@@ -1,6 +1,7 @@
 <?
 
-function sample_image() {
+function view_image($path) {
+	$info = getimagesize($f);
 	header("Expires: Mon, 26 Jul 1997 05:00:00 GMT"); 
 	header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT"); 
 	header("Cache-Control: no-cache, must-revalidate"); 
@@ -9,16 +10,21 @@ function sample_image() {
 	header("Pragma: no-cache");
 	
 	header('Accept-Ranges: bytes');
+	header('Content-Length: '.filesize( $path ));
 	header('Connection: close');
-	header('Content-Type: image/gif');
+	header('Content-Type: gif');
 	header("Content-Disposition: inline; filename=im");
+	readfile($path);
 
+/*	
 	$c = curl_init();
-	curl_setopt($c, CURLOPT_URL, 'http://placehold.it/60x60/C5D9EB&text=no+image');
+	curl_setopt($c, CURLOPT_URL, 'http://placehold.it/60x60/C5D9EB&text=noimage');
 	curl_setopt($c, CURLOPT_PROXY, '10.10.16.8:3128');
 	curl_setopt($c,CURLOPT_BINARYTRANSFER, true);
 	$result = @curl_exec($c);
 	curl_close($c); 
+	echo $result;
+*/
 }
 
 include('incs/config.inc');
@@ -44,35 +50,17 @@ $query = <<<QUERY
 QUERY;
 
 
+$f = 'images/placeit.gif';
 
 if ( (int)$mssql->executeQuery($query) != -1 ) {
 	$data = $mssql->getRow('num');
-	$f = PPImageTemplatePath.'pp_'.$data[0].'-1.jpg';
+	$path = PPImageTemplatePath.'pp_'.$data[0].'-1.jpg';
 		
-	if ( file_exists($f) ) 
-	{
-		$info = getimagesize($f);
-		
-		header("Expires: Mon, 26 Jul 1997 05:00:00 GMT"); 
-		header("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT"); 
-		header("Cache-Control: no-cache, must-revalidate"); 
-		header("Cache-Control: post-check=0,pre-check=0"); 
-		header("Cache-Control: max-age=0"); 
-		header("Pragma: no-cache");
-		
-		header('Accept-Ranges: bytes');
-		header('Content-Length: '.filesize( $f ));
-		header('Connection: close');
-		header('Content-Type: '.$info['mime']);
-		header("Content-Disposition: inline; filename=im");
-		
-		readfile($f);
-	}
-	else
-		sample_image();
+	if ( file_exists($path) ) 
+		$f = $path;
 }
-else
-	sample_image();
+
+view_image($f);
 
 // =================
 // відключення від БД
