@@ -12,6 +12,7 @@ $mssql = new mssql();
 $mssql->connection($currConn['host'], $currConn['login'], $currConn['pass'], $currConn['dbname'], connType);
 $mssql->selectDb('spp');
 
+// CHANGES
 $query = <<<QUERY
 	select top 1 c2.idvariant 
 	from claim210 c
