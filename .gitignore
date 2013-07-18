@@ -8,3 +8,10 @@ tmp/**/*
 tempdocs/*
 notices/*
 incs/config.inc
+dict_*
+article_parser*
+bmptojpg_err.php
+create_*
+romarin_upload.php
+Копия search.php
+*test*
