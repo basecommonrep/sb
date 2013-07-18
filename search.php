@@ -1,15 +1,6 @@
 <?
-	/*
-	print(phpinfo());
-	exit;
-	*/
 	session_start();
-
-	//print(phpinfo());	
-	//exit;
-	//print('<BR>REMOTE_ADDR='.$_SERVER['REMOTE_ADDR'].'<BR>');
-	//exit;
-	//print('HTTP_REFERER='.$_SERVER['HTTP_REFERER'].'<BR>');
+	
 	/*
 	print('(sess)NReg='.$_SESSION['NReg'].'<BR>');
 	print('section='.$_GET['section'].'<BR>');
@@ -20,15 +11,10 @@
 	if ( ( $_GET['action'] == 'search' || $_GET['action'] == 'viewdetails' ) && 
 	     ( ( empty($_SESSION['bulStartedSession']) && empty($_SESSION['addDbName']) ) || ( count($_POST) === 0 && count($_SESSION['lastSearchIds']) === 0 && count($_SESSION['lastViewIds']) === 0 && $_GET['from'] != 'notice' && empty($_GET['chapter']) ) ) )
 	{
-		/*
-		print_r($_POST);
-		print('<BR>');
-		print_r($_SESSION['lastViewIds']);
-		print('<BR>');
-		print_r($_SESSION['lastSearchIds']);
-		*/
-		Header('Location: http://www.uipv.org/ua/bases2.html');
-		exit;	
+		if ($_GET['from_efiling'] != 'yes') {
+			Header('Location: http://www.uipv.org/ua/bases2.html');
+			exit;	
+		}
 	}
 
 	$isFirst = false;
@@ -43,7 +29,11 @@
 	{
 		session_unset();
 		$isFirst = true;
-		//print('alex');
+	}
+	
+	if ($_GET['from_efiling'] == 'yes') { 
+		session_unset();
+		$isFirst = true;
 	}
 	// ===========================================================================
 
