@@ -1,0 +1,10 @@
+.bundle
+*~
+*.cache
+*.log
+*.pid
+tmp/**/*
+.DS_Store
+tempdocs/*
+notice/*
+incs/config.inc
