@@ -1,0 +1,8 @@
+select t.bulstr [bullNumb], 
+convert(varchar(20), t.bulletindate, 104) [bullDate]
+from (
+	select distinct m.bulletinDate, m.bulStr
+	from maininfo m
+	where m.bulletinDate > convert(datetime, '01.04.2006', 104) and m.bulletinDate<getdate()
+) as t 
+order by t.bulletindate desc

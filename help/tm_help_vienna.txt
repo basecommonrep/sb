@@ -1,0 +1,4 @@
+<font class="help">01.01.02</font><br>
+<font class="help">01.01.*</font><br>
+<font class="help">05.03.* <?=$LANG_SETTINGS['logical']['and'];?> <?=$LANG_SETTINGS['logical']['not'];?> 05.03.01</font><br>
+<font class="help">05.05.02 <?=$LANG_SETTINGS['logical']['and'];?> 05.05.15</font><br>

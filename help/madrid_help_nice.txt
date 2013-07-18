@@ -1,0 +1,3 @@
+<font class="help">16</font><br>
+<font class="help">16 <?=$LANG_SETTINGS['logical']['or'];?> 35</font><br>
+<font class="help">16 <?=$LANG_SETTINGS['logical']['and'];?> 35</font><br>

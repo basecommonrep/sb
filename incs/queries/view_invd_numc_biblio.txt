@@ -1,0 +1,9 @@
+select mi.idClaim,
+case
+	when charindex('/',mi.i_21) > 0 then substring(mi.i_21, 0, charindex('/',mi.i_21))
+	else mi.i_21
+end [i_21],
+mi.i_11
+from maininfo mi 
+where mi.i_13 in (49, 50, 53) and mi.i_46=convert(datetime, '$$$PUBDATE$$$', 104)
+order by mi.i_21

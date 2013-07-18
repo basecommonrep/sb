@@ -1,0 +1,5 @@
+<font class="help">72</font><br>
+<font class="help">=47</font><br>
+<font class="help">47 <?=$LANG_SETTINGS['logical']['or'];?> 72</font><br>
+<font class="help">>12 <?=$LANG_SETTINGS['logical']['and'];?> <=40</font><br>
+

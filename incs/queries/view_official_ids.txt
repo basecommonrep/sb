@@ -1,0 +1,9 @@
+select n.notifnum [code], 
+n.filename [fname], 
+b.bulNumber+'&nbsp;'+convert(varchar(20), b.bulDate, 104) [bulinfo],
+b.bulNumber,
+convert(varchar(20), b.bulDate, 104) [bulDate]
+from texts_notif n
+inner join bulletins b on b.idbul=n.idbul
+where n.notifnum=0
+order by b.bulDate

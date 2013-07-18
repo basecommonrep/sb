@@ -1,0 +1,14 @@
+select rc.idtrademark
+from (
+	select distinct m.idtrademark
+	from mark_image m
+	inner join (
+		select distinct d.idtrademark
+		from designations_dcpcd d
+		where d.office='UA'
+	) as uareg on m.idtrademark=uareg.idtrademark
+	inner join ($$$SUBQUERY$$$) res on m.idtrademark=res.idtrademark
+) as rc
+inner join trademarks tm on rc.idtrademark=tm.idtrademark
+$$$VIEWBULWHERE$$$
+$$$ORDERCLAUSE$$$

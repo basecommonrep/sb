@@ -1,0 +1,10 @@
+select mi.idClaim
+from maininfo mi
+inner join (
+	select distinct c51.idClaim 
+	from claim51publ c51
+	where c51.ipc_string like '$$$LETTER$$$%'
+) res on mi.idClaim=res.idClaim
+inner join publication pub on pub.idClaim=res.idClaim and pub.typePub=2
+where mi.i_13 not in (51, 52, 54, 671) and pub.bulletinDate=convert(datetime, '$$$PUBDATE$$$', 104)
+$$$ORDERCLAUSE$$$

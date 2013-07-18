@@ -1,0 +1,6 @@
+select mi.idClaim
+from maininfo mi
+inner join ($$$SUBQUERY$$$) res on mi.idClaim=res.idClaim
+$$$VIEWBULWHERE$$$
+$$$ORDERCLAUSE$$$
+

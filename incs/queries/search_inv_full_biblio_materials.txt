@@ -1,0 +1,25 @@
+select idx.iddoc, 
+idx.zayavkaNumber [i_21],
+case 
+	when idx.cod='Ñ8' and idx.langdoc='UA' then 'ru'
+	when idx.cod='Ñ8' and idx.langdoc='RU' then 'rr'
+	when idx.cod='Ñ8' and idx.langdoc='EN' then 're'
+	when idx.cod='Ñ16' or idx.cod='Ñ6Ï' then 'fu'
+	when idx.cod='Ñ17' then 'ou'
+	else null
+end [matCode],
+idx.arch_html [rar],
+case 
+	when idx.cod='Ñ17' then idx.blobpdf
+	else null
+end [pdf]
+from in_docs_for_index idx
+where idx.id in (
+	select max(t.id) [iddoc]
+	from (
+		select idx.id, idx.cod, idx.langdoc
+		from in_docs_for_index idx
+		where idx.zayavkanumber=':CLAIMNUMBER' and (idx.cod='Ñ6Ï' or idx.cod='Ñ16')
+	) as t
+	group by t.cod, t.langdoc
+)

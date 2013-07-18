@@ -1,0 +1,11 @@
+select tm.idTradeMark [idClaim],
+tm.regnumber [fi_111],
+rtrim(ltrim(mi.imagetext)) [fi_540],
+mi.image [image],
+lower(mi.imageType) [imageType],
+x.val [xml]
+from trademarks tm
+inner join mark_image mi on mi.idtrademark=tm.idtrademark
+inner join mergedata md on md.idtrademark=tm.idtrademark
+inner join xml x on x.idtrademark=tm.idtrademark
+where tm.idtrademark=:$$$IDCLAIM$$$

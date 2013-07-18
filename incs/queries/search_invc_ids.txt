@@ -1,0 +1,7 @@
+select mi.idClaim
+from maininfo mi
+inner join ($$$SUBQUERY$$$) res on mi.idClaim=res.idClaim
+inner join publication p on p.idClaim=res.idClaim and p.typePub=2
+where mi.i_13 not in (51, 52, 54, 671) and p.bulletinDate > convert(datetime, '01.04.2006', 104)
+$$$VIEWBULWHERE$$$
+$$$ORDERCLAUSE$$$

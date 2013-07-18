@@ -1,0 +1,5 @@
+select tn.notifnum, tn.filename, tn.val [file], tn.idBul
+from texts_notif tn
+left join bulletins b on tn.idbul=b.idbul
+where tn.notifNum = 0
+order by tn.filename, tn.idbul

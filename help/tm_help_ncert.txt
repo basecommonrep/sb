@@ -1,0 +1,6 @@
+<font class="help">"3901" - знайде точне співпадіння</font><br>
+<font class="help">200101</font><br>
+<font class="help">95101 <?=$LANG_SETTINGS['logical']['or'];?> 95105</font><br>
+<font class="help">2010*</font><br>
+<font class="help">2104?6</font><br>
+<font class="help">9810* <?=$LANG_SETTINGS['logical']['and'];?> <?=$LANG_SETTINGS['logical']['not'];?> 981045</font><br>

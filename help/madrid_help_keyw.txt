@@ -1,0 +1,3 @@
+<font class="help">fiat</font><br>
+<font class="help">PRINTOFIX <?=$LANG_SETTINGS['logical']['or'];?> Vacuflex</font><br>
+<font class="help"><?=$LANG_SETTINGS['logical']['not'];?> Arsol <?=$LANG_SETTINGS['logical']['and'];?> ratak</font><br>

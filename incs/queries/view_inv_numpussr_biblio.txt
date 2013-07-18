@@ -1,0 +1,12 @@
+select mi.idClaim,
+case
+--	when substring(c.ipc_string, 28, 1)='C' then '('+substring(c.ipc_string, 20, 4)+') '+'<b>'+ltrim(rtrim(substring(c.ipc_string, 0, 14)))+'</b>'
+	when substring(c.ipc_string, 28, 1)='C' then '(2006) '+'<b>'+ltrim(rtrim(substring(c.ipc_string, 0, 14)))+'</b>'
+	when substring(c.ipc_string, 28, 1)='A' then '<i><b>'+ltrim(rtrim(substring(c.ipc_string, 0, 14)))+'</b></i> ('+substring(c.ipc_string, 20, 4)+'.'+substring(c.ipc_string, 24, 2)+')' 
+end [mpk],
+mi.i_11,
+mi.ussrac
+from maininfo mi
+left join claim51publ c on c.idclaim=mi.idclaim 
+where mi.ussrac is not null and mi.i_13 in (44, 45, 46, 47, 48) and mi.i_46=convert(datetime, '$$$PUBDATE$$$', 104)
+order by mi.i_11

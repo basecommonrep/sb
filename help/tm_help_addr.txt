@@ -1,0 +1,4 @@
+<font class="help">ьебвемй</font><br>
+<font class="help">ьебвемйн <?=$LANG_SETTINGS['logical']['and'];?> <?=$LANG_SETTINGS['logical']['not'];?> аск</font><br>
+<font class="help">"о. рхвхмх"</font><br>
+<font class="help">бюяхк*</font><br>

@@ -1,0 +1,7 @@
+<font class="help">A1</font><br>
+<font class="help">A1 <?=$LANG_SETTINGS['logical']['or'];?> A3</font><br>
+<br>
+
+<b><font class="help">Примітки:</font></b><br>
+A1 - авторське свідоцтво СРСР<br>
+A3 - патент СРСР

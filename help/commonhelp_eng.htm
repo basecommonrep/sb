@@ -1,0 +1,154 @@
+ <table border=0 cellpadding="0" cellspacing="0" width="100%">
+<!--
+  <tr>
+   <td height="20px" background="images/bg2.jpg">
+    <table cellpadding="0" cellspacing="0">
+     <tr>
+      <td class="" width="22px" height="20px" align="center">?</td>
+
+      <td style="padding-left: 10px">
+       <b><font style="FONT-SIZE: 14px;" class="help">Help</font></b>
+      </td>
+     </tr>
+    </table>
+   </td>
+   <td align="right" background="images/bg1r.jpg" width="15%" nowrap="true">
+    <b><span style="CURSOR: HAND;" class="help" onclick="javascript:printpr();">Preview</span></b>&nbsp;
+    <b><span style="CURSOR: HAND;" class="help" onclick="javascript:print();">Print</span></b>&nbsp;
+   </td>
+  </tr>
+
+  <tr>
+   <td height="1px" background="images/bg1.jpg" style="padding-left:30px" colspan="2"></td>
+  </tr>
+-->
+
+  <tr>
+   <td  colspan="2">
+   <table border=0 cellpadding="0" cellspacing="0" width="100%">
+   <tr>
+   <td>
+<!--
+	<b><a href="#main"><font style="text-decoration: underline" class="help">Search Parameters</font></a></b><br>
+-->
+	<b><a href="#request"><font style="text-decoration: underline" class="help">Request Form</font></a></b><br>
+	<b><a href="#results"><font style="text-decoration: underline" class="help">Search Results</font></a></b><br>
+	<b><a href="#basket"><font style="text-decoration: underline" class="help">Basket</font></a></b><br>
+	<b><a href="#dict"><font style="text-decoration: underline" class="help">Dictionary</font></a></b><br>
+   </td>
+   </tr>
+
+   <tr><td><img height=20 src="images/spacer.gif"></td></tr>
+   
+   <tr>
+   <td>
+
+<!--
+<p><a name="main"><b><font style="text-decoration: underline" class="help">Search Parameters</font></b></p>
+<p style="TEXT-ALIGN: justify">
+<font class="help">
+A page is intended for the choice of the fields, on which the database search will be to. 
+In addition, by means the list of "Records on a page" an user can choose the amount of results of search, which will be represented on one page in a window the "Results of search".
+For the receipt of the detailed information on the field, press on the name of this field.<br>
+For the receipt of dictionary on the field, push the button of "Dictionary" in a column.<br>
+</font><br><br>
+</p>
+-->
+
+<p><a name="request"><b><font style="text-decoration: underline" class="help">Request Form</font></b></p>
+<p style="TEXT-ALIGN: justify">
+<font class="help">
+The checkbox "Search in found" allows to conduct the search in the found great number of results. Use the checkbox "Search in found" for clarification of search result.<br>
+General syntax of searching query:<br><br>
+&lt;expression1&gt; [&lt;BO1&gt;] &lt;expression2&gt; [&lt;BO2&gt;] ... [&lt;BO (N-1)&gt;] &lt;expressionN&gt;<br><br>
+Boolean operators (BO): AND, OR, NOT, AND NOT, OR NOT.<br><br>
+The fields for the search divide into types: date, character set and integer number.<br><br>
+<b><font class="help">Date:</font></b><br>
+A date is specified in a format: dd.mm.yyyy, dd - day, mm - month, yyyy - year.<br>
+If a day or month consists of one number, it is necessary to write a zero before a number.<br>
+Special characters: <  > = <= >= <> ()<br>
+If before a date the special character is not indicated, it is considered, that it is a character =.<br>
+The dates parted by spacebar are considered connected by a boolean operator AND.<br><br>
+
+Examples of query:<br>
+11.12.2004<br>
+01.04.2001<br>
+23.11.2004 OR 23.12.2004<br>
+23.11.2003 AND <= 23.12.2004<br>
+>= 01.01.2001 AND (< 10.01.2001 OR <> 05.01.2001)<br><br>
+
+<b><font class="help">Integer number:</font></b><br>
+
+It is allowed to enter an integer number.<br>
+Special characters: < > = <= >= <> ()<br>
+If before a number the special character is not indicated, it is considered, that it is a character =.<br>
+The numbers parted by spacebar are considered connected by a boolean operator AND.<br><br>
+
+Examples of query:<br>
+12000<br>
+=350<br>
+12000 OR 12001<br>
+>3000 AND <=3010<br>
+>= 2000 AND (< 3050 OR <>2500)<br><br>
+
+<b><font class="help">Character set:</font></b><br>
+
+It is allowed to use the characters of the Ukrainian, Russian, English alphabet, integer number.<br>
+The register of characters of value has not.<br>
+The words parted by spacebar are considered connected by a boolean operator AND.<br><br>
+
+Special characters: * ? " ().<br>
+* replaces one and more characters<br>
+? replaces one character<br>
+"..." used for the search word set<br><br>
+
+If before the character value the special character is not indicated, it is considered, that it is a character =.<br><br>
+
+Examples of query:<br>
+київський політехнічний інститут<br>
+ТОВ OR ВАТ<br>
+(іванов OR петров) AND NOT сідоров<br>
+"Іванов Іван Іванович"<br>
+інформ* стандартиз*<br>
+ЗАКРЫТОЕ АКЦИОНЕРНОЕ ОБЩЕСТВО АТЛАНТ<br>
+Adamovych Volodymyr Ivanovych
+</font><br>
+</p>
+
+<p><a name="results"><b><font style="text-decoration: underline" class="help">Search Results</font></b></p>
+<p style="TEXT-ALIGN: justify">
+<font class="help">
+The results of search are given as table.<br>
+Every record in table contains brief bibliographic data of the document. <br>
+In the case of a plenty of records, that it was found, they divided into pages. The amount of records on one page is set through the parameter of "Records on a page" in a section "Serach Parameters". For moving between pages use an overhead and lower navigation line. For the receipt of complete bibliographic data of the document, press on him.<br>
+Marking or taking off mark from records in a column "Basket", you you determine, what documents will be plugged in to the basket. A basket can be caused, if to push the button with the image of basket.
+</font><br>
+</p>
+
+
+<p><a name="basket"><b><font style="text-decoration: underline" class="help">Basket</font></b></p>
+<p style="TEXT-ALIGN: justify">
+<font class="help">
+In this window those results of search, which were plugged in a basket on a page the "Search Results", hatch only.<br>
+If to press on a record, you you will get complete bibliographic data of protective to the document.<br>
+For deleting documents from a basket are select, note the proper records in a column to "Delete" and push the button to "Delete from a basket".
+</font><br>
+</p>
+
+<p><a name="dict"><b><font style="text-decoration: underline" class="help">Dictionary</font></b></p>
+<p style="TEXT-ALIGN: justify">
+<font class="help">
+A dictionary contains the all possible values of the set field, that is in a data-base. For every value how many are indicated one time it meets in a data-base.
+For the search of values in a dictionary, use the button to "Attach a filter".
+</font>
+</p>
+
+
+	</td>
+	</tr>
+
+</table>
+</td>
+</tr>
+     
+</table>

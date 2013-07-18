@@ -1,0 +1,2 @@
+<font class="help">1437039</font><br>
+<font class="help">1437039 <?=$LANG_SETTINGS['logical']['or'];?> 143</font><br>

@@ -1,0 +1,13 @@
+select rc.idClaim, 
+c111.i_111,
+c210.i_210,
+c510.classNumber [class]
+from ref_claims rc
+inner join claim111 c111 on rc.idclaim=c111.idclaim
+inner join claim210 c210 on rc.idclaim=c210.idclaim
+inner join claim450 c450 on rc.idclaim=c450.idclaim
+inner join claim510 c510 on rc.idclaim=c510.idclaim
+inner join ref_bulletins rb on c450.bulletinDate=rb.bulletinDate
+where c450.bulletinDate > convert(datetime, '01.04.2006', 104) and
+rb.bulletinNumber='$$$BULNUMB$$$'
+order by replicate('.', 10-len(c111.i_111))+ltrim(c111.i_111), c510.classNumber

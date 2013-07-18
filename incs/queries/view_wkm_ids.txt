@@ -1,0 +1,9 @@
+select mi.idmark
+from mark mi
+left join ref_bulletins rb on mi.idBulletin=rb.idBulletin
+where rb.bullstr='$$$BULNUMB$$$' 
+$$$ORDERCLAUSE$$$
+
+
+
+

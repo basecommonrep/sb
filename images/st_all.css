@@ -1,0 +1,412 @@
+body.* {
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 12;
+    color: #00518f;
+}
+
+.pageHeaderText {
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 14;
+    font-weight: bold;
+	color: #00518F;   
+}
+
+a.pageHeaderText {
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 14;
+    font-weight: bold;
+    text-decoration: none;
+	color: #00518F;   
+}
+
+a.pageHeaderText:hover {
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 14;
+    font-weight: bold;
+    text-decoration: underline;
+	color: #00518F;   
+}
+
+.viennacat {
+	font-family: Tahoma, Arial, Helvetica, sans-serif; 
+	font-size: 12px; 
+	color: #00518F;
+	font-weight: bold;
+}
+
+.viennacat2 {
+	font-family: Tahoma, Arial, Helvetica, sans-serif; 
+	font-size: 12px; 
+	color: #00518F;
+}
+
+.viennacatinid {
+	font-family: Tahoma, Arial, Helvetica, sans-serif; 
+	font-size: 12px; 
+	color: #00518F;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.viennacat2white {
+	font-family: Tahoma, Arial, Helvetica, sans-serif; 
+	font-size: 12px; 
+	color: #FFFFFF;
+}
+
+.viennacatwhite {
+	font-family: Tahoma, Arial, Helvetica, sans-serif; 
+	font-size: 12px; 
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+.viennacatwhiteunder {
+	font-family: Tahoma, Arial, Helvetica, sans-serif; 
+	font-size: 12px; 
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+
+.viennacatchange {
+	font-family: Tahoma, Arial, Helvetica, sans-serif; 
+	font-size: 12px; 
+	color: rgb(91, 114, 136);
+}
+
+.viennacatunder {
+	font-family: Tahoma, Arial, Helvetica, sans-serif; 
+	font-size: 12px; 
+	color: #00518F;
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+.viennacat2under {
+	font-family: Tahoma, Arial, Helvetica, sans-serif; 
+	font-size: 12px; 
+	color: #00518F;
+	text-decoration: underline;
+}
+
+.viennacat2not {
+	font-family: Tahoma, Arial, Helvetica, sans-serif; 
+	font-size: 12px; 
+	color:#5b7288;
+}
+
+a.viennacat2 {
+	font-family: Tahoma, Arial, Helvetica, sans-serif; 
+	font-size: 12px; 
+	color: #00518F;
+	text-decoration: none;
+}
+
+a.viennacat2:hover {
+	font-family: Tahoma, Arial, Helvetica, sans-serif; 
+	font-size: 12px; 
+	color: #00518F;
+	text-decoration: underline;
+}
+
+
+
+.viennawhitebgr {
+	font-family: Tahoma, Arial, Helvetica, sans-serif; 
+	font-size: 12px; 
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color:#00518F;
+}
+
+a.viennacat {
+	font-family: Tahoma, Arial, Helvetica, sans-serif; 
+	font-size: 12px; 
+	color: #00518F;
+	text-decoration: none;
+}
+
+a.viennacat:hover {
+	font-family: Tahoma, Arial, Helvetica, sans-serif; 
+	font-size: 12px; 
+	color: #00518F;
+	text-decoration: underline;
+}
+
+.inputstyle  {
+        BACKGROUND-COLOR: #FFFFEE; 
+		BORDER-BOTTOM: #00518F 1px solid; 
+		BORDER-LEFT: #00518F 1px solid; 
+		BORDER-RIGHT: #00518F 1px solid; 
+		BORDER-TOP: #00518F 1px solid; 
+		
+		HEIGHT: 20px;
+		WIDTH: 200px;
+		font-family: Tahoma, Arial, Helvetica, sans-serif;
+		color: #00518F;
+		font-size: 12px; 
+		font-weight: normal;		
+}
+
+table.maintable {
+       BORDER-BOTTOM: #00518f 1px solid; 
+	   BORDER-LEFT: #00518f 1px solid; 
+	   BORDER-RIGHT: #00518f 1px solid; 
+	   BORDER-TOP: #00518f 1px solid;
+}
+
+.info {
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 10;
+	color: #00518F;
+}
+
+.info2 {
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 10;
+	color: #00518F;
+	font-weight: bold;
+}
+
+a.info2 {
+	font-family: Tahoma, Arial, Helvetica, sans-serif; 
+	font-size: 10px; 
+	color: #00518F;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+a.info2:hover {
+	font-family: Tahoma, Arial, Helvetica, sans-serif; 
+	font-size: 10px; 
+	color: #00518F;
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+.maintitle {
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 14;
+    font-weight: bold;
+	color: #00518F;
+    text-decoration: none;
+}
+
+.SoftErrorText {
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 12;
+    color: #c02020;
+    text-decoration: none;
+}
+
+.resnumb {
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 14;
+    color: #ffffff;
+    text-decoration: none;
+	font-weight: bold;
+}
+
+.restitle {
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 12;
+    color: #ffffff;
+    text-decoration: none;
+	font-weight: bold;
+}
+
+td.resnumbcell {
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 14;
+    color: #ffffff;
+    text-decoration: none;
+	font-weight: bold;
+	text-align: center;
+	height: 40;
+	width: 25;
+	background-color: #00518F;
+}
+
+td.restitlecell {
+	padding-left: 5px;
+	background-color: #c5d9eb;
+}
+
+td.resbibliocell {
+	padding-left: 5px;
+	background-color: #eef0f4;
+	height: 50;	
+}
+
+td.resbibliostatuscell {
+	padding-left: 5px;
+	background-color: #FFFFEE;
+	height: 10;	
+}
+
+td.notifyHeader {
+	background-color: #00518F;
+	height: 30;	
+	BORDER-BOTTOM: #FFFFFF 2px solid;
+	BORDER-RIGHT: #FFFFFF 2px solid;
+	text-align: center;	
+}
+
+td.notifyHeader2 {
+	background-color: #00518F;
+	height: 30;	
+	BORDER-BOTTOM: #FFFFFF 2px solid;
+	BORDER-RIGHT: #FFFFFF 2px solid;
+	text-align: center;	
+	font-family: Tahoma, Arial, Helvetica, sans-serif; 
+	font-size: 12px; 
+	color: #FFFFFF;
+}
+
+td.notifyHeaderNot {
+	background-color: #00518F;
+	height: 30;	
+	BORDER-BOTTOM: #FFFFFF 2px solid;
+	text-align: center;		
+}
+
+td.notifyHeaderNot2 {
+	background-color: #00518F;
+	height: 30;	
+	BORDER-BOTTOM: #FFFFFF 2px solid;
+	text-align: center;		
+	font-family: Tahoma, Arial, Helvetica, sans-serif; 
+	font-size: 12px; 
+	color: #FFFFFF;
+}
+
+td.notifyLine {
+	background-color: #eef0f4;
+	height: 20;	
+	BORDER-RIGHT: #FFFFFF 2px solid;
+	BORDER-BOTTOM: #FFFFFF 2px solid;
+	text-align: left;
+}
+
+td.notifyLine2 {
+	background-color: #eef0f4;
+	height: 20;	
+	BORDER-RIGHT: #FFFFFF 2px solid;
+	BORDER-BOTTOM: #FFFFFF 2px solid;
+	text-align: left;
+	font-family: Tahoma, Arial, Helvetica, sans-serif; 
+	font-size: 12px; 
+	color: #00518F;
+}
+
+td.notifyLineR {
+	background-color: #eef0f4;
+	height: 20;	
+	BORDER-RIGHT: #FFFFFF 2px solid;
+	BORDER-BOTTOM: #FFFFFF 2px solid;
+	text-align: right;
+	font-family: Tahoma, Arial, Helvetica, sans-serif; 
+	font-size: 12px; 
+	color: #00518F;
+}
+td.notifyLineC {
+	background-color: #eef0f4;
+	height: 20;	
+	BORDER-RIGHT: #FFFFFF 2px solid;
+	BORDER-BOTTOM: #FFFFFF 2px solid;
+	text-align: center;
+	font-family: Tahoma, Arial, Helvetica, sans-serif; 
+	font-size: 12px; 
+	color: #00518F;
+}
+
+td.notifyLineLeft {
+	background-color: #eef0f4;
+	height: 20;	
+	BORDER-LEFT: #FFFFFF 2px solid;
+	BORDER-RIGHT: #FFFFFF 2px solid;
+	BORDER-BOTTOM: #FFFFFF 2px solid;
+	text-align: left;
+}
+
+
+td.notifyLineLeft2 {
+	background-color: #eef0f4;
+	height: 20;	
+	BORDER-LEFT: #FFFFFF 2px solid;
+	BORDER-RIGHT: #FFFFFF 2px solid;
+	BORDER-BOTTOM: #FFFFFF 2px solid;
+	text-align: left;
+	font-family: Tahoma, Arial, Helvetica, sans-serif; 
+	font-size: 12px; 
+	color: #00518F;
+}
+
+td.noticeNotifyLineLeft2 {
+	background-color: #eef0f4;
+	height: 20;	
+	BORDER-LEFT: #FFFFFF 2px solid;
+	BORDER-RIGHT: #FFFFFF 2px solid;
+	BORDER-BOTTOM: #FFFFFF 2px solid;
+	text-align: left;
+	font-family: Tahoma, Arial, Helvetica, sans-serif; 
+	font-size: 12px; 
+	color: #ffffff;
+}
+
+td.notifyLineNot {
+	background-color: #eef0f4;
+	height: 20;	
+	text-align: left;
+}
+
+.pglinedis {
+	font-family: Tahoma, Arial, Helvetica, sans-serif; 
+    color: silver;
+    font-size: 12;
+    cursor: default;
+    text-decoration: none; 
+}
+
+a.pgline {
+	font-family: Tahoma, Arial, Helvetica, sans-serif; 
+    color: #00518f;
+    font-size: 12;
+    text-decoration: none; 
+}
+
+a.pgline:hover {
+    text-decoration: underline; 
+}
+
+table.mt {
+       border: #00518f solid 1;
+       border-collapse: collapse;
+}
+tr.hdr {
+       background-color: #00518F;
+}
+
+.ftc {
+    font-family: Tahoma, Arial, Helvetica, sans-serif;
+    color: #00518f;
+	font-size: 11; 
+	text-decoration: none;
+}
+
+.help {
+	COLOR: #555599;  
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; 
+	FONT-SIZE: 12px; 
+	TEXT-ALIGN: justify
+} 	
+
+.dictval {
+	font-family: Tahoma, Arial, Helvetica, sans-serif; 
+	font-size: 12px; 
+	color: #00518F;
+	text-decoration: underline;
+
+}
+

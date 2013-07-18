@@ -1,0 +1,7 @@
+<font class="help">30600 <?=$LANG_SETTINGS['logical']['or'];?> 30700</font><br>
+<font class="help"><30100</font><br>
+<font class="help">>50100 <?=$LANG_SETTINGS['logical']['and'];?> <50600 <?=$LANG_SETTINGS['logical']['and'];?> <?=$LANG_SETTINGS['logical']['not'];?> 50500</font><br>
+<font class="help">(30120 (>30130 <?=$LANG_SETTINGS['logical']['and'];?> <30300)) <?=$LANG_SETTINGS['logical']['and'];?> <=30200</font><br>
+
+
+

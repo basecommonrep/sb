@@ -1,0 +1,24 @@
+select rc.idClaim, 
+c111.i_111 [fi_11], 
+convert(varchar(20),c141.i_141,104) [fi_14],
+c210.i_210 [fi_21],
+convert(varchar(20),c220.i_220,104) [fi_22],
+convert(varchar(20),c240.i_240,104) [fi_24],
+convert(varchar(20),c450.bulletinDate,104) [bullDate],
+c450.bulletinNumber [bulletinNumber],
+cast(dbo.getClaim('mkpz',null,null,rc.idclaim) as text) [fi_51],
+c540.i_540 [fi_54],
+cast(dbo.getClaim('variants',null,null,rc.idclaim) as text) [fi_55],
+cast(dbo.getClaim('inv',null,0,rc.idclaim) as text) [fi_72],
+cast(dbo.getClaim('prop',null,0,rc.idclaim) as text) [fi_73]
+from ref_claims rc
+inner join claim111 c111 on c111.idclaim=rc.idclaim
+left  join claim141 c141 on c141.idclaim=rc.idclaim
+inner join claim210 c210 on c210.idclaim=rc.idclaim
+inner join claim220 c220 on c220.idclaim=rc.idclaim
+inner join claim240 c240 on c240.idclaim=rc.idclaim
+inner join claim450 c450 on c450.idclaim=rc.idclaim
+left  join claim540 c540 on c540.idclaim=rc.idclaim
+where rc.idclaim in ($$$IDS$$$)
+$$$ORDERCLAUSE$$$
+

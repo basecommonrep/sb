@@ -1,0 +1,17 @@
+select m.idMark, 
+convert(varchar(20), m.decisionDate, 104) [decisionDate], 
+convert(varchar(20), m.orderDate, 104) [orderDate], 
+m.orderNumber, 
+convert(varchar(20), m.rightsDate, 104) [rightsDate],
+convert(varchar(20), rb.bulletinDate, 104)+',&nbsp;'+
+rb.bullStr [bulStr], 
+convert(varchar(20), rb.bulletinDate, 104) [bulld],
+m.keyWords,
+cast(dbo.getclaim('mktp', 0, m.idMark) as text) [fi_511],
+cast(dbo.getclaim('prop', 0, m.idMark) as text) [fi_72],
+m.markImage [image],
+m.courtcomments,
+m.wheretopublish
+from mark m
+left join ref_bulletins rb on m.idBulletin=rb.idBulletin
+where m.idMark in ($$$IDS$$$)

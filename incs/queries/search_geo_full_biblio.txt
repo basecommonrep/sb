@@ -1,0 +1,19 @@
+select mi.idClaim, 
+mi.regNumb,
+convert(varchar(20), mi.regDate, 104) [regDate],
+mi.kzpCountry,
+cast(upper(mi.kzpName) as text) [kzpName],
+cast(mi.goodName as text) [goodName],
+mi.i_21,
+convert(varchar(20), mi.i_22, 104) [i_22],
+convert(varchar(20), mi.bulletinDate, 104) [bulletinDate],
+mi.bulletinNumber,
+mi.goodDescription,
+mi.geogPlaceName,
+cast(mi.kzpUseConditions as text) [kzpUseConditions],
+cast(dbo.getClaim('patpovir',0,mi.idclaim) as text) [i_74],
+cast(dbo.getClaim('address',0,mi.idclaim) as text) [i_98],
+t.value [kzpType]
+from maininfo mi
+inner join kzpTypes t on t.idKzpType=mi.kzpType
+where mi.idClaim=:$$$IDCLAIM$$$

@@ -1,0 +1,8 @@
+<font class="help">київський політехнічний інститут</font><br>
+<font class="help">ТОВ <?=$LANG_SETTINGS['logical']['or'];?> ВАТ</font><br>
+<font class="help">(іванов <?=$LANG_SETTINGS['logical']['or'];?> петров) <?=$LANG_SETTINGS['logical']['and'];?> <?=$LANG_SETTINGS['logical']['not'];?> сідоров</font><br>
+<font class="help">"Іванов Іван Іванович"</font><br>
+<font class="help">інформ* стандартиз*</font><br>
+<font class="help">ЗАКРЫТОЕ АКЦИОНЕРНОЕ ОБЩЕСТВО АТЛАНТ</font><br>
+<font class="help">Adamovych Volodymyr Ivanovych</font><br>
+

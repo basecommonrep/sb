@@ -1,0 +1,4 @@
+
+select * from ppNotice_Nots where bulYear='$$$BULNUMB$$$'
+order by type,name,Number,iRegN
+

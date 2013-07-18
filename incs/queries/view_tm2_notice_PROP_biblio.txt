@@ -1,0 +1,5 @@
+select * from tmNotice_Nots 
+where isNull(Holder,'')+isNull(PreviousHolder,'')+isNull(NewHolder,'')+isNull(Licensor,'')+isNull(Licensee,'')
+ like '%$$$PROP$$$%'
+
+order by bulletinDate desc, type,name,Number,iRegN

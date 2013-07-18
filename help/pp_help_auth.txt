@@ -1,0 +1,6 @@
+<font class="help">товариство</font><br>
+<font class="help">АКЦІОНЕРН <?=$LANG_SETTINGS['logical']['or'];?> ПРИВАТ</font><br>
+<font class="help">"науково-проектне державне відкрите акціонерне товариство"</font><br>
+<font class="help">СИ*НИЙ</font><br>
+<font class="help">СЕ?ТКО ІНК</font><br>
+<font class="help">АКЦ*</font><br>

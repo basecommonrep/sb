@@ -1,0 +1,5 @@
+--  сповищення вказаного типу 
+select * from tmNotice_Nots where type='$$$NOTICECOD$$$'
+order by bulletinDate desc, type,name,Number,iRegN
+
+

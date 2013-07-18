@@ -1,0 +1,5 @@
+<font class="help">A01B 13/08</font><br>
+<font class="help">A01D*</font><br>
+<font class="help">"A01B 13/00" <?=$LANG_SETTINGS['logical']['or'];?> "A01B 13/04"</font><br>
+<font class="help">A01B 1/* <?=$LANG_SETTINGS['logical']['and'];?> <?=$LANG_SETTINGS['logical']['not'];?> A01B 1/04</font><br>
+<font class="help">A01? 1/00</font>

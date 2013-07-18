@@ -1,0 +1,2 @@
+<font class="help">UA</font><br>
+<font class="help">UA <?=$LANG_SETTINGS['logical']['or'];?> RU</font><br>

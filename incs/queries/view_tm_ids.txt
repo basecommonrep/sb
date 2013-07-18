@@ -1,0 +1,7 @@
+select rc.idclaim 
+from ref_claims rc
+inner join claim111 c111 on c111.idclaim=rc.idclaim
+inner join claim450 c450 on c450.idclaim=rc.idclaim
+inner join ref_bulletins rb on c450.bulletinDate=rb.bulletinDate
+where c450.bulletinDate > convert(datetime, '01.04.2006', 104) and rb.bulletinNumber='$$$BULNUMB$$$'
+$$$ORDERCLAUSE$$$

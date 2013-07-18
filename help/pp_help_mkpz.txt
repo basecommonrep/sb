@@ -1,0 +1,4 @@
+<font class="help">01-02</font><br>
+<font class="help">01*</font><br>
+<font class="help">06* <?=$LANG_SETTINGS['logical']['and'];?> <?=$LANG_SETTINGS['logical']['not'];?> 06-02</font><br>
+<font class="help">12-01 <?=$LANG_SETTINGS['logical']['and'];?> 12-09</font><br>

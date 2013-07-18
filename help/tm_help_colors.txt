@@ -1,0 +1,4 @@
+<font class="help">АКЮЙХРМ</font><br>
+<font class="help">акюйхрм <?=$LANG_SETTINGS['logical']['or'];?> фнбр</font><br>
+<font class="help">(<?=$LANG_SETTINGS['logical']['not'];?> акюйхрмхи) <?=$LANG_SETTINGS['logical']['and'];?> фнбрхи</font><br>
+<font class="help">"вепбнмхи, гекемхи"</font><br>

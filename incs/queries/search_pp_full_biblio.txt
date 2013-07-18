@@ -1,0 +1,62 @@
+select rc.idClaim, 
+case
+	when c100.guardType is not null then c100.guardType+',&nbsp;'+c100.i_100
+	else null
+end as i_10,
+c111.i_111 [i_11], 
+convert(varchar(20),c141.i_141,104) [i_14],
+convert(varchar(20),c151.i_151,104) [i_15],
+convert(varchar(20),c186.i_186,104) [i_18],
+case
+	when c200.i_200n <> '*' and c200.i_200d is not null 
+		then c200.i_200n+',&nbsp;'+convert(varchar(20),c200.i_200d,104)
+	else null
+end as i_20,
+case
+	when c200.i_200n is not null and c200.i_200d is not null  then c210.i_210 + '/SU'
+	else c210.i_210
+end as [i_21],
+convert(varchar(20),c220.i_220,104) [i_22],
+convert(varchar(20),c230.exhibitionDate,104) [i_23],
+convert(varchar(20),c240.i_240,104) [i_24],
+c280.i_280 [i_28],
+cast(dbo.getClaim('convent','31',null,rc.idclaim) as text) [i_31],
+cast(dbo.getClaim('convent','32',null,rc.idclaim) as text) [i_32],
+cast(dbo.getClaim('convent','33',null,rc.idclaim) as text) [i_33],
+
+--convert(varchar(20),c450.bulletinDate,104)+',&nbsp;'+c450.bullStr [i_45],
+convert(varchar(20),c450.bulletinDate,104) [bulletinDate],
+c450.bulletinNumber,
+
+cast(dbo.getClaim('mkpz',null,null,rc.idclaim) as text) [i_51],
+c540.i_540 [i_54],
+cast(dbo.getClaim('variants',null,null,rc.idclaim) as text) [fi_55],
+
+case
+	when c620.i_620n is not null then c620.i_620n + ';' + convert(varchar(20), c620.i_620d, 104)
+	else null
+end [i_62],
+
+cast(dbo.getClaim('poper','66',null,rc.idclaim) as text) [i_66],
+cast(dbo.getClaim('app',null,0,rc.idclaim) as text) [i_71],
+cast(dbo.getClaim('inv',null,0,rc.idclaim) as text) [i_72],
+cast(dbo.getClaim('prop',null,1,rc.idclaim) as text) [i_73],
+cast(dbo.getClaim('patpovir',null,0,rc.idclaim) as text) [i_74],
+cast(dbo.getClaim('addressat',null,1,rc.idclaim) as text) [i_98]
+from ref_claims rc
+left  join claim100 c100 on c100.idclaim=rc.idclaim
+inner join claim111 c111 on c111.idclaim=rc.idclaim
+left  join claim141 c141 on c141.idclaim=rc.idclaim
+left  join claim151 c151 on c151.idclaim=rc.idclaim
+left  join claim186 c186 on c186.idclaim=rc.idclaim
+left  join claim200 c200 on c200.idclaim=rc.idclaim
+inner join claim210 c210 on c210.idclaim=rc.idclaim
+inner join claim220 c220 on c220.idclaim=rc.idclaim
+left  join claim230 c230 on c230.idclaim=rc.idclaim
+inner join claim240 c240 on c240.idclaim=rc.idclaim
+left  join claim280 c280 on c280.idclaim=rc.idclaim
+inner join claim450 c450 on c450.idclaim=rc.idclaim
+left  join claim540 c540 on c540.idclaim=rc.idclaim
+left  join claim620 c620 on c620.idclaim=rc.idclaim
+left  join claim740 c740 on c740.idclaim=rc.idclaim
+where rc.idClaim=:$$$IDCLAIM$$$

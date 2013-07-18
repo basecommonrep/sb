@@ -1,0 +1,6 @@
+<font class="help">3/2007</font><br>
+<font class="help">1/2006 <?=$LANG_SETTINGS['logical']['and'];?> 7/2006</font><br>
+<font class="help">2003</font><br>
+<font class="help">200*</font><br>
+<font class="help">2?/2008</font><br>
+<font class="help">* - пошук по всім бюлетеням</font>

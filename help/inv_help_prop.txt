@@ -1,0 +1,8 @@
+<font class="help">інженерний провулок</font><br>
+<font class="help">вул <?=$LANG_SETTINGS['logical']['or'];?> пров</font><br>
+<font class="help">(київ <?=$LANG_SETTINGS['logical']['or'];?> дніпропетровськ) <?=$LANG_SETTINGS['logical']['and'];?> красноармійська</font><br>
+<font class="help">"Іванову Валерію Васильовичу"</font><br>
+<font class="help">інформ* стандартиз*</font><br>
+
+
+

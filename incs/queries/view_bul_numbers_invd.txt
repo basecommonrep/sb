@@ -1,0 +1,9 @@
+select t.bullstr [bullNumb], 
+convert(varchar(20), t.bulletindate, 104) [bullDate]
+from (
+	select distinct p.bullstr, p.bulletindate
+	from publication p
+	inner join maininfo m on m.i_13 in (49, 50, 53) and m.i_46=p.bulletindate
+	where p.bulletindate > convert(datetime, '01.04.2006', 104) and p.typepub in (3, 7) and p.bulletinNumber != 0
+) as t 
+order by t.bulletindate desc

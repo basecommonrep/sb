@@ -1,0 +1,3 @@
+<font class="help">акрите акціонерне товариство</font><br>
+<font class="help">Гетьман  <?=$LANG_SETTINGS['logical']['or'];?> фармак</font><br>
+<font class="help">“Миргородський завод мінеральних вод”</font><br>

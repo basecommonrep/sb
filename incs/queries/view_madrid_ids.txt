@@ -1,0 +1,4 @@
+select mi.idclaim
+from mainInfo mi
+where mi.bulletinDate=convert(datetime, '$$$PUBDATE$$$', 104)
+$$$ORDERCLAUSE$$$

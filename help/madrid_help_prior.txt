@@ -1,0 +1,2 @@
+<font class="help">BZ2008C000052</font><br>
+<font class="help">BZ2008C000052 <?=$LANG_SETTINGS['logical']['or'];?> BZ2008C000068</font><br>

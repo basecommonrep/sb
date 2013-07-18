@@ -1,0 +1,6 @@
+select mi.idclaim
+from mainInfo mi
+inner join ($$$SUBQUERY$$$) res on mi.idclaim=res.idclaim
+where mi.bulletinDate > convert(datetime, '01.04.2006', 104)
+$$$ORDERCLAUSE$$$
+

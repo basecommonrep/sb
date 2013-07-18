@@ -1,0 +1,5 @@
+<font class="help">12000</font><br>
+<font class="help">=350</font><br>
+<font class="help">12000 <?=$LANG_SETTINGS['logical']['or'];?> 12001</font><br>
+<font class="help">>3000 <?=$LANG_SETTINGS['logical']['and'];?> <=3010</font><br>
+

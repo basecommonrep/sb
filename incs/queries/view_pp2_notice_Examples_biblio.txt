@@ -1,0 +1,25 @@
+-- примеры всех типов сповищень - по 2 каждого типа если есть
+select * from ppNotice_Nots where id in
+(
+  select minId from
+  ( select Tp,q,B.maxId,B.minId,N1.RegN maxRegN,N2.RegN minRegN from
+    (select A.type Tp,count(*) q,max(A.id) maxId, min(A.id) minId from ppNotice_nots A 
+    group by A.type 
+    ) B
+    inner join ppNotice_nots N1 on N1.id=B.maxId  
+    inner join ppNotice_nots N2 on N2.id=B.minId
+  ) zz
+  union
+  select maxId from
+  ( select Tp,q,B.maxId,B.minId,N1.RegN maxRegN,N2.RegN minRegN from
+    (select A.type Tp,count(*) q,max(A.id) maxId, min(A.id) minId from ppNotice_nots A 
+    group by A.type 
+    ) B
+    inner join ppNotice_nots N1 on N1.id=B.maxId  
+    inner join ppNotice_nots N2 on N2.id=B.minId
+  ) zz
+) 
+order by type,name,bulletinDate desc, Number,iRegN
+
+
+

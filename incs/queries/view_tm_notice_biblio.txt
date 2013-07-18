@@ -1,0 +1,6 @@
+select n.notifnum [code], 
+n.filename [fname], 
+n.val [file]
+from texts_notif n
+inner join bulletins b on b.idbul=n.idbul
+where b.bulnumber like '$$$BULNUMB$$$' and n.notifnum>=85

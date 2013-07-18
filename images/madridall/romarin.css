@@ -1,0 +1,110 @@
+#.popup {
+	COLOR: #00518F; 
+	TEXT-DECORATION: none
+}
+
+.popup {
+	color: #00518F; 
+	text-decoration: none
+}
+
+.hit  {
+	background-color: #00518F
+}
+
+td.markhead { 
+	font-size: 12pt;  
+	font-weight: bold;
+	font-family: Tahoma, Arial, Helvetica, sans-serif; 
+	color: #00518F; 
+	text-align: right;
+}
+
+td.label { 
+	font-size: 9pt; 
+	font-family: Tahoma, Arial, Helvetica, sans-serif; 
+	color: #00518F; 
+	font-weight: bold; 
+	text-align: left; 
+	margin: 20px
+}
+
+td.labelTable { 
+	font-size: 9pt; 
+	font-family: Tahoma, Arial, Helvetica, sans-serif; 
+	color: #00518F; 
+	text-align: left; 
+	margin: 20px
+}
+
+td.labelINID { 
+	font-size: 9pt; 
+	font-family: Tahoma, Arial, Helvetica, sans-serif; 
+	color: #00518F; 
+	font-weight: bold; 
+	text-align: left; 
+	margin: 20px
+}
+
+td.labelGS { 
+	font-size: 11pt; 
+	font-family: Tahoma, Arial, Helvetica, sans-serif; 
+	font-weight: bold;
+	color: #00518F;  
+	text-align: left; 
+	margin: 20px
+}
+
+#td.labelBlock { 
+	font-size: 9pt; 
+	font-family: Tahoma, Arial, Helvetica, sans-serif; 
+	font-weight: bold; 
+	background-color: #00518F; 
+	text-align: left; 
+	margin: 20px
+}
+
+td.labelBlock { 
+	font-size: 9pt; 
+	font-family: Tahoma, Arial, Helvetica, sans-serif; 
+	font-weight: bold; 
+	background-color: #cdf; 
+	text-align: left; 
+	margin: 20px;
+	color: #00518F;  
+}
+
+td.value { 
+	font-size: 9pt; 
+	font-family: Tahoma, Arial, Helvetica, sans-serif; 
+	font-weight: bold;
+	color: #00518F; 
+	text-align: left
+}
+
+td.valueLight { 
+	font-size: 9pt; 
+	font-family: Tahoma, Arial, Helvetica, sans-serif; 
+	text-align: left;
+	color: #00518F;  
+}
+
+.marklabel {
+	font-size: 18pt;
+	color: #00518F; 
+}
+
+.noDeco {
+	background-color: #FFFFFF; 
+	color:#FFFFFF; 
+	text-decoration: none 
+}
+
+#zmain_div
+{
+  border:solid;
+  border-width:1px;
+  width:100%;
+  height= expression(document.body.clientHeight - 120);
+  overflow:scroll;">
+}

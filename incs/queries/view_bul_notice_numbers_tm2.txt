@@ -1,0 +1,21 @@
+/*
+select   convert(int,bulletinNumber) [bulN],
+substring(bulletinDate,9,2)+'-'+substring(bulletinDate,6,2)+'-'+substring(bulletinDate,1,4) [bullDate], 
+--case when len()=7 then bulYear else '0'+bulYear end [bullNumb]
+bulYear [bullNumb]
+from buls
+order by bulletinDate desc
+*/ 
+
+
+/* -- если нет tmNotice_buls
+select distinct substring(bulYear,1,CharIndex('/',bulYear)-1) [bulN], 
+substring(bulletinDate,9,2)+'-'+substring(bulletinDate,6,2)+'-'+substring(bulletinDate,1,4) [bullDate],
+bulYear [bullNumb],
+bulletinDate 
+from tmNotice_nots
+order by bulletinDate desc
+*/
+-- быстрее в 2 раза если есть tmNotice_buls
+
+select * from tmNotice_buls

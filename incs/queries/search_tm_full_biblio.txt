@@ -1,0 +1,63 @@
+select rc.idClaim,
+c100.i_100,
+c111.i_111,
+CONVERT(varchar(20),c141.i_141, 104) [i_141],
+CONVERT(varchar(20),c151.i_151, 104) [i_151],
+CONVERT(varchar(20),c156.i_156, 104) [i_156],
+CONVERT(varchar(20),c181.i_181, 104) [i_181],
+CONVERT(varchar(20),c186.i_186, 104) [i_186],
+case 
+	when c200.i_200n is not null then c200.i_200n+',&nbsp;'+CONVERT(varchar(20),c200.i_200d, 104)
+	else null
+end as i_200,
+c210.i_210,
+CONVERT(varchar(20),c220.i_220, 104) [i_220],
+cast(dbo.getClaim('vistavka',null,null,rc.idclaim) as text) [i_230],
+cast(dbo.getClaim('priorclaim',310,null,rc.idclaim) as text) [i_310],
+cast(dbo.getClaim('priorclaim',320,null,rc.idclaim) as text) [i_320],
+cast(dbo.getClaim('priorclaim',330,null,rc.idclaim) as text) [i_330],
+/*
+case 
+	when c450.bulletinDate is not null then CONVERT(varchar(20),c450.bulletinDate, 104)+',&nbsp;'+rb.bulletinNumber
+	else null
+end as i_450,
+*/
+CONVERT(varchar(20),c450.bulletinDate, 104) [bulletinDate],
+substring(rb.bulletinNumber, 0, charindex('/', rb.bulletinNumber)) [bulletinNumber],
+cast(dbo.getClaim('mktp',null,1,rc.idclaim) as text) [i_511], 
+cast(c526.i_526 as text) [i_526], 
+cast(dbo.getClaim('vienna',null,null,rc.idclaim) as text) [i_531],
+cast(dbo.getClaim('keywords',null,null,rc.idclaim) as text) [i_539],
+c551.idClaim [i_551], 
+c554.idClaim [i_554], 
+c555.idClaim [i_555],
+c556.idClaim [i_556],
+c561.i_561 [i_561],
+cast(dbo.getClaim('colors',null,null,rc.idclaim) as text) [i_591], 
+cast(dbo.getClaim('pravo641',null,null,rc.idclaim) as text) [i_641], 
+cast(dbo.getClaim('pravo646',null,null,rc.idclaim) as text) [i_646], 
+cast(dbo.getClaim('app',null,1,rc.idclaim) as text) [i_731], 
+cast(dbo.getClaim('prop',null,1,rc.idclaim) as text) [i_732], 
+cast(dbo.getClaim('patpovir',null,null,rc.idclaim) as text) [i_740],
+cast(dbo.getClaim('addressat',null,null,rc.idclaim) as text) [i_750] 
+from ref_claims rc
+left  join claim100 c100 on c100.idclaim=rc.idclaim
+inner join claim111 c111 on c111.idclaim=rc.idclaim
+left  join claim141 c141 on c141.idclaim=rc.idclaim
+left  join claim151 c151 on c151.idclaim=rc.idclaim
+left  join claim156 c156 on c156.idclaim=rc.idclaim
+left  join claim181 c181 on c181.idclaim=rc.idclaim
+left  join claim186 c186 on c186.idclaim=rc.idclaim
+left  join claim200 c200 on c200.idclaim=rc.idclaim
+inner join claim210 c210 on c210.idclaim=rc.idclaim
+inner join claim220 c220 on c220.idclaim=rc.idclaim
+inner join claim450 c450 on c450.idclaim=rc.idclaim
+left  join claim526 c526 on c526.idclaim=rc.idclaim
+left  join claim550 c550 on c550.idclaim=rc.idclaim
+left  join claim551 c551 on c551.idclaim=rc.idclaim
+left  join claim554 c554 on c554.idclaim=rc.idclaim
+left  join claim555 c555 on c555.idclaim=rc.idclaim
+left  join claim556 c556 on c556.idclaim=rc.idclaim
+left  join claim561 c561 on c561.idclaim=rc.idclaim
+left  join ref_bulletins rb on rb.bulletinDate=c450.bulletinDate
+where rc.idClaim=:$$$IDCLAIM$$$

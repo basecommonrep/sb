@@ -1,0 +1,4 @@
+<font class="help">11.12.2004</font><br>
+<font class="help">23.11.2004 <?=$LANG_SETTINGS['logical']['or'];?> 23.12.2004</font><br>
+<font class="help">> 23.11.2003 <?=$LANG_SETTINGS['logical']['and'];?> <= 23.12.2004</font><br>
+<font class="help">> 01.01.2001 <?=$LANG_SETTINGS['logical']['and'];?> <= 10.01.2001 <?=$LANG_SETTINGS['logical']['and'];?> <> 05.01.2001</font><br>

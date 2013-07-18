@@ -1,0 +1,2 @@
+<font class="help">Мінеральна вода</font><br>
+<font class="help">Десертне марочне вино</font><br>

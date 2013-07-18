@@ -1,0 +1,5 @@
+select rb.bullStr [bullNumb],
+convert(varchar(20), rb.bulletinDate, 104) [bullDate]
+from ref_bulletins rb
+where rb.bulletinDate > convert(datetime, '01.04.2006', 104) and rb.bulletinDate<getdate()
+order by rb.bulletinDate desc

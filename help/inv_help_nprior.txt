@@ -1,0 +1,5 @@
+<font class="help">P3907899.6</font><br>
+<font class="help">2001010*</font><br>
+<font class="help">95101233 <?=$LANG_SETTINGS['logical']['or'];?> 95101305</font><br>
+<font class="help">20010104?6</font><br>
+<font class="help">8/73* <?=$LANG_SETTINGS['logical']['and'];?> <?=$LANG_SETTINGS['logical']['not'];?> 8/73100345</font>

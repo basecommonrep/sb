@@ -1,0 +1,19 @@
+
+select   convert(int,bulletinNumber) [bulN],
+substring(bulletinDate,9,2)+'-'+substring(bulletinDate,6,2)+'-'+substring(bulletinDate,1,4) [bullDate], 
+/*case when len()=7 then bulYear
+      else '0'+bulYear
+ end
+*/  
+bulYear [bullNumb]
+from buls
+order by bulletinDate desc
+
+/*
+select * from
+(select distinct bulletinNumber [bullNumb], 
+substring(bulletinDate,9,2)+'-'+substring(bulletinDate,6,2)+'-'+substring(bulletinDate,1,4) [bullDate],
+Convert(varchar,bulletinNumber)+'/'+substring(bulletinDate,1,4) [bulDate] 
+from nots)xx
+order by substring(bullDate,7,4) desc, Convert(int,bullNumb) desc
+*/

@@ -1,0 +1,4 @@
+<font class="help">7</font><br>
+<font class="help">7 <?=$LANG_SETTINGS['logical']['or'];?> 8</font><br>
+<font class="help"><7</font><br>
+<font class="help">5 <?=$LANG_SETTINGS['logical']['or'];?> >=7</font><br>

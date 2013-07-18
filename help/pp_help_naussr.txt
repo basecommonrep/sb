@@ -1,0 +1,3 @@
+<font class="help">Ð3600424</font><br>
+<font class="help">Ð360*</font><br>
+<font class="help">Ð3600424 <?=$LANG_SETTINGS['logical']['or'];?> Ð3600194</font><br>

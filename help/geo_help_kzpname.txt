@@ -1,0 +1,2 @@
+<font class="help">лхпцнпндяэйю</font><br>
+<font class="help">лхпцнпндяэйю <?=$LANG_SETTINGS['logical']['or'];?> якюбъмнбяйюъ</font><br>

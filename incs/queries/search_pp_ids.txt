@@ -1,0 +1,15 @@
+select rc.idclaim 
+from (
+	select distinct rc.idclaim 
+	from ref_claims rc
+	inner join ($$$SUBQUERY$$$) res on rc.idClaim=res.idClaim
+) as rc
+inner join claim450 c450 on c450.idclaim=rc.idclaim
+inner join claim111 c111 on c111.idclaim=rc.idclaim
+inner join claim210 c210 on c210.idclaim=rc.idclaim
+inner join claim220 c220 on c220.idclaim=rc.idclaim
+where c450.bulletinDate > convert(datetime, '01.04.2006', 104)
+$$$ORDERCLAUSE$$$
+
+
+

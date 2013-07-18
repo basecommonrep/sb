@@ -1,0 +1,182 @@
+<!ENTITY Acaron "&#258;"> <!-- latin capital letter A with caron (breve),                                  
+                                  U+0102 Latin Extended-A -->
+<!ENTITY acaron "&#259;"> <!-- latin small letter a with caron (breve),                                  
+                                  U+0103 Latin Extended-A -->
+<!ENTITY Acedil "&#260;"> <!-- latin capital letter A with cedilla,
+                                  U+0104 Latin Extended-A -->
+<!ENTITY acedil "&#261;"> <!-- latin small letter a with cedilla,
+                                  U+0105 Latin Extended-A -->
+<!ENTITY Amacr  "&#256;"> <!-- latin capital letter A with macron,                                  
+                                  U+0100 Latin Extended-A -->
+<!ENTITY amacr  "&#257;"> <!-- latin small letter a with macron,
+                                  U+0101 Latin Extended-A -->
+<!ENTITY Aring  "&#197;"> <!-- latin capital letter A with ring above,
+                                  U+00C5 Latin 1 supplement-->
+<!ENTITY aring  "&#229;"> <!-- latin small letter a with ring above,
+                                  U+00E5 Latin 1 supplement-->
+<!ENTITY Cacute "&#262;"> <!-- latin capital letter C with acute,
+                                  U+0106 Latin Extended-A -->
+<!ENTITY cacute "&#263;"> <!-- latin small letter c with acute,
+                                  U+0107 Latin Extended-A -->
+<!ENTITY Ccaron "&#268;"> <!-- latin capital letter C with caron,
+                                  U+010C Latin Extended-A -->
+<!ENTITY ccaron "&#269;"> <!-- latin small letter c with caron,
+                                  U+010D Latin Extended-A -->
+<!ENTITY dash   "&#8209;"> <!-- Non breaking dash,
+                                  U+2011E -->
+<!ENTITY Dcaron "&#270;"> <!-- latin capital letter D with caron,
+                                  U+010E Latin Extended-A -->
+<!ENTITY Dstrok "&#272;"> <!-- latin capital letter D with stroke,
+                                  U+0110 Latin Extended-A -->
+<!ENTITY dstrok "&#273;"> <!-- latin small letter d with stroke,
+                                  U+0111 Latin Extended-A -->
+<!ENTITY Ecaron "&#282;"> <!-- latin capital letter E with caron,                                  
+                                  U+011A Latin Extended-A -->
+<!ENTITY ecaron "&#283;"> <!-- latin small letter e with caron,                                  
+                                  U+011B Latin Extended-A -->
+<!ENTITY Ecedil "&#280;"> <!-- latin capital letter E with cedilla,
+                                  U+0118 Latin Extended-A -->
+<!ENTITY ecedil "&#281;"> <!-- latin small letter e with cedilla,
+                                  U+0119 Latin Extended-A -->
+<!ENTITY Edot   "&#278;"> <!-- latin capital letter E with dot above,
+                                  U+0116 Latin Extended-A -->
+<!ENTITY edot   "&#279;"> <!-- latin small letter e with dot above,
+                                  U+0117 Latin Extended-A -->
+<!ENTITY Emacr  "&#274;"> <!-- latin capital letter E with macron,
+                                  U+0112 Latin Extended-A -->
+<!ENTITY emacr  "&#275;"> <!-- latin small letter e with macron,
+                                  U+0113 Latin Extended-A -->
+<!ENTITY gapos  "&#291;"> <!-- latin small letter g with cedilla above,
+                                  U+0123 Latin Extended-A -->
+<!ENTITY Gcaron "&#286;"> <!-- latin capital letter G with caron (breve),
+                                  U+011E Latin Extended-A -->
+<!ENTITY gcaron "&#287;"> <!-- latin small letter g with caron (breve),
+                                  U+011F Latin Extended-A -->
+<!ENTITY Gcedil "&#290;"> <!-- latin capital letter G with cedilla,
+                                  U+0122 Latin Extended-A -->
+<!ENTITY Imacr  "&#298;"> <!-- latin capital letter I with macron,
+                                  U+012A Latin Extended-A -->
+<!ENTITY imacr  "&#299;"> <!-- latin small letter i with macron,
+                                  U+012B Latin Extended-A -->
+<!ENTITY Iogon  "&#302;"> <!-- latin capital letter I with ogonek,
+                                  U+012E Latin Extended-A -->
+<!ENTITY iogon  "&#303;"> <!-- latin small letter i with ogonek,
+                                  U+012F Latin Extended-A -->
+<!ENTITY Icedil "&#302;"> <!-- latin capital letter I with cedilla, OBSOLETE
+                                  U+012E Latin Extended-A -->
+<!ENTITY Idot   "&#304;"> <!-- latin Capital letter I with dot,
+                                  U+0130 Latin Extended-A -->
+<!ENTITY inodot "&#305;"> <!-- latin small letter i with no dot,
+                                  U+0131 Latin Extended-A -->
+<!ENTITY Kcedil "&#310;"> <!-- latin capital letter K with cedilla,
+                                  U+0136 Latin Extended-A -->
+<!ENTITY kcedil "&#311;"> <!-- latin small letter k with cedilla,
+                                  U+0137 Latin Extended-A -->
+<!ENTITY Lacute "&#313;"> <!-- latin capital letter L with acute,
+                                  U+0139 Latin Extended-A -->
+<!ENTITY lacute "&#314;"> <!-- latin small letter l with acute,
+                                  U+013A Latin Extended-A -->
+<!ENTITY Lcedil "&#315;"> <!-- latin capital letter L with cedilla,
+                                  U+013B Latin Extended-A -->
+<!ENTITY lcedil "&#316;"> <!-- latin small letter l with cedilla,
+                                  U+013C Latin Extended-A -->
+<!ENTITY Lcaron "&#317;"> <!-- latin capital letter L with caron,
+                                  U+013D Latin Extended-A -->
+<!ENTITY lcaron "&#318;"> <!-- latin small letter l with caron,
+                                  U+013E Latin Extended-A -->
+<!ENTITY Lstrok "&#321;"> <!-- latin capital letter L with stroke,
+                                  U+0141 Latin Extended-A -->
+<!ENTITY lstrok "&#322;"> <!-- latin small letter l with stroke,
+                                  U+0142 Latin Extended-A -->
+<!ENTITY Nacute "&#323;"> <!-- latin capital letter N with acute,
+                                  U+0143 Latin Extended-A -->
+<!ENTITY nacute "&#324;"> <!-- latin small letter n with acute,
+                                  U+0144 Latin Extended-A -->
+<!ENTITY Ncaron "&#327;"> <!-- latin capital letter N with caron,                                  
+                                  U+0147 Latin Extended-A -->
+<!ENTITY ncaron "&#328;"> <!-- latin small letter n with caron,                                  
+                                  U+0148 Latin Extended-A -->
+<!ENTITY Ncedil "&#325;"> <!-- latin capital letter N with cedilla,
+                                  U+0145 Latin Extended-A -->
+<!ENTITY ncedil "&#326;"> <!-- latin small letter n with cedilla,
+                                  U+0146 Latin Extended-A -->
+<!ENTITY Odblac "&#336;"> <!-- latin capital letter O with double acute,
+                                  U+0150 Latin Extended-A -->
+<!ENTITY odblac "&#337;" > <!--  latin small letter o with double acute,
+                                  U+0151 Latin Extended-A -->
+<!ENTITY Omacr  "&#332;"> <!-- latin capital letter O with macron,
+                                  U+014C Latin Extended-A -->
+<!ENTITY omacr  "&#333;"> <!-- latin small letter o with macron,
+                                  U+014D Latin Extended-A -->
+<!ENTITY Rcaron "&#344;"> <!-- latin capital letter R with caron,                                  
+                                  U+0158 Latin Extended-A -->
+<!ENTITY rcaron "&#345;"> <!-- latin small letter r with caron,                                  
+                                  U+0159 Latin Extended-A -->
+<!ENTITY Rcedil "&#342;"> <!-- latin capital letter R with cedilla,
+                                  U+0156 Latin Extended-A -->
+<!ENTITY rcedil "&#343;"> <!-- latin small letter r with cedilla,
+                                  U+0157 Latin Extended-A -->
+<!ENTITY reg    "&#174;"> <!-- registered sign = registered trade mark sign,
+                                  U+00AE ISOnum -->
+<!ENTITY Sacute "&#346;"> <!-- latin capital letter S with acute,
+                                  U+015A Latin Extended-A -->
+<!ENTITY sacute "&#347;"> <!-- latin small letter s with acute,
+                                  U+015B Latin Extended-A -->
+<!ENTITY Scaron "&#352;"> <!-- latin capital letter S with caron,
+                                  U+0160 Latin Extended-A -->
+<!ENTITY scaron "&#353;"> <!-- latin small letter s with caron,
+                                  U+0161 Latin Extended-A -->
+<!ENTITY Scedil "&#350;"> <!-- latin capital letter S with cedilla,
+                                  U+015E Latin Extended-A -->
+<!ENTITY scedil "&#351;"> <!-- latin small letter s with cedilla,
+                                  U+015F Latin Extended-A -->
+<!ENTITY Tcaron "&#356;"> <!-- latin capital letter T with caron,
+                                  U+0164 Latin Extended-A -->
+<!ENTITY tcaron "&#357;"> <!-- latin small letter t with caron,
+                                  U+0165 Latin Extended-A -->
+<!ENTITY Tcedil "&#354;"> <!-- latin capital letter T with cedilla,
+                                  U+0162 Latin Extended-A -->
+<!ENTITY tcedil "&#355;"> <!-- latin small letter t with cedilla,
+                                  U+0163 Latin Extended-A -->
+<!ENTITY Uogon  "&#370;"> <!-- latin capital letter U with ogonek,
+                                  U+0172 Latin Extended-A -->
+<!ENTITY uogon  "&#371;"> <!-- latin small letter u with ogonek,
+                                  U+0173 Latin Extended-A -->
+<!ENTITY Ucedil  "&#370;"> <!-- latin capital letter U with cedilla, OBSOLETE
+                                  U+0172 Latin Extended-A -->
+<!ENTITY ucedil  "&#371;"> <!-- latin small letter u with cedilla, OBSOLETE
+                                  U+0173 Latin Extended-A -->
+<!ENTITY Udblac "&#368;"> <!-- latin capital letter U with double acute,
+                                  U+0170 Latin Extended-A -->
+<!ENTITY udblac "&#369;"> <!-- latin small letter u with double acute,
+                                  U+0171 Latin Extended-A -->
+<!ENTITY Umacr  "&#362;"> <!-- latin capital letter U with macron,
+                                  U+016A Latin Extended-A -->
+<!ENTITY umacr  "&#363;"> <!-- latin small letter u with macron,
+                                  U+016B Latin Extended-A -->
+<!ENTITY Uring  "&#366;"> <!-- latin capital letter U with ring above,                                  
+                                  U+016E Latin Extended-A -->
+<!ENTITY uring  "&#367;"> <!-- latin small letter u with ring above,                                  
+                                  U+016F Latin Extended-A -->
+<!ENTITY Yacute "&#221;"> <!-- latin capital letter Y with acute,
+                                  U+00DD Latin 1 supplement -->
+<!ENTITY yacute "&#253;"> <!-- latin small letter y with acute,
+                                  U+00FD Latin 1 supplement -->
+<!ENTITY yuml   "&#255;"> <!-- latin small letter y with umlaut,
+                                  U+00FF Latin 1 supplement -->
+<!ENTITY Zacute "&#377;"> <!-- latin capital letter Z with acute,
+                                  U+0179 Latin Extended-A -->
+<!ENTITY zacute "&#378;"> <!-- latin small letter z with acute,
+                                  U+017A Latin Extended-A -->
+<!ENTITY Zcaron "&#381;" > <!--  latin capital letter Z with caron,
+                                  U+017D Latin Extended-A -->
+<!ENTITY zcaron "&#382;"> <!-- latin small letter z with caron,
+                                  U+017E Latin Extended-A -->
+<!ENTITY Zdot   "&#379;"> <!-- latin capital letter Z with dot above,
+                                  U+017B Latin Extended-A -->
+<!ENTITY zdot   "&#380;"> <!-- latin small letter z with dot above,
+                                  U+017C Latin Extended-A -->
+<!ENTITY thinsp "&#8201;"> <!-- Thin space,  U+2009 ISO publication -->
+<!ENTITY emsp   "&#8195;"> <!-- Em space,  U+2003 ISO publication -->
+<!ENTITY ensp   "&#8194;"> <!-- En space,  U+2002 ISO publication -->
+<!ENTITY middot "&#183;"> <!-- middle dot U+00B7 Latin-1 supplement-->

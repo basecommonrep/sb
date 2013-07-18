@@ -1,0 +1,7 @@
+select distinct b.bulNumber [bullNumb],
+convert(varchar(20), b.bulDate, 104) [bullDate],
+b.bulDate
+from bulletins b 
+inner join texts_notif n on b.idbul=n.idbul
+where n.notifnum>=59 and n.notifnum<=84
+order by b.bulDate desc

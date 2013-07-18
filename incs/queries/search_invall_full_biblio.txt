@@ -1,0 +1,71 @@
+select mi.idclaim, 
+mi.ussrAC [i_10],
+case 
+	when mi.i_13 = 53 then convert(varchar(20), mi.i_11)+'&nbsp;A'
+	else convert(varchar(20), mi.i_11)
+end i_11,
+--ltrim(str(mi.i_11)) [i_11], 
+pc.value [i_13],
+case	
+	when mi.i_13=671 then 54
+	else mi.i_13
+end [i_13_code],
+rtrim(ltrim(mi.i_20)) [i_20], 
+case
+	when mi.ussrac is not null or mi.i_13 in (45,46,47,48,50,52) then rtrim(ltrim(mi.i_21))+'/SU' 
+	else rtrim(ltrim(mi.i_21))
+end as [i_21],
+ltrim(rtrim(mi.i_21)) [i_21_original],
+
+CONVERT(varchar(20),mi.i_22,104) [i_22], 
+CONVERT(varchar(20),mi.rightsDate,104) [i_24], 
+CONVERT(varchar(20),mi.i_85,104) [i_85], 
+cast(dbo.getClaim('convent','31',null,mi.idclaim,null) as text) [i_31],
+cast(dbo.getClaim('convent','32',null,mi.idclaim,null) as text) [i_32],
+cast(dbo.getClaim('convent','33',null,mi.idclaim,null) as text) [i_33],
+/*
+case
+	when p2.bulletinNumber is not null then convert(varchar(20),p2.bulletinDate,104)+', бюл. № '+convert(varchar(5),p2.bulletinNumber)
+	else null
+end as [i_41],
+case
+	when mi.i_46 is not null then convert(varchar(20),mi.i_46,104)+', бюл. № '+convert(varchar(5),p.bulletinNumber)
+	else ''
+end as [i_46],
+*/
+convert(varchar(20),mi.i_46,104) [i_46],
+p.bulletinNumber [patentBullNumber],
+convert(varchar(20), p2.bulletinDate, 104) [claimBullDate],
+p2.bulletinNumber [claimBullNumber],
+cast(dbo.getClaim('mpk',null,null,mi.idclaim,'###pubtype###') as text) [i_51],
+CAST(c54.i_54 AS TEXT) [i_54_ukr], 
+CAST(c542.i_54 AS TEXT) [i_54_eng], 
+CAST(c543.i_54 AS TEXT) [i_54_rus],
+cast(dbo.getClaim('analog',null,null,mi.idclaim,null) as text) [i_56],
+cast(dbo.getClaim('convent','62',null,mi.idclaim,null) as text) [i_62],
+case
+	when mi.pctNumber is not null and mi.pctdate is null then mi.pctNumber
+	when mi.pctNumber is not null and mi.pctdate is not null then mi.pctNumber+', '+CONVERT(varchar(20),mi.pctDate,104)
+end as [i_86],  
+case
+	when charindex('дію патента припинено', sc.value) > 0 and dateadd(mm, 4, mi.i_46) >= getdate() then 'Очікується перша сплата збору за підтримання чинності'
+	else sc.value
+end [status],
+cast(dbo.getClaim('app',null,'UA',mi.idclaim,null) as text) [i_71_ukr], 
+cast(dbo.getClaim('app',null,'RU',mi.idclaim,null) as text) [i_71_rus], 
+cast(dbo.getClaim('app',null,'EN',mi.idclaim,null) as text) [i_71_eng],
+cast(dbo.getClaim('inv',null,'UA',mi.idclaim,null) as text) [i_72_ukr],
+cast(dbo.getClaim('inv',null,'RU',mi.idclaim,null) as text) [i_72_rus],
+cast(dbo.getClaim('inv',null,'EN',mi.idclaim,null) as text) [i_72_eng],
+cast(dbo.getClaim('prop',null,'UA',mi.idclaim,null) as text) [i_73_ukr],
+cast(dbo.getClaim('prop',null,'RU',mi.idclaim,null) as text) [i_73_rus],
+cast(dbo.getClaim('prop',null,'EN',mi.idclaim,null) as text) [i_73_eng]
+from maininfo mi
+inner join patentCode pc on mi.i_13=pc.idcategory
+left join statusCode sc on mi.idStatus=sc.idStatus
+inner join claim54 c54 on mi.idclaim=c54.idclaim and c54.lang='UA'
+left join claim54 c542 on mi.idclaim=c542.idclaim and c542.lang='RU'
+left join claim54 c543 on mi.idclaim=c543.idclaim and c543.lang='EN'
+left join publication p on p.idclaim=mi.idClaim and p.bulletinDate=mi.i_46
+left join publication p2 on p2.idclaim=mi.idClaim and p2.typePub in (2)
+where mi.idClaim=:$$$IDCLAIM$$$

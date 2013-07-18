@@ -1,0 +1,4 @@
+<font class="help">система</font><br>
+<font class="help">спосіб <?=$LANG_SETTINGS['logical']['or'];?> засіб</font><br>
+<font class="help">"лікування інфікованих"</font><br>
+<font class="help">кислот*</font>

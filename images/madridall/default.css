@@ -1,0 +1,62 @@
+BODY { color: #333; background-color: white; font-family: Geneva, Arial, Verdana, Helvetica, SunSans-Regular, Sans-Serif; font-size:9pt;}
+
+/* This is here to get the message through to Navigator 4.x */
+.first { margin-top:10px }
+.leadtext { font-weight: bold; font-size: 9pt; line-height: 1.5em; font-family: Geneva, Arial, Verdana, Helvetica, SunSans-Regular, Sans-Serif; }
+.linkboxlist { font-size: 9pt; line-height: 1em; font-family: Geneva, Arial, Verdana,66 Helvetica, SunSans-Regular, Sans-Serif; background-color: #fc6; }
+.linkboxtitle { color: #039; font-weight: bold; font-size: 9pt; line-height: 1em; font-family: Geneva, Arial, Verdana, Helvetica, SunSans-Regular, Sans-Serif; background-color: #9cf; letter-spacing: 5px }
+.list-no-margin { font-size: 9pt; line-height: 1em; font-family: Geneva, Arial, Verdana, Helvetica, SunSans-Regular, Sans-Serif; margin-top: 0px; margin-bottom: 0px }
+.menu { font-size: 9pt; font-family: Geneva, Arial, Verdana, Helvetica, SunSans-Regular, Sans-Serif; padding-top: 5px; padding-buttom: 5px;}
+.menu a:link { color: #36c; text-decoration: none; }
+.menu a:visited { color: #36c; text-decoration: none; }
+.menu a:hover { text-decoration: underline; background-color: #fff; }
+.menu a:active { color: #69f; text-decoration: underline; }
+
+.menua { font-size: 9pt; font-family: Geneva, Arial, Verdana, Helvetica, SunSans-Regular, Sans-Serif; padding-top: 2px; padding-buttom: 2px;}
+.menua a:link { color: #36c; text-decoration: none; }
+.menua a:visited { color: #36c; text-decoration: none; }
+.menua a:hover { text-decoration: underline; background-color: #fff; }
+.menua a:active { color: #69f; text-decoration: underline; }
+
+
+.navigation { color: #666; font-weight: normal; font-size: 10px; line-height: 1em;font-family: Geneva, Arial, Verdana, Helvetica, SunSans-Regular, Sans-Serif; margin-top: 0px; margin-bottom: 0px }
+.navigation a:link { color: #36c; text-decoration: none; }
+.navigation a:visited { color: #36c; text-decoration: none; }
+.navigation a:hover { color: #333; text-decoration: none;}
+.navigation a:active { color: #69f; text-decoration: none; }
+.notes { font-size: 9pt; line-height: 1em; font-family: Geneva, Arial, Verdana, Helvetica, SunSans-Regular, Sans-Serif }
+.techlist { font-size: 9pt; line-height: 1em; font-family: Geneva, Arial, Verdana, Helvetica, SunSans-Regular, Sans-Serif }
+
+a:link { color: #36c; }
+a:visited { color: #36c; }
+a:link:hover, a:visited:hover { color: #039; }
+a:link:active { color: #69f; }
+h1 { color: #36c; font-weight: bold; font-size: 19px; line-height: 1em; font-family: Geneva, Arial, Verdana, Helvetica, SunSans-Regular, Sans-Serif; margin-top: 30px }
+h2 { color: #333; font-weight: bold; font-size: 16px; line-height: 1em; font-family: Geneva, Arial, Verdana, Helvetica, SunSans-Regular, Sans-Serif; margin-top: 0px }
+h3 { color: #333; font-weight: bold; font-size: 15px; line-height: 1em; font-family: Geneva, Arial, Verdana, Helvetica, SunSans-Regular, Sans-Serif; margin-top: 6px }
+h4 { color: #666; font-weight: bold; font-size: 13px; line-height: 1em; font-family: Geneva, Arial, Verdana, Helvetica, SunSans-Regular, Sans-Serif; margin-top: 0px}
+h5 { color: #000; font-weight: bold; font-size: 13px; line-height: 1em; font-family: Geneva, Arial, Verdana, Helvetica, SunSans-Regular, Sans-Serif; margin-top: 0px}
+h6 { color: #999; font-weight: bold; font-style:  italic; font-size: 11px; font-family: Geneva, Arial, Verdana, Helvetica, SunSans-Regular, Sans-Serif; margin-top: 0px}
+ol { font-size: 9pt; line-height: 1.5em; font-family: Geneva, Arial, Verdana, Helvetica, SunSans-Regular, Sans-Serif; list-style-type: decimal}
+ul { font-size: 9pt; line-height: 1.5em; font-family: Geneva, Arial, Verdana, Helvetica, SunSans-Regular, Sans-Serif; list-style-type: disc}
+
+p, td, th, .text { font-size: 9pt; font-family: Geneva, Arial, Verdana, Helvetica, SunSans-Regular, Sans-Serif; }
+th  { color: #039; font-weight: bold; background-color: #9cf; text-align: left }
+th.bg-gray-1 { color: #333; font-weight: bold; background-color: #ccc; text-align: left }
+th.bg-blue-dark-1 { color: #9cf; font-weight: bold; background-color: #039; text-align: left }
+
+
+/* special table cell background and font colour definitions */
+.bg-blue-1 { background-color: #9cf }
+.bg-blue-2 { background-color: #cbe8ff }
+.bg-blue-dark-1 { color: #fff; background-color: #039 }
+.bg-blue-dark-2 { color: #fff; background-color: #006 }
+.bg-gray-1 { background-color: #ccc }
+.bg-gray-2 { background-color: #dcdcdc }
+.bg-yellow-1 { background-color: #fc6 }
+.bg-yellow-2 { background-color: #ffe4b5 }
+
+/* head */
+td.head_romarin { color: #aaa; font-weight: bold; font-size: 19px; font-family: Geneva, Arial, Verdana, Helvetica, SunSans-Regular, Sans-Serif }
+td.head_romarinnum { color: #aaa; font-weight: bold; font-size: 19px; font-family: Geneva, Arial, Verdana, Helvetica, SunSans-Regular, Sans-Serif }
+td.head_romarindate { color: #aaa; font-weight: bold; font-style: italic; font-size: 16px; font-family: Geneva, Arial, Verdana, Helvetica, SunSans-Regular, Sans-Serif }

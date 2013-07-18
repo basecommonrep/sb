@@ -1,0 +1,3 @@
+<font class="help">2000010001</font><br>
+<font class="help">u2006*</font><br>
+<font class="help">2000010009 <?=$LANG_SETTINGS['logical']['or'];?> 2000010010</font><br>

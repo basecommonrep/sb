@@ -1,0 +1,16 @@
+select n.bulletinNumber [bullNumb],
+convert(varchar(20), dates.bulletindate, 104) [bullDate]
+from (
+	select distinct n.bulletinNumber
+	from notices n
+	where n.idCategory in (44, 45, 46, 47, 48, 49, 50, 53) and 
+	(convert(int, substring(n.bulletinNumber, charindex('/', n.bulletinNumber)+1, len(n.bulletinNumber)-charindex('/', n.bulletinNumber)+1)) >= 2007 or 
+	(convert(int, substring(n.bulletinNumber, charindex('/', n.bulletinNumber)+1, len(n.bulletinNumber)-charindex('/', n.bulletinNumber)+1)) = 2006 and convert(int, substring(n.bulletinNumber, 1, charindex('/', n.bulletinNumber)-1)) >= 4)
+)) n
+inner join (	
+	select distinct p.bulletindate, p.bullstr
+	from publication p
+	where p.typepub in (3, 7) and p.bulletinDate>convert(datetime, '01.04.2006', 104)
+) dates on n.bulletinNumber=dates.bullstr
+order by convert(int, substring(n.bulletinNumber, charindex('/', n.bulletinNumber)+1, len(n.bulletinNumber)-charindex('/', n.bulletinNumber)+1)) desc, 
+convert(int, substring(n.bulletinNumber, 1, charindex('/', n.bulletinNumber)-1)) desc

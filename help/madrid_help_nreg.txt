@@ -1,0 +1,5 @@
+<font class="help">185876 <?=$LANG_SETTINGS['logical']['or'];?> 210851</font><br>
+<font class="help">185* <?=$LANG_SETTINGS['logical']['and'];?> *12*</font><br>
+
+
+

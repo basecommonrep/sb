@@ -1,0 +1,4 @@
+
+select * from ppNotice_Nots where RegN='$$$NREG$$$'
+order by bulletinDate desc, type,name,Number,iRegN
+

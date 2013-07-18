@@ -1,0 +1,7 @@
+<font class="help">к╡йсбюммъ</font><br>
+<font class="help">а╡нкнц╡вм <?=$LANG_SETTINGS['logical']['or'];?> юрйхбм</font><br>
+<font class="help">(<?=$LANG_SETTINGS['logical']['not'];?> опхярп╡и) <?=$LANG_SETTINGS['logical']['and'];?> юйрхбм</font><br>
+<font class="help">"опхярп╡и дкъ екейрпну╡пспц╡╞"</font><br>
+<font class="help">ях*мхи</font><br>
+<font class="help">йнп*</font><br>
+<font class="help">ярп?и</font><br>

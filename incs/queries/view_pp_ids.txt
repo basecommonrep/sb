@@ -1,0 +1,5 @@
+select rc.idclaim 
+from ref_claims rc
+inner join claim111 c111 on rc.idclaim=c111.idclaim
+inner join claim450 c450 on rc.idclaim=c450.idclaim
+where c450.bulletindate=convert(datetime, '$$$PUBDATE$$$', 104)

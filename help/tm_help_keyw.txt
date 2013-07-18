@@ -1,0 +1,8 @@
+<font class="help">юбрн</font><br>
+<font class="help">юбрн <?=$LANG_SETTINGS['logical']['or'];?> лнрн</font><br>
+<font class="help">(<?=$LANG_SETTINGS['logical']['not'];?> юбрн) <?=$LANG_SETTINGS['logical']['and'];?> лнрн</font><br>
+<font class="help">"опхярп╡и дкъ екейрпну╡пспц╡╞"</font><br>
+<font class="help">2001*3</font><br>
+<font class="help">456?7</font><br>
+<font class="help">200101*</font><br>
+<font class="help">*387</font><br>

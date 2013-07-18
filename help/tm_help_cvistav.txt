@@ -1,0 +1,3 @@
+<font class="help">DE</font><br>
+<font class="help">fr</font><br>
+<font class="help">GB <?=$LANG_SETTINGS['logical']['or'];?> UK</font><br>

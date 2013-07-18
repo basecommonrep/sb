@@ -1,0 +1,4 @@
+<font class="help">2</font><br>
+<font class="help">=2</font><br>
+<font class="help">2 <?=$LANG_SETTINGS['logical']['or'];?> 3</font><br>
+<font class="help">>1 <?=$LANG_SETTINGS['logical']['and'];?> <=6</font><br>

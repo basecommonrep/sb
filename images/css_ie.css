@@ -1,0 +1,101 @@
+TD.tab_sel {
+	BACKGROUND-COLOR: #c5d9eb
+}
+TD.tab_sel_left {
+	BACKGROUND: url(esp/tab_sel_lm.gif) #c5d9eb
+}
+TD.tab_sel_right {
+	BACKGROUND: url(esp/tab_sel_rm.gif) #c5d9eb
+}
+
+TD.tab_sel_bot {
+	BACKGROUND: #c5d9eb
+}
+TD.tab_sel_botLeft {
+	BACKGROUND: url(esp/tab_sel_lb.gif) #c5d9eb
+}
+TD.tab_sel_botRight {
+	BACKGROUND: url(esp/tab_sel_rb.gif) #c5d9eb
+}
+TD.tab_sel_topLeft {
+	BACKGROUND: url(esp/tab_sel_lt.gif) #c5d9eb
+}
+TD.tab_sel_top {
+	BACKGROUND: url(esp/tab_sel_mt.gif) #c5d9eb
+}
+TD.tab_sel_topRight {
+	BACKGROUND: url(esp/tab_sel_rt.gif) #c5d9eb
+}
+TD.tab_unsel_left {
+	BACKGROUND: url(esp/tab_unsel_lm.gif) #dbdbde
+}
+TD.tab_unsel_right {
+	BACKGROUND: url(esp/tab_unsel_rm.gif) #dbdbde
+}
+TD.tab_unsel_top {
+	BACKGROUND: url(esp/tab_unsel_mt.gif) #dbdbde
+}
+TD.tab_unsel_topLeft {
+	BACKGROUND: url(esp/tab_unsel_lt.gif) #dbdbde
+}
+TD.tab_unsel_topRight {
+	BACKGROUND: url(esp/tab_unsel_rt.gif) #dbdbde
+}
+TD.tab_unsel_bot {
+	BACKGROUND: url(esp/tab_unsel_b.gif) #dbdbde
+}
+TD.tab_unsel {
+	BACKGROUND-COLOR: #dbdbde
+}
+
+TD.tab_bot {
+	BACKGROUND: url(esp/tab_b.gif) #c5d9eb
+}
+TD.tab_left {
+	BACKGROUND: url(esp/tab_lm.gif) #c5d9eb
+}
+TD.tab_right {
+	BACKGROUND: url(esp/tab_rm.gif) #c5d9eb
+}
+TD.tab_botLeft {
+	BACKGROUND: url(esp/tab_lb.gif) #c5d9eb
+}
+TD.tab_botRight {
+	BACKGROUND: url(esp/tab_rb.gif) #c5d9eb
+}
+TD.tab_inner {
+	BACKGROUND: #ffffff
+}
+TD.tab_inner_lt {
+	BACKGROUND: url(esp/tab_inner_lt.gif) #c5d9eb
+}
+TD.tab_inner_mt {
+	BACKGROUND: url(esp/tab_inner_mt.gif) #c5d9eb
+}
+TD.tab_inner_rt {
+	BACKGROUND: url(esp/tab_inner_rt.gif) #c5d9eb
+}
+TD.tab_inner_rm {
+	BACKGROUND: url(esp/tab_inner_rm.gif) #c5d9eb
+}
+TD.tab_inner_lm {
+	BACKGROUND: url(esp/tab_inner_lm.gif) #c5d9eb
+}
+TD.tab_inner_lb {
+	BACKGROUND: url(esp/tab_inner_lb.gif) #c5d9eb
+}
+TD.tab_inner_mb {
+	BACKGROUND: url(esp/tab_inner_mb.gif) #c5d9eb
+}
+TD.tab_inner_rb {
+	BACKGROUND: url(esp/tab_inner_rb.gif) #c5d9eb
+}
+TABLE.box {
+	BORDER-RIGHT: #646560 1px solid; 
+	BORDER-TOP: #646560 1px solid; 
+	BORDER-LEFT: #646560 1px solid; 
+	BORDER-BOTTOM: #646560 1px solid;
+	BACKGROUND: url(esp/nav_menu_item_help.gif) #ffffff; 
+}
+
+

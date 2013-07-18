@@ -1,0 +1,4 @@
+select m.idmark
+from mark m
+inner join ($$$SUBQUERY$$$) res on m.idmark=res.idmark
+order by m.idmark

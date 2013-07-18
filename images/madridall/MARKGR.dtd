@@ -1,0 +1,1026 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+
+<!--Address-->
+<!ELEMENT ADDRESS  (ADDRL+,COUNTRY) >
+
+<!--Address Line-->
+<!ELEMENT ADDRL  (#PCDATA) >
+
+<!--Affected CP-->
+<!ELEMENT AFFCP   EMPTY  >
+
+<!ATTLIST AFFCP
+               CPCD  CDATA    #REQUIRED  >
+
+<!--No Request for Review or appeal has been lodged (time limit expired) -->
+<!ELEMENT APNE  EMPTY >
+
+<!ATTLIST APNE
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               INTOFF  CDATA    #REQUIRED  >
+
+<!-- Request for Review or appeal has been lodged-->
+<!ELEMENT APNL  EMPTY >
+
+<!ATTLIST APNL
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               INTOFF  CDATA    #REQUIRED  >
+
+<!-- Request for Review or appeal has been Withdrawn-->
+<!ELEMENT APNW  EMPTY >
+
+<!ATTLIST APNW
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               INTOFF  CDATA    #REQUIRED  >
+
+<!--Basic Application Date-->
+<!ELEMENT BASAPPD  (#PCDATA) >
+
+<!--Basic Application Details-->
+<!ELEMENT BASAPPGR  (BASAPPD,BASAPPN) >
+
+<!--Basic Application Number-->
+<!ELEMENT BASAPPN  (#PCDATA) >
+
+<!--Basic Application/Registration Details-->
+<!ELEMENT BASGR  ((BASREGGR,BASAPPGR?) | BASAPPGR) >
+
+<!--Basic List of Goods and services-->
+<!ELEMENT BASICGS  ((GSHEADEN?,GSHEADFR,GSHEADES?)?,GSGR+,(GSFOOTEN?,GSFOOTFR,
+               GSFOOTES?)?) >
+
+<!--Basic Goods and Services
+Nice Version-->
+<!ATTLIST BASICGS
+               NICEVER (6 | 7 | 8)   #IMPLIED  >
+
+<!--Basic Registration Date-->
+<!ELEMENT BASREGD  (#PCDATA) >
+
+<!--Basic Registration Details-->
+<!ELEMENT BASREGGR  (BASREGD,BASREGN) >
+
+<!--Basic Registration Number-->
+<!ELEMENT BASREGN  (#PCDATA) >
+
+<!--Partial Ceasing of effect details-->
+<!ELEMENT CBNP  ((GSHEADEN?,GSHEADFR,GSHEADES?)?,(LIMTO | REMVD)*,(GSFOOTEN?,
+               GSFOOTFR,GSFOOTES?)?,FACTS?) >
+
+<!ATTLIST CBNP
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               INTOFF  CDATA    #IMPLIED  >
+
+<!--Total Ceasing of effect details-->
+<!ELEMENT CBNT  (FACTS?)  >
+
+<!ATTLIST CBNT
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               INTOFF  CDATA    #IMPLIED  >
+
+<!-- Ceasing of effect started before 5 year period-->
+<!ELEMENT CBN1  EMPTY  >
+
+<!ATTLIST CBN1
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               INTOFF  CDATA    #IMPLIED  >
+
+<!--Continuation of effect details-->
+<!ELEMENT CEN  (DCPCD*) >
+
+<!ATTLIST CEN
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               INTOFF  CDATA    #IMPLIED  >
+
+<!--Colours Claimed (English)-->
+<!ELEMENT COLCLAEN  (#PCDATA) >
+
+<!--Colours Claimed (Spanish)-->
+<!ELEMENT COLCLAES  (#PCDATA) >
+
+<!--Colours Claimed (French)-->
+<!ELEMENT COLCLAFR  (#PCDATA) >
+
+<!--Colours Claimed Group-->
+<!ELEMENT COLCLAGR  (COLCLAEN?,COLPAREN?,COLCLAFR?,COLPARFR?,COLCLAES?,COLPARES?) >
+
+<!--Mark is Colour (Rule 9 (4)(viibis)-->
+<!ELEMENT COLMARI  EMPTY >
+
+<!--Parts of mark in colour (English)-->
+<!ELEMENT COLPAREN  (#PCDATA) >
+
+<!--Parts of mark in colour (Spanish)-->
+<!ELEMENT COLPARES  (#PCDATA) >
+
+<!--Parts of mark in colour (French)-->
+<!ELEMENT COLPARFR  (#PCDATA) >
+
+<!--Agent Name and Address-->
+<!ELEMENT CORRGR  (NAME,ADDRESS) >
+
+<!--Client ID
+Client Idientification No-->
+<!ATTLIST CORRGR
+               CLID  CDATA    #REQUIRED  >
+
+<!--Correspondence address-->
+<!ELEMENT CORRIND   EMPTY  >
+
+<!--Country code-->
+<!ELEMENT COUNTRY  (#PCDATA) >
+
+<!--Contracting Party-->
+<!ELEMENT CPCD  (#PCDATA) >
+
+<!--Partial Transfer details-->
+<!ELEMENT CPN  (INTREGG+) >
+
+<!ATTLIST CPN
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               INTOFF  CDATA    #IMPLIED  >
+
+<!--Current State of Mark-->
+<!ELEMENT CURRENT  (CORRGR?,HOLGR+,REPGR?,PHOLGR*,IMAGE,MARTRAN?,SIGVRBL?,STDMIND?,MARDUR?,VIENNAGR?,
+               MARCOLI?,THRDMAR?,SOUMARI?,TYPMARI?,COLMARI?,VRBLNOT?,PREREGG*,COLCLAGR?,MARDESGR?,
+               MARTRGR?,DISCLAIMGR?,NATDECGR?,BASICGS,BASGR*,PRIGR*,((DESAG,DESPG?) | DESPG)?,
+               INTENTG?) >
+
+<!--Division/merger of Basic Regsitration details-->
+<!ELEMENT DBN  (BASGR+) >
+
+<!ATTLIST DBN
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               INTOFF  CDATA    #IMPLIED  >
+
+<!--Designated Contracting Party Code-->
+<!ELEMENT DCPCD  (#PCDATA) >
+
+<!--Designations under the Agreement-->
+<!ELEMENT DESAG  (DCPCD+) >
+
+<!--Designations under the Protocol-->
+<!ELEMENT DESPG  (DCPCD+) >
+
+<!--Refusal disclaimer details-->
+<!ELEMENT DIN   EMPTY  >
+
+<!ATTLIST DIN
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               INTOFF  CDATA    #REQUIRED  >
+
+<!--Disclaimer (English)-->
+<!ELEMENT DISCLAIMEREN  (#PCDATA) >
+
+<!--DISCLAIMER (French)-->
+<!ELEMENT DISCLAIMERFR  (#PCDATA) >
+
+<!--Disclaimer (Spanish)-->
+<!ELEMENT DISCLAIMERES  (#PCDATA) >
+
+<!--Disclaimer Group-->
+<!ELEMENT DISCLAIMGR  (DISCLAIMEREN?,DISCLAIMERFR?,DISCLAIMERES?) >
+
+<!--Duration (English)-->
+<!ELEMENT DURTNEN  (#PCDATA) >
+
+<!--Duration (Spanish)-->
+<!ELEMENT DURTNES  (#PCDATA) >
+
+<!--Duration (French)-->
+<!ELEMENT DURTNFR  (#PCDATA) >
+
+<!--Contracting parties renewed (rule 40.3)-->
+<!ELEMENT EEN  ((DESAG,DESPG?) | DESPG) >
+
+<!ATTLIST EEN
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               INTOFF  CDATA    #IMPLIED  >
+
+<!--Contracting parties not renewed (rule 40.3)-->
+<!ELEMENT EENN  (DCPCD*) >
+
+<!ATTLIST EENN
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               INTOFF  CDATA    #IMPLIED  >
+
+<!--Registration details-->
+<!ELEMENT ENN  (DESAG?,DESPG?,INTENTG?,LIMGR*) >
+
+<!ATTLIST ENN
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               INTOFF  CDATA    #REQUIRED  >
+
+<!--Entitlement Address-->
+<!ELEMENT ENTADDR  (ADDRL+,COUNTRY) >
+
+<!--Entitlement - Domicile-->
+<!ELEMENT ENTDOM  (#PCDATA) >
+
+<!--Entitlement - Establishment-->
+<!ELEMENT ENTEST  (#PCDATA) >
+
+<!--Entitlement - Nationality-->
+<!ELEMENT ENTNATL  (#PCDATA) >
+
+<!--Subsequent Designation details-->
+<!ELEMENT EXN  (DESAG?,DESPG?,INTENTG?,LIMGR*) >
+
+<!ATTLIST EXN
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               INTOFF  CDATA    #IMPLIED  >
+
+<!--Facts and Decisions-->
+<!ELEMENT FACTS  (FACTSEN?,FACTSFR,FACTSES?) >
+
+<!--Facts and decisions (English)-->
+<!ELEMENT FACTSEN  (#PCDATA) >
+
+<!--Facts and decisions (Spanish)-->
+<!ELEMENT FACTSES  (#PCDATA) >
+
+<!--Facts and decisions (French)-->
+<!ELEMENT FACTSFR  (#PCDATA) >
+
+<!--Replacement of national registration by an international registration-->
+<!ELEMENT FBN  (NATGR+,(GSHEADEN?,GSHEADFR,GSHEADES?)?,(LIMTO | REMVD)*,(GSFOOTEN?,
+               GSFOOTFR,GSFOOTES?)?) >
+
+<!ATTLIST FBN
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               INTOFF  CDATA    #IMPLIED  >
+
+<!--Final decision confirming initial Refusal-->
+<!ELEMENT FINC  EMPTY >
+
+<!ATTLIST FINC
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               INTOFF  CDATA    #REQUIRED  >
+
+<!-- Other Final decision details-->
+<!ELEMENT FINO  (PRF) >
+
+<!ATTLIST FINO
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               INTOFF  CDATA    #REQUIRED  >
+
+<!--Final decision reversing the initial Refusal-->
+<!ELEMENT FINV  EMPTY >
+
+<!ATTLIST FINV
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               INTOFF  CDATA    #REQUIRED  >
+
+<!--Final decision totally refusing the goods and services-->
+<!ELEMENT FINT  EMPTY >
+
+<!ATTLIST FINT
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               INTOFF  CDATA    #REQUIRED  >
+
+<!--Merger (Fusion) details-->
+<!ELEMENT FUN  (NEWREGN,INTREGG) >
+
+<!ATTLIST FUN
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               INTOFF  CDATA    #IMPLIED  >
+
+<!--Grant of protection subject to opposition-->
+<!ELEMENT GPON   EMPTY  >
+
+<!ATTLIST GPON
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               OPPERE  CDATA    #REQUIRED
+               INTOFF  CDATA    #REQUIRED  >
+
+<!--Grant of protection details-->
+<!ELEMENT GPN   EMPTY  >
+
+<!ATTLIST GPN
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               INTOFF  CDATA    #REQUIRED  >
+
+<!--Licence G&S/Contracting party set-->
+<!ELEMENT GSCPSET  (LIMTO*,REMVD*,LICDCPCD*) >
+
+<!--Goods and services Footer (English)-->
+<!ELEMENT GSFOOTEN  (#PCDATA) >
+
+<!--Goods and services Footer (Spanish)-->
+<!ELEMENT GSFOOTES  (#PCDATA) >
+
+<!--Goods and services Footer (French)-->
+<!ELEMENT GSFOOTFR  (#PCDATA) >
+
+<!--Goods and Services Group-->
+<!ELEMENT GSGR  (GSTERMEN?,GSTERMFR,GSTERMES?) >
+
+<!--Nice Class-->
+<!ATTLIST GSGR
+               NICCLAI (01 | 02 | 03 | 04 | 05 | 06 | 07 | 08 | 09 | 10 | 11 | 12 |
+               13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 |
+               27 | 28 | 29 | 30 | 31 | 32 | 33 | 34 | 35 | 36 | 37 | 38 | 39 | 40 |
+               41 | 42 | 43 | 44 | 45)   #REQUIRED  >
+
+<!--Goods and services header (English)-->
+<!ELEMENT GSHEADEN  (#PCDATA) >
+
+<!--Goods and services header (Spanish)-->
+<!ELEMENT GSHEADES  (#PCDATA) >
+
+<!--Goods and services header (French)-->
+<!ELEMENT GSHEADFR  (#PCDATA) >
+
+<!--Goods and Services (English)-->
+<!ELEMENT GSTERMEN  (#PCDATA) >
+
+<!--Goods and Services (Spanish)-->
+<!ELEMENT GSTERMES  (#PCDATA) >
+
+<!--Goods and Services (French)-->
+<!ELEMENT GSTERMFR  (#PCDATA) >
+
+<!--Holder Name and Address-->
+<!ELEMENT HOLGR  ((NAME,ADDRESS),NAMETR?,(ENTNATL | (ENTEST,ENTADDR?) | (ENTDOM,ENTADDR?))+,
+               NATLTY?,LEGNATU?,CORRIND?) >
+
+<!--Client ID
+Client Idientification No-->
+<!ATTLIST HOLGR
+               CLID  CDATA    #REQUIRED
+               NOTLANG (0 | 1 | 3 | 4)   #REQUIRED  >
+
+<!--Restriction of the holders right of disposal-->
+<!ELEMENT HRN  (TEXTEN?,TEXTFR,TEXTES?) >
+
+<!ATTLIST HRN
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               OPPERE  CDATA    #IMPLIED
+               INTOFF  CDATA    #IMPLIED  >
+
+<!--Mark Image-->
+<!ELEMENT IMAGE   EMPTY  >
+
+<!--Colour Image Y=Yes,N=no,G=Greyscale,B=Both(B&W and Colour)
+Resolution in Dpi
+Type of image file
+Name of Image file
+Mark Text-->
+<!ATTLIST IMAGE
+               COLOUR (Y | N | G | B)   #REQUIRED
+               TYPE (GIF | TIF | JPG | NIL)   #REQUIRED
+               NAME  CDATA    #REQUIRED
+               TEXT  CDATA    #IMPLIED  >
+
+<!--Partial invalidation -->
+<!ELEMENT INNP  (PRF) >
+
+<!ATTLIST INNP
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               INTOFF  CDATA    #REQUIRED  >
+
+<!-- Total Invalidation details-->
+<!ELEMENT INNT  EMPTY >
+
+<!ATTLIST INNT
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               INTOFF  CDATA    #REQUIRED  >
+
+<!--Intention to Use-->
+<!ELEMENT INTENTG  (CPCD+) >
+
+<!--International Registration Details-->
+<!ELEMENT INTREGG  (AFFCP*,INTREGN,MARKVE?) >
+
+<!--International Registration Number-->
+<!ELEMENT INTREGN  (#PCDATA) >
+
+<!--Licencee Name and Address-->
+<!ELEMENT LCSEEGR  ((NAME,ADDRESS),LEGNATU?) >
+
+<!--Client ID
+Client Idientification No-->
+<!ATTLIST LCSEEGR
+               CLID  CDATA    #REQUIRED  >
+
+<!--Legal Nature: Type-->
+<!ELEMENT LEGNATT  (#PCDATA) >
+
+<!--Legal Nature-->
+<!ELEMENT LEGNATU  (LEGNATT,PLAINCO?) >
+
+<!--Licence Contracting party set-->
+<!ELEMENT LICDCPCD  (DCPCD,(TERRREEN?,TERRREFR,TERRREES?)?) >
+
+<!--Licence Duration-->
+<!ELEMENT LICDURTN  (DURTNEN?,DURTNFR,DURTNES?) >
+
+<!--Override: Limitation-->
+<!ELEMENT LIMGR  (DCPCD+,((GSHEADEN?,GSHEADFR,GSHEADES?,(LIMTO | REMVD)*,(GSFOOTEN?,
+               GSFOOTFR,GSFOOTES?)?) | ((LIMTO | REMVD)+,(GSFOOTEN?,GSFOOTFR,
+               GSFOOTES?)?) | (GSFOOTEN?,GSFOOTFR,GSFOOTES?))?) >
+
+<!--Goods and Services limited to:-->
+<!ELEMENT LIMTO  (GSTERMEN?,GSTERMFR,GSTERMES?) >
+
+<!--Nice Class
+Nice Class-->
+<!ATTLIST LIMTO
+               NICCLAI (01 | 02 | 03 | 04 | 05 | 06 | 07 | 08 | 09 | 10 | 11 | 12 |
+               13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 |
+               27 | 28 | 29 | 30 | 31 | 32 | 33 | 34 | 35 | 36 | 37 | 38 | 39 | 40 |
+               41 | 42 | 43 | 44 | 45)   #REQUIRED  >
+
+<!--Limitation details-->
+<!ELEMENT LIN  (DCPCD+,((GSHEADEN?,GSHEADFR,GSHEADES?,(LIMTO | REMVD)*,(GSFOOTEN?,
+               GSFOOTFR,GSFOOTES?)?) | ((LIMTO | REMVD)+,(GSFOOTEN?,GSFOOTFR,
+               GSFOOTES?)?) | (GSFOOTEN?,GSFOOTFR,GSFOOTES?))) >
+
+<!ATTLIST LIN
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               INTOFF  CDATA    #IMPLIED  >
+
+<!--Licencee name change-->
+<!ELEMENT LLCN  (HOLGR+,LCSEEGR+,REPGR?,PLCSEEGR+) >
+
+<!--Interested Office
+Original Filing Language. 1=English, 3=French
+Office Reference
+Holder Reference
+Doc Id
+Recording date
+Notification date
+Effective date
+-->
+<!ATTLIST LLCN
+               INTOFF  CDATA    #IMPLIED
+               ORIGLAN (0 | 1 | 3 | 4)   #REQUIRED
+               OFFREF  CDATA    #IMPLIED
+               HOLREF  CDATA    #IMPLIED
+               DOCID  CDATA    #REQUIRED
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED  >
+
+<!--Limitation not considered as such details-->
+<!ELEMENT LNN  ((GSHEADEN?,GSHEADFR,GSHEADES?)?,(LIMTO | REMVD)*,(GSFOOTEN?,
+               GSFOOTFR,GSFOOTES?)?) >
+
+<!ATTLIST LNN
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               INTOFF  CDATA    #IMPLIED  >
+
+<!--Transfer details-->
+<!ELEMENT MAN  (REPGR | REPCANI) >
+
+<!ATTLIST MAN
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               INTOFF  CDATA    #IMPLIED  >
+
+<!--Mark in Colour-->
+<!ELEMENT MARCOLI   EMPTY  >
+
+<!--Mark Description (English)-->
+<!ELEMENT MARDESEN  (#PCDATA) >
+
+<!--Mark Description (Spanish)-->
+<!ELEMENT MARDESES  (#PCDATA) >
+
+<!--Mark Description (French)-->
+<!ELEMENT MARDESFR  (#PCDATA) >
+
+<!--Mark Description Group-->
+<!ELEMENT MARDESGR  (MARDESEN?,MARDESFR?,MARDESES?) >
+
+<!--Mark Duration-->
+<!ELEMENT MARDUR  (#PCDATA) >
+
+<!--Mark Group (for republication)-->
+<!ELEMENT MARKGR  (CURRENT,(ENN | EXN | REN | RCN | REN2 | REN3 | RFNP | RFNT | FINC | FINO | FINV | FINT | INNP | INNT | PCN |
+               LIN | CBNP | CBNT | CBN1 | CPN | FUN | DBN | EEN | EENN | FBN | RAN | RNN | APNE | APNL | APNW |
+               DIN | OPN | GPN | GPON | MAN | MTN | TRN | CEN | RTN | HRN | NLCN | LLCN | P2N | SEN | LNN)*) >
+
+<!--Bilingual Indicator
+International Registration Date
+International Registration Number
+Office of Origin Code
+Original Filing Language. 1=English, 3=French
+Renewal Prefix: R, 2R etc-->
+<!ATTLIST MARKGR
+               INTREGN  CDATA    #REQUIRED
+               ORIGLAN (0 | 1 | 3 | 4)   #REQUIRED
+               OOCD  CDATA    #REQUIRED
+               BILING (Y | N)   #REQUIRED
+               INTREGD  CDATA    #REQUIRED
+               EXPDATE  CDATA    #REQUIRED  >
+
+<!--International Registration Verbal Elements-->
+<!ELEMENT MARKVE  (#PCDATA) >
+
+<!--Mark Transliteration-->
+<!ELEMENT MARTRAN  (#PCDATA) >
+
+<!--Mark Translation (English)-->
+<!ELEMENT MARTREN  (#PCDATA) >
+
+<!--Mark Translation (Spanish)-->
+<!ELEMENT MARTRES  (#PCDATA) >
+
+<!--Mark Translation (French)-->
+<!ELEMENT MARTRFR  (#PCDATA) >
+
+<!--Mark Translation Group-->
+<!ELEMENT MARTRGR  (MARTREN?,MARTRFR?,MARTRES?) >
+
+<!--Change of Holder Name/address details-->
+<!ELEMENT MTN  (CORRGR?,HOLGR+,REPGR?,PHOLGR*) >
+
+<!ATTLIST MTN
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               INTOFF  CDATA    #IMPLIED  >
+
+<!--Name-->
+<!ELEMENT NAME  (NAMEL+) >
+
+<!--Name Line-->
+<!ELEMENT NAMEL  (#PCDATA) >
+
+<!--Translitteration of Name-->
+<!ELEMENT NAMETR  (#PCDATA) >
+
+<!--National Decclaration (English)-->
+<!ELEMENT NATDECEN  (#PCDATA) >
+
+<!--National Decclaration (Spanish)-->
+<!ELEMENT NATDECES  (#PCDATA) >
+
+<!--National Declaration (French)-->
+<!ELEMENT NATDECFR  (#PCDATA) >
+
+<!--National Declaration Group-->
+<!ELEMENT NATDECGR  (NATDECEN?,NATDECFR,NATDECES?) >
+
+<!--National Registration Filing date-->
+<!ELEMENT NATFDAT  (#PCDATA) >
+
+<!--National Registration Group-->
+<!ELEMENT NATGR  (NATFDAT?,NATRDAT?,NATRNUM,NATPDAT?) >
+
+<!ATTLIST NATGR
+               CPCD  CDATA    #REQUIRED  >
+
+<!--Nationality-->
+<!ELEMENT NATLTY  (#PCDATA) >
+
+<!--National Registration Priority date-->
+<!ELEMENT NATPDAT  (#PCDATA) >
+
+<!--National Registration registration date-->
+<!ELEMENT NATRDAT  (#PCDATA) >
+
+<!--National Registration Number-->
+<!ELEMENT NATRNUM  (#PCDATA) >
+
+<!--Resulting International Registration Number-->
+<!ELEMENT NEWREGN  (#PCDATA) >
+
+<!--New Licence-->
+<!ELEMENT NLCN  (LCSEEGR+,REPGR?,GSCPSET*,LICDURTN?) >
+
+<!--Bilingual Indicator
+Interested Office
+Original Filing Language. 1=English, 3=French
+Office Reference
+Holder Reference
+Doc Id
+Recording date
+Notification date
+Effective date
+All Goods and Services INdicator
+All Office indicator
+Licence Type - EXclusive, SOle, PLain-->
+<!ATTLIST NLCN
+               INTOFF  CDATA    #IMPLIED
+               ORIGLAN (0 | 1 | 3 | 4)   #IMPLIED
+               DOCID  CDATA    #IMPLIED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               ALLGSI  CDATA    #IMPLIED
+               ALLOFF  CDATA    #IMPLIED
+               LICTYPE (EX | SO | PL)   #IMPLIED  >
+
+<!--Opposition after 18 months details-->
+<!ELEMENT OPN  (OPPERS?,OPPERE?) >
+
+<!ATTLIST OPN
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               INTOFF  CDATA    #REQUIRED  >
+
+<!--Opposition End Date-->
+<!ELEMENT OPPERE  (#PCDATA) >
+
+<!--Opposition Start Date-->
+<!ELEMENT OPPERS  (#PCDATA) >
+
+<!--Limitation details-->
+<!ELEMENT PCN  ((GSHEADEN?,GSHEADFR,GSHEADES?,(LIMTO | REMVD)*,(GSFOOTEN?,GSFOOTFR,
+               GSFOOTES?)?) | ((LIMTO | REMVD)+,(GSFOOTEN?,GSFOOTFR,GSFOOTES?)?) | (
+               GSFOOTEN?,GSFOOTFR,GSFOOTES?))? >
+
+<!ATTLIST PCN
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               INTOFF  CDATA    #IMPLIED  >
+
+<!--Previous Holder Name and Address-->
+<!ELEMENT PHOLGR  (NAME,ADDRESS) >
+
+<!--Client ID-->
+<!ATTLIST PHOLGR
+               CLID  CDATA    #REQUIRED  >
+
+<!--Legal Nature: Place Incorporated-->
+<!ELEMENT PLAINCO  (#PCDATA) >
+
+<!--Previous Licencee Name and Address-->
+<!ELEMENT PLCSEEGR  (NAME,ADDRESS) >
+
+<!--Previous Registration Date-->
+<!ELEMENT PREREGD  (#PCDATA) >
+
+<!--Previous Registrations-->
+<!ELEMENT PREREGG  (PREREGD?,PREREGN) >
+
+<!--Previous Registration Number-->
+<!ELEMENT PREREGN  (#PCDATA) >
+
+<!--Override - Partial refusal-->
+<!ELEMENT PRF  ((GSHEADEN?,GSHEADFR,GSHEADES?,(LIMTO | REMVD)*,(GSFOOTEN?,GSFOOTFR,
+               GSFOOTES?)?) | ((LIMTO | REMVD)+,(GSFOOTEN?,GSFOOTFR,GSFOOTES?)?) | (
+               GSFOOTEN?,GSFOOTFR,GSFOOTES?))? >
+
+<!ATTLIST PRF
+               ORIGLAN (0 | 1 | 3 | 4)   #REQUIRED  >
+
+<!--Priority Application Date-->
+<!ELEMENT PRIAPPD  (#PCDATA) >
+
+<!--Priority Application Number-->
+<!ELEMENT PRIAPPN  (#PCDATA) >
+
+<!--Priority Contracting Party Code-->
+<!ELEMENT PRICP  (#PCDATA) >
+
+<!--Priority Details-->
+<!ELEMENT PRIGR  (PRICP,PRIAPPD?,PRIAPPN?,(TEXTEN?,TEXTFR,TEXTES?)?,PRIGS*) >
+
+<!--Priority Goods and services-->
+<!ELEMENT PRIGS  (GSTERMEN?,GSTERMFR,GSTERMES?)? >
+
+<!--Nice Class-->
+<!ATTLIST PRIGS
+               NICCLAI (01 | 02 | 03 | 04 | 05 | 06 | 07 | 08 | 09 | 10 | 11 | 12 |
+               13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 |
+               27 | 28 | 29 | 30 | 31 | 32 | 33 | 34 | 35 | 36 | 37 | 38 | 39 | 40 |
+               41 | 42 | 43 | 44 | 45)   #REQUIRED  >
+
+<!--Payment for second part fee not made-->
+<!ELEMENT P2N  EMPTY >
+
+<!ATTLIST P2N
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               INTOFF  CDATA    #REQUIRED  >
+
+<!--Cancellation (Radiation) details-->
+<!ELEMENT RAN   EMPTY  >
+
+<!ATTLIST RAN
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               INTOFF  CDATA    #IMPLIED  >
+
+<!--Complementary Renewal details-->
+<!ELEMENT RCN  (((DESAG,DESPG?) | DESPG),INTENTG?) >
+
+<!ATTLIST RCN
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               INTOFF  CDATA    #IMPLIED  >
+
+<!--Refusal Date-->
+<!ELEMENT REFDAT  (#PCDATA) >
+
+<!--Refusal Type-->
+<!ELEMENT REFTYPE  (#PCDATA) >
+
+<!--Goods and Services Removed-->
+<!ELEMENT REMVD  (GSTERMEN?,GSTERMFR,GSTERMES?) >
+
+<!--Nice Class
+Nice Class-->
+<!ATTLIST REMVD
+               NICCLAI (01 | 02 | 03 | 04 | 05 | 06 | 07 | 08 | 09 | 10 | 11 | 12 |
+               13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 |
+               27 | 28 | 29 | 30 | 31 | 32 | 33 | 34 | 35 | 36 | 37 | 38 | 39 | 40 |
+               41 | 42 | 43 | 44 | 45)   #REQUIRED  >
+
+<!--Renewal details-->
+<!ELEMENT REN  (((DESAG,DESPG?) | DESPG),INTENTG?) >
+
+<!ATTLIST REN
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               INTOFF  CDATA    #IMPLIED  >
+
+<!--Mark not not renewed-->
+<!ELEMENT REN2  EMPTY >
+<!ATTLIST REN2
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED >
+
+
+<!--Contracting parties not renewed-->
+<!ELEMENT REN3  (DCPCD+) >
+
+<!--Representative cancelled indicator-->
+<!ELEMENT REPCANI   EMPTY  >
+
+<!--Representative Name and Address-->
+<!ELEMENT REPGR  (NAME,ADDRESS) >
+
+<!--Client ID
+Client Idientification No-->
+<!ATTLIST REPGR
+               CLID  CDATA    #REQUIRED  >
+
+<!--Partial Refusal details-->
+<!ELEMENT RFNP  (PRF) >
+
+<!ATTLIST RFNP
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               INTOFF  CDATA    #IMPLIED  >
+
+<!--Total Refusal details-->
+<!ELEMENT RFNT  EMPTY >
+
+<!ATTLIST RFNT
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               INTOFF  CDATA    #IMPLIED  >
+
+<!--Contracting parties renounced-->
+<!ELEMENT RNN  (DCPCD*) >
+
+<!ATTLIST RNN
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               INTOFF  CDATA    #IMPLIED  >
+
+<!--Romarin Extraction-->
+<!ELEMENT ROMARIN  (MARKGR+) >
+
+<!ATTLIST ROMARIN
+               EXTRDATE  CDATA    #REQUIRED  >
+
+<!--Refusal of a transfer details-->
+<!ELEMENT RTN   EMPTY  >
+
+<!ATTLIST RTN
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               OPPERE  CDATA    #IMPLIED
+               INTOFF  CDATA    #REQUIRED  >
+
+<!--Solde d'emolument-->
+<!ELEMENT SEN   EMPTY  >
+
+<!ATTLIST SEN
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED  
+               INTOFF  CDATA    #IMPLIED  >
+
+<!--Significant Verbal elements-->
+<!ELEMENT SIGVRBL  (#PCDATA) >
+
+<!--Sound Mark-->
+<!ELEMENT SOUMARI   EMPTY  >
+
+<!--Standard Characters Indicator-->
+<!ELEMENT STDMIND   EMPTY  >
+
+<!--Territory (English)-->
+<!ELEMENT TERRREEN  (#PCDATA) >
+
+<!--Territory (Spanish)-->
+<!ELEMENT TERRREES  (#PCDATA) >
+
+<!--Territory (French)-->
+<!ELEMENT TERRREFR  (#PCDATA) >
+
+<!--Text (English)-->
+<!ELEMENT TEXTEN  (#PCDATA) >
+
+<!--Text (Spanish)-->
+<!ELEMENT TEXTES  (#PCDATA) >
+
+<!--Text (French)-->
+<!ELEMENT TEXTFR  (#PCDATA) >
+
+<!--3-D Mark-->
+<!ELEMENT THRDMAR   EMPTY  >
+
+<!--Transfer details-->
+<!ELEMENT TRN  (CORRGR?,HOLGR+,REPGR?,PHOLGR*) >
+
+<!ATTLIST TRN
+               PUBDATE CDATA #IMPLIED
+               GAZNO  CDATA    #IMPLIED
+               REGEDAT  CDATA    #REQUIRED
+               REGRDAT  CDATA    #REQUIRED
+               NOTDATE  CDATA    #IMPLIED
+               INTOFF  CDATA    #IMPLIED  >
+
+<!--Collective/Certificate/Guarantee Mark
+-->
+<!ELEMENT TYPMARI  (#PCDATA) >
+
+<!--Verbal elements not significant-->
+<!ELEMENT VRBLNOT   EMPTY  >
+
+<!--Vienna Classification (2 level)-->
+<!ELEMENT VIECLAI  (#PCDATA) >
+
+<!--Vienna Classification (3 level)-->
+<!ELEMENT VIECLA3  (#PCDATA) >
+
+<!--Vienna Group-->
+<!ELEMENT VIENNAGR  (VIECLAI+,VIECLA3*) >
+
+<!--Vienna Version-->
+<!ATTLIST VIENNAGR
+               VIENVER (3 | 4 | 5)   #IMPLIED  >
+
+<!ENTITY % WIPO   SYSTEM "wipo.ent"    >
+
+%WIPO;

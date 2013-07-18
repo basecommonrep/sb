@@ -1,0 +1,7 @@
+-- работает тока под 2005, compatabilities на 2005 должно быть > 80
+
+select p.idclaim, mi.i_111, p.value
+from maininfo mi
+outer apply dbo.getMKTPTable(mi.idclaim) as p
+where mi.bulletinDate=convert(datetime, '$$$PUBDATE$$$', 104)
+order by p.value, replicate('.', 10-len(mi.i_111))+ltrim(mi.i_111)

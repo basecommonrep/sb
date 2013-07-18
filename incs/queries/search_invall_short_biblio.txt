@@ -1,0 +1,37 @@
+select mi.idClaim, 
+pc.value [patentType],
+case	
+	when mi.i_13=671 then 54
+	else mi.i_13
+end [fi_13_code],
+case 
+	when mi.i_13 = 53 then convert(varchar(20), mi.i_11)+'&nbsp;A'
+	else convert(varchar(20), mi.i_11)
+end [fi_11],
+case
+	when mi.ussrac is not null or mi.i_13 in (45,46,47,48,50,52) then rtrim(ltrim(mi.i_21))+'/SU' 
+	else rtrim(ltrim(mi.i_21))
+end as [fi_21],
+convert(varchar(20), mi.i_22, 104) [fi_22], 
+convert(varchar(20), mi.rightsDate, 104) [fi_24], 
+convert(varchar(20), mi.i_46, 104) [fi_46], 
+p2.bulletinNumber [patentBullNumber],
+cast(dbo.getClaim('app',null,'UA',mi.idClaim,null) as text) [applicants],
+cast(dbo.getClaim('inv',null,'UA',mi.idClaim,null) as text) [inventors], 
+cast(dbo.getClaim('prop',null,'UA',mi.idClaim,null) as text) [owners], 
+cast(dbo.getClaim('mpk',null,null,mi.idClaim,'###pubtype###') as text) [mpk],
+convert(varchar(20), p.bulletinDate, 104) [claimBullDate],
+p.bulletinNumber [claimBullNumber],
+cast(c54.i_54 as text) [fi_54],
+case
+	when charindex('дію патента припинено', sc.value) > 0 and dateadd(mm, 4, mi.i_46) >= getdate() then 'Очікується перша сплата збору за підтримання чинності'
+	else sc.value
+end [status]
+from maininfo mi
+inner join patentCode pc on mi.i_13=pc.idcategory
+left join statusCode sc on mi.idStatus=sc.idStatus
+inner join claim54 c54 on mi.idclaim=c54.idclaim and c54.lang='UA'
+left join publication p on p.idclaim=mi.idClaim and p.typePub=2
+left join publication p2 on p2.bulletinDate=mi.i_46 and p2.idclaim=mi.idClaim
+where mi.idClaim in ($$$IDS$$$)
+$$$ORDERCLAUSE$$$

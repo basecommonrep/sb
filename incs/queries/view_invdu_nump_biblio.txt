@@ -1,0 +1,7 @@
+select ipc.idclaim, 
+ipc.[value] [mpk], 
+mi.i_11
+from maininfo mi 
+outer apply dbo.[getIpcTable](mi.idclaim) as ipc
+where mi.i_13 in (51, 52, 54, 671) and mi.i_46=convert(datetime, '$$$PUBDATE$$$', 104)
+order by mi.i_11, ipc.[value]

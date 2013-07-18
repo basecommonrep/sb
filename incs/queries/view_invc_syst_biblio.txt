@@ -1,0 +1,10 @@
+select ipc.idclaim, ipc.[value], 
+case
+	when charindex('/',mi.i_21) > 0 then substring(mi.i_21, 0, charindex('/',mi.i_21))
+	else mi.i_21
+end [i_21]
+from maininfo mi 
+inner join publication pub on pub.idClaim=mi.idClaim and pub.typePub=2 
+outer apply dbo.[getIpcTable](mi.idclaim) as ipc
+where mi.i_11 is null and pub.bulletindate=convert(datetime, '$$$PUBDATE$$$', 104)
+order by ipc.[value], mi.i_21

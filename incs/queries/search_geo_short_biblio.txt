@@ -1,0 +1,10 @@
+select mi.idClaim, 
+mi.regNumb,
+convert(varchar(20), mi.regDate, 104) [regDate],
+cast(upper(mi.kzpName) as text) [kzpName],
+cast(mi.goodName as text) [goodName],
+convert(varchar(20), mi.bulletinDate, 104) [bulletinDate],
+mi.bulletinNumber
+from maininfo mi
+where mi.idClaim in ($$$IDS$$$)
+$$$ORDERCLAUSE$$$

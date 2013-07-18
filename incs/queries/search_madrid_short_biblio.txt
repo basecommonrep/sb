@@ -1,0 +1,18 @@
+select mi.idClaim,
+mi.i_111 [fi_111],
+convert(varchar(20), mi.i_151, 104) [fi_151], 
+convert(varchar(20), mi.[i_450], 104)+
+case
+	when mi.i_450_gaz is not null then ',&nbsp;'+i_450_gaz
+	else ''
+end [fi_450], 
+mi.i_511 [fi_511],
+mi.i_540 [fi_540],
+convert(varchar(20), mi.i_580, 104) [fi_580],
+mi.imageType,
+mi.image,
+convert(varchar(20), mi.bulletinDate, 104) [bulletinDate],
+substring(mi.bulStr, 1 ,charindex('/',mi.bulStr)-1) [bulletinNumber] 
+from maininfo mi
+where mi.idClaim in ($$$IDS$$$)
+$$$ORDERCLAUSE$$$

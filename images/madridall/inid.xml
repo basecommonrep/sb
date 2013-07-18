@@ -1,0 +1,792 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- File: inid.xml  -->
+<!-- Copyright 2004 ELCA Informatique -->
+<InidList>
+	<Inid>
+		<Id>151</Id>
+		<Label>INTREGD</Label>
+		<Description language="en">Date of the registration</Description>
+		<Description language="fr">Date de l'enregistrement</Description>
+		<Description language="es">Fecha del registro</Description>
+	</Inid>
+	<Inid>
+		<Id>156</Id>
+		<Label>RENDATE</Label>
+		<Description language="en">Date of the renewal</Description>
+		<Description language="fr">Date du renouvellement</Description>
+		<Description language="es">Fecha de la renovación</Description>
+	</Inid>
+	<Inid>
+		<Id>161</Id>
+		<Label>PREREGG</Label>
+		<Description language="en">Earlier registration number(s) of the renewed registration</Description>
+		<Description language="fr">Numéro(s) d'enregistrement antérieur(s) de l'enregistrement renouvelé</Description>
+		<Description language="es">Número o números de registro anterior del registro renovado</Description>
+	</Inid>
+	<Inid>
+		<Id>180</Id>
+		<Label>EXPDATE</Label>
+		<Description language="en">Expected expiration date of the registration/renewal</Description>
+		<Description language="fr">Date prévue de l’expiration de l’enregistrement/du renouvellement</Description>
+		<Description language="es">Duración prevista del registro/renovación</Description>
+	</Inid>
+	<Inid>
+		<Id>270</Id>
+		<Label>ORIGLAN</Label>
+		<Description language="en">Language of the application</Description>
+		<Description language="fr">Langue de la demande</Description>
+		<Description language="es">Idioma de la solicitud</Description>
+	</Inid>
+	<Inid>
+		<Id>300</Id>
+		<Label>PRIGR</Label>
+		<Description language="en">Data relating to priority under the Paris Convention and other data relating to registration of the mark in the country of origin</Description>
+		<Description language="fr">Données relatives à la priorité selon la Convention de Paris et autres données relatives à l'enregistrement de la marque dans le pays d'origine</Description>
+		<Description language="es">Datos relativos a la prioridad en virtud del Convenio de París y otros datos relativos al registro de la marca en el país de origen</Description>
+	</Inid>
+	<Inid>
+		<Id>320</Id>
+		<Label>NATPDAT</Label>
+		<Description language="en">Date of filing of the first application</Description>
+		<Description language="fr">Date de dépôt de la première demande</Description>
+		<Description language="es">Fecha de presentación de la primera solicitud</Description>
+	</Inid>
+	<Inid>
+		<Id>511</Id>
+		<Label>BASICGS</Label>
+		<Description language="en">Nice Classification</Description>
+		<Description language="fr">Classification de Nice</Description>
+		<Description language="es">Clasificación de Niza</Description>
+	</Inid>
+	<Inid>
+		<Id>526</Id>
+		<Label>DISCLAIMGR</Label>
+		<Description language="en">Disclaimer</Description>
+		<Description language="fr">Renonciation (non revendication de la protection à l’égard de tout élément de la marque)</Description>
+		<Description language="es">Renuncia a invocar derechos exclusivos</Description>
+	</Inid>
+	<Inid>
+		<Id>527</Id>
+		<Label>INTENTG</Label>
+		<Description language="en">Indications regarding use requirements</Description>
+		<Description language="fr">Indications relatives aux exigences d'utilisation</Description>
+		<Description language="es">Indicaciones relativas a los requisitos de utilización</Description>
+	</Inid>
+	<Inid>
+		<Id>531</Id>
+		<Label>VIENNAGR</Label>
+		<Description language="en">Vienna Classification</Description>
+		<Description language="fr">Classification internationale des éléments figuratifs des marques (classification de Vienne)</Description>
+		<Description language="es">Clasificación Internacional de los Elementos Figurativos de las Marcas (Clasificación de Viena)</Description>
+	</Inid>
+	<Inid>
+		<Id>540</Id>
+		<Label>IMAGE</Label>
+		<Description language="en">Mark</Description>
+		<Description language="fr">Marque</Description>
+		<Description language="es">Marca</Description>
+	</Inid>
+	<Inid>
+		<Id>541</Id>
+		<Label>STDMIND</Label>
+		<Description language="en">Reproduction of the mark where the mark is represented in standard characters</Description>
+		<Description language="fr">Reproduction de la marque lorsque celle-ci est représentée en caractère standard</Description>
+		<Description language="es">Reproducción de la marca cuando la marca esté representada con caracteres normalizados</Description>
+	</Inid>
+	<Inid>
+		<Id>550</Id>
+		<Label>SOUMARI</Label>
+		<Description language="en">Indication relating to the nature or kind of mark</Description>
+		<Description language="fr">Indication relative à la nature de la marque ou au type de marque</Description>
+		<Description language="es">Indicación relativa a la naturaleza o tipo de la marca</Description>
+	</Inid>
+	<Inid>
+		<Id>550</Id>
+		<Label>THRDMAR</Label>
+		<Description language="en">Indication relating to the nature or kind of mark</Description>
+		<Description language="fr">Indication relative à la nature de la marque ou au type de marque</Description>
+		<Description language="es">Indicación relativa a la naturaleza o tipo de la marca</Description>
+	</Inid>
+	<Inid>
+		<Id>550</Id>
+		<Label>TYPMARI</Label>
+		<Description language="en">Indication relating to the nature or kind of mark</Description>
+		<Description language="fr">Indication relative à la nature de la marque ou au type de marque</Description>
+		<Description language="es">Indicación relativa a la naturaleza o tipo de la marca</Description>
+	</Inid>
+	<Inid>
+		<Id>558</Id>
+		<Label>COLMARI</Label>
+		<Description language="en">Mark consisting exclusively of one or several colors</Description>
+		<Description language="fr">Marque consistant exclusivement en une ou plusieurs couleurs</Description>
+		<Description language="es">La marca consiste exclusivamente de uno o varios colores</Description>
+	</Inid>
+	<Inid>
+		<Id>561</Id>
+		<Label>MARTRAN</Label>
+		<Description language="en">Transliteration of the mark</Description>
+		<Description language="fr">Translittération de la marque</Description>
+		<Description language="es">Transcripción de la marca</Description>
+	</Inid>
+	<Inid>
+		<Id>566</Id>
+		<Label>MARTRGR</Label>
+		<Description language="en">Translation of the mark or of words contained in the mark</Description>
+		<Description language="fr">Traduction de la marque ou de mots contenus dans la marque</Description>
+		<Description language="es">Traducción de la marca o de las palabras contenidas en la marca</Description>
+	</Inid>
+	<Inid>
+		<Id>571</Id>
+		<Label>MARDESGR</Label>
+		<Description language="en">Description of the mark</Description>
+		<Description language="fr">Description de la marque</Description>
+		<Description language="es">Descripción de la marca</Description>
+	</Inid>
+	<Inid>
+		<Id>580</Id>
+		<Label>NOTDATE</Label>
+		<Ancestors>/MARKGR/ENN</Ancestors>
+		<Description language="en">Date of recording (date of notification from which the time limit to notify the refusal starts)</Description>
+		<Description language="fr">Date de l'inscription (date de notification à partir de laquelle commence à courir le délai pour émettre le refus de protection)</Description>
+		<Description language="es">Fecha de inscripción (fecha de notificación a partir de la cual comienza a contarse el plazo para notificar la denegación de protección)</Description>
+	</Inid>
+	<Inid>
+		<Id>580</Id>
+		<Label>NOTDATE</Label>
+		<Ancestors>/MARKGR/EXN</Ancestors>
+		<Description language="en">Date of recording (date of notification from which the time limit to notify the refusal starts)</Description>
+		<Description language="fr">Date de l'inscription (date de notification à partir de laquelle commence à courir le délai pour émettre le refus de protection)</Description>
+		<Description language="es">Fecha de inscripción (fecha de notificación a partir de la cual comienza a contarse el plazo para notificar la denegación de protección)</Description>
+	</Inid>
+	<Inid>
+		<Id>580</Id>
+		<Label>NOTDATE</Label>
+		<Ancestors>/MARKGR</Ancestors>
+		<Description language="en">Date of recording</Description>
+		<Description language="fr">Date de l'inscription</Description>
+		<Description language="es">Fecha de inscripción</Description>
+	</Inid>
+	<Inid>
+		<Id>580</Id>
+		<Label>REGRDAT</Label>
+		<Description language="en">Date of recording</Description>
+		<Description language="fr">Date de l'inscription</Description>
+		<Description language="es">Fecha de inscripción</Description>
+	</Inid>
+	<Inid>
+		<Id>591</Id>
+		<Label>COLCLAGR</Label>
+		<Description language="en">Information concerning colors claimed</Description>
+		<Description language="fr">Informations concernant les couleurs revendiquées</Description>
+		<Description language="es">Información relativa a los colores reivindicados</Description>
+	</Inid>
+	<Inid>
+		<Id>874</Id>
+		<Label>HOLGR</Label>
+		<Ancestors>/MARKGR/MTN</Ancestors>
+		<Description language="en">New name and/or address of the holder</Description>
+		<Description language="fr">Nouveau nom ou nouvelle adresse du titulaire</Description>
+		<Description language="es">Nuevo nombre y/o dirección del titular</Description>
+	</Inid>
+	<Inid>
+		<Id>732</Id>
+		<Label>HOLGR</Label>
+		<Ancestors>/MARKGR</Ancestors>
+		<Description language="en">Name and address of the holder of the registration</Description>
+		<Description language="fr">Nom et adresse du titulaire de l'enregistrement</Description>
+		<Description language="es">Nombre y dirección del titular del registro</Description>
+	</Inid>
+	<Inid>
+		<Id>740</Id>
+		<Label>REPGR</Label>
+		<Description language="en">Name and address of the representative</Description>
+		<Description language="fr">Nom et adresse du mandataire</Description>
+		<Description language="es">Nombre y dirección del representante</Description>
+	</Inid>
+	<Inid>
+		<Id>750</Id>
+		<Label>CORRGR</Label>
+		<Description language="en">Address for correspondence</Description>
+		<Description language="fr">Adresse pour la correspondance</Description>
+		<Description language="es">Dirección para envío de correspondencia</Description>
+	</Inid>
+	<Inid>
+		<Id>791</Id>
+		<Label>LCSEEGR</Label>
+		<Description language="en">Name and address of the licensee</Description>
+		<Description language="fr">Nom et adresse du preneur de licence</Description>
+		<Description language="es">Nombre y dirección del licenciatario</Description>
+	</Inid>
+	<Inid>
+		<Id>793</Id>
+		<Label>GSCPSET</Label>
+		<Description language="en">Indication of conditions and/or restrictions under the license</Description>
+		<Description language="fr">Indication des conditions ou rectrictions prévues dans la licence</Description>
+		<Description language="es">Indicación de las condiciones y/o restricciones respecto de la licencia</Description>
+	</Inid>
+	<Inid>
+		<Id>770</Id>
+		<Label>PHOLGR</Label>
+		<Description language="en">Name and address of the previous holder (in case of change in ownership)</Description>
+		<Description language="fr">Nom et adresse du titulaire précédent (en cas de changement de titulaire)</Description>
+		<Description language="es">Nombre y dirección del titular anterior (en el caso de un cambio de titularidad)</Description>
+	</Inid>
+	<Inid>
+		<Id>814</Id>
+		<Label>ENTNATL</Label>
+		<Ancestors>/MARKGR/TRN</Ancestors>
+		<Description language="en">Contracting Party in the territory of which the new holder fulfills the conditions to be the holder of the international registration</Description>
+		<Description language="fr">Partie contractante sur le territoire de laquelle le nouveau titulaire remplit les conditions requises pour être le titulaire de l'enregistrement international</Description>
+		<Description language="es">Estado contratante en cuyo territorio el nuevo titular tiene el punto de conexión necesario para ser titular de un registro internacional</Description>
+	</Inid>
+	<Inid>
+		<Id>811</Id>
+		<Label>ENTNATL</Label>
+		<Ancestors>/MARKGR</Ancestors>
+		<Description language="en">Contracting State of which the holder is a national</Description>
+		<Description language="fr">État contractant dont le titulaire est ressortissant</Description>
+		<Description language="es">Estado contratante del que es nacional el titular</Description>
+	</Inid>
+	<Inid>
+		<Id>814</Id>
+		<Label>ENTEST</Label>
+		<Ancestors>/MARKGR/TRN</Ancestors>
+		<Description language="en">Contracting Party in the territory of which the new holder fulfills the conditions to be the holder of the international registration</Description>
+		<Description language="fr">Partie contractante sur le territoire de laquelle le nouveau titulaire remplit les conditions requises pour être le titulaire de l'enregistrement international</Description>
+		<Description language="es">Estado contratante en cuyo territorio el nuevo titular tiene el punto de conexión necesario para ser titular de un registro internacional</Description>
+	</Inid>
+	<Inid>
+		<Id>812</Id>
+		<Label>ENTEST</Label>
+		<Ancestors>/MARKGR</Ancestors>
+		<Description language="en">Contracting State or Contracting Organization in the territory of which the holder has a real and effective industrial or commercial establishment</Description>
+		<Description language="fr">État contractant ou organisation contractante sur le territoire duquel ou de laquelle le titulaire a un établissement industriel ou commercial effectif et sérieux</Description>
+		<Description language="es">Estado contratante u organización contratante en cuyo territorio el titular tiene un establecimiento industrial o comercial real y efectivo</Description>
+	</Inid>
+	<Inid>
+		<Id>814</Id>
+		<Label>ENTDOM</Label>
+		<Ancestors>/MARKGR/TRN</Ancestors>
+		<Description language="en">Contracting Party in the territory of which the new holder fulfills the conditions to be the holder of the international registration</Description>
+		<Description language="fr">Partie contractante sur le territoire de laquelle le nouveau titulaire remplit les conditions requises pour être le titulaire de l'enregistrement international</Description>
+		<Description language="es">Estado contratante en cuyo territorio el nuevo titular tiene el punto de conexión necesario para ser titular de un registro internacional</Description>
+	</Inid>
+	<Inid>
+		<Id>813</Id>
+		<Label>ENTDOM</Label>
+		<Ancestors>/MARKGR</Ancestors>
+		<Description language="en">Contracting State or Contracting Organization in the territory of which the holder has his domicile</Description>
+		<Description language="fr">État contractant ou organisation contractante sur le territoire duquel ou de laquelle le titulaire a son domicile</Description>
+		<Description language="es">Estado contratante u organización contratante en cuyo territorio tiene su domicilio el titular</Description>
+	</Inid>
+	<Inid>
+		<Id>883</Id>
+		<Label>BASAPPGR</Label>
+		<Ancestors>/MARKGR/DBN</Ancestors>
+		<Description language="en">Data concerning the basic application, the registration resulting therefrom or the basic registration resulting from the division or merger</Description>
+		<Description language="fr">Données concernant la demande de base, l'enregistrement qui en est issu ou l'enregistrement de base résultant de la division ou de la fusion</Description>
+		<Description language="es">Datos relativos a la solicitud de base, al registro resultante de la misma o al registro de base resultante de la división o de la fusión</Description>
+	</Inid>
+	<Inid>
+		<Id>821</Id>
+		<Label>BASAPPGR</Label>
+		<Ancestors>/MARKGR</Ancestors>
+		<Description language="en">Basic application</Description>
+		<Description language="fr">Demande de base</Description>
+		<Description language="es">Solicitud de base</Description>
+	</Inid>
+	<Inid>
+		<Id>882</Id>
+		<Label>BASREGGR</Label>
+		<Ancestors>/MARKGR/DBN</Ancestors>
+		<Description language="en">Basic registration</Description>
+		<Description language="fr">Enregistrement de base</Description>
+		<Description language="es">Registro de base</Description>
+	</Inid>
+	<Inid>
+		<Id>822</Id>
+		<Label>BASREGGR</Label>
+		<Description language="en">Basic registration</Description>
+		<Description language="fr">Enregistrement de base</Description>
+		<Description language="es">Registro de base</Description>
+	</Inid>
+	<Inid>
+		<Id>831</Id>
+		<Label>DESAG</Label>
+		<Description language="en">Designation(s) under the Madrid Agreement</Description>
+		<Description language="fr">Désignation(s) selon l'Arrangement de Madrid</Description>
+		<Description language="es">Designación(es) en virtud del Arreglo de Madrid</Description>
+	</Inid>
+	<Inid>
+		<Id>832</Id>
+		<Label>DESPG</Label>
+		<Description language="en">Designation(s) under the Madrid Protocol</Description>
+		<Description language="fr">Désignation(s) selon le Protocole de Madrid</Description>
+		<Description language="es">Designación(es) en virtud del Protocolo de Madrid</Description>
+	</Inid>
+	<Inid>
+		<Id>833</Id>
+		<Label>CPCD</Label>
+		<Ancestors>/MARKGR/FBN/NATGR</Ancestors>
+		<Description language="en">Interested Contracting Party(ies)</Description>
+		<Description language="fr">Partie(s) contractante(s) intéressée(s)</Description>
+		<Description language="es">Parte o Partes Contratantes afectada</Description>
+	</Inid>
+
+	<Inid>
+		<Id>833</Id>
+		<Label>INTOFF</Label>
+		<Description language="en">Interested Contracting Party(ies)</Description>
+		<Description language="fr">Partie(s) contractante(s) intéressée(s)</Description>
+		<Description language="es">Parte o Partes Contratantes afectada</Description>
+	</Inid>
+	<Inid>
+		<Id>841</Id>
+		<Label>NATLTY</Label>
+		<Description language="en">State of which the holder is a national</Description>
+		<Description language="fr">État dont le titulaire est ressortissant</Description>
+		<Description language="es">Estado del que es nacional el titular</Description>
+	</Inid>
+	<Inid>
+		<Id>842</Id>
+		<Label>LEGNATT</Label>
+		<Description language="en">Legal nature of the holder (legal entity) and State, and, where applicable, territory within that State where the legal entity is organized</Description>
+		<Description language="fr">Nature juridique du titulaire (personne morale) et État ainsi que, le cas échéant, territoire à l'intérieur de cet État, où la personne morale est constituée</Description>
+		<Description language="es">Naturaleza jurídica del titular (persona jurídica) así como Estado y, cuando sea aplicable, territorio dentro del Estado, en el que está organizada la persona jurídica</Description>
+	</Inid>
+	<Inid>
+		<Id>851</Id>
+		<Label>LIMGR</Label>
+		<Description language="en">Limitation of the list of goods and services</Description>
+		<Description language="fr">Limitation de la liste des produits et services</Description>
+		<Description language="es">Limitación de la lista de productos y servicios</Description>
+	</Inid>
+	<Inid>
+		<Id>871</Id>
+		<Label>INTREGN</Label>
+		<Ancestors>/MARKGR/CPN</Ancestors>
+		<Description language="en">Number of the assigned part of the international registration</Description>
+		<Description language="fr">Numéro de la partie cédée de l'enregistrement international</Description>
+		<Description language="es">Número de la parte cedida de un registro internacional</Description>
+	</Inid>
+	<Inid>
+		<Id>872</Id>
+		<Label>INTREGN</Label>
+		<Ancestors>/MARKGR/FUN</Ancestors>
+		<Description language="en">Numbers of the international registrations which have been merged</Description>
+		<Description language="fr">Numéros des enregistrements internationaux fusionnés</Description>
+		<Description language="es">Números de los registros internacionales que se han fusionado</Description>
+	</Inid>
+	<Inid>
+		<Id>873</Id>
+		<Label>NEWREGN</Label>
+		<Description language="en">Number of the international registration resulting from the merger</Description>
+		<Description language="fr">Numéro de l'enregistrement international résultant de la fusion</Description>
+		<Description language="es">Número del registro internacional resultante de la fusión</Description>
+	</Inid>
+	<Inid>
+		<Id>881</Id>
+		<Label>NATGR</Label>
+		<Description language="en">Number(s) and date(s) of national or regional registration(s) replaced by an international registration and Contracting Party concerned (Article 4bis of the Madrid Agreement and Article 4bis of the Protocol)</Description>
+		<Description language="fr">Numéro et date de l'enregistrement national ou régional ou des enregistrements nationaux ou régionaux remplacés par un enregistrement international et partie contractante concernée (article 4bis de l'Arrangement ou article 4bis du Protocole)</Description>
+		<Description language="es">Número o números y fecha o fechas del registro o registros nacionales o regionales sustituidos por un registro internacional y Parte Contractante afectada (Artículo 4bis del Arreglo de Madrid y Artículo 4bis del Protocolo)</Description>
+	</Inid>
+	<Inid>
+		<Id>891</Id>
+		<Label>REGEDAT</Label>
+		<Ancestors>/MARKGR/EXN</Ancestors>
+		<Description language="en">Date of subsequent designation (Rule 24(6) of the Common Regulations)</Description>
+		<Description language="fr">Date de la désignation postérieure (règle 24.6) du règlement d'exécution commun)</Description>
+		<Description language="es">Fecha de la designación posterior (Regla 24.6) del Reglamento Común)</Description>
+	</Inid>
+	<Inid>
+		<Id>580</Id>
+		<Label>REGEDAT</Label>
+		<Ancestors>/MARKGR</Ancestors>
+		<Description language="en">Date of recording</Description>
+		<Description language="fr">Date de l'inscription</Description>
+		<Description language="es">Fecha de inscripción</Description>
+	</Inid>
+	<Inid>
+		<Id>450</Id>
+		<Label>GAZNO</Label>
+		<Description language="en">Publication number and date</Description>
+		<Description language="fr">Date et numéro de publication</Description>
+		<Description language="es">Número y fecha de publicación</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>REMVD</Label>
+		<Description language="en">Delete from list:</Description>
+		<Description language="fr">À supprimer de la liste:</Description>
+		<Description language="es">Borrar de la lista:</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>LIMTO</Label>
+		<Description language="en">List limited to:</Description>
+		<Description language="fr">Liste limitée à:</Description>
+		<Description language="es">Lista limitada a:</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>OPPERE</Label>
+		<Description language="en">Opposition end date</Description>
+		<Description language="fr">Date de fin du délai d'opposition</Description>
+		<Description language="es">Fecha de fin del plazo de oposición</Description>
+	</Inid>
+
+	<!-- Empty INIDs used to display a blue line before the content of the node -->
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>GSHEAD</Label>
+		<Description language="en">&#160;</Description>
+		<Description language="fr">&#160;</Description>
+		<Description language="es">&#160;</Description>		
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>GSFOOT</Label>
+		<Description language="en">&#160;</Description>
+		<Description language="fr">&#160;</Description>
+		<Description language="es">&#160;</Description>		
+	</Inid>
+
+	<!-- Titles of the various blocks -->
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>CURRENT</Label>
+		<Description language="en">Current Status</Description>
+		<Description language="fr">État actuel</Description>
+		<Description language="es">Estado actual</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>APNE</Label>
+		<Description language="en">No request for review or appeal has been lodged</Description>
+		<Description language="fr">Aucune requête en réexamen ou aucun recours n'a été présenté</Description>
+		<Description language="es">No se ha presentado ninguna petición de revisión o de recurso</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>APNL</Label>
+		<Description language="en">A request for review or an appeal has been lodged</Description>
+		<Description language="fr">Une requête en réexamen ou un recours a été présenté</Description>
+		<Description language="es">Se ha presentado una petición de revisión o de recurso</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>APNW</Label>
+		<Description language="en">Withdrawal of request for review or appeal</Description>
+		<Description language="fr">Retrait de la requête en réexamen ou du recours</Description>
+		<Description language="es">Retirada de la petición de revisión o de recurso</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>CBNP</Label>
+		<Description language="en">Cancellation effected for some of the goods and services at the request of an Office of origin in accordance with Article 6(4) of the Agreement or Article 6(4) of the Protocol</Description>
+		<Description language="fr">Radiation effectuée pour une partie des produits et services à la demande d’un Office d’origine, selon l’article 6.4) de l’Arrangement ou l’article 6.4) du Protocole</Description>
+		<Description language="es">Cancelación efectuada para algunos de los productos y servicios a petición de una Oficina de origen, de conformidad con el Artículo 6.4) del Arreglo o el Artículo 6.4) del Protocolo</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>CBNT</Label>
+		<Description language="en">Cancellation effected for all the goods and services at the request of an Office of origin in accordance with Article 6(4) of the Agreement or Article 6(4) of the Protocol</Description>
+		<Description language="fr">Radiation effectuée pour tous les produits et services à la demande d’un Office d’origine, selon l’article 6.4) de l’Arrangement ou l’article 6.4) du Protocole</Description>
+		<Description language="es">Cancelación efectuada para todos los productos y servicios a petición de una Oficina de origen de conformidad con el Artículo 6.4) del Arreglo o el Artículo 6.4) del Protocolo</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>CBN1</Label>
+		<Description language="en">Judicial actions or proceedings under Rule 22(1)(b)</Description>
+		<Description language="fr">Actions judiciaires ou procédures selon la règle 22.1)b)</Description>
+		<Description language="es">Actuaciones judiciales o procedimientos en virtud de la Regla 22.1)b)</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>CEN</Label>
+		<Description language="en">Continuation of effect</Description>
+		<Description language="fr">Continuation des effets</Description>
+		<Description language="es">Continuación de los efectos</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>CPN</Label>
+		<Description language="en">Partial assignment</Description>
+		<Description language="fr">Cession partielle</Description>
+		<Description language="es">Cesión parcial</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>DBN</Label>
+		<Description language="en">Division/Merger of basic registration</Description>
+		<Description language="fr">Division/Fusion de l’enregistrement de base</Description>
+		<Description language="es">División/Fusión del registro de base</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>DIN</Label>
+		<Description language="en">Disclaimer</Description>
+		<Description language="fr">Acceptation avec réserve</Description>
+		<Description language="es">Aceptación con reserva</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>EEN</Label>
+		<Description language="en">Designated contracting party(ies) for which the second installment has been paid (Rule 40(3))</Description>
+		<Description language="fr">Partie(s) contractante(s) désignée(s) pour laquelle (lesquelles) le second versement a été payé (règle 40.3))</Description>
+		<Description language="es">Parte o Partes Contratantes designadas en relación con las cuales se ha efectuado el segundo pago (Regla 40.3))</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>EENN</Label>
+		<Description language="en">Designated contracting party(ies) for which the second installment has not been paid (Rule 40(3))</Description>
+		<Description language="fr">Partie(s) contractante(s) désignée(s) pour laquelle (lesquelles) le second versement n'a pas été payé (règle 40.3))</Description>
+		<Description language="es">Parte o Partes Contratantes designadas en relación con las cuales no se ha efectuado el segundo pago (Regla 40.3))</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>ENN</Label>
+		<Description language="en">Registration</Description>
+		<Description language="fr">Enregistrement</Description>
+		<Description language="es">Registro</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>EXN</Label>
+		<Description language="en">Subsequent designation</Description>
+		<Description language="fr">Désignation postérieure</Description>
+		<Description language="es">Designación posterior</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>FBN</Label>
+		<Description language="en">Replacement of national registration by an international registration</Description>
+		<Description language="fr">Remplacement d’un enregistrement national (ou régional) par un enregistrement international</Description>
+		<Description language="es">Sustitución de un registro nacional (o regional) por un registro internacional</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>FINC</Label>
+		<Description language="en">Final decision confirming the refusal of protection</Description>
+		<Description language="fr">Décision finale confirmant le refus de protection</Description>
+		<Description language="es">Decisión final que confirma la denegación de protección </Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>FINO</Label>
+		<Description language="en">Other final decision</Description>
+		<Description language="fr">Autre décision finale</Description>
+		<Description language="es">Otra decisión final</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>FINV</Label>
+		<Description language="en">Statement indicating that the mark is protected for all the goods and services requested</Description>
+		<Description language="fr">Déclaration indiquant que la marque est protégée pour tous les produits et services demandés</Description>
+		<Description language="es">Declaración en la que se indica que se protege la marca para todos los productos y servicios solicitados</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>FINT</Label>
+		<Description language="en">Statement indicating that protection of the mark is refused for all the goods and services requested</Description>
+		<Description language="fr">Déclaration indiquant que la protection de la marque est refusée pour tous les produits et services demandés</Description>
+		<Description language="es">Declaración en la que se indica que la protección de la marca ha sido denegada para todos los productos y servicios solicitados </Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>FUN</Label>
+		<Description language="en">Merger of international registrations</Description>
+		<Description language="fr">Fusion d’enregistrements internationaux</Description>
+		<Description language="es">Fusión de registros internacionales</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>GPN</Label>
+		<Description language="en">Grant of protection</Description>
+		<Description language="fr">Octroi de protection</Description>
+		<Description language="es">Concesión de protección</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>GPON</Label>
+		<Description language="en">Grant of protection subject to opposition</Description>
+		<Description language="fr">Octroi de protection sous réserve d'opposition</Description>
+		<Description language="es">Concesión de protección sujeta a oposición</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>HRN</Label>
+		<Description language="en">Restriction of the holder’s right of disposal of the international registration</Description>
+		<Description language="fr">Restriction du droit du titulaire de disposer de l’enregistrement international</Description>
+		<Description language="es">Restricción del derecho del titular a disponer del registro internacional</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>INNP</Label>
+		<Description language="en">Partial invalidation</Description>
+		<Description language="fr">Invalidation partielle</Description>
+		<Description language="es">Invalidación parcial</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>INNT</Label>
+		<Description language="en">Total invalidation</Description>
+		<Description language="fr">Invalidation totale</Description>
+		<Description language="es">Invalidación total</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>LIN</Label>
+		<Description language="en">Limitation</Description>
+		<Description language="fr">Limitation</Description>
+		<Description language="es">Limitación</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>LLCN</Label>
+		<Description language="en">Change in the name or address of the licensee</Description>
+		<Description language="fr">Modification du nom ou de l’adresse du preneur de licence</Description>
+		<Description language="es">Cambio de nombre o dirección del licenciatario</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>LNN</Label>
+		<Description language="en">Declaration that a limitation has no effect</Description>
+		<Description language="fr">Déclaration selon laquelle une limitation est sans effet</Description>
+		<Description language="es">Declaración de que una limitación no tiene efecto</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>MAN</Label>
+		<Description language="en">Representative</Description>
+		<Description language="fr">Mandataire</Description>
+		<Description language="es">Representante</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>MTN</Label>
+		<Description language="en">Change in the name or address of the holder</Description>
+		<Description language="fr">Modification du nom ou de l’adresse du titulaire</Description>
+		<Description language="es">Cambio en el nombre o en la dirección del titular</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>NLCN</Label>
+		<Description language="en">New licence</Description>
+		<Description language="fr">Nouvelle licence</Description>
+		<Description language="es">Nueva licencia</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>OPN</Label>
+		<Description language="en">Opposition possible after the 18 months time limit</Description>
+		<Description language="fr">Opposition possible après le délai de 18 mois</Description>
+		<Description language="es">Oposición posible tras el vencimiento del plazo de 18 meses</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>P2N</Label>
+		<Description language="en">Cancellation effected with respect to a designated Contracting Party following the non payment of the second part of the individual fee (Rule 34(3))</Description>
+		<Description language="fr">Radiation effectuée à l’égard d’une partie contractante désignée suite au non paiement de la seconde partie de la taxe individuelle (règle 34.3))</Description>
+		<Description language="es">Cancelación efectuada respecto de una Parte Contratante designada por no haber efectuado el pago de la segunda parte de la tasa individual (Regla 34.3))</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>PCN</Label>
+		<Description language="en">Cancellation effected for some of the goods and services at the request of the holder under Rule 25</Description>
+		<Description language="fr">Radiation effectuée pour une partie des produits et services à la demande du titulaire selon la règle 25</Description>
+		<Description language="es">Cancelación efectuada para algunos los productos y servicios a petición del titular de conformidad con la Regla 25</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>FACTS</Label>
+		<Description language="en">Facts and decisions</Description>
+		<Description language="fr">Faits et décisions</Description>
+		<Description language="es">Hechos y decisiones</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>RAN</Label>
+		<Description language="en">Cancellation effected for all the goods and services at the request of the holder under Rule 25</Description>
+		<Description language="fr">Radiation effectuée pour tous les produits et/ou services à la demande du titulaire selon la règle 25</Description>
+		<Description language="es">Cancelación efectuada para todos los productos y servicios a petición del titular de conformidad con la Regla 25</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>RCN</Label>
+		<Description language="en">Complementary renewal</Description>
+		<Description language="fr">Renouvellement complémentaire</Description>
+		<Description language="es">Renovación complementaria</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>REN</Label>
+		<Description language="en">Renewal</Description>
+		<Description language="fr">Renouvellement</Description>
+		<Description language="es">Renovación</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>REN2</Label>
+		<Description language="en">Designated contracting party(ies) which has not been the subject of a renewal (Rule 31(4)(a))</Description>
+		<Description language="fr">Partie(s) contractante(s) désignée(s) n'ayant pas fait l'objet d'un renouvellement (règle 31.4)a))</Description>
+		<Description language="es">Parte o Partes Contratantes designadas que no han sido objeto de renovación (Regla 31.4)a))</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>REN3</Label>
+		<Description language="en">Designated contracting party(ies) which has not been the subject of a renewal (Rule 31(4)(b))</Description>
+		<Description language="fr">Partie(s) contractante(s) désignée(s) n'ayant pas fait l'objet d'un renouvellement (règle 31.4)(b))</Description>
+		<Description language="es">Parte o Partes Contratantes designadas que no han sido objeto de renovación (Regla 31.4)b))</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>RFN</Label>
+		<Description language="en">Refusal of protection</Description>
+		<Description language="fr">Refus de protection</Description>
+		<Description language="es">Denegación de protección</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>RFNP</Label>
+		<Description language="en">Partial refusal of protection</Description>
+		<Description language="fr">Refus partiel de protection</Description>
+		<Description language="es">Denegación parcial de protección</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>RFNT</Label>
+		<Description language="en">Total refusal of protection</Description>
+		<Description language="fr">Refus total de protection</Description>
+		<Description language="es">Denegación total de protección</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>RNN</Label>
+		<Description language="en">Renunciation</Description>
+		<Description language="fr">Renonciation</Description>
+		<Description language="es">Renuncia</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>RTN</Label>
+		<Description language="en">Declaration that a change in ownership has no effect</Description>
+		<Description language="fr">Déclaration selon laquelle un changement de titulaire est sans effet</Description>
+		<Description language="es">Declaración de que un cambio de titularidad no tiene efecto</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>SEN</Label>
+		<Description language="en">Balances of fees</Description>
+		<Description language="fr">Solde d'émolument</Description>
+		<Description language="es">Saldo de tasas</Description>
+	</Inid>
+	<Inid>
+		<Id>&#160;</Id>
+		<Label>TRN</Label>
+		<Description language="en">Transfer</Description>
+		<Description language="fr">Transmission</Description>
+		<Description language="es">Transmisión</Description>
+	</Inid>
+</InidList>

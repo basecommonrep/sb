@@ -1,0 +1,9 @@
+select mi.idClaim
+from maininfo mi
+inner join (
+	select distinct c51.idClaim 
+	from claim51publ c51
+	where c51.ipc_string like '$$$LETTER$$$%'
+) res on mi.idClaim=res.idClaim
+where mi.i_13 in (49, 50, 53) and mi.i_46=convert(datetime, '$$$PUBDATE$$$', 104)
+$$$ORDERCLAUSE$$$

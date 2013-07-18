@@ -1,0 +1,54 @@
+This PHP4 class uses the COM extension of PHP to access some of the functionalities of Excel 2000.
+The class has been tested with PHP4.02 running as cgi with Apache 1.3.9 on win98.
+It should work with Excel 97 but it has not been tested.
+It is very much a "work in progress". Though the main functionalities of Excel are supported 
+(Opening/Closing workbooks, writing and reading a cell and range of cells, running functions
+and macros), a lot of other Excel features has yet to be supported, notably the Excel charts
+I will try to complete this class later, but other users are welcome to do it themselves. 
+Also please report any bugs or problems to me (alain@samoun.com) so I can correct it if 
+possible.
+This is Gnu GPL code (see www.fsf.org for more information).
+Copyright alain samoun 09/2000
+
+
+The methods are:
+	- Excel() 
+	  The constructor that instantiate excel.
+	
+	- XL($workbook="",$pathin="",$sheet="sheet1")
+	  Load a sheet from a workbook in path pathin.
+	  Note that if the name workbook is empty and the sheet set to "sheet1", it will 
+	  start a new workbook.
+	  
+	- (mix) readrange($sheet(string),$range(string))
+	  Read the content of one cell if $range="Xx" or a range of cells if $range="Xx:Yy"
+	  Where Xx and Yy are the cells' addresses using the notation Column: letters and
+	  Row; numbers as "A1" or "D5:D20" . It will return a single variable or an array.
+	  
+	- (boolean) writerange($sheet(string),$range(string),$value(mix))
+	  Write a value (single or array) to a cell or range of cells on a single raw or on a
+	  single column of sheet $sheet. The size of the array should be at least equal to 
+	  the number of cells to fill.
+	  
+	- (boolean) saveas($workbook(file name),$pathout(path),$ext(string))
+	  Save the workbook $workbook in path $pathout with the extension $ext.
+	  Extensions value are code corresponding to different file types supported by excel. 
+	  
+	- (boolean) XLTranslate($pathin(path),$pathout(path),$oext(string),$ext(string),//
+	  $kill=0(boolean))
+	  Convert all the files in path $pathin, with extension $oext, to files in path                $pathout with extension $ext. If kill<>0 the original file will be erased..
+	  Extensions value are code corresponding to different file types supported by excel.
+	  
+	- (boolean) closexl()
+	  Close all workbooks open in Excel.  
+	  
+	- (mix) runfunction($funct(string),$arrayparam(array))
+	  Return the value of the excel function funct ran with the parameters from the
+	  $arrayparam array.
+	  
+	- (boolean) runmacro($workbook(string),$macroname(string))
+	  Run the macro $macroname in the current workbook $workbook.
+	  
+	- (boolean) calculate($sheet="sheet1"(string))
+	  Calculate or update the current sheet $sheet.
+	  

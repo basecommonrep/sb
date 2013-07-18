@@ -1,0 +1,8 @@
+select mi.idClaim
+from maininfo mi
+inner join ($$$SUBQUERY$$$) res on mi.idClaim=res.idClaim
+where mi.i_11 is not null and 
+mi.i_13 in (49, 50, 53) and
+mi.i_46 > convert(datetime, '01.04.2006', 104)
+$$$VIEWBULWHERE$$$
+$$$ORDERCLAUSE$$$

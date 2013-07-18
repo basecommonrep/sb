@@ -1,0 +1,3 @@
+<font class="help">МИРГОРОДСЬКА</font><br>
+<font class="help">Гетьман <?=$LANG_SETTINGS['logical']['or'];?> КОРВАЛОЛ</font><br>
+<font class="help"><?=$LANG_SETTINGS['logical']['not'];?> АСПИРИН <?=$LANG_SETTINGS['logical']['and'];?> ASPIRIN</font><br>

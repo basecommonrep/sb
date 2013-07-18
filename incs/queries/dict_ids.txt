@@ -1,0 +1,5 @@
+select d.id
+from dictionary d
+where d.dictName = '$$$DICTNAME$$$' and d.fieldName = '$$$FIELDNAME$$$'
+$$$WHEREDICT$$$
+$$$ORDERDICT$$$

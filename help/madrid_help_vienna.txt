@@ -1,0 +1,3 @@
+<font class="help">05.01.05</font><br>
+<font class="help">05.01.05 <?=$LANG_SETTINGS['logical']['or'];?> 29.01.03</font><br>
+<font class="help">05.01.05 <?=$LANG_SETTINGS['logical']['and'];?> 29.01.03</font><br>
