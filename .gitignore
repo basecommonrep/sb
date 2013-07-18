@@ -6,5 +6,5 @@
 tmp/**/*
 .DS_Store
 tempdocs/*
-notice/*
+notices/*
 incs/config.inc
