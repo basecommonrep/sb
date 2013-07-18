@@ -1,140 +1,0 @@
-insert into SPP2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_pp', 'NBUL', COUNT(isnull(res1.bullStr, '')), ltrim(rtrim(res1.bullStr)) FROM (SELECT t_NBUL.idclaim, t_NBUL.bullStr FROM SPP2..claim450 t_NBUL INNER JOIN (select distinct rc.idclaim 
-from SPP2..ref_claims rc inner join SPP2..claim450 c450 on c450.idclaim=rc.idclaim
-inner join SPP2..claim111 c111 on c111.idclaim=rc.idclaim
-where c450.bulletinDate > convert(datetime, '01.04.2006', 104)) AS cut ON cut.idclaim=t_NBUL.idclaim WHERE t_NBUL.bullStr is not null) res1 GROUP BY res1.bullStr ORDER BY convert(int,substring(res1.bullStr, charindex('/',res1.bullStr)+1, len(res1.bullStr)-charindex('/',res1.bullStr))) desc, case when charindex('-',res1.bullStr)>0 then convert(int,substring(res1.bullStr, 1, charindex('-',res1.bullStr)-1)) else convert(int,substring(res1.bullStr, 1, charindex('/',res1.bullStr)-1)) end desc
-
-insert into SPP2..dictionary (dictName, fieldName, entries, valueDate) SELECT 'bul_pp', 'PPUBL', COUNT(isnull(res1.bulletindate, '01.01.1900')), res1.bulletindate FROM (SELECT t_PPUBL.idclaim, t_PPUBL.bulletindate FROM SPP2..claim450 t_PPUBL INNER JOIN (select distinct rc.idclaim 
-from SPP2..ref_claims rc inner join SPP2..claim450 c450 on c450.idclaim=rc.idclaim
-inner join SPP2..claim111 c111 on c111.idclaim=rc.idclaim
-where c450.bulletinDate > convert(datetime, '01.04.2006', 104)) AS cut ON cut.idclaim=t_PPUBL.idclaim WHERE t_PPUBL.bulletindate is not null) res1 GROUP BY res1.bulletindate ORDER BY res1.bulletindate DESC
-
-insert into SPP2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_pp', 'NUSSR', COUNT(isnull(res1.i_100, '')), ltrim(rtrim(res1.i_100)) FROM (SELECT t_NUSSR.idclaim, t_NUSSR.i_100 FROM SPP2..claim100 t_NUSSR INNER JOIN (select distinct rc.idclaim 
-from SPP2..ref_claims rc inner join SPP2..claim450 c450 on c450.idclaim=rc.idclaim
-inner join SPP2..claim111 c111 on c111.idclaim=rc.idclaim
-where c450.bulletinDate > convert(datetime, '01.04.2006', 104)) AS cut ON cut.idclaim=t_NUSSR.idclaim WHERE t_NUSSR.i_100 is not null) res1 GROUP BY res1.i_100 ORDER BY res1.i_100 ASC
-
-insert into SPP2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_pp', 'TUSSR', COUNT(isnull(res1.guardType, '')), ltrim(rtrim(res1.guardType)) FROM (SELECT t_TUSSR.idclaim, t_TUSSR.guardType FROM SPP2..claim100 t_TUSSR INNER JOIN (select distinct rc.idclaim 
-from SPP2..ref_claims rc inner join SPP2..claim450 c450 on c450.idclaim=rc.idclaim
-inner join SPP2..claim111 c111 on c111.idclaim=rc.idclaim
-where c450.bulletinDate > convert(datetime, '01.04.2006', 104)) AS cut ON cut.idclaim=t_TUSSR.idclaim WHERE t_TUSSR.guardType is not null) res1 GROUP BY res1.guardType ORDER BY res1.guardType ASC
-
-insert into SPP2..dictionary (dictName, fieldName, entries, valueInt) SELECT 'bul_pp', 'NP', COUNT(isnull(res1.i_111, 0)), res1.i_111 FROM (SELECT t_NP.idclaim, t_NP.i_111 FROM SPP2..claim111 t_NP INNER JOIN (select distinct rc.idclaim 
-from SPP2..ref_claims rc inner join SPP2..claim450 c450 on c450.idclaim=rc.idclaim
-inner join SPP2..claim111 c111 on c111.idclaim=rc.idclaim
-where c450.bulletinDate > convert(datetime, '01.04.2006', 104)) AS cut ON cut.idclaim=t_NP.idclaim WHERE t_NP.i_111 is not null) res1 GROUP BY res1.i_111 ORDER BY res1.i_111 ASC
-
-insert into SPP2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_pp', 'NC', COUNT(isnull(res1.i_210, '')), ltrim(rtrim(res1.i_210)) FROM (SELECT t_NC.idclaim, t_NC.i_210 FROM SPP2..claim210 t_NC INNER JOIN (select distinct rc.idclaim 
-from SPP2..ref_claims rc inner join SPP2..claim450 c450 on c450.idclaim=rc.idclaim
-inner join SPP2..claim111 c111 on c111.idclaim=rc.idclaim
-where c450.bulletinDate > convert(datetime, '01.04.2006', 104)) AS cut ON cut.idclaim=t_NC.idclaim WHERE t_NC.i_210 is not null) res1 GROUP BY res1.i_210 ORDER BY res1.i_210 ASC
-
-insert into SPP2..dictionary (dictName, fieldName, entries, valueDate) SELECT 'bul_pp', 'FD', COUNT(isnull(res1.i_220, '01.01.1900')), res1.i_220 FROM (SELECT t_FD.idclaim, t_FD.i_220 FROM SPP2..claim220 t_FD INNER JOIN (select distinct rc.idclaim 
-from SPP2..ref_claims rc inner join SPP2..claim450 c450 on c450.idclaim=rc.idclaim
-inner join SPP2..claim111 c111 on c111.idclaim=rc.idclaim
-where c450.bulletinDate > convert(datetime, '01.04.2006', 104)) AS cut ON cut.idclaim=t_FD.idclaim WHERE t_FD.i_220 is not null) res1 GROUP BY res1.i_220 ORDER BY res1.i_220 DESC
-
-insert into SPP2..dictionary (dictName, fieldName, entries, valueDate) SELECT 'bul_pp', 'DVISTAV', COUNT(isnull(res1.exhibitionDate, '01.01.1900')), res1.exhibitionDate FROM (SELECT t_DVISTAV.idclaim, t_DVISTAV.exhibitionDate FROM SPP2..claim230 t_DVISTAV INNER JOIN (select distinct rc.idclaim 
-from SPP2..ref_claims rc inner join SPP2..claim450 c450 on c450.idclaim=rc.idclaim
-inner join SPP2..claim111 c111 on c111.idclaim=rc.idclaim
-where c450.bulletinDate > convert(datetime, '01.04.2006', 104)) AS cut ON cut.idclaim=t_DVISTAV.idclaim WHERE t_DVISTAV.exhibitionDate is not null) res1 GROUP BY res1.exhibitionDate ORDER BY res1.exhibitionDate DESC
-
-insert into SPP2..dictionary (dictName, fieldName, entries, valueDate) SELECT 'bul_pp', 'DATECOM', COUNT(isnull(res1.i_240, '01.01.1900')), res1.i_240 FROM (SELECT t_DATECOM.idclaim, t_DATECOM.i_240 FROM SPP2..claim240 t_DATECOM INNER JOIN (select distinct rc.idclaim 
-from SPP2..ref_claims rc inner join SPP2..claim450 c450 on c450.idclaim=rc.idclaim
-inner join SPP2..claim111 c111 on c111.idclaim=rc.idclaim
-where c450.bulletinDate > convert(datetime, '01.04.2006', 104)) AS cut ON cut.idclaim=t_DATECOM.idclaim WHERE t_DATECOM.i_240 is not null) res1 GROUP BY res1.i_240 ORDER BY res1.i_240 DESC
-
-insert into SPP2..dictionary (dictName, fieldName, entries, valueInt) SELECT 'bul_pp', 'NVAR', COUNT(isnull(res1.i_280, 0)), res1.i_280 FROM (SELECT t_NVAR.idclaim, t_NVAR.i_280 FROM SPP2..claim280 t_NVAR INNER JOIN (select distinct rc.idclaim 
-from SPP2..ref_claims rc inner join SPP2..claim450 c450 on c450.idclaim=rc.idclaim
-inner join SPP2..claim111 c111 on c111.idclaim=rc.idclaim
-where c450.bulletinDate > convert(datetime, '01.04.2006', 104)) AS cut ON cut.idclaim=t_NVAR.idclaim WHERE t_NVAR.i_280 is not null) res1 GROUP BY res1.i_280 ORDER BY res1.i_280 ASC
-
-insert into SPP2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_pp', 'NPRIOR', COUNT(isnull(res1.claimNumber, '')), ltrim(rtrim(res1.claimNumber)) FROM (SELECT t_NPRIOR.idclaim, t_NPRIOR.claimNumber FROM SPP2..claim310 t_NPRIOR INNER JOIN (select distinct rc.idclaim 
-from SPP2..ref_claims rc inner join SPP2..claim450 c450 on c450.idclaim=rc.idclaim
-inner join SPP2..claim111 c111 on c111.idclaim=rc.idclaim
-where c450.bulletinDate > convert(datetime, '01.04.2006', 104)) AS cut ON cut.idclaim=t_NPRIOR.idclaim WHERE t_NPRIOR.claimNumber is not null) res1 GROUP BY res1.claimNumber ORDER BY res1.claimNumber ASC
-
-insert into SPP2..dictionary (dictName, fieldName, entries, valueDate) SELECT 'bul_pp', 'DPRIOR', COUNT(isnull(res1.claimDate, '01.01.1900')), res1.claimDate FROM (SELECT t_DPRIOR.idclaim, t_DPRIOR.claimDate FROM SPP2..claim310 t_DPRIOR INNER JOIN (select distinct rc.idclaim 
-from SPP2..ref_claims rc inner join SPP2..claim450 c450 on c450.idclaim=rc.idclaim
-inner join SPP2..claim111 c111 on c111.idclaim=rc.idclaim
-where c450.bulletinDate > convert(datetime, '01.04.2006', 104)) AS cut ON cut.idclaim=t_DPRIOR.idclaim WHERE t_DPRIOR.claimDate is not null) res1 GROUP BY res1.claimDate ORDER BY res1.claimDate DESC
-
-insert into SPP2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_pp', 'CPRIOR', COUNT(isnull(res1.countryCode, '')), ltrim(rtrim(res1.countryCode)) FROM (SELECT t_CPRIOR.idclaim, t_CPRIOR.countryCode FROM SPP2..claim310 t_CPRIOR INNER JOIN (select distinct rc.idclaim 
-from SPP2..ref_claims rc inner join SPP2..claim450 c450 on c450.idclaim=rc.idclaim
-inner join SPP2..claim111 c111 on c111.idclaim=rc.idclaim
-where c450.bulletinDate > convert(datetime, '01.04.2006', 104)) AS cut ON cut.idclaim=t_CPRIOR.idclaim WHERE t_CPRIOR.countryCode is not null) res1 GROUP BY res1.countryCode ORDER BY res1.countryCode ASC
-
-insert into SPP2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_pp', 'MKPZ', COUNT(isnull(res1.ClassStr, '')), ltrim(rtrim(res1.ClassStr)) FROM (SELECT t_MKPZ.idclaim, t_MKPZ.ClassStr FROM SPP2..claim510 t_MKPZ INNER JOIN (select distinct rc.idclaim 
-from SPP2..ref_claims rc inner join SPP2..claim450 c450 on c450.idclaim=rc.idclaim
-inner join SPP2..claim111 c111 on c111.idclaim=rc.idclaim
-where c450.bulletinDate > convert(datetime, '01.04.2006', 104)) AS cut ON cut.idclaim=t_MKPZ.idclaim WHERE t_MKPZ.ClassStr is not null) res1 GROUP BY res1.ClassStr ORDER BY res1.ClassStr ASC
-
-insert into SPP2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_pp', 'TITLE', COUNT(isnull(res1.i_540, '')), ltrim(rtrim(res1.i_540)) FROM (SELECT t_TITLE.idclaim, t_TITLE.i_540 FROM SPP2..claim540 t_TITLE INNER JOIN (select distinct rc.idclaim 
-from SPP2..ref_claims rc inner join SPP2..claim450 c450 on c450.idclaim=rc.idclaim
-inner join SPP2..claim111 c111 on c111.idclaim=rc.idclaim
-where c450.bulletinDate > convert(datetime, '01.04.2006', 104)) AS cut ON cut.idclaim=t_TITLE.idclaim WHERE t_TITLE.i_540 is not null) res1 GROUP BY res1.i_540 ORDER BY res1.i_540 ASC
-
-insert into SPP2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_pp', 'APP', COUNT(isnull(res1.name, '')), ltrim(rtrim(res1.name)) FROM (SELECT t_APP.idclaim, t_APP.name FROM SPP2..claim710 t_APP INNER JOIN (select distinct rc.idclaim 
-from SPP2..ref_claims rc inner join SPP2..claim450 c450 on c450.idclaim=rc.idclaim
-inner join SPP2..claim111 c111 on c111.idclaim=rc.idclaim
-where c450.bulletinDate > convert(datetime, '01.04.2006', 104)) AS cut ON cut.idclaim=t_APP.idclaim WHERE t_APP.name is not null) res1 GROUP BY res1.name ORDER BY res1.name ASC
-
-insert into SPP2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_pp', 'AUTH', COUNT(isnull(res1.name, '')), ltrim(rtrim(res1.name)) FROM (SELECT t_AUTH.idclaim, t_AUTH.name FROM SPP2..claim720 t_AUTH INNER JOIN (select distinct rc.idclaim 
-from SPP2..ref_claims rc inner join SPP2..claim450 c450 on c450.idclaim=rc.idclaim
-inner join SPP2..claim111 c111 on c111.idclaim=rc.idclaim
-where c450.bulletinDate > convert(datetime, '01.04.2006', 104)) AS cut ON cut.idclaim=t_AUTH.idclaim WHERE t_AUTH.name is not null) res1 GROUP BY res1.name ORDER BY res1.name ASC
-
-insert into SPP2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_pp', 'PROP', COUNT(isnull(res1.name, '')), ltrim(rtrim(res1.name)) FROM (SELECT t_PROP.idclaim, t_PROP.name FROM SPP2..claim730 t_PROP INNER JOIN (select distinct rc.idclaim 
-from SPP2..ref_claims rc inner join SPP2..claim450 c450 on c450.idclaim=rc.idclaim
-inner join SPP2..claim111 c111 on c111.idclaim=rc.idclaim
-where c450.bulletinDate > convert(datetime, '01.04.2006', 104)) AS cut ON cut.idclaim=t_PROP.idclaim WHERE t_PROP.name is not null) res1 GROUP BY res1.name ORDER BY res1.name ASC
-
-insert into SPP2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_pp', 'PATP', COUNT(isnull(res1.name, '')), ltrim(rtrim(res1.name)) FROM (SELECT t_PATP.idclaim, t_PATP.name FROM SPP2..claim740 t_PATP INNER JOIN (select distinct rc.idclaim 
-from SPP2..ref_claims rc inner join SPP2..claim450 c450 on c450.idclaim=rc.idclaim
-inner join SPP2..claim111 c111 on c111.idclaim=rc.idclaim
-where c450.bulletinDate > convert(datetime, '01.04.2006', 104)) AS cut ON cut.idclaim=t_PATP.idclaim WHERE t_PATP.name is not null) res1 GROUP BY res1.name ORDER BY res1.name ASC
-
-insert into SPP2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_pp', 'ADDR', COUNT(isnull(res1.name, '')), ltrim(rtrim(res1.name)) FROM (SELECT t_ADDR.idclaim, t_ADDR.name FROM SPP2..claim980 t_ADDR INNER JOIN (select distinct rc.idclaim 
-from SPP2..ref_claims rc inner join SPP2..claim450 c450 on c450.idclaim=rc.idclaim
-inner join SPP2..claim111 c111 on c111.idclaim=rc.idclaim
-where c450.bulletinDate > convert(datetime, '01.04.2006', 104)) AS cut ON cut.idclaim=t_ADDR.idclaim WHERE t_ADDR.name is not null) res1 GROUP BY res1.name ORDER BY res1.name ASC
-
-insert into SPP2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'certpp', 'NBUL', COUNT(isnull(res1.bullStr, '')), ltrim(rtrim(res1.bullStr)) FROM (SELECT t_NBUL.idclaim, t_NBUL.bullStr FROM SPP2..claim450 t_NBUL WHERE t_NBUL.bullStr is not null) res1 GROUP BY res1.bullStr ORDER BY convert(int,substring(res1.bullStr, charindex('/',res1.bullStr)+1, len(res1.bullStr)-charindex('/',res1.bullStr))) desc, case when charindex('-',res1.bullStr)>0 then convert(int,substring(res1.bullStr, 1, charindex('-',res1.bullStr)-1)) else convert(int,substring(res1.bullStr, 1, charindex('/',res1.bullStr)-1)) end desc
-
-insert into SPP2..dictionary (dictName, fieldName, entries, valueDate) SELECT 'certpp', 'PPUBL', COUNT(isnull(res1.bulletindate, '01.01.1900')), res1.bulletindate FROM (SELECT t_PPUBL.idclaim, t_PPUBL.bulletindate FROM SPP2..claim450 t_PPUBL WHERE t_PPUBL.bulletindate is not null) res1 GROUP BY res1.bulletindate ORDER BY res1.bulletindate DESC
-
-insert into SPP2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'certpp', 'NUSSR', COUNT(isnull(res1.i_100, '')), ltrim(rtrim(res1.i_100)) FROM (SELECT t_NUSSR.idclaim, t_NUSSR.i_100 FROM SPP2..claim100 t_NUSSR WHERE t_NUSSR.i_100 is not null) res1 GROUP BY res1.i_100 ORDER BY res1.i_100 ASC
-
-insert into SPP2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'certpp', 'TUSSR', COUNT(isnull(res1.guardType, '')), ltrim(rtrim(res1.guardType)) FROM (SELECT t_TUSSR.idclaim, t_TUSSR.guardType FROM SPP2..claim100 t_TUSSR WHERE t_TUSSR.guardType is not null) res1 GROUP BY res1.guardType ORDER BY res1.guardType ASC
-
-insert into SPP2..dictionary (dictName, fieldName, entries, valueInt) SELECT 'certpp', 'NP', COUNT(isnull(res1.i_111, 0)), res1.i_111 FROM (SELECT t_NP.idclaim, t_NP.i_111 FROM SPP2..claim111 t_NP WHERE t_NP.i_111 is not null) res1 GROUP BY res1.i_111 ORDER BY res1.i_111 ASC
-
-insert into SPP2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'certpp', 'NC', COUNT(isnull(res1.i_210, '')), ltrim(rtrim(res1.i_210)) FROM (SELECT t_NC.idclaim, t_NC.i_210 FROM SPP2..claim210 t_NC WHERE t_NC.i_210 is not null) res1 GROUP BY res1.i_210 ORDER BY res1.i_210 ASC
-
-insert into SPP2..dictionary (dictName, fieldName, entries, valueDate) SELECT 'certpp', 'FD', COUNT(isnull(res1.i_220, '01.01.1900')), res1.i_220 FROM (SELECT t_FD.idclaim, t_FD.i_220 FROM SPP2..claim220 t_FD WHERE t_FD.i_220 is not null) res1 GROUP BY res1.i_220 ORDER BY res1.i_220 DESC
-
-insert into SPP2..dictionary (dictName, fieldName, entries, valueDate) SELECT 'certpp', 'DVISTAV', COUNT(isnull(res1.exhibitionDate, '01.01.1900')), res1.exhibitionDate FROM (SELECT t_DVISTAV.idclaim, t_DVISTAV.exhibitionDate FROM SPP2..claim230 t_DVISTAV WHERE t_DVISTAV.exhibitionDate is not null) res1 GROUP BY res1.exhibitionDate ORDER BY res1.exhibitionDate DESC
-
-insert into SPP2..dictionary (dictName, fieldName, entries, valueDate) SELECT 'certpp', 'DATECOM', COUNT(isnull(res1.i_240, '01.01.1900')), res1.i_240 FROM (SELECT t_DATECOM.idclaim, t_DATECOM.i_240 FROM SPP2..claim240 t_DATECOM WHERE t_DATECOM.i_240 is not null) res1 GROUP BY res1.i_240 ORDER BY res1.i_240 DESC
-
-insert into SPP2..dictionary (dictName, fieldName, entries, valueInt) SELECT 'certpp', 'NVAR', COUNT(isnull(res1.i_280, 0)), res1.i_280 FROM (SELECT t_NVAR.idclaim, t_NVAR.i_280 FROM SPP2..claim280 t_NVAR WHERE t_NVAR.i_280 is not null) res1 GROUP BY res1.i_280 ORDER BY res1.i_280 ASC
-
-insert into SPP2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'certpp', 'NPRIOR', COUNT(isnull(res1.claimNumber, '')), ltrim(rtrim(res1.claimNumber)) FROM (SELECT t_NPRIOR.idclaim, t_NPRIOR.claimNumber FROM SPP2..claim310 t_NPRIOR WHERE t_NPRIOR.claimNumber is not null) res1 GROUP BY res1.claimNumber ORDER BY res1.claimNumber ASC
-
-insert into SPP2..dictionary (dictName, fieldName, entries, valueDate) SELECT 'certpp', 'DPRIOR', COUNT(isnull(res1.claimDate, '01.01.1900')), res1.claimDate FROM (SELECT t_DPRIOR.idclaim, t_DPRIOR.claimDate FROM SPP2..claim310 t_DPRIOR WHERE t_DPRIOR.claimDate is not null) res1 GROUP BY res1.claimDate ORDER BY res1.claimDate DESC
-
-insert into SPP2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'certpp', 'CPRIOR', COUNT(isnull(res1.countryCode, '')), ltrim(rtrim(res1.countryCode)) FROM (SELECT t_CPRIOR.idclaim, t_CPRIOR.countryCode FROM SPP2..claim310 t_CPRIOR WHERE t_CPRIOR.countryCode is not null) res1 GROUP BY res1.countryCode ORDER BY res1.countryCode ASC
-
-insert into SPP2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'certpp', 'MKPZ', COUNT(isnull(res1.ClassStr, '')), ltrim(rtrim(res1.ClassStr)) FROM (SELECT t_MKPZ.idclaim, t_MKPZ.ClassStr FROM SPP2..claim510 t_MKPZ WHERE t_MKPZ.ClassStr is not null) res1 GROUP BY res1.ClassStr ORDER BY res1.ClassStr ASC
-
-insert into SPP2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'certpp', 'TITLE', COUNT(isnull(res1.i_540, '')), ltrim(rtrim(res1.i_540)) FROM (SELECT t_TITLE.idclaim, t_TITLE.i_540 FROM SPP2..claim540 t_TITLE WHERE t_TITLE.i_540 is not null) res1 GROUP BY res1.i_540 ORDER BY res1.i_540 ASC
-
-insert into SPP2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'certpp', 'APP', COUNT(isnull(res1.name, '')), ltrim(rtrim(res1.name)) FROM (SELECT t_APP.idclaim, t_APP.name FROM SPP2..claim710 t_APP WHERE t_APP.name is not null) res1 GROUP BY res1.name ORDER BY res1.name ASC
-
-insert into SPP2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'certpp', 'AUTH', COUNT(isnull(res1.name, '')), ltrim(rtrim(res1.name)) FROM (SELECT t_AUTH.idclaim, t_AUTH.name FROM SPP2..claim720 t_AUTH WHERE t_AUTH.name is not null) res1 GROUP BY res1.name ORDER BY res1.name ASC
-
-insert into SPP2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'certpp', 'PROP', COUNT(isnull(res1.name, '')), ltrim(rtrim(res1.name)) FROM (SELECT t_PROP.idclaim, t_PROP.name FROM SPP2..claim730 t_PROP WHERE t_PROP.name is not null) res1 GROUP BY res1.name ORDER BY res1.name ASC
-
-insert into SPP2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'certpp', 'PATP', COUNT(isnull(res1.name, '')), ltrim(rtrim(res1.name)) FROM (SELECT t_PATP.idclaim, t_PATP.name FROM SPP2..claim740 t_PATP WHERE t_PATP.name is not null) res1 GROUP BY res1.name ORDER BY res1.name ASC
-
-insert into SPP2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'certpp', 'ADDR', COUNT(isnull(res1.name, '')), ltrim(rtrim(res1.name)) FROM (SELECT t_ADDR.idclaim, t_ADDR.name FROM SPP2..claim980 t_ADDR WHERE t_ADDR.name is not null) res1 GROUP BY res1.name ORDER BY res1.name ASC
-

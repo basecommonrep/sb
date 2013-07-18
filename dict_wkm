@@ -1,30 +1,0 @@
-insert into wellknownmarks..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_wkm', 'NBUL', COUNT(isnull(res1.bullstr, '')), ltrim(rtrim(res1.bullstr)) FROM (SELECT t_nbul.idmark, rc.bullstr from wellknownmarks..mark t_nbul inner join ( select t_nbul.bullstr, t_nbul.idBulletin 	from wellknownmarks..ref_bulletins t_nbul 	 ) rc on rc.idBulletin=t_nbul.idBulletin  ) as res1 INNER JOIN (select m.idmark
-from wellknownmarks..mark m) AS cut ON cut.idmark=res1.idmark GROUP BY res1.bullstr HAVING ltrim(rtrim(res1.bullstr)) is not null ORDER BY convert(int,substring(res1.bullstr, charindex('/',res1.bullstr)+1, len(res1.bullstr)-charindex('/',res1.bullstr))) desc, case when charindex('-',res1.bullstr)>0 then convert(int,substring(res1.bullstr, 1, charindex('-',res1.bullstr)-1)) else convert(int,substring(res1.bullstr, 1, charindex('/',res1.bullstr)-1)) end desc
-
-insert into wellknownmarks..dictionary (dictName, fieldName, entries, valueDate) SELECT 'bul_wkm', 'NDD', COUNT(isnull(res1.decisionDate, '01.01.1900')), res1.decisionDate FROM (SELECT t_NDD.idmark, t_NDD.decisionDate FROM wellknownmarks..mark t_NDD INNER JOIN (select m.idmark
-from wellknownmarks..mark m) AS cut ON cut.idmark=t_NDD.idmark WHERE t_NDD.decisionDate is not null) res1 GROUP BY res1.decisionDate ORDER BY res1.decisionDate DESC
-
-insert into wellknownmarks..dictionary (dictName, fieldName, entries, valueDate) SELECT 'bul_wkm', 'NDDD', COUNT(isnull(res1.orderDate, '01.01.1900')), res1.orderDate FROM (SELECT t_NDDD.idmark, t_NDDD.orderDate FROM wellknownmarks..mark t_NDDD INNER JOIN (select m.idmark
-from wellknownmarks..mark m) AS cut ON cut.idmark=t_NDDD.idmark WHERE t_NDDD.orderDate is not null) res1 GROUP BY res1.orderDate ORDER BY res1.orderDate DESC
-
-insert into wellknownmarks..dictionary (dictName, fieldName, entries, valueInt) SELECT 'bul_wkm', 'NDDN', COUNT(isnull(res1.orderNumber, 0)), res1.orderNumber FROM (SELECT t_NDDN.idmark, t_NDDN.orderNumber FROM wellknownmarks..mark t_NDDN INNER JOIN (select m.idmark
-from wellknownmarks..mark m) AS cut ON cut.idmark=t_NDDN.idmark WHERE t_NDDN.orderNumber is not null) res1 GROUP BY res1.orderNumber ORDER BY res1.orderNumber ASC
-
-insert into wellknownmarks..dictionary (dictName, fieldName, entries, valueDate) SELECT 'bul_wkm', 'DWKM', COUNT(isnull(res1.rightsDate, '01.01.1900')), res1.rightsDate FROM (SELECT t_DWKM.idmark, t_DWKM.rightsDate FROM wellknownmarks..mark t_DWKM INNER JOIN (select m.idmark
-from wellknownmarks..mark m) AS cut ON cut.idmark=t_DWKM.idmark WHERE t_DWKM.rightsDate is not null) res1 GROUP BY res1.rightsDate ORDER BY res1.rightsDate DESC
-
-insert into wellknownmarks..dictionary (dictName, fieldName, entries, valueDate) SELECT 'bul_wkm', 'PUBL', COUNT(isnull(res1.bulletindate, '01.01.1900')), res1.bulletindate FROM (SELECT t_publ.idmark, rc.bulletindate from wellknownmarks..mark t_publ inner join ( select t_publ.bulletindate, t_publ.idBulletin 	from wellknownmarks..ref_bulletins t_publ 	 ) rc on rc.idBulletin=t_publ.idBulletin  ) as res1 INNER JOIN (select m.idmark
-from wellknownmarks..mark m) AS cut ON cut.idmark=res1.idmark GROUP BY res1.bulletindate HAVING res1.bulletindate is not null ORDER BY res1.bulletindate DESC
-
-insert into wellknownmarks..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_wkm', 'PROP', COUNT(isnull(res1.ownerName, '')), ltrim(rtrim(res1.ownerName)) FROM (SELECT t_prop.idmark, rc.ownerName from wellknownmarks..markOwners t_prop inner join ( select t_prop.ownerName, t_prop.idOwner 	from wellknownmarks..ref_owners t_prop 	 ) rc on rc.idOwner=t_prop.idOwner  ) as res1 INNER JOIN (select m.idmark
-from wellknownmarks..mark m) AS cut ON cut.idmark=res1.idmark GROUP BY res1.ownerName HAVING ltrim(rtrim(res1.ownerName)) is not null ORDER BY res1.ownerName ASC
-
-insert into wellknownmarks..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_wkm', 'LGS', COUNT(isnull(res1.products, '')), ltrim(rtrim(res1.products)) FROM (SELECT t_LGS.idmark, t_LGS.products FROM wellknownmarks..markProducts t_LGS INNER JOIN (select m.idmark
-from wellknownmarks..mark m) AS cut ON cut.idmark=t_LGS.idmark WHERE t_LGS.products is not null) res1 GROUP BY res1.products ORDER BY res1.products ASC
-
-insert into wellknownmarks..dictionary (dictName, fieldName, entries, valueInt) SELECT 'bul_wkm', 'NICE', COUNT(isnull(res1.classNumber, 0)), res1.classNumber FROM (SELECT t_NICE.idmark, t_NICE.classNumber FROM wellknownmarks..markclasses t_NICE INNER JOIN (select m.idmark
-from wellknownmarks..mark m) AS cut ON cut.idmark=t_NICE.idmark WHERE t_NICE.classNumber is not null) res1 GROUP BY res1.classNumber ORDER BY res1.classNumber ASC
-
-insert into wellknownmarks..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_wkm', 'MARK', COUNT(isnull(res1.keyWords, '')), ltrim(rtrim(res1.keyWords)) FROM (SELECT t_MARK.idmark, t_MARK.keyWords FROM wellknownmarks..mark t_MARK INNER JOIN (select m.idmark
-from wellknownmarks..mark m) AS cut ON cut.idmark=t_MARK.idmark WHERE t_MARK.keyWords is not null) res1 GROUP BY res1.keyWords ORDER BY res1.keyWords ASC
-

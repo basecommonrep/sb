@@ -1,24 +1,0 @@
-insert into SROMARIN2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_madrid', 'NBUL', COUNT(isnull(res1.bulStr, '')), ltrim(rtrim(res1.bulStr)) FROM (SELECT t_NBUL.idclaim, t_NBUL.bulStr FROM SROMARIN2..maininfo t_NBUL INNER JOIN (select mi.idclaim
-from SROMARIN2..mainInfo mi where mi.bulletinDate > convert(datetime, '01.04.2006', 104)) AS cut ON cut.idclaim=t_NBUL.idclaim WHERE t_NBUL.bulStr is not null) res1 GROUP BY res1.bulStr ORDER BY convert(int,substring(res1.bulStr, charindex('/',res1.bulStr)+1, len(res1.bulStr)-charindex('/',res1.bulStr))) desc, case when charindex('-',res1.bulStr)>0 then convert(int,substring(res1.bulStr, 1, charindex('-',res1.bulStr)-1)) else convert(int,substring(res1.bulStr, 1, charindex('/',res1.bulStr)-1)) end desc
-
-insert into SROMARIN2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_madrid', 'NREG', COUNT(isnull(res1.i_111, '')), ltrim(rtrim(res1.i_111)) FROM (SELECT t_NREG.idclaim, t_NREG.i_111 FROM SROMARIN2..maininfo t_NREG INNER JOIN (select mi.idclaim
-from SROMARIN2..mainInfo mi where mi.bulletinDate > convert(datetime, '01.04.2006', 104)) AS cut ON cut.idclaim=t_NREG.idclaim WHERE t_NREG.i_111 is not null) res1 GROUP BY res1.i_111 ORDER BY res1.i_111 ASC
-
-insert into SROMARIN2..dictionary (dictName, fieldName, entries, valueDate) SELECT 'bul_madrid', 'DREG', COUNT(isnull(res1.i_151, '01.01.1900')), res1.i_151 FROM (SELECT t_DREG.idclaim, t_DREG.i_151 FROM SROMARIN2..maininfo t_DREG INNER JOIN (select mi.idclaim
-from SROMARIN2..mainInfo mi where mi.bulletinDate > convert(datetime, '01.04.2006', 104)) AS cut ON cut.idclaim=t_DREG.idclaim WHERE t_DREG.i_151 is not null) res1 GROUP BY res1.i_151 ORDER BY res1.i_151 DESC
-
-insert into SROMARIN2..dictionary (dictName, fieldName, entries, valueDate) SELECT 'bul_madrid', 'DPUBLD', COUNT(isnull(res1.i_450, '01.01.1900')), res1.i_450 FROM (SELECT t_DPUBLD.idclaim, t_DPUBLD.i_450 FROM SROMARIN2..maininfo t_DPUBLD INNER JOIN (select mi.idclaim
-from SROMARIN2..mainInfo mi where mi.bulletinDate > convert(datetime, '01.04.2006', 104)) AS cut ON cut.idclaim=t_DPUBLD.idclaim WHERE t_DPUBLD.i_450 is not null) res1 GROUP BY res1.i_450 ORDER BY res1.i_450 DESC
-
-insert into SROMARIN2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_madrid', 'DPUBLN', COUNT(isnull(res1.i_450_gaz, '')), ltrim(rtrim(res1.i_450_gaz)) FROM (SELECT t_DPUBLN.idclaim, t_DPUBLN.i_450_gaz FROM SROMARIN2..maininfo t_DPUBLN INNER JOIN (select mi.idclaim
-from SROMARIN2..mainInfo mi where mi.bulletinDate > convert(datetime, '01.04.2006', 104)) AS cut ON cut.idclaim=t_DPUBLN.idclaim WHERE t_DPUBLN.i_450_gaz is not null) res1 GROUP BY res1.i_450_gaz ORDER BY res1.i_450_gaz ASC
-
-insert into SROMARIN2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_madrid', 'NICE', COUNT(isnull(res1.i_511, '')), ltrim(rtrim(res1.i_511)) FROM (SELECT t_NICE.idclaim, t_NICE.i_511 FROM SROMARIN2..maininfo t_NICE INNER JOIN (select mi.idclaim
-from SROMARIN2..mainInfo mi where mi.bulletinDate > convert(datetime, '01.04.2006', 104)) AS cut ON cut.idclaim=t_NICE.idclaim WHERE t_NICE.i_511 is not null) res1 GROUP BY res1.i_511 ORDER BY res1.i_511 ASC
-
-insert into SROMARIN2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_madrid', 'KEYW', COUNT(isnull(res1.i_540, '')), ltrim(rtrim(res1.i_540)) FROM (SELECT t_KEYW.idclaim, t_KEYW.i_540 FROM SROMARIN2..maininfo t_KEYW INNER JOIN (select mi.idclaim
-from SROMARIN2..mainInfo mi where mi.bulletinDate > convert(datetime, '01.04.2006', 104)) AS cut ON cut.idclaim=t_KEYW.idclaim WHERE t_KEYW.i_540 is not null) res1 GROUP BY res1.i_540 ORDER BY res1.i_540 ASC
-
-insert into SROMARIN2..dictionary (dictName, fieldName, entries, valueDate) SELECT 'bul_madrid', 'DM', COUNT(isnull(res1.i_580, '01.01.1900')), res1.i_580 FROM (SELECT t_DM.idclaim, t_DM.i_580 FROM SROMARIN2..maininfo t_DM INNER JOIN (select mi.idclaim
-from SROMARIN2..mainInfo mi where mi.bulletinDate > convert(datetime, '01.04.2006', 104)) AS cut ON cut.idclaim=t_DM.idclaim WHERE t_DM.i_580 is not null) res1 GROUP BY res1.i_580 ORDER BY res1.i_580 DESC
-

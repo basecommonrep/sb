@@ -1,450 +1,0 @@
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_invc', 'NBUL', COUNT(isnull(res1.bullStr, '')), ltrim(rtrim(res1.bullStr)) FROM (SELECT t_nbul.idclaim, t_nbul.bullStr from SINV2..publication t_nbul  where (t_nbul.typePub=2 AND t_NBUL.bulletindate > convert(datetime, '01.04.2006', 104))) as res1 INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi inner join SINV2..publication p on p.idClaim=mi.idClaim and p.typePub=2
-where mi.i_11 is null
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=res1.idclaim GROUP BY res1.bullStr HAVING ltrim(rtrim(res1.bullStr)) is not null ORDER BY convert(int,substring(res1.bullStr, charindex('/',res1.bullStr)+1, len(res1.bullStr)-charindex('/',res1.bullStr))) desc, case when charindex('-',res1.bullStr)>0 then convert(int,substring(res1.bullStr, 1, charindex('-',res1.bullStr)-1)) else convert(int,substring(res1.bullStr, 1, charindex('/',res1.bullStr)-1)) end desc
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueDate) SELECT 'bul_invc', 'PPUBL', COUNT(isnull(res1.bulletinDate, '01.01.1900')), res1.bulletinDate FROM (SELECT t_ppubl.idclaim, t_ppubl.bulletinDate from SINV2..publication t_ppubl  where (t_ppubl.typePub=2 AND t_PPUBL.bulletindate > convert(datetime, '01.04.2006', 104))) as res1 INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi inner join SINV2..publication p on p.idClaim=mi.idClaim and p.typePub=2
-where mi.i_11 is null
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=res1.idclaim GROUP BY res1.bulletinDate HAVING res1.bulletinDate is not null ORDER BY res1.bulletinDate DESC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_invc', 'NC', COUNT(isnull(res1.i_21, '')), ltrim(rtrim(res1.i_21)) FROM (SELECT t_NC.idclaim, t_NC.i_21 FROM SINV2..maininfo t_NC INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi inner join SINV2..publication p on p.idClaim=mi.idClaim and p.typePub=2
-where mi.i_11 is null
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=t_NC.idclaim WHERE t_NC.i_21 is not null) res1 GROUP BY res1.i_21 ORDER BY res1.i_21 ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueDate) SELECT 'bul_invc', 'FD', COUNT(isnull(res1.i_22, '01.01.1900')), res1.i_22 FROM (SELECT t_FD.idclaim, t_FD.i_22 FROM SINV2..maininfo t_FD INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi inner join SINV2..publication p on p.idClaim=mi.idClaim and p.typePub=2
-where mi.i_11 is null
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=t_FD.idclaim WHERE t_FD.i_22 is not null) res1 GROUP BY res1.i_22 ORDER BY res1.i_22 DESC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_invc', 'NPRIOR', COUNT(isnull(res1.inputNumber, '')), ltrim(rtrim(res1.inputNumber)) FROM (SELECT t_nprior.idclaim, t_nprior.inputNumber from SINV2..convent t_nprior  where (t_nprior.code=31 )) as res1 INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi inner join SINV2..publication p on p.idClaim=mi.idClaim and p.typePub=2
-where mi.i_11 is null
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=res1.idclaim GROUP BY res1.inputNumber HAVING ltrim(rtrim(res1.inputNumber)) is not null ORDER BY res1.inputNumber ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueDate) SELECT 'bul_invc', 'DPRIOR', COUNT(isnull(res1.appDate, '01.01.1900')), res1.appDate FROM (SELECT t_dprior.idclaim, t_dprior.appDate from SINV2..convent t_dprior  where (t_dprior.code=31 )) as res1 INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi inner join SINV2..publication p on p.idClaim=mi.idClaim and p.typePub=2
-where mi.i_11 is null
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=res1.idclaim GROUP BY res1.appDate HAVING res1.appDate is not null ORDER BY res1.appDate DESC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_invc', 'MPK', COUNT(isnull(res1.ipc_string, '')), ltrim(rtrim(res1.ipc_string)) FROM (SELECT t_mpk.idclaim, ltrim(rtrim(substring(t_mpk.ipc_string, 1, 4)))+' '+ltrim(rtrim(substring(t_mpk.ipc_string, 5, 10))) [ipc_string] from SINV2..claim51publ t_mpk  where (t_mpk.level='A' )) as res1 INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi inner join SINV2..publication p on p.idClaim=mi.idClaim and p.typePub=2
-where mi.i_11 is null
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=res1.idclaim GROUP BY res1.ipc_string HAVING ltrim(rtrim(res1.ipc_string)) is not null ORDER BY res1.ipc_string ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_invc', 'PCTN', COUNT(isnull(res1.pctnumber, '')), ltrim(rtrim(res1.pctnumber)) FROM (SELECT t_PCTN.idclaim, t_PCTN.pctnumber FROM SINV2..maininfo t_PCTN INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi inner join SINV2..publication p on p.idClaim=mi.idClaim and p.typePub=2
-where mi.i_11 is null
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=t_PCTN.idclaim WHERE t_PCTN.pctnumber is not null) res1 GROUP BY res1.pctnumber ORDER BY res1.pctnumber ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueDate) SELECT 'bul_invc', 'PCTD', COUNT(isnull(res1.pctdate, '01.01.1900')), res1.pctdate FROM (SELECT t_PCTD.idclaim, t_PCTD.pctdate FROM SINV2..maininfo t_PCTD INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi inner join SINV2..publication p on p.idClaim=mi.idClaim and p.typePub=2
-where mi.i_11 is null
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=t_PCTD.idclaim WHERE t_PCTD.pctdate is not null) res1 GROUP BY res1.pctdate ORDER BY res1.pctdate DESC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_invc', 'APP', COUNT(isnull(res1.name, '')), ltrim(rtrim(res1.name)) FROM (SELECT t_app.idclaim, t_app.name from SINV2..claim71 t_app  where (t_app.lang='UA' )) as res1 INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi inner join SINV2..publication p on p.idClaim=mi.idClaim and p.typePub=2
-where mi.i_11 is null
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=res1.idclaim GROUP BY res1.name HAVING ltrim(rtrim(res1.name)) is not null ORDER BY res1.name ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_invc', 'INV', COUNT(isnull(res1.name, '')), ltrim(rtrim(res1.name)) FROM (SELECT t_inv.idclaim, t_inv.name from SINV2..claim72 t_inv  where (t_inv.lang='UA' )) as res1 INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi inner join SINV2..publication p on p.idClaim=mi.idClaim and p.typePub=2
-where mi.i_11 is null
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=res1.idclaim GROUP BY res1.name HAVING ltrim(rtrim(res1.name)) is not null ORDER BY res1.name ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_invc', 'TITLE', COUNT(isnull(res1.i_54, '')), ltrim(rtrim(res1.i_54)) FROM (SELECT t_title.idclaim, t_title.i_54 from SINV2..claim54 t_title  where (t_title.lang='UA' )) as res1 INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi inner join SINV2..publication p on p.idClaim=mi.idClaim and p.typePub=2
-where mi.i_11 is null
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=res1.idclaim GROUP BY res1.i_54 HAVING ltrim(rtrim(res1.i_54)) is not null ORDER BY res1.i_54 ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_inv', 'NBUL', COUNT(isnull(res1.bullStr, '')), ltrim(rtrim(res1.bullStr)) FROM (SELECT t_nbul.idclaim, t_nbul.bullStr from SINV2..publication t_nbul  where (t_nbul.typePub in (3,7,11,36) AND t_NBUL.bulletindate > convert(datetime, '01.04.2006', 104))) as res1 INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (44, 45, 46, 47, 48) and 
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$
-
-) AS cut ON cut.idclaim=res1.idclaim GROUP BY res1.bullStr HAVING ltrim(rtrim(res1.bullStr)) is not null ORDER BY convert(int,substring(res1.bullStr, charindex('/',res1.bullStr)+1, len(res1.bullStr)-charindex('/',res1.bullStr))) desc, case when charindex('-',res1.bullStr)>0 then convert(int,substring(res1.bullStr, 1, charindex('-',res1.bullStr)-1)) else convert(int,substring(res1.bullStr, 1, charindex('/',res1.bullStr)-1)) end desc
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueDate) SELECT 'bul_inv', 'PPUBL', COUNT(isnull(res1.bulletinDate, '01.01.1900')), res1.bulletinDate FROM (SELECT t_ppubl.idclaim, t_ppubl.bulletinDate from SINV2..publication t_ppubl  where (t_ppubl.typePub in (3,7,11,36) AND t_PPUBL.bulletindate > convert(datetime, '01.04.2006', 104))) as res1 INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (44, 45, 46, 47, 48) and 
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$
-
-) AS cut ON cut.idclaim=res1.idclaim GROUP BY res1.bulletinDate HAVING res1.bulletinDate is not null ORDER BY res1.bulletinDate DESC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_inv', 'UPN', COUNT(isnull(res1.ussrac, '')), ltrim(rtrim(res1.ussrac)) FROM (SELECT t_UPN.idclaim, t_UPN.ussrac FROM SINV2..maininfo t_UPN INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (44, 45, 46, 47, 48) and 
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$
-
-) AS cut ON cut.idclaim=t_UPN.idclaim WHERE t_UPN.ussrac is not null) res1 GROUP BY res1.ussrac ORDER BY res1.ussrac ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueInt) SELECT 'bul_inv', 'NP', COUNT(isnull(res1.i_11, 0)), res1.i_11 FROM (SELECT t_NP.idclaim, t_NP.i_11 FROM SINV2..maininfo t_NP INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (44, 45, 46, 47, 48) and 
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$
-
-) AS cut ON cut.idclaim=t_NP.idclaim WHERE t_NP.i_11 is not null) res1 GROUP BY res1.i_11 ORDER BY res1.i_11 ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueDate) SELECT 'bul_inv', 'DATECOM', COUNT(isnull(res1.rightsDate, '01.01.1900')), res1.rightsDate FROM (SELECT t_DATECOM.idclaim, t_DATECOM.rightsDate FROM SINV2..maininfo t_DATECOM INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (44, 45, 46, 47, 48) and 
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$
-
-) AS cut ON cut.idclaim=t_DATECOM.idclaim WHERE t_DATECOM.rightsDate is not null) res1 GROUP BY res1.rightsDate ORDER BY res1.rightsDate DESC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_inv', 'NC', COUNT(isnull(res1.i_21, '')), ltrim(rtrim(res1.i_21)) FROM (SELECT t_NC.idclaim, t_NC.i_21 FROM SINV2..maininfo t_NC INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (44, 45, 46, 47, 48) and 
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$
-
-) AS cut ON cut.idclaim=t_NC.idclaim WHERE t_NC.i_21 is not null) res1 GROUP BY res1.i_21 ORDER BY res1.i_21 ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueDate) SELECT 'bul_inv', 'FD', COUNT(isnull(res1.i_22, '01.01.1900')), res1.i_22 FROM (SELECT t_FD.idclaim, t_FD.i_22 FROM SINV2..maininfo t_FD INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (44, 45, 46, 47, 48) and 
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$
-
-) AS cut ON cut.idclaim=t_FD.idclaim WHERE t_FD.i_22 is not null) res1 GROUP BY res1.i_22 ORDER BY res1.i_22 DESC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_inv', 'NPRIOR', COUNT(isnull(res1.inputNumber, '')), ltrim(rtrim(res1.inputNumber)) FROM (SELECT t_nprior.idclaim, t_nprior.inputNumber from SINV2..convent t_nprior  where (t_nprior.code=31 )) as res1 INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (44, 45, 46, 47, 48) and 
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$
-
-) AS cut ON cut.idclaim=res1.idclaim GROUP BY res1.inputNumber HAVING ltrim(rtrim(res1.inputNumber)) is not null ORDER BY res1.inputNumber ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueDate) SELECT 'bul_inv', 'DPRIOR', COUNT(isnull(res1.appDate, '01.01.1900')), res1.appDate FROM (SELECT t_dprior.idclaim, t_dprior.appDate from SINV2..convent t_dprior  where (t_dprior.code=31 )) as res1 INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (44, 45, 46, 47, 48) and 
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$
-
-) AS cut ON cut.idclaim=res1.idclaim GROUP BY res1.appDate HAVING res1.appDate is not null ORDER BY res1.appDate DESC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_inv', 'MPK', COUNT(isnull(res1.ipc_string, '')), ltrim(rtrim(res1.ipc_string)) FROM (SELECT t_mpk.idclaim, ltrim(rtrim(substring(t_mpk.ipc_string, 1, 4)))+' '+ltrim(rtrim(substring(t_mpk.ipc_string, 5, 10))) [ipc_string] from SINV2..claim51publ t_mpk  where (t_mpk.level='A' )) as res1 INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (44, 45, 46, 47, 48) and 
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$
-
-) AS cut ON cut.idclaim=res1.idclaim GROUP BY res1.ipc_string HAVING ltrim(rtrim(res1.ipc_string)) is not null ORDER BY res1.ipc_string ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_inv', 'PCTN', COUNT(isnull(res1.pctnumber, '')), ltrim(rtrim(res1.pctnumber)) FROM (SELECT t_PCTN.idclaim, t_PCTN.pctnumber FROM SINV2..maininfo t_PCTN INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (44, 45, 46, 47, 48) and 
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$
-
-) AS cut ON cut.idclaim=t_PCTN.idclaim WHERE t_PCTN.pctnumber is not null) res1 GROUP BY res1.pctnumber ORDER BY res1.pctnumber ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueDate) SELECT 'bul_inv', 'PCTD', COUNT(isnull(res1.pctdate, '01.01.1900')), res1.pctdate FROM (SELECT t_PCTD.idclaim, t_PCTD.pctdate FROM SINV2..maininfo t_PCTD INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (44, 45, 46, 47, 48) and 
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$
-
-) AS cut ON cut.idclaim=t_PCTD.idclaim WHERE t_PCTD.pctdate is not null) res1 GROUP BY res1.pctdate ORDER BY res1.pctdate DESC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_inv', 'ANALOG', COUNT(isnull(res1.text, '')), ltrim(rtrim(res1.text)) FROM (SELECT t_ANALOG.idclaim, t_ANALOG.text FROM SINV2..analog t_ANALOG INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (44, 45, 46, 47, 48) and 
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$
-
-) AS cut ON cut.idclaim=t_ANALOG.idclaim WHERE t_ANALOG.text is not null) res1 GROUP BY res1.text ORDER BY res1.text ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_inv', 'INV', COUNT(isnull(res1.name, '')), ltrim(rtrim(res1.name)) FROM (SELECT t_inv.idclaim, t_inv.name from SINV2..claim72 t_inv  where (t_inv.lang='UA' )) as res1 INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (44, 45, 46, 47, 48) and 
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$
-
-) AS cut ON cut.idclaim=res1.idclaim GROUP BY res1.name HAVING ltrim(rtrim(res1.name)) is not null ORDER BY res1.name ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_inv', 'PROP', COUNT(isnull(res1.name, '')), ltrim(rtrim(res1.name)) FROM (SELECT t_prop.idclaim, t_prop.name from SINV2..claim73 t_prop  where (t_prop.lang='UA' )) as res1 INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (44, 45, 46, 47, 48) and 
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$
-
-) AS cut ON cut.idclaim=res1.idclaim GROUP BY res1.name HAVING ltrim(rtrim(res1.name)) is not null ORDER BY res1.name ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_inv', 'TITLE', COUNT(isnull(res1.i_54, '')), ltrim(rtrim(res1.i_54)) FROM (SELECT t_title.idclaim, t_title.i_54 from SINV2..claim54 t_title  where (t_title.lang='UA' )) as res1 INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (44, 45, 46, 47, 48) and 
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$
-
-) AS cut ON cut.idclaim=res1.idclaim GROUP BY res1.i_54 HAVING ltrim(rtrim(res1.i_54)) is not null ORDER BY res1.i_54 ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_invd', 'NBUL', COUNT(isnull(res1.bullStr, '')), ltrim(rtrim(res1.bullStr)) FROM (SELECT t_nbul.idclaim, t_nbul.bullStr from SINV2..publication t_nbul  where (t_nbul.typePub in (3,7,11,36) AND t_NBUL.bulletindate > convert(datetime, '01.04.2006', 104))) as res1 INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (49, 50, 53) and
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=res1.idclaim GROUP BY res1.bullStr HAVING ltrim(rtrim(res1.bullStr)) is not null ORDER BY convert(int,substring(res1.bullStr, charindex('/',res1.bullStr)+1, len(res1.bullStr)-charindex('/',res1.bullStr))) desc, case when charindex('-',res1.bullStr)>0 then convert(int,substring(res1.bullStr, 1, charindex('-',res1.bullStr)-1)) else convert(int,substring(res1.bullStr, 1, charindex('/',res1.bullStr)-1)) end desc
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueDate) SELECT 'bul_invd', 'PPUBL', COUNT(isnull(res1.bulletinDate, '01.01.1900')), res1.bulletinDate FROM (SELECT t_ppubl.idclaim, t_ppubl.bulletinDate from SINV2..publication t_ppubl  where (t_ppubl.typePub in (3,7,11,36) AND t_PPUBL.bulletindate > convert(datetime, '01.04.2006', 104))) as res1 INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (49, 50, 53) and
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=res1.idclaim GROUP BY res1.bulletinDate HAVING res1.bulletinDate is not null ORDER BY res1.bulletinDate DESC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueInt) SELECT 'bul_invd', 'NP', COUNT(isnull(res1.i_11, 0)), res1.i_11 FROM (SELECT t_NP.idclaim, t_NP.i_11 FROM SINV2..maininfo t_NP INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (49, 50, 53) and
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=t_NP.idclaim WHERE t_NP.i_11 is not null) res1 GROUP BY res1.i_11 ORDER BY res1.i_11 ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueDate) SELECT 'bul_invd', 'DATECOM', COUNT(isnull(res1.rightsDate, '01.01.1900')), res1.rightsDate FROM (SELECT t_DATECOM.idclaim, t_DATECOM.rightsDate FROM SINV2..maininfo t_DATECOM INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (49, 50, 53) and
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=t_DATECOM.idclaim WHERE t_DATECOM.rightsDate is not null) res1 GROUP BY res1.rightsDate ORDER BY res1.rightsDate DESC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_invd', 'NC', COUNT(isnull(res1.i_21, '')), ltrim(rtrim(res1.i_21)) FROM (SELECT t_NC.idclaim, t_NC.i_21 FROM SINV2..maininfo t_NC INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (49, 50, 53) and
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=t_NC.idclaim WHERE t_NC.i_21 is not null) res1 GROUP BY res1.i_21 ORDER BY res1.i_21 ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueDate) SELECT 'bul_invd', 'FD', COUNT(isnull(res1.i_22, '01.01.1900')), res1.i_22 FROM (SELECT t_FD.idclaim, t_FD.i_22 FROM SINV2..maininfo t_FD INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (49, 50, 53) and
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=t_FD.idclaim WHERE t_FD.i_22 is not null) res1 GROUP BY res1.i_22 ORDER BY res1.i_22 DESC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_invd', 'NPRIOR', COUNT(isnull(res1.inputNumber, '')), ltrim(rtrim(res1.inputNumber)) FROM (SELECT t_nprior.idclaim, t_nprior.inputNumber from SINV2..convent t_nprior  where (t_nprior.code=31 )) as res1 INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (49, 50, 53) and
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=res1.idclaim GROUP BY res1.inputNumber HAVING ltrim(rtrim(res1.inputNumber)) is not null ORDER BY res1.inputNumber ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueDate) SELECT 'bul_invd', 'DPRIOR', COUNT(isnull(res1.appDate, '01.01.1900')), res1.appDate FROM (SELECT t_dprior.idclaim, t_dprior.appDate from SINV2..convent t_dprior  where (t_dprior.code=31 )) as res1 INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (49, 50, 53) and
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=res1.idclaim GROUP BY res1.appDate HAVING res1.appDate is not null ORDER BY res1.appDate DESC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_invd', 'MPK', COUNT(isnull(res1.ipc_string, '')), ltrim(rtrim(res1.ipc_string)) FROM (SELECT t_mpk.idclaim, ltrim(rtrim(substring(t_mpk.ipc_string, 1, 4)))+' '+ltrim(rtrim(substring(t_mpk.ipc_string, 5, 10))) [ipc_string] from SINV2..claim51publ t_mpk  where (t_mpk.level='A' )) as res1 INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (49, 50, 53) and
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=res1.idclaim GROUP BY res1.ipc_string HAVING ltrim(rtrim(res1.ipc_string)) is not null ORDER BY res1.ipc_string ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_invd', 'PCTN', COUNT(isnull(res1.pctnumber, '')), ltrim(rtrim(res1.pctnumber)) FROM (SELECT t_PCTN.idclaim, t_PCTN.pctnumber FROM SINV2..maininfo t_PCTN INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (49, 50, 53) and
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=t_PCTN.idclaim WHERE t_PCTN.pctnumber is not null) res1 GROUP BY res1.pctnumber ORDER BY res1.pctnumber ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueDate) SELECT 'bul_invd', 'PCTD', COUNT(isnull(res1.pctdate, '01.01.1900')), res1.pctdate FROM (SELECT t_PCTD.idclaim, t_PCTD.pctdate FROM SINV2..maininfo t_PCTD INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (49, 50, 53) and
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=t_PCTD.idclaim WHERE t_PCTD.pctdate is not null) res1 GROUP BY res1.pctdate ORDER BY res1.pctdate DESC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_invd', 'ANALOG', COUNT(isnull(res1.text, '')), ltrim(rtrim(res1.text)) FROM (SELECT t_ANALOG.idclaim, t_ANALOG.text FROM SINV2..analog t_ANALOG INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (49, 50, 53) and
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=t_ANALOG.idclaim WHERE t_ANALOG.text is not null) res1 GROUP BY res1.text ORDER BY res1.text ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_invd', 'INV', COUNT(isnull(res1.name, '')), ltrim(rtrim(res1.name)) FROM (SELECT t_inv.idclaim, t_inv.name from SINV2..claim72 t_inv  where (t_inv.lang='UA' )) as res1 INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (49, 50, 53) and
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=res1.idclaim GROUP BY res1.name HAVING ltrim(rtrim(res1.name)) is not null ORDER BY res1.name ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_invd', 'PROP', COUNT(isnull(res1.name, '')), ltrim(rtrim(res1.name)) FROM (SELECT t_prop.idclaim, t_prop.name from SINV2..claim73 t_prop  where (t_prop.lang='UA' )) as res1 INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (49, 50, 53) and
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=res1.idclaim GROUP BY res1.name HAVING ltrim(rtrim(res1.name)) is not null ORDER BY res1.name ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_invd', 'TITLE', COUNT(isnull(res1.i_54, '')), ltrim(rtrim(res1.i_54)) FROM (SELECT t_title.idclaim, t_title.i_54 from SINV2..claim54 t_title  where (t_title.lang='UA' )) as res1 INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (49, 50, 53) and
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=res1.idclaim GROUP BY res1.i_54 HAVING ltrim(rtrim(res1.i_54)) is not null ORDER BY res1.i_54 ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_invdu', 'NBUL', COUNT(isnull(res1.bullStr, '')), ltrim(rtrim(res1.bullStr)) FROM (SELECT t_nbul.idclaim, t_nbul.bullStr from SINV2..publication t_nbul  where (t_nbul.typePub in (3,7,11,36) AND t_NBUL.bulletindate > convert(datetime, '01.04.2006', 104))) as res1 INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (51, 52, 54, 671) and 
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=res1.idclaim GROUP BY res1.bullStr HAVING ltrim(rtrim(res1.bullStr)) is not null ORDER BY convert(int,substring(res1.bullStr, charindex('/',res1.bullStr)+1, len(res1.bullStr)-charindex('/',res1.bullStr))) desc, case when charindex('-',res1.bullStr)>0 then convert(int,substring(res1.bullStr, 1, charindex('-',res1.bullStr)-1)) else convert(int,substring(res1.bullStr, 1, charindex('/',res1.bullStr)-1)) end desc
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueDate) SELECT 'bul_invdu', 'PPUBL', COUNT(isnull(res1.bulletinDate, '01.01.1900')), res1.bulletinDate FROM (SELECT t_ppubl.idclaim, t_ppubl.bulletinDate from SINV2..publication t_ppubl  where (t_ppubl.typePub in (3,7,11,36) AND t_PPUBL.bulletindate > convert(datetime, '01.04.2006', 104))) as res1 INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (51, 52, 54, 671) and 
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=res1.idclaim GROUP BY res1.bulletinDate HAVING res1.bulletinDate is not null ORDER BY res1.bulletinDate DESC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueInt) SELECT 'bul_invdu', 'NP', COUNT(isnull(res1.i_11, 0)), res1.i_11 FROM (SELECT t_NP.idclaim, t_NP.i_11 FROM SINV2..maininfo t_NP INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (51, 52, 54, 671) and 
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=t_NP.idclaim WHERE t_NP.i_11 is not null) res1 GROUP BY res1.i_11 ORDER BY res1.i_11 ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueDate) SELECT 'bul_invdu', 'DATECOM', COUNT(isnull(res1.rightsDate, '01.01.1900')), res1.rightsDate FROM (SELECT t_DATECOM.idclaim, t_DATECOM.rightsDate FROM SINV2..maininfo t_DATECOM INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (51, 52, 54, 671) and 
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=t_DATECOM.idclaim WHERE t_DATECOM.rightsDate is not null) res1 GROUP BY res1.rightsDate ORDER BY res1.rightsDate DESC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_invdu', 'NC', COUNT(isnull(res1.i_21, '')), ltrim(rtrim(res1.i_21)) FROM (SELECT t_NC.idclaim, t_NC.i_21 FROM SINV2..maininfo t_NC INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (51, 52, 54, 671) and 
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=t_NC.idclaim WHERE t_NC.i_21 is not null) res1 GROUP BY res1.i_21 ORDER BY res1.i_21 ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueDate) SELECT 'bul_invdu', 'FD', COUNT(isnull(res1.i_22, '01.01.1900')), res1.i_22 FROM (SELECT t_FD.idclaim, t_FD.i_22 FROM SINV2..maininfo t_FD INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (51, 52, 54, 671) and 
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=t_FD.idclaim WHERE t_FD.i_22 is not null) res1 GROUP BY res1.i_22 ORDER BY res1.i_22 DESC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_invdu', 'NPRIOR', COUNT(isnull(res1.inputNumber, '')), ltrim(rtrim(res1.inputNumber)) FROM (SELECT t_nprior.idclaim, t_nprior.inputNumber from SINV2..convent t_nprior  where (t_nprior.code=31 )) as res1 INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (51, 52, 54, 671) and 
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=res1.idclaim GROUP BY res1.inputNumber HAVING ltrim(rtrim(res1.inputNumber)) is not null ORDER BY res1.inputNumber ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueDate) SELECT 'bul_invdu', 'DPRIOR', COUNT(isnull(res1.appDate, '01.01.1900')), res1.appDate FROM (SELECT t_dprior.idclaim, t_dprior.appDate from SINV2..convent t_dprior  where (t_dprior.code=31 )) as res1 INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (51, 52, 54, 671) and 
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=res1.idclaim GROUP BY res1.appDate HAVING res1.appDate is not null ORDER BY res1.appDate DESC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_invdu', 'MPK', COUNT(isnull(res1.ipc_string, '')), ltrim(rtrim(res1.ipc_string)) FROM (SELECT t_mpk.idclaim, ltrim(rtrim(substring(t_mpk.ipc_string, 1, 4)))+' '+ltrim(rtrim(substring(t_mpk.ipc_string, 5, 10))) [ipc_string] from SINV2..claim51publ t_mpk  where (t_mpk.level='A' )) as res1 INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (51, 52, 54, 671) and 
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=res1.idclaim GROUP BY res1.ipc_string HAVING ltrim(rtrim(res1.ipc_string)) is not null ORDER BY res1.ipc_string ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_invdu', 'PCTN', COUNT(isnull(res1.pctnumber, '')), ltrim(rtrim(res1.pctnumber)) FROM (SELECT t_PCTN.idclaim, t_PCTN.pctnumber FROM SINV2..maininfo t_PCTN INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (51, 52, 54, 671) and 
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=t_PCTN.idclaim WHERE t_PCTN.pctnumber is not null) res1 GROUP BY res1.pctnumber ORDER BY res1.pctnumber ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueDate) SELECT 'bul_invdu', 'PCTD', COUNT(isnull(res1.pctdate, '01.01.1900')), res1.pctdate FROM (SELECT t_PCTD.idclaim, t_PCTD.pctdate FROM SINV2..maininfo t_PCTD INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (51, 52, 54, 671) and 
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=t_PCTD.idclaim WHERE t_PCTD.pctdate is not null) res1 GROUP BY res1.pctdate ORDER BY res1.pctdate DESC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_invdu', 'ANALOG', COUNT(isnull(res1.text, '')), ltrim(rtrim(res1.text)) FROM (SELECT t_ANALOG.idclaim, t_ANALOG.text FROM SINV2..analog t_ANALOG INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (51, 52, 54, 671) and 
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=t_ANALOG.idclaim WHERE t_ANALOG.text is not null) res1 GROUP BY res1.text ORDER BY res1.text ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_invdu', 'INV', COUNT(isnull(res1.name, '')), ltrim(rtrim(res1.name)) FROM (SELECT t_inv.idclaim, t_inv.name from SINV2..claim72 t_inv  where (t_inv.lang='UA' )) as res1 INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (51, 52, 54, 671) and 
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=res1.idclaim GROUP BY res1.name HAVING ltrim(rtrim(res1.name)) is not null ORDER BY res1.name ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_invdu', 'PROP', COUNT(isnull(res1.name, '')), ltrim(rtrim(res1.name)) FROM (SELECT t_prop.idclaim, t_prop.name from SINV2..claim73 t_prop  where (t_prop.lang='UA' )) as res1 INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (51, 52, 54, 671) and 
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=res1.idclaim GROUP BY res1.name HAVING ltrim(rtrim(res1.name)) is not null ORDER BY res1.name ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'bul_invdu', 'TITLE', COUNT(isnull(res1.i_54, '')), ltrim(rtrim(res1.i_54)) FROM (SELECT t_title.idclaim, t_title.i_54 from SINV2..claim54 t_title  where (t_title.lang='UA' )) as res1 INNER JOIN (select mi.idClaim
-from SINV2..maininfo mi where mi.i_11 is not null and 
-mi.i_13 in (51, 52, 54, 671) and 
-mi.i_46 > convert(datetime, '01.04.2006', 104)
- 
-$$$ORDERCLAUSE$$$) AS cut ON cut.idclaim=res1.idclaim GROUP BY res1.i_54 HAVING ltrim(rtrim(res1.i_54)) is not null ORDER BY res1.i_54 ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'appinvc', 'NBUL', COUNT(isnull(res1.bullStr, '')), ltrim(rtrim(res1.bullStr)) FROM (SELECT t_nbul.idclaim, t_nbul.bullStr from SINV2..publication t_nbul  where (t_nbul.typePub=2 )) as res1 GROUP BY res1.bullStr HAVING ltrim(rtrim(res1.bullStr)) is not null ORDER BY convert(int,substring(res1.bullStr, charindex('/',res1.bullStr)+1, len(res1.bullStr)-charindex('/',res1.bullStr))) desc, case when charindex('-',res1.bullStr)>0 then convert(int,substring(res1.bullStr, 1, charindex('-',res1.bullStr)-1)) else convert(int,substring(res1.bullStr, 1, charindex('/',res1.bullStr)-1)) end desc
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueDate) SELECT 'appinvc', 'PPUBL', COUNT(isnull(res1.bulletinDate, '01.01.1900')), res1.bulletinDate FROM (SELECT t_ppubl.idclaim, t_ppubl.bulletinDate from SINV2..publication t_ppubl  where (t_ppubl.typePub=2 )) as res1 GROUP BY res1.bulletinDate HAVING res1.bulletinDate is not null ORDER BY res1.bulletinDate DESC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'appinvc', 'NC', COUNT(isnull(res1.i_21, '')), ltrim(rtrim(res1.i_21)) FROM (SELECT t_NC.idclaim, t_NC.i_21 FROM SINV2..maininfo t_NC WHERE t_NC.i_21 is not null) res1 GROUP BY res1.i_21 ORDER BY res1.i_21 ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueDate) SELECT 'appinvc', 'FD', COUNT(isnull(res1.i_22, '01.01.1900')), res1.i_22 FROM (SELECT t_FD.idclaim, t_FD.i_22 FROM SINV2..maininfo t_FD WHERE t_FD.i_22 is not null) res1 GROUP BY res1.i_22 ORDER BY res1.i_22 DESC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'appinvc', 'NPRIOR', COUNT(isnull(res1.inputNumber, '')), ltrim(rtrim(res1.inputNumber)) FROM (SELECT t_nprior.idclaim, t_nprior.inputNumber from SINV2..convent t_nprior  where (t_nprior.code=31 )) as res1 GROUP BY res1.inputNumber HAVING ltrim(rtrim(res1.inputNumber)) is not null ORDER BY res1.inputNumber ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueDate) SELECT 'appinvc', 'DPRIOR', COUNT(isnull(res1.appDate, '01.01.1900')), res1.appDate FROM (SELECT t_dprior.idclaim, t_dprior.appDate from SINV2..convent t_dprior  where (t_dprior.code=31 )) as res1 GROUP BY res1.appDate HAVING res1.appDate is not null ORDER BY res1.appDate DESC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'appinvc', 'MPK', COUNT(isnull(res1.ipc_string, '')), ltrim(rtrim(res1.ipc_string)) FROM (SELECT t_mpk.idclaim, ltrim(rtrim(substring(t_mpk.ipc_string, 1, 4)))+' '+ltrim(rtrim(substring(t_mpk.ipc_string, 5, 10))) [ipc_string] from SINV2..claim51publ t_mpk  where (t_mpk.level='A' )) as res1 GROUP BY res1.ipc_string HAVING ltrim(rtrim(res1.ipc_string)) is not null ORDER BY res1.ipc_string ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'appinvc', 'PCTN', COUNT(isnull(res1.pctnumber, '')), ltrim(rtrim(res1.pctnumber)) FROM (SELECT t_PCTN.idclaim, t_PCTN.pctnumber FROM SINV2..maininfo t_PCTN WHERE t_PCTN.pctnumber is not null) res1 GROUP BY res1.pctnumber ORDER BY res1.pctnumber ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueDate) SELECT 'appinvc', 'PCTD', COUNT(isnull(res1.pctdate, '01.01.1900')), res1.pctdate FROM (SELECT t_PCTD.idclaim, t_PCTD.pctdate FROM SINV2..maininfo t_PCTD WHERE t_PCTD.pctdate is not null) res1 GROUP BY res1.pctdate ORDER BY res1.pctdate DESC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'appinvc', 'APP', COUNT(isnull(res1.name, '')), ltrim(rtrim(res1.name)) FROM (SELECT t_app.idclaim, t_app.name from SINV2..claim71 t_app  where (t_app.lang='UA' )) as res1 GROUP BY res1.name HAVING ltrim(rtrim(res1.name)) is not null ORDER BY res1.name ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'appinvc', 'INV', COUNT(isnull(res1.name, '')), ltrim(rtrim(res1.name)) FROM (SELECT t_inv.idclaim, t_inv.name from SINV2..claim72 t_inv  where (t_inv.lang='UA' )) as res1 GROUP BY res1.name HAVING ltrim(rtrim(res1.name)) is not null ORDER BY res1.name ASC
-
-insert into SINV2..dictionary (dictName, fieldName, entries, valueStr) SELECT 'appinvc', 'TITLE', COUNT(isnull(res1.i_54, '')), ltrim(rtrim(res1.i_54)) FROM (SELECT t_title.idclaim, t_title.i_54 from SINV2..claim54 t_title  where (t_title.lang='UA' )) as res1 GROUP BY res1.i_54 HAVING ltrim(rtrim(res1.i_54)) is not null ORDER BY res1.i_54 ASC
-
