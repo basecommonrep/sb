@@ -535,17 +535,13 @@
 						NUSSR 	=> array(2, 'claim100',		'i_100',		$LANG_SETTINGS['pp_fields']['NUSSR'],	10, '32837', 													0, center,	603),
 						TUSSR 	=> array(2, 'claim100',		'guardType',	$LANG_SETTINGS['pp_fields']['TUSSR'],	10, 'A1', 														0, center,	604),
 						NP 		=> array(1, 'claim111',		'i_111',		$LANG_SETTINGS['pp_fields']['NP'], 		11, '13095', 													0, center,	605),
-						
 						NAUSSR	=> array(2, 'claim200',		'i_200N',		$LANG_SETTINGS['pp_fields']['NAUSSR'], 	20, 'Р3600424', 												0, center,	606),
 						DAUSSR	=> array(3, 'claim200',		'i_200D',		$LANG_SETTINGS['pp_fields']['DAUSSR'], 	20, '15.06.1993', 												0, center,	606),
-					
 						NC 		=> array(2, 'claim210',		'i_210',		$LANG_SETTINGS['pp_fields']['NC'], 		21, 's200600007', 												0, center,	606),
 						FD 		=> array(3, 'claim220',		'i_220',		$LANG_SETTINGS['pp_fields']['FD'], 		22, '03.01.2006', 												0, center,	607),
 						DVISTAV	=> array(3, 'claim230',		'exhibitionDate',$LANG_SETTINGS['pp_fields']['DVISTAV'],23, '12.06.2007', 												0, center,	608),
-						
 						// можно убрать, в деталях к патенту не отображается
 						//CVISTAV	=> array(2, 'claim230',		'countryCode',	$LANG_SETTINGS['pp_fields']['CVISTAV'], 23, 'UA', 													0, center,	609),
-
 						DATECOM => array(3, 'claim240',		'i_240',		$LANG_SETTINGS['pp_fields']['DATECOM'],	24, '15.11.2006', 												0, center,	610),
 						NVAR 	=> array(1, 'claim280',		'i_280',		$LANG_SETTINGS['pp_fields']['NVAR'],	28, '>3 '.$LANG_SETTINGS['logical']['and'].' <10', 				0, center,	611),						
 						NPRIOR 	=> array(2, 'claim310',		'claimNumber',	$LANG_SETTINGS['pp_fields']['NPRIOR'],	31, '200730003403.2', 											0, center,	612),
@@ -557,7 +553,7 @@
 						AUTH 	=> array(2, 'claim720',		'name',			$LANG_SETTINGS['pp_fields']['AUTH'], 	72, 'Ендрю Хайнкл', 											0, left,	618),
 						PROP 	=> array(2, 'claim730',		'name',			$LANG_SETTINGS['pp_fields']['PROP'], 	73, 'Міхал Сінярскі', 											0, left,	619),
 						PATP 	=> array(2, 'claim740',		'name',			$LANG_SETTINGS['pp_fields']['PATP'], 	74, 'Собко Ніна Іванівна',				 						0, left,	620),
-						ADDR 	=> array(2, 'claim980',		'name',			$LANG_SETTINGS['pp_fields']['ADDR'], 	98, 'Грановська',				 								0, left,	621),
+						//ADDR 	=> array(2, 'claim980',		'name',			$LANG_SETTINGS['pp_fields']['ADDR'], 	98, 'Грановська',				 								0, left,	621),
 						),
 
 	
