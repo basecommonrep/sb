@@ -24,7 +24,8 @@ convert(varchar(20), p.bulletinDate, 104) [claimBullDate],
 p.bulletinNumber [claimBullNumber],
 cast(c54.i_54 as text) [fi_54],
 case
-	when charindex('дію патента припинено', sc.value) > 0 and dateadd(mm, 4, mi.i_46) >= getdate() then 'Очікується перша сплата збору за підтримання чинності'
+	--when charindex('дію патента припинено', sc.value) > 0 and dateadd(mm, 4, mi.i_46) >= getdate() then 'Очікується перша сплата збору за підтримання чинності'
+	when sc.value != 'діє' and dateadd(mm, 4, mi.i_46) >= getdate() then 'Очікується перша сплата збору за підтримання чинності'
 	else sc.value
 end [status]
 from maininfo mi

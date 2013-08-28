@@ -561,6 +561,9 @@
 		'tm' 	=> array(
 						NBUL 	=> array(2, 'ref_bulletins','bulletinNumber',$LANG_SETTINGS['tm_fields']['NBUL'], 	450, '10/2007', 											0, center,	701),
 						PPUBL 	=> array(3, 'claim450',		'bulletindate',	$LANG_SETTINGS['tm_fields']['PPUBL'], 	450, '10.11.2008', 											0, center,	702),
+						TUSSR 	=> array(2, 'claim100',		'i_100',		$LANG_SETTINGS['tm_fields']['TUSSR'],	100, '68824', 												0, center,	603),
+						NUSSR 	=> array(2, 'claim200',		'i_200n',		$LANG_SETTINGS['tm_fields']['NUSSR'],	200, '93041450', 											0, center,	604),
+						DUSSR 	=> array(3, 'claim200',		'i_200d',		$LANG_SETTINGS['tm_fields']['DUSSR'],	200, '16.04.1993', 											0, center,	604),
 						NCERT 	=> array(2, 'claim111',		'i_111',		$LANG_SETTINGS['tm_fields']['NCERT'], 	111, '78687', 												0, center,	703),
 						EXPD 	=> array(3, 'claim141',		'i_141',		$LANG_SETTINGS['tm_fields']['EXPD'], 	141, '14.05.2007',											0, center,	704),
 						REGD 	=> array(3, 'claim151',		'i_151',		$LANG_SETTINGS['tm_fields']['REGD'], 	151, '10.07.2007', 											0, center,	705),
