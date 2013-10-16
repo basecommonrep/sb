@@ -61,6 +61,8 @@
 		$publication = str_replace('%2', '<b>'.$fullBiblio['bulletinNumber'].'</b>', $publication);		
 	} // if ( !empty($fullBiblio) )
 	
+	//print_r($fullBiblio);
+	
 ?>
 
 		<table border="0" cellpadding="0" cellspacing="0" width="100%">
@@ -293,7 +295,7 @@
 							?>
 	
 							<?
-								if ( !empty( $fullBiblio['i_23'] ) && $access )
+								if ( !empty( $fullBiblio['i_23'] ) )
 								{
 							?>
 	
@@ -301,7 +303,7 @@
 	
 								<tr valign="top">
 									<td><font class="viennacatunder"><acronym title="<?=$LANG_SETTINGS['pp_details']['inid23'];?>">(23)</acronym></font></td>
-									<td colspan=3 valign="top"><font class="viennacat"><?=$fullBiblio['i_23'];?></font></td>
+									<td colspan=3 valign="top"><font class="viennacat"><?=$fullBiblio['i_23'];?>; <?= $fullBiblio['i_23_country']; ?></font></td>
 								</tr>
 	
 							<?

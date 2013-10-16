@@ -482,7 +482,7 @@
 						MPK 	=> array(2, 'claim51publ',	'ipc_string',	$LANG_SETTINGS['inv_fields']['MPK'], 	51, 'C30B 29/20', 					1, center,	310),
 						PCTN 	=> array(2, 'maininfo',		'pctnumber',	$LANG_SETTINGS['inv_fields']['PCTN'], 	86, 'PCT/CU02/00003', 				0, center,	311),
 						PCTD 	=> array(3, 'maininfo',		'pctdate',		$LANG_SETTINGS['inv_fields']['PCTD'], 	86, '24.01.2003', 					0, center,	312),
-						ANALOG 	=> array(2, 'analog',		'text',			$LANG_SETTINGS['inv_fields']['ANALOG'], 56, 'US 5263835',					1, left,	313),
+						//ANALOG 	=> array(2, 'analog',		'text',			$LANG_SETTINGS['inv_fields']['ANALOG'], 56, 'US 5263835',					1, left,	313),
 						INV 	=> array(2, 'claim72',		'name',			$LANG_SETTINGS['inv_fields']['INV'], 	72, 'Швець Іван Софронович', 		0, left,	314),
 						PROP 	=> array(2, 'claim73',		'name',			$LANG_SETTINGS['inv_fields']['PROP'], 	73, 'Лі Юанхе', 					0, left,	315),
 						TITLE 	=> array(2, 'claim54',		'i_54',			$LANG_SETTINGS['inv_fields']['TITLE'], 	54, 'електричний конденсатор', 		0, left,	316),
@@ -500,9 +500,9 @@
 						NPRIOR 	=> array(2, 'convent',		'inputNumber',	$LANG_SETTINGS['inv_fields']['NPRIOR'],	31, '06254102.4', 					0, center,	408),
 						DPRIOR 	=> array(3, 'convent',		'appDate',		$LANG_SETTINGS['inv_fields']['DPRIOR'],	32, '04.08.2006', 					0, center,	409),
 						MPK 	=> array(2, 'claim51publ',	'ipc_string',	$LANG_SETTINGS['inv_fields']['MPK'], 	51, 'G01G 13/00', 					1, center,	410),
-						PCTN 	=> array(2, 'maininfo',		'pctnumber',	$LANG_SETTINGS['inv_fields']['PCTN'], 	86, 'PCT/CU02/00003',				0, center,	411),
-						PCTD 	=> array(3, 'maininfo',		'pctdate',		$LANG_SETTINGS['inv_fields']['PCTD'], 	86, '24.01.2003', 					0, center,	412),
-						ANALOG 	=> array(2, 'analog',		'text',			$LANG_SETTINGS['inv_fields']['ANALOG'], 56, 'SU 716711', 					1, left,	413),
+						//PCTN 	=> array(2, 'maininfo',		'pctnumber',	$LANG_SETTINGS['inv_fields']['PCTN'], 	86, 'PCT/CU02/00003',				0, center,	411),
+						//PCTD 	=> array(3, 'maininfo',		'pctdate',		$LANG_SETTINGS['inv_fields']['PCTD'], 	86, '24.01.2003', 					0, center,	412),
+						//ANALOG 	=> array(2, 'analog',	'text',			$LANG_SETTINGS['inv_fields']['ANALOG'], 56, 'SU 716711', 					1, left,	413),
 						INV 	=> array(2, 'claim72',		'name',			$LANG_SETTINGS['inv_fields']['INV'], 	72, 'Браз Давид Леонідович', 		0, left,	414),
 						PROP 	=> array(2, 'claim73',		'name',			$LANG_SETTINGS['inv_fields']['PROP'], 	73, 'ТОВАРИСТВО ОЛМА', 				0, left,	415),
 						TITLE 	=> array(2, 'claim54',		'i_54',			$LANG_SETTINGS['inv_fields']['TITLE'], 	54, 'бункерні ваги', 				0, left,	416),
@@ -525,7 +525,7 @@
 						ANALOG 	=> array(2, 'analog',		'text',			$LANG_SETTINGS['inv_fields']['ANALOG'], 56, 'AU 374037', 			1, left,	513),
 						INV 	=> array(2, 'claim72',		'name',			$LANG_SETTINGS['inv_fields']['INV'], 	72, 'Секей Шандор', 		0, left,	514),
 						PROP 	=> array(2, 'claim73',		'name',			$LANG_SETTINGS['inv_fields']['PROP'], 	73, 'Пустаі Ґабор', 		0, left,	515),
-						TITLE 	=> array(2, 'claim54',		'i_54',			$LANG_SETTINGS['inv_fields']['TITLE'], 	54, 'тепловий колектор', 	0, left,	516),
+						TITLE 	=> array(2, 'claim54',		'i_54',			$LANG_SETTINGS['inv_fields']['TITLEU'], 	54, 'тепловий колектор', 	0, left,	516),
 						),
 		// Відомості про видачу патентів України на промислові зразки
 		'pp' 	=> array(
@@ -552,7 +552,7 @@
 						AUTH 	=> array(2, 'claim720',		'name',			$LANG_SETTINGS['pp_fields']['AUTH'], 	72, 'Ендрю Хайнкл', 											0, left,	618),
 						PROP 	=> array(2, 'claim730',		'name',			$LANG_SETTINGS['pp_fields']['PROP'], 	73, 'Міхал Сінярскі', 											0, left,	619),
 						PATP 	=> array(2, 'claim740',		'name',			$LANG_SETTINGS['pp_fields']['PATP'], 	74, 'Собко Ніна Іванівна',				 						0, left,	620),
-						//ADDR 	=> array(2, 'claim980',		'name',			$LANG_SETTINGS['pp_fields']['ADDR'], 	98, 'Грановська',				 								0, left,	621),
+						ADDR 	=> array(2, 'claim980',		'name',			$LANG_SETTINGS['pp_fields']['ADDR'], 	98, 'Грановська',				 								0, left,	621),
 						),
 
 	

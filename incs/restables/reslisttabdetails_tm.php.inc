@@ -377,7 +377,7 @@
 							?>
 
 							<?
-								if ( !empty( $fullBiblio['i_230'] ) && $access )
+								if ( !empty( $fullBiblio['i_230'] ))
 								{
 							?>
 	

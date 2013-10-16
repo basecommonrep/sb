@@ -18,6 +18,7 @@ case
 end as [i_21],
 convert(varchar(20),c220.i_220,104) [i_22],
 convert(varchar(20),c230.exhibitionDate,104) [i_23],
+convert(varchar(20),c230.countrycode,104) [i_23_country],
 convert(varchar(20),c240.i_240,104) [i_24],
 c280.i_280 [i_28],
 cast(dbo.getClaim('convent','31',null,rc.idclaim) as text) [i_31],

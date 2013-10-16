@@ -346,6 +346,14 @@
 		unset($params_table_content['tm']['NUSSR']);
 		unset($params_table_content['tm']['DUSSR']);
 		unset($params_table_content['tm']['TUSSR']);
+		unset($params_table_content['tm']['APP']);
+		unset($params_table_content['tm']['ADDR']);
+		
+	}	
+
+	if ( $_POST['newsearchdbname'] == 'pp' ) {
+		unset($params_table_content['pp']['APP']);
+		unset($params_table_content['pp']['ADDR']);
 	}	
 	
 	if ( $_SESSION['addDbName'] == 'cert' && $_SESSION['lastSearchDbName'] == 'tm' && !$_SESSION['specialEnter'] )

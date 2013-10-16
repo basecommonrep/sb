@@ -1,4 +1,5 @@
 <?
+
 	include('.././searchBul/incs/xml.php.inc');
 	
 	$dictPrefix = 'inv_';
@@ -21,6 +22,7 @@
 		}
 	}
 	
+
 	$tagPrefix = 'i_';
 	if ( $currDbName == 'invu' || $currDbName == 'invdu' )
 		$tagPrefix = 'u_';	
