@@ -390,7 +390,7 @@ $str = '<font class="info2">-&nbsp;</font><a class="info2" href="search.php?acti
 if ( $currDbName == 'pp2' && $currAction == 'viewnotices' )
 	$str = '<font class="info2">-&nbsp;</font><font style="text-decoration:underline" class="info2">'.$LANG_SETTINGS['notice']['pp2'].'</font>';
 
-$s .= $str.'<BR>';
+//$s .= $str.'<BR>'; 
 //----------------
 
 $str = '<font class="info2">-&nbsp;</font><a class="info2" href="search.php?action=viewnotices&dbname=tm">'.$LANG_SETTINGS['notice']['tm'].'</a>';
@@ -405,7 +405,7 @@ $str = '<font class="info2">-&nbsp;</font><a class="info2" href="search.php?acti
 if ( $currDbName == 'tm2' && $currAction == 'viewnotices' )
 	$str = '<font class="info2">-&nbsp;</font><font style="text-decoration:underline" class="info2">'.$LANG_SETTINGS['notice']['tm2'].'</font>';
 
-$s .= $str.'<BR>';
+//$s .= $str.'<BR>'; //закоменчено ввиду изм пор€дка актуализации, смены е–еестра, доработки по рез тестир за год
 //----------------
 
 
