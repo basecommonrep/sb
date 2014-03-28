@@ -58,17 +58,17 @@ For the receipt of dictionary on the field, push the button of "Dictionary" in a
 <p><a name="request"><b><font style="text-decoration: underline" class="help">Request Form</font></b></p>
 <p style="TEXT-ALIGN: justify">
 <font class="help">
-The checkbox "Search in found" allows to conduct the search in the found great number of results. Use the checkbox "Search in found" for clarification of search result.<br>
-General syntax of searching query:<br><br>
+The checkbox “Search in results” allows searching in the numerous retrieved results. Use this checkbox to refine search results.<br>
+General syntax of the search query:<br><br>
 &lt;expression1&gt; [&lt;BO1&gt;] &lt;expression2&gt; [&lt;BO2&gt;] ... [&lt;BO (N-1)&gt;] &lt;expressionN&gt;<br><br>
 Boolean operators (BO): AND, OR, NOT, AND NOT, OR NOT.<br><br>
-The fields for the search divide into types: date, character set and integer number.<br><br>
+The search fields are divided into several types, i.e. date, character, or integer number.<br><br>
 <b><font class="help">Date:</font></b><br>
-A date is specified in a format: dd.mm.yyyy, dd - day, mm - month, yyyy - year.<br>
-If a day or month consists of one number, it is necessary to write a zero before a number.<br>
-Special characters: <  > = <= >= <> ()<br>
-If before a date the special character is not indicated, it is considered, that it is a character =.<br>
-The dates parted by spacebar are considered connected by a boolean operator AND.<br><br>
+Date is specified in the following format – dd.mm.yyyy, where dd – day, mm – month, and yyyy – year.<br>
+If a day or a month consists of one digit, it has to be preceded by zero.<br>
+Wildcards: <  > = <= >= <> ()<br>
+If there is no wildcard indicated before the date, it is considered to be “=”.<br>
+Dates, separated by spaces, are considered to be linked by the Boolean operator “AND”.<br><br>
 
 Examples of query:<br>
 11.12.2004<br>
@@ -80,9 +80,9 @@ Examples of query:<br>
 <b><font class="help">Integer number:</font></b><br>
 
 It is allowed to enter an integer number.<br>
-Special characters: < > = <= >= <> ()<br>
-If before a number the special character is not indicated, it is considered, that it is a character =.<br>
-The numbers parted by spacebar are considered connected by a boolean operator AND.<br><br>
+Wildcards: < > = <= >= <> ()<br>
+If there is no Wildcard indicated before the date, it is considered to be “=”.<br>
+Numbers, separated by spaces, are considered to be linked by the Boolean operator “AND”.<br><br>
 
 Examples of query:<br>
 12000<br>
@@ -93,16 +93,16 @@ Examples of query:<br>
 
 <b><font class="help">Character set:</font></b><br>
 
-It is allowed to use the characters of the Ukrainian, Russian, English alphabet, integer number.<br>
-The register of characters of value has not.<br>
-The words parted by spacebar are considered connected by a boolean operator AND.<br><br>
+It is allowed to use characters of the Ukrainian, Russian, and English alphabets, and integer numbers.<br>
+Case does not matter.<br>
+Words, separated by spaces, are considered to be linked by the Boolean operator “AND”.<br><br>
 
-Special characters: * ? " ().<br>
-* replaces one and more characters<br>
+Wildcards: * ? " ().<br>
+* replaces one or more characters<br>
 ? replaces one character<br>
-"..." used for the search word set<br><br>
+"..." is used to search the exact match<br><br>
 
-If before the character value the special character is not indicated, it is considered, that it is a character =.<br><br>
+If there is no wildcard indicated before the character, it is considered to be “=”.<br><br>
 
 Examples of query:<br>
 êè¿âñüêèé ïîë³òåõí³÷íèé ³íñòèòóò<br>
@@ -118,10 +118,11 @@ Adamovych Volodymyr Ivanovych
 <p><a name="results"><b><font style="text-decoration: underline" class="help">Search Results</font></b></p>
 <p style="TEXT-ALIGN: justify">
 <font class="help">
-The results of search are given as table.<br>
-Every record in table contains brief bibliographic data of the document. <br>
-In the case of a plenty of records, that it was found, they divided into pages. The amount of records on one page is set through the parameter of "Records on a page" in a section "Serach Parameters". For moving between pages use an overhead and lower navigation line. For the receipt of complete bibliographic data of the document, press on him.<br>
-Marking or taking off mark from records in a column "Basket", you you determine, what documents will be plugged in to the basket. A basket can be caused, if to push the button with the image of basket.
+Search results are shown in table form.<br>
+Each record in the table contains brief bibliographic data of the document.<br>
+In case of the numerous found records they are divided into pages. Number of records on one page is set using the parameter “Entries per page”. To jump through pages, use the top or bottom navigation bar. To retrieve the complete bibliographic data of a document, click on “details”.<br>
+Items can be put into or removed from the basket by marking or unmarking the appropriate checkbox in the “Basket” column.<br>
+When looking through the details of the bibliographic data, you can view quickly the bibliography of the previous (“previous” link) or the following (“next” link) title of protection.<br>
 </font><br>
 </p>
 
@@ -129,17 +130,21 @@ Marking or taking off mark from records in a column "Basket", you you determine,
 <p><a name="basket"><b><font style="text-decoration: underline" class="help">Basket</font></b></p>
 <p style="TEXT-ALIGN: justify">
 <font class="help">
-In this window those results of search, which were plugged in a basket on a page the "Search Results", hatch only.<br>
-If to press on a record, you you will get complete bibliographic data of protective to the document.<br>
-For deleting documents from a basket are select, note the proper records in a column to "Delete" and push the button to "Delete from a basket".
+This window shows only those search results, which were put into the basket via the “Search results” page.<br>
+Clicking on a record will show the complete bibliographic data of the title of protection.<br>
+Click “delete” to remove the document from the basket.<br>
+To remove all the documents from the basket, click “empty basket”.
 </font><br>
 </p>
 
 <p><a name="dict"><b><font style="text-decoration: underline" class="help">Dictionary</font></b></p>
 <p style="TEXT-ALIGN: justify">
 <font class="help">
-A dictionary contains the all possible values of the set field, that is in a data-base. For every value how many are indicated one time it meets in a data-base.
-For the search of values in a dictionary, use the button to "Attach a filter".
+Dictionary contains all the possible values of the specified field, which are currently in the database.<br>
+There is a counter for each value to indicate the number of times it is encountered in the database.<br>
+After clicking on any field value, it is entered in the search field automatically, and the dictionary closes.<br>
+To search values in the dictionary, use the “Search” button and “Field value” field.<br>
+The link “view all values of the field” is used to restore the initial set of values after the search.<br>
 </font>
 </p>
 
