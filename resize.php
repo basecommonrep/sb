@@ -1,5 +1,6 @@
 <?php 
 
+// test comment my new
 include('incs/config.inc');
 
 $dbn = $_GET['dbn'];

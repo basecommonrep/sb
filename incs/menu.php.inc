@@ -384,30 +384,28 @@ if ( $currDbName == 'pp' && $currAction == 'viewnotices' )
 	$str = '<font class="info2">-&nbsp;</font><font style="text-decoration:underline" class="info2">'.$LANG_SETTINGS['notice']['pp'].'</font>';
 
 $s .= $str.'<BR>';
-
-
 //----------------notices pp2 -test
-$str = '';
-//$str = '<font class="info2">-&nbsp;</font><a class="info2" href="search.php?action=viewnotices&dbname=pp2">'.$LANG_SETTINGS['notice']['pp2'].'</a>';
-//if ( $currDbName == 'pp2' && $currAction == 'viewnotices' )
-//	$str = '<font class="info2">-&nbsp;</font><font style="text-decoration:underline" class="info2">'.$LANG_SETTINGS['notice']['pp2'].'</font>';
 
-//$s .= $str.'<BR>';
+$str = '<font class="info2">-&nbsp;</font><a class="info2" href="search.php?action=viewnotices&dbname=pp2">'.$LANG_SETTINGS['notice']['pp2'].'</a>';
+if ( $currDbName == 'pp2' && $currAction == 'viewnotices' )
+	$str = '<font class="info2">-&nbsp;</font><font style="text-decoration:underline" class="info2">'.$LANG_SETTINGS['notice']['pp2'].'</font>';
+
+//$s .= $str.'<BR>'; 
 //----------------
 
-//$str = '<font class="info2">-&nbsp;</font><a class="info2" href="search.php?action=viewnotices&dbname=tm">'.$LANG_SETTINGS['notice']['tm'].'</a>';
-//if ( $currDbName == 'tm' && $currAction == 'viewnotices' )
-//	$str = '<font class="info2">-&nbsp;</font><font style="text-decoration:underline" class="info2">'.$LANG_SETTINGS['notice']['tm'].'</font>';
+$str = '<font class="info2">-&nbsp;</font><a class="info2" href="search.php?action=viewnotices&dbname=tm">'.$LANG_SETTINGS['notice']['tm'].'</a>';
+if ( $currDbName == 'tm' && $currAction == 'viewnotices' )
+	$str = '<font class="info2">-&nbsp;</font><font style="text-decoration:underline" class="info2">'.$LANG_SETTINGS['notice']['tm'].'</font>';
 
-//$s .= $str.'<BR>';
+$s .= $str.'<BR>';
 
 //----------------notices tm2 -test
-$str = '';
-//$str = '<font class="info2">-&nbsp;</font><a class="info2" href="search.php?action=viewnotices&dbname=tm2">'.$LANG_SETTINGS['notice']['tm2'].'</a>';
-//if ( $currDbName == 'tm2' && $currAction == 'viewnotices' )
-//	$str = '<font class="info2">-&nbsp;</font><font style="text-decoration:underline" class="info2">'.$LANG_SETTINGS['notice']['tm2'].'</font>';
 
-//$s .= $str.'<BR>';
+$str = '<font class="info2">-&nbsp;</font><a class="info2" href="search.php?action=viewnotices&dbname=tm2">'.$LANG_SETTINGS['notice']['tm2'].'</a>';
+if ( $currDbName == 'tm2' && $currAction == 'viewnotices' )
+	$str = '<font class="info2">-&nbsp;</font><font style="text-decoration:underline" class="info2">'.$LANG_SETTINGS['notice']['tm2'].'</font>';
+
+//$s .= $str.'<BR>'; //закоменчено ввиду изм пор€дка актуализации, смены е–еестра, доработки по рез тестир за год
 //----------------
 
 
