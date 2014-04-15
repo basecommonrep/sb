@@ -495,8 +495,8 @@
 					*/
 				}
 				
-				if ( $currDbName == 'wkm' && !empty($addDbName))
-					$query = str_replace('order by', " where m.wheretopublish = 'both' order by", $query);
+				//if ( $currDbName == 'wkm' && !empty($addDbName))
+				//	$query = str_replace('order by', " where m.wheretopublish = 'both' order by", $query);
 	
 				//print($query.'<br>');
 				//print($lastSearchQuery.'<br>');

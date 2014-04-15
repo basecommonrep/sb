@@ -598,9 +598,9 @@
 		// Â³äîìîñò³ ïğî äîáğå â³äîì³ çíàêè â Óêğà¿í³
 		'wkm' 	=> array(
 						NBUL 	=> array(2, 'ref_bulletins',	'bullstr',			$LANG_SETTINGS['wkm_fields']['NBUL'], 	0, '15/2006', 										0, center,	901),
-						NDD 	=> array(3, 'mark',				'decisionDate',		$LANG_SETTINGS['wkm_fields']['NDD'], 	0, '14.11.2007', 									0, center,	902),
-						NDDD	=> array(3, 'mark',				'orderDate',		$LANG_SETTINGS['wkm_fields']['NDDD'], 	0, '18.02.2008', 									0, center,	903),
-						NDDN	=> array(2, 'mark',				'orderNumber',		$LANG_SETTINGS['wkm_fields']['NDDN'], 	0, '19', 											0, center,	904),
+						NDD 	=> array(3, 'mark',				'decisionDate',		$LANG_SETTINGS['wkm_fields']['D'], 		0, '14.11.2007', 									0, center,	902),
+//						NDDD	=> array(3, 'mark',				'orderDate',		$LANG_SETTINGS['wkm_fields']['NDDD'], 	0, '18.02.2008', 									0, center,	903),
+//						NDDN	=> array(2, 'mark',				'orderNumber',		$LANG_SETTINGS['wkm_fields']['NDDN'], 	0, '19', 											0, center,	904),
 						DWKM 	=> array(3, 'mark',				'rightsDate',		$LANG_SETTINGS['wkm_fields']['DWKM'], 	0, '01.01.2006', 									0, center,	905),
 						PUBL 	=> array(3, 'ref_bulletins',	'bulletindate',		$LANG_SETTINGS['wkm_fields']['PUBL'], 	0, '26.11.2007', 									0, center,	906),
 						PROP 	=> array(2, 'markOwners',		'ownerName',		$LANG_SETTINGS['wkm_fields']['PROP'], 	0, '×åğíÿê', 										0, left,	907),
@@ -608,6 +608,7 @@
 //						NICE 	=> array(1, 'markProducts',		'classNumber',		$LANG_SETTINGS['wkm_fields']['NICE'], 	0, '16 '.$LANG_SETTINGS['logical']['and'].' 35', 	1, center,	909),
 						NICE 	=> array(1, 'markclasses',		'classNumber',		$LANG_SETTINGS['wkm_fields']['NICE'], 	0, '16 '.$LANG_SETTINGS['logical']['and'].' 35', 	1, center,	910),
 						MARK	=> array(2, 'mark',				'keyWords',			$LANG_SETTINGS['wkm_fields']['KEYW'], 	0, 'infocom', 										0, left,	911),
+						TYPE	=> array(2, 'v_mark',			'publish_type',		$LANG_SETTINGS['wkm_fields']['TYPE'], 	0, 'çà ğ³øåííÿì ñóäó',								0, left,	912),
 						),
 
 		'geo'  => array(
