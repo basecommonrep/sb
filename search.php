@@ -18,7 +18,7 @@
 	}
 
 	$isFirst = false;
-	$access = array('certtm', 'certpp', 'appinvc', 'certwkm', 'certmadridall', 'apptmc');
+	$access = array('certtm', 'certpp', 'appinvc', 'certwkm', 'certmadridall', 'apptmc', 'reestrtm', 'reestrpp');
 	// ===========================================================
 	// ÓÄÀËÅÍÈÅ ÑÅÑÑÈÎÍÍÎÉ ÈÍÔÛ "ÎÑÒÀÂØÅÉÑß" ÎÒ ²ÄÑ "ÒÌ" ÈËÈ MKTP9
 	// ===========================================================
@@ -243,7 +243,7 @@
 		{
 			session_register( 'addDbName' );
 			
-			//$access = array('reestrtm', 'reestrpp', 'certtm', 'certpp', 'appinvc');
+			$access = array('reestrtm', 'reestrpp', 'certtm', 'certpp', 'appinvc');
 			
 			$_SESSION['basketIds'] += array( 'madridall' => array() );
 			
@@ -281,7 +281,8 @@
 			session_register( 'bulStartedSession' );
 			$_SESSION['bulStartedSession'] = 'on';
 		}
-		
+
+	
 		session_register( 'specialEnter' );
 		$_SESSION['specialEnter'] = false;
 		if ( $_GET['special'] == '54321' ) 
