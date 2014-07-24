@@ -241,9 +241,12 @@
 
 		if ( !empty($_GET['dbname']) ) 
 		{
+			
+			
+			
 			session_register( 'addDbName' );
 			
-			$access = array('reestrtm', 'reestrpp', 'certtm', 'certpp', 'appinvc');
+			//$access = array('reestrtm', 'reestrpp', 'certtm', 'certpp', 'appinvc');
 			
 			$_SESSION['basketIds'] += array( 'madridall' => array() );
 			
@@ -269,6 +272,9 @@
 				$n = substr($_GET['dbname'], 3, 4);
 				$c = 'app';
 			}
+
+			
+			
 			
 			if ( !empty($c) )
 			{
