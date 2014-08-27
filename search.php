@@ -349,14 +349,15 @@
 	// ================================================================================================================
 	// ÓÁÈĞÀÅÌ ÈÇ ÏÎÈÑÊÎÂÛÕ ÏÎËÅÉ ÄËß ÒÌ ÍÅÊÎÒÎĞÛÅ ÏÎËß, ÓÁÈĞÀÅÌ ÈÇ ÑÏÈÑÊÀ ÈÑÒÎ×ÍÈÊÎÂ ÄËß ÏÎÈÑÊÀ ÁŞËÅÒÅÍß ÍÅÍÓÆÍÛÅ ÏÎËß
 	// ================================================================================================================
+	
 	if ( $_POST['newsearchdbname'] == 'tm' ) {
 		unset($params_table_content['tm']['NUSSR']);
 		unset($params_table_content['tm']['DUSSR']);
 		unset($params_table_content['tm']['TUSSR']);
 		unset($params_table_content['tm']['APP']);
 		unset($params_table_content['tm']['ADDR']);
-		
 	}	
+	
 
 	if ( $_POST['newsearchdbname'] == 'pp' ) {
 		unset($params_table_content['pp']['APP']);
@@ -368,7 +369,7 @@
 		unset($params_table_content['tm']['VIENNA']);
 		unset($params_table_content['tm']['KEYW']);
 		unset($params_table_content['tm']['ADDR']);
-		unset($params_table_content['tm']['PROP']);
+		unset($params_table_content['tm']['APP']);
 	}
 	elseif ( empty($_SESSION['addDbName']) )
 	{
@@ -377,6 +378,7 @@
 		$db_names = $GLOBALS['db_names'];
 		$db_names_codes = array_keys($db_names);		
 	}
+	
 	// ================================================
 	// ================================================
 	// ================================================

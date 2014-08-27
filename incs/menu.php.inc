@@ -540,37 +540,7 @@ else
 		</td>
 	</tr>
 
-	<?
-	if (!empty($_SESSION['addDbName']) && $currDbName == 'tm' && !$_SESSION['specialEnter'] )
-	{
-	?>
-	<tr>
-		<td height="10"><img src="images/spacer.gif" width="1" height="10"></td>
-	</tr>
-	<tr>
-		<td>
-		<table width="90%" border="0" cellspacing="7" cellpadding="0">
-		<tr>
-			<td>
-			<font class="info" style="color: firebrick; text-align: justify">
-						<!--
-						<b class="info" style="color: firebrick;">Увага!</b><BR>
-						Згідно з розпорядженням Державного департаменту інтелектуальної власності № 111 від 31 грудня 2008 року, у базі даних 
-						&quot;Зареєстровані в Україні знаки для товарів і послуг&quot; виключені із множини раніше установлених критеріїв пошуку наступні поля:
-						&quot;віденська класифікація&quot;, &quot;ключові слова&quot;, &quot;власник&quot;, &quot;адресат&quot;.<BR>
-						За вилученими критеріями пошук відповідних відомостей можна здійснювати в &quot;БД Електронна версія акумулятивного офіційного бюлетеня &quot;Промислова власність&quot;
-						-->
-						<b class="info" style="color: firebrick;">Увага!</b><BR>
-						Пошук за додатковими критеріями, зокрема, за критеріями: "віденська класифікація", "ключові слова" тощо можна здійснювати в <a href="/searchbul/" style="color: firebrick;">БД &quot;Електронна версія акумулятивного офіційного бюлетеня &quot;Промислова власність&quot;</a>
-					</font>		
-			</td>
-		</tr>
-		</table>
-		</td>
-	</tr>
-	<?
-	}
-	?>
+
 
 	</table>
 	</td>
