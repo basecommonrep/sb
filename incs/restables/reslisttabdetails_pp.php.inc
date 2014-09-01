@@ -25,6 +25,17 @@
 	{
 	 	$statusImg = 'images/red.gif';	
 		$statusStr = $LANG_SETTINGS['pp_fields']['patentoff'];
+		
+		$date_fi_14 = new DateTime($fullBiblio['i_14']);
+		$date_end = new DateTime($fullBiblio['i_14']);
+		$date_end->modify('+6 month');
+		$date_now = new DateTime;
+
+			if ( ( strstr($fullBiblio['status'], 'Припинення дії патенту у разі несплати річного збору') ) && (($date_now >= $date_fi_14) && ($date_now < $date_end)) )
+			{
+				$statusImg = 'images/yellow.gif';
+				$statusStr = $LANG_SETTINGS['pp_fields']['patentoff_6m'];
+			}
 	}
 
 	if ( !empty($fullBiblio) )

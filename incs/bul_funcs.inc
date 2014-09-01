@@ -481,6 +481,8 @@ function castSearchValuesToSqlFormat($dbn, &$parsedValues, $isDict)
 		$parsedValues[$fname] = $newFieldElements;
 
 	} // end while
+	if ((count ($parsedValues[DAUSSR]) > 0) && ((count ($parsedValues[TUSSR]) == 0) && (count ($parsedValues[TUSSR]) == 0)))
+		$parsedValues[DAUSSR][0] = '('.$parsedValues[DAUSSR][0].') and t_DAUSSR.i_200n <> \'*\'';
 	
 } // end castSearchValuesToSqlFormat
 
