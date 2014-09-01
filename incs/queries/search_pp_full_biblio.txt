@@ -43,7 +43,8 @@ cast(dbo.getClaim('app',null,0,rc.idclaim) as text) [i_71],
 cast(dbo.getClaim('inv',null,0,rc.idclaim) as text) [i_72],
 cast(dbo.getClaim('prop',null,1,rc.idclaim) as text) [i_73],
 cast(dbo.getClaim('patpovir',null,0,rc.idclaim) as text) [i_74],
-cast(dbo.getClaim('addressat',null,1,rc.idclaim) as text) [i_98]
+cast(dbo.getClaim('addressat',null,1,rc.idclaim) as text) [i_98],
+rc.State [status]
 from ref_claims rc
 left  join claim100 c100 on c100.idclaim=rc.idclaim
 inner join claim111 c111 on c111.idclaim=rc.idclaim

@@ -10,7 +10,8 @@ cast(dbo.getClaim('mkpz',null,null,rc.idclaim) as text) [fi_51],
 c540.i_540 [fi_54],
 cast(dbo.getClaim('variants',null,null,rc.idclaim) as text) [fi_55],
 cast(dbo.getClaim('inv',null,0,rc.idclaim) as text) [fi_72],
-cast(dbo.getClaim('prop',null,0,rc.idclaim) as text) [fi_73]
+cast(dbo.getClaim('prop',null,0,rc.idclaim) as text) [fi_73],
+rc.State [status]
 from ref_claims rc
 inner join claim111 c111 on c111.idclaim=rc.idclaim
 left  join claim141 c141 on c141.idclaim=rc.idclaim
