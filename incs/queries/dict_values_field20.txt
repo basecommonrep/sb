@@ -1,0 +1,7 @@
+select count(d.id)[entries], convert(varchar(20), d.valueDate, 104) [value] from dbo.dictionary d
+inner join dbo.Claim200 c200 on c200.i_200d=d.valueDate
+where (d.dictName = 'certpp' and d.fieldName = 'DAUSSR') and c200.I_200N <> '*'
+and 
+d.id in ($$$DICTIDS$$$)
+group by d.valueDate
+order by d.valueDate desc
