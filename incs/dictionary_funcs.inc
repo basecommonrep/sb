@@ -8,7 +8,10 @@ function buildGetDictIdsQuery($dbn, $fname, $currSearchDbsValuesParsed, $addDbNa
 	if ( empty( $currSearchDbsValuesParsed[$fname][0] ) && $currSearchDbsValuesParsed != 'all' )
 		return '';
 
-	$fpath = 'incs/queries/dict_ids.txt';
+	if (($addDbName.$dbn == 'certpp') && ($fname == 'DAUSSR'))
+	  $fpath = 'incs/queries/dict_ids_field20.txt';
+	else
+	  $fpath = 'incs/queries/dict_ids.txt';
 		
 	$handle = fopen($fpath, "r");
 	$query = fread($handle, filesize($fpath));
@@ -38,7 +41,10 @@ function buildGetDictIdsQuery($dbn, $fname, $currSearchDbsValuesParsed, $addDbNa
 	
 function buildGetDictValuesQuery($dbn, $fname, $ids, $addDbName)
 {
-	$fpath = 'incs/queries/dict_values.txt';
+	if (($addDbName.$dbn == 'certpp') && ($fname == 'DAUSSR'))
+	  $fpath = 'incs/queries/dict_values_field20.txt';
+	else
+	  $fpath = 'incs/queries/dict_values.txt';
 		
 	$handle = fopen($fpath, "r");
 	$query = fread($handle, filesize($fpath));
