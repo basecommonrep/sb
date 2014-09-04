@@ -26,7 +26,12 @@ function buildGetDictIdsQuery($dbn, $fname, $currSearchDbsValuesParsed, $addDbNa
 	$query = str_replace('$$$FIELDNAME$$$', $fname, $query);
 
 	if ( $currSearchDbsValuesParsed == 'all' )
-		$query = str_replace('$$$WHEREDICT$$$', '', $query);
+		{
+		if (($addDbName.$dbn == 'certpp') && ($fname == 'DAUSSR'))
+			$query = str_replace('$$$WHEREDICT$$$', 'and t_DAUSSR.I_200N <> \'*\'', $query);
+		else
+			$query = str_replace('$$$WHEREDICT$$$', '', $query);
+		}
 	else
 		$query = str_replace('$$$WHEREDICT$$$', ' and '.$currSearchDbsValuesParsed[$fname][0], $query);
 	
