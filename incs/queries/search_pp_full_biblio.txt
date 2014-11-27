@@ -1,6 +1,6 @@
 select rc.idClaim, 
 case
-	when c100.guardType is not null then c100.guardType+',&nbsp;'+c100.i_100
+	when c100.guardType is not null then c100.guardType+'&nbsp;'+c100.i_100
 	else null
 end as i_10,
 c111.i_111 [i_11], 

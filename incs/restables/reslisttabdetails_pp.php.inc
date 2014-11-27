@@ -16,8 +16,7 @@
 	}
 		
 	//$access = false;
-	
-	
+
 	
 	$statusImg = 'images/green.gif';
 	$statusStr = $LANG_SETTINGS['pp_fields']['patenton'];
@@ -31,12 +30,18 @@
 		$date_end->modify('+6 month');
 		$date_now = new DateTime;
 
-			if ( ( strstr($fullBiblio['status'], 'Припинення дії патенту у разі несплати річного збору') ) && (($date_now >= $date_fi_14) && ($date_now < $date_end)) )
+			if ( ( $fullBiblio['status'] == 'Нагадування про необхідність підтримання чинності патенту') && (($date_now >= $date_fi_14) && ($date_now < $date_end)) )
 			{
 				$statusImg = 'images/yellow.gif';
 				$statusStr = $LANG_SETTINGS['pp_fields']['patentoff_6m'];
 			}
 	}
+	
+	if ( $fullBiblio['status'] == 'Нагадування про необхідність підтримання чинності патенту')
+		{
+			$statusImg = 'images/yellow.gif';
+			$statusStr = $LANG_SETTINGS['pp_fields']['patentoff_6m'];
+		}
 
 	if ( !empty($fullBiblio) )
 	{
@@ -49,7 +54,7 @@
 		$fullBiblio['i_62'] = str_replace('###poper###', '<br>', $fullBiblio['i_62']);
 		$fullBiblio['i_66'] = str_replace('###poper###', '<br>', $fullBiblio['i_66']);
 		
-		$fullBiblio['i_51'] = str_replace('###mkpz###', ', ', $fullBiblio['i_51']);
+		$fullBiblio['i_51'] = str_replace('###mkpz###', ', ', $fullBiblio['i_51']); 
 		
 		$inid31arr = explode('###convent###', $fullBiblio['i_31']);
 		$inid32arr = explode('###convent###', $fullBiblio['i_32']);

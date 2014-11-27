@@ -44,11 +44,17 @@
 			$date_end->modify('+6 month');
 			$date_now = new DateTime;
 
-			if ( ( strstr($row['status'], 'Припинення дії патенту у разі несплати річного збору') ) && (($date_now >= $date_fi_14) && ($date_now < $date_end)) )
+			if ( ( $row['status'] == mb_convert_encoding('Нагадування про необхідність підтримання чинності патенту', "windows-1251", "utf-8"))  && (($date_now >= $date_fi_14) && ($date_now < $date_end)) )
 			{
 				$statusImg = 'images/yellow.gif';
 				$statusStr = $LANG_SETTINGS['pp_fields']['patentoff_6m'];
 			}
+		}
+
+		if ( $row['status'] == mb_convert_encoding('Нагадування про необхідність підтримання чинності патенту', "windows-1251", "utf-8"))
+		{
+			$statusImg = 'images/yellow.gif';
+			$statusStr = $LANG_SETTINGS['pp_fields']['patentoff_6m'];
 		}
 		
 		$bcs = $basket_check_str;
