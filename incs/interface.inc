@@ -608,7 +608,7 @@
 //						NICE 	=> array(1, 'markProducts',		'classNumber',		$LANG_SETTINGS['wkm_fields']['NICE'], 	0, '16 '.$LANG_SETTINGS['logical']['and'].' 35', 	1, center,	909),
 						NICE 	=> array(1, 'markclasses',		'classNumber',		$LANG_SETTINGS['wkm_fields']['NICE'], 	0, '16 '.$LANG_SETTINGS['logical']['and'].' 35', 	1, center,	910),
 						MARK	=> array(2, 'mark',				'keyWords',			$LANG_SETTINGS['wkm_fields']['KEYW'], 	0, 'infocom', 										0, left,	911),
-						TYPE	=> array(2, 'v_mark',			'publish_type',		$LANG_SETTINGS['wkm_fields']['TYPE'], 	0, 'çà ğ³øåííÿì ñóäó',								0, left,	912),
+						TYPE	=> array(2, 'v_mark',			'publish_type',		$LANG_SETTINGS['wkm_fields']['TYPE'], 	0, $LANG_SETTINGS['wkm_fields']['TYPE_NAME_COURT'],								0, left,	912),
 						),
 
 		'geo'  => array(

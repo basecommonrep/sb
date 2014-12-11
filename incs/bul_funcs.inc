@@ -78,7 +78,7 @@ function parseFieldsExpr($dbn, $currSearchDbsValues)
 		
 		$parsedValues += array( $fname => $fieldElements );
 	} // end while
-	
+//	print_r ($parsedValues);
 	return $parsedValues;
 } // end parseFieldsExpr
 
@@ -1185,6 +1185,7 @@ function saveAllNoticeToTemp($mssql)
 
 function getBulNumberList($dbn, $mssql, $addDbName)
 {
+	$LANG_SETTINGS = $GLOBALS['LANG_SETTINGS'];
 	$connSettings = $GLOBALS['connection'];
 	$currDbConnSettings = $connSettings[$dbn];
 	$database = $currDbConnSettings['dbname'];
@@ -1205,7 +1206,7 @@ function getBulNumberList($dbn, $mssql, $addDbName)
 	$i = 0;
 	if ( $dbn == 'wkm' )
 	{
-		$bulNumbers += array($i => '* [âñ³ áþëåòåí³]');
+		$bulNumbers += array($i => '* ['.$LANG_SETTINGS['interface']['CBALLBULL'].']');
 		$i++;
 	}
 		

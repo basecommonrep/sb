@@ -3,7 +3,7 @@
 
 		
 	// ===========================================================
-	// УДАЛЕНИЕ СЕССИОННОЙ ИНФЫ "ОСТАВШЕЙСЯ" ОТ ІДС "ТМ" ИЛИ MKTP9
+	// Ф?ЉО?Нї? Ч?ЧЧїЭННЭЕ їНСЯ "ЭЧУЉђ°?ЕЧ¤" ЭУ ??Ч "УЮ" їОї MKTP9
 	// ===========================================================
 	/*
 	if ( ( count($_GET) === 0 && count($_POST) === 0 && empty($_SESSION['bulStartedSession'])) || 
@@ -18,7 +18,7 @@
 
 
 	// ===========================================================================
-	// НАЧАЛЬНЫЕ УСТАНОВКИ, ЗАГРУЗКА ЯЗЫКА ИНТЕРФЕЙСА
+	// НЉДЉОєНЯ? ФЧУЉНЭђ†ї, ЂЉvЦФЂ†Љ ¤ЂЯ†Љ їНУ?ЦС?ЕЧЉ
 	// ===========================================================================
 	$langs = array( 'ukr', 'rus', 'eng' );
 	
@@ -46,7 +46,7 @@
 	$db_names_codes = array_keys($db_names);
 	
 	// ===========================================================
-	// СОЗДАНИЕ СЕССИОННЫХ ПЕРЕМЕННЫХ
+	// ЧЭЂ?ЉНї? Ч?ЧЧїЭННЯТ Њ?Ц?Ю?ННЯТ
 	// ===========================================================
 	//print_r($_SESSION);
 	
@@ -72,7 +72,7 @@
 	$lastSearchIds = $_SESSION['lastSearchIds'];			
 
 	// =================
-	// підключення до БД
+	// п?дключенн§ до љ?
 	// =================
 	$currConn = $connection[$db_names_codes[0]];
 	
@@ -109,8 +109,8 @@
 			
 			if ( empty( $errors ) )
 			{
-				// подставляем где нужно AND, перед операндами ставим равно, 
-				// укр-рус-анг логические операторы заменяем на англияские AND, OR, NOT
+				// подставл§ем где нужно AND, перед операндами ставим равно, 
+				// укр-рус-анг логические операторы замен§ем на англи§ские AND, OR, NOT
 				castSearchValuesToFormat($currDbName, $currSearchDbsValuesParsed);
 				
 				//print('<br><br>');
@@ -118,7 +118,7 @@
 				//print('<br><br>');
 				
 				
-				// подставляем имена переменных в таблицах mssql, 
+				// подставл§ем имена переменных в таблицах mssql, 
 				castSearchValuesToSqlFormat($currDbName, $currSearchDbsValuesParsed, true);
 				//print('======================================================================<br>');
 				//print('<br><br>');
@@ -145,11 +145,11 @@
 				if ( empty( $errors ) )
 					$currSearchIds =  executeGetDictIdsQuery($currDbName, $query, $mssql);
 					
-				// помилка при виконнанні запиту
+				// помилка при виконнанн? запиту
 				if ( empty( $errors ) && $currSearchIds == -1 )
 					$errors = $LANG_SETTINGS['errors']['header'].': '.$LANG_SETTINGS['errors']['req'];				
 				
-				// по запиту нічого не знайдено
+				// по запиту н?чого не знайдено
 				if ( empty( $errors ) && count($currSearchIds) === 0 )
 					$errors = $LANG_SETTINGS['errors']['nores'];					
 				
@@ -159,7 +159,7 @@
 			
 		case 'viewdict':
 			
-			// когда пришли на страничку со странички поиска бюллтня
+			// когда пришли на страничку со странички поиска бюллтн§
 			if ( $currAction != 'searchdict' && empty($currPage) )
 			{
 				$query = buildGetDictIdsQuery($currDbName, $currFieldName, 'all', $addDbName);
@@ -172,7 +172,7 @@
 				if ( $currSearchIds == -1 )
 					$errors = $LANG_SETTINGS['errors']['header'].': '.$LANG_SETTINGS['errors']['req'];				
 
-				// по запиту нічого не знайдено
+				// по запиту н?чого не знайдено
 				if ( empty( $errors ) && count($currSearchIds) === 0 )
 					$errors = $LANG_SETTINGS['errors']['nores'];					
 
@@ -207,10 +207,28 @@
 				$query = buildGetDictValuesQuery($currDbName, $currFieldName, $currSubSetSearchIds, $addDbName);
 				//print('<br><br>'.$query.'<br><br>');			
 				//exit;
+				//print ($currFieldName);
 				
 				$searchShortBiblioSet = executeGetDictValues($currDbName, $query, $mssql);
 				//print_r($searchShortBiblioSet);
+
 				//exit;
+
+
+
+				if ($currFieldName = 'TYPE')
+				{
+					for ($t=0; $t<count($searchShortBiblioSet); $t++)
+					{
+					
+					if ($searchShortBiblioSet[$t]['value'] == 'за рішенням суду')
+						$searchShortBiblioSet[$t]['value'] = $LANG_SETTINGS['wkm_fields']['TYPE_NAME_COURT'];
+					if ($searchShortBiblioSet[$t]['value'] == 'за рішенням апеляційної палати')
+						$searchShortBiblioSet[$t]['value'] = $LANG_SETTINGS['wkm_fields']['TYPE_NAME_AP'];
+					
+					}
+				}
+				
 				
 				$pageNumbersStr = getPageNumbersStr('viewdict', $currDbName, '', $pageCount, $currPage, $currFieldName);
 				
@@ -226,7 +244,7 @@
 	include('incs/sitetemplate.php.inc');
 	
 	// =================
-	// відключення від БД
+	// в?дключенн§ в?д љ?
 	// =================
 	$mssql->disconnection();
 	// =================

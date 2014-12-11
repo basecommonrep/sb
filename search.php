@@ -20,7 +20,7 @@
 	$isFirst = false;
 	$access = array('certtm', 'certpp', 'appinvc', 'certwkm', 'certmadridall', 'apptmc', 'reestrtm', 'reestrpp');
 	// ===========================================================
-	// ”ƒјЋ≈Ќ»≈ —≈——»ќЌЌќ… »Ќ‘џ "ќ—“ј¬Ў≈…—я" ќ“ ≤ƒ— "“ћ" »Ћ» MKTP9
+	// Ф?ЉО?Нї? Ч?ЧЧїЭННЭЕ їНСЯ "ЭЧУЉђ°?ЕЧ€" ЭУ ??Ч "УЮ" їОї MKTP9
 	// ===========================================================
 	if ( ( count($_GET) === 0 && count($_POST) === 0 ) || 
 		 ( count($_GET) === 1 && count($_POST) === 0 && in_array($_GET['dbname'], $access) ) ||
@@ -38,7 +38,7 @@
 	// ===========================================================================
 	
 	// ===========================================================================
-	// Ќј„јЋ№Ќџ≈ ”—“јЌќ¬ », «ј√–”« ј я«џ ј »Ќ“≈–‘≈…—ј
+	// НЉДЉОєНЯ? ФЧУЉНЭђ†ї, ЂЉvЦФЂ†Љ €ЂЯ†Љ їНУ?ЦС?ЕЧЉ
 	// ===========================================================================
 	$langs = array( 'ukr', 'rus', 'eng' );
 	
@@ -84,14 +84,14 @@
 	
 		
 	// ===========================================================
-	// —ќ«ƒјЌ»≈ —≈——»ќЌЌџ’ ѕ≈–≈ћ≈ЌЌџ’
+	// ЧЭЂ?ЉНї? Ч?ЧЧїЭННЯТ Њ?Ц?Ю?ННЯТ
 	// ===========================================================
 	
 	//if ( ( count($_GET) === 0 && count( $_POST ) === 0 ) || ( ( count($_GET) === 1 || ( count($_GET) === 2 && !empty($_GET['special']) )) && !empty($_GET['dbname']) && count($_POST) === 0 ) ) 
 	//if ( !empty($_GET['test']) )
 	if ( $isFirst )
 	{
-		// дл€ статистики
+		// дл§ статистики
 		// =============
 		session_register( 'statInfo' );
 		$_SESSION['statInfo'] = array(
@@ -108,7 +108,7 @@
 		// очистка временных файлов
 		ClearTempFiles('tempdocs', 24);
 
-		// дл€ словарика
+		// дл§ словарика
 		// =============
 		session_register( 'searchDictValue' );
 		$_SESSION['searchDictValue'] = '';
@@ -117,7 +117,7 @@
 		$_SESSION['lastSearchDictIds'] = array();
 		// =============
 		
-		// дл€ корзины
+		// дл§ корзины
 		// =============
 		session_register( 'basketIds' );
 		$_SESSION['basketIds'] = array();
@@ -130,7 +130,7 @@
 		// =============
 
 
-		// дл€ оптимизации детального просмотра библиографии
+		// дл§ оптимизации детального просмотра библиографии
 		// =============
 		session_register( 'viewedIds' );
 		$_SESSION['viewedIds'] = array();
@@ -196,7 +196,7 @@
 		session_register( 'lastInFound' );
 		$_SESSION['lastInFound'] = 0;
 		
-		// нужны дл€ оптимизации:
+		// нужны дл§ оптимизации:
 		// исключить необходимость при каждом переходе по закладкам деталей читать библиографию и копировать файлы
 
         //session_register( 'NReg' );
@@ -229,14 +229,14 @@
 		session_register( 'lastSearchQuery' );
 		$_SESSION['lastSearchQuery'] = '';
 		
-		// дл€ сортуванн€
+		// дл§ сортуванн§
 		// ==============
 		session_register( 'lastSortField' );
 		$_SESSION['lastSortField'] = '';
 		session_register( 'lastSortOrder' );
 		$_SESSION['lastSortOrder'] = '';
 		
-		// дл€ реЇстра та спец≥ал≥зованих Ѕƒ
+		// дл§ реѓстра та спец?ал?зованих љ?
 		// =============
 
 		if ( !empty($_GET['dbname']) ) 
@@ -252,7 +252,7 @@
 			
 			$_GET['dbname'] = (in_array($_GET['dbname'], $access)) ? $_GET['dbname'] : $access[0];
 			
-			// выдел€ем из certpp, certtm, reestrpp, reestrtm, appinvc -> tm, pp, invc
+			// выдел§ем из certpp, certtm, reestrpp, reestrtm, appinvc -> tm, pp, invc
 			$n = '';
 			$c = '';
 			if ( strstr($_GET['dbname'], 'cert') )
@@ -311,7 +311,7 @@
 
 
 	// =================
-	// п≥дключенн€ до Ѕƒ
+	// п?дключенн§ до љ?
 	// =================
 	$currConn = $connection[$db_names_codes[0]];
 	//print_r($currConn);
@@ -328,7 +328,7 @@
 	if ( $isFirst )
 	{
 		// =========================================================
-		// ‘≥ксуЇмо вх≥д в систему ≥снуючого та нового користувача
+		// С?ксуѓмо вх?д в систему ?снуючого та нового користувача
 		// =========================================================
 		//print('enter');
 		$idUser = doStatistics('createnewuser', null, $_SERVER['REMOTE_ADDR'], null, null, $mssql, null);
@@ -337,17 +337,17 @@
 		
 		if ( empty($addDbName) )
 		{
-			doStatistics('createnewaction', 'bul', null, $_SESSION['statInfo']['idUser'], 1, $mssql, null); // 1 - вх≥д в систему
+			doStatistics('createnewaction', 'bul', null, $_SESSION['statInfo']['idUser'], 1, $mssql, null); // 1 - вх?д в систему
 			//print('111');
 		}
 		else
-			doStatistics('createnewaction', $addDbName.$_SESSION['lastSearchDbName'], null, $_SESSION['statInfo']['idUser'], 1, $mssql, null); // 1 - вх≥д в систему
+			doStatistics('createnewaction', $addDbName.$_SESSION['lastSearchDbName'], null, $_SESSION['statInfo']['idUser'], 1, $mssql, null); // 1 - вх?д в систему
 		// =========================================================
 	} // end if $isFirst
 
 	
 	// ================================================================================================================
-	// ”Ѕ»–ј≈ћ »« ѕќ»— ќ¬џ’ ѕќЋ≈… ƒЋя “ћ Ќ≈ ќ“ќ–џ≈ ѕќЋя, ”Ѕ»–ј≈ћ »« —ѕ»— ј »—“ќ„Ќ» ќ¬ ƒЋя ѕќ»— ј ЅёЋ≈“≈Ќя Ќ≈Ќ”∆Ќџ≈ ѕќЋя
+	// ФљїЦЉ?Ю їЂ ЊЭїЧ†ЭђЯТ ЊЭО?Е ?О€ УЮ Н?†ЭУЭЦЯ? ЊЭО€, ФљїЦЉ?Ю їЂ ЧЊїЧ†Љ їЧУЭДНї†Эђ ?О€ ЊЭїЧ†Љ љЄО?У?Н€ Н?НФ?НЯ? ЊЭО€
 	// ================================================================================================================
 	
 	if ( $_POST['newsearchdbname'] == 'tm' ) {
@@ -436,7 +436,7 @@
 			$_SESSION['lastInFound'] = ( !empty( $_POST['newinfound'] ) ) ? 1 : 0;
 			$isInFound = $_SESSION['lastInFound'];
 			
-			// сортуванн€
+			// сортуванн§
 			$currSortOrderTable = $sortOrderTable[$currDbName];
 			$orderFields = array_keys($currSortOrderTable);
 			
@@ -460,7 +460,16 @@
 			$currSearchDbsValues = getSearchFieldsValues($currDbName, $_POST);
 			//print_r($currSearchDbsValues);
 			//print('<br><br>');
-
+			
+			if ( ($_SESSION['lastLang'] == 'rus') || ($_SESSION['lastLang'] == 'eng'));
+			{
+				$currSearchDbsValues['TYPE'] = str_replace($LANG_SETTINGS['wkm_fields']['TYPE_NAME_COURT'],'за р≥шенн€м суду',$currSearchDbsValues['TYPE']);
+				$currSearchDbsValues['TYPE'] = str_replace($LANG_SETTINGS['wkm_fields']['TYPE_NAME_AP'],'за р≥шенн€м јпел€ц≥йноњ палати',$currSearchDbsValues['TYPE']);
+			}
+			
+			//print('<br><br>');
+			//print_r($currSearchDbsValues);
+			
 			$currSearchDbsValuesParsed = parseFieldsExpr($currDbName, $currSearchDbsValues);
 			//print_r($currSearchDbsValuesParsed);
 			//print('<br><br>');
@@ -471,15 +480,15 @@
 			
 			if ( empty( $errors ) )
 			{
-				// подставл€ем где нужно AND, перед операндами ставим равно, 
-				// укр-рус-анг логические операторы замен€ем на англи€ские AND, OR, NOT
+				// подставл§ем где нужно AND, перед операндами ставим равно, 
+				// укр-рус-анг логические операторы замен§ем на англи§ские AND, OR, NOT
 				castSearchValuesToFormat($currDbName, $currSearchDbsValuesParsed);
 				//print('<br><br>');
 				//print_r($currSearchDbsValuesParsed);
 				//print('<br><br>');
 				//exit;
 				
-				// подставл€ем имена переменных в таблицах mssql, 
+				// подставл§ем имена переменных в таблицах mssql, 
 				castSearchValuesToSqlFormat($currDbName, $currSearchDbsValuesParsed, false);
 				//print('======================================================================<br>');
 				//print('<br><br>');
@@ -492,9 +501,9 @@
 
 				//print($query);
 				
-				// убираем ограничение, которое есть дл€ отображени€ раздела бюлетн€ "з€вки, прин€тые к рассмотрению", 
-				// но которого не должно быть дл€ Ѕƒ "¬едомости о з€вка на изобренеи€, которые прин€ты к расмотрению"
-				// кроме того делает возможным поиск за€вок, которые не имеют (41) даты публикации (за€вки ———–)
+				// убираем ограничение, которое есть дл§ отображени§ раздела бюлетн§ "з§вки, прин§тые к рассмотрению", 
+				// но которого не должно быть дл§ љ? "ђедомости о з§вка на изобренеи§, которые прин§ты к расмотрению"
+				// кроме того делает возможным поиск за§вок, которые не имеют (41) даты публикации (за§вки ЧЧЧЦ)
 				if ( $_SESSION['addDbName'] == 'app' && $_SESSION['lastSearchDbName'] == 'invc' )
 				{
 					$query = str_replace('where mi.i_11 is null', '', $query);
@@ -527,19 +536,19 @@
 				if ( empty( $errors ) )
 					$currSearchIds = executeGetIdsQuery($currDbName, $query, $mssql);
 					
-				// помилка при виконнанн≥ запиту
+				// помилка при виконнанн? запиту
 				if ( empty( $errors ) && $currSearchIds == -1 )
 					$errors = $LANG_SETTINGS['errors']['header'].': '.$LANG_SETTINGS['errors']['req'];				
 				
-				// по запиту н≥чого не знайдено
+				// по запиту н?чого не знайдено
 				if ( empty( $errors ) && count($currSearchIds) === 0 )
 					$errors = $LANG_SETTINGS['errors']['nores'];					
 				
 				if ( empty( $errors ) )
 				{
-					// дл€ статистики
+					// дл§ статистики
 					// =============
-					// 2 - усп≥шний пошук
+					// 2 - усп?шний пошук
 					if ( !empty( $addDbName ) )
 						$idDbAction = doStatistics('createnewaction', $addDbName.$currDbName, null, $_SESSION['statInfo']['idUser'], 2, $mssql, null); 
 					else
@@ -555,16 +564,16 @@
 				}
 				else
 				{
-					// дл€ статистики
+					// дл§ статистики
 					// =============
-					// 3 - неусп≥шний пошук
+					// 3 - неусп?шний пошук
 					if ( !empty( $addDbName ) )
 						$idDbAction = doStatistics('createnewaction', $addDbName.$currDbName, null, $_SESSION['statInfo']['idUser'], 3, $mssql, null); 
 					else
 						$idDbAction = doStatistics('createnewaction', 'bul', null, $_SESSION['statInfo']['idUser'], 3, $mssql, null); 
 				}
 				
-				// додаЇмо текст запиту до Ѕƒ
+				// додаѓмо текст запиту до љ?
 				doStatistics('createnewquery', $currDbName, null, null, $idDbAction, $mssql, $currSearchDbsValues);
 				
 			} // empty $errors
@@ -590,14 +599,14 @@
 				$_SESSION['lastSortField'] = $currSortField;
 				$_SESSION['lastSortOrder'] = $currSortOrder;
 				
-				// модиф≥куЇмо попередн≥й запит в≥дпов≥дно до нових критер≥њв			
+				// модиф?куѓмо попередн?й запит в?дпов?дно до нових критер?Ьв			
 				$query = $_SESSION['lastSearchQuery'];
 				$query = substr($query, 0, strrpos($query, 'order by'));
 				$query .= 'order by '.$currSortExpr.' '.$currSortOrder;
 				
 				//print($query.'<BR><BR>');
 				
-				// сортуЇмо за новими кр≥тер≥€ми
+				// сортуѓмо за новими кр?тер?§ми
 				$currSearchIds = executeGetIdsQuery($currDbName, $query, $mssql);
 
 				$_SESSION['lastSearchQuery'] = $query;
@@ -615,7 +624,7 @@
 				$currSearchClaimsPerPage = $_SESSION['lastSearchClaimsPerPage'];
 				$currBasketIds = $_SESSION['basketIds'][$currDbName];
 				
-				// сортуванн€
+				// сортуванн§
 				$currSortOrderTable = $sortOrderTable[$currDbName];
 				$orderFields = array_keys($currSortOrderTable);
 	
@@ -648,7 +657,7 @@
 				
 				$query = buildGetShortBiblioQuery($currDbName, $currSubSetSearchIds, '');
 				$query = str_replace('$$$ORDERCLAUSE$$$', 'order by '.$currSortExpr.' '.$currSortOrder, $query);
-				$query = str_replace('###pubtype###', $currDbName, $query); // тип публикации дл€ ћѕ 
+				$query = str_replace('###pubtype###', $currDbName, $query); // тип публикации дл§ ЮЊ†
 				//print('<br><br>'.$query.'<br><br>');			
 				//die;
 				
@@ -678,7 +687,7 @@
 
 			if ( $currDbName != 'official' )
 			{
-				// сортуванн€
+				// сортуванн§
 				$currSortOrderTable = $sortOrderTable[$currDbName];
 				$orderFields = array_keys($currSortOrderTable);
 	
@@ -732,7 +741,7 @@
 
 			if ( $currDbName != 'official' && empty($addDbName))
 			{
-				// получаем кол-во патентов/за€вок в разделе ћѕ 
+				// получаем кол-во патентов/за§вок в разделе ЮЊ†
 				if ( substr($currDbName, 0, 3) == 'inv' )
 				{
 					$invMPKItemCount = getInvMPKItemCount($currDbName, $currSecName, $currBulId, $currBulStr, $isIndexSec, $mssql, $currBulDate);
@@ -762,12 +771,12 @@
 			if ( ( $currSecName == 'notice' || !isset( $_GET['page'] ) || $_GET['from'] == 'details' ) )
 			{
 
-				// в том числе формируем запрос на получение спов≥щень
+				// в том числе формируем запрос на получение спов?щень
 				$query = buildGetIdsBulViewQuery($currDbName, $currSecName, $currBulId, $currBulStr, $isIndexSec, $addDbName, $currBulDate);
 				//print($query);
 		
-				// убираем ограничение, которое есть дл€ отображени€ раздела бюлетн€ "з€вки, прин€тые к рассмотрению", 
-				// но которого не должно быть дл€ Ѕƒ "¬едомости о з€вка на изобренеи€, которые прин€ты к расмотрению"
+				// убираем ограничение, которое есть дл§ отображени§ раздела бюлетн§ "з§вки, прин§тые к рассмотрению", 
+				// но которого не должно быть дл§ љ? "ђедомости о з§вка на изобренеи§, которые прин§ты к расмотрению"
 				if ( $_SESSION['addDbName'] == 'app' && $_SESSION['lastSearchDbName'] == 'invc' ) 
 					$query = str_replace('where mi.i_11 is null', '', $query);
 
@@ -828,7 +837,7 @@
 				{
 					$query = buildGetShortBiblioQuery($currDbName, $currSubSetSearchIds, $currSecName);
 					$query = str_replace('$$$ORDERCLAUSE$$$', 'order by '.$currSortExpr.' '.$currSortOrder, $query);
-					$query = str_replace('###pubtype###', $currDbName, $query); // тип публикации дл€ ћѕ 
+					$query = str_replace('###pubtype###', $currDbName, $query); // тип публикации дл§ ЮЊ†
 					$searchShortBiblioSet = executeGetShortBiblioQuery($currDbName, $query, $mssql);
 				}
 				else
@@ -885,7 +894,7 @@
 			//if ( $currFullBiblioChapter == 'biblio' || $currDbName == 'pp' )
 			{
 				$fullBiblioQuery = buildGetFullBiblioQuery($currDbName, $idClaim);
-				$fullBiblioQuery = str_replace('###pubtype###', $currDbName, $fullBiblioQuery); // тип публикации дл€ ћѕ 
+				$fullBiblioQuery = str_replace('###pubtype###', $currDbName, $fullBiblioQuery); // тип публикации дл§ ЮЊ†
 				//print($fullBiblioQuery);
 				$fullBiblio = executeGetFullBiblioQuery($currDbName, $fullBiblioQuery, $mssql);
 				//print_r($fullBiblio);
@@ -1023,7 +1032,7 @@
 			$currBulId = $_SESSION['lastViewBulNumb'];
 //print('<br><br>search.php(viewnotices) currBulId= '.$currBulId.'<br>');	
 
-if (empty($_POST['NReg']) && empty($_POST['PROP']))  //прищли от javaScipt (смена €зыка)
+if (empty($_POST['NReg']) && empty($_POST['PROP']))  //прищли от javaScipt (смена §зыка)
 { $NReg=$_GET['fname'];	
   $PROP=$_GET['chapter'];
 }
@@ -1055,7 +1064,7 @@ else //прищли от ввода данных на поиск
 			//print($currBulStr.'<BR>');	
 			if ( ($currDbName == 'tm2' ) || ($currDbName == 'pp2' ))
 			{
-				// в том числе формируем запрос на получение спов≥щень
+				// в том числе формируем запрос на получение спов?щень
 				if (($NReg=='') &&  ($PROP==''))
 				 $query = buildGetIdsBulViewQuery($currDbName, 'notice', $currBulId, $currBulStr, true, $addDbName, $currBulDate);
 				elseif ($NReg!='')
@@ -1081,7 +1090,7 @@ else //прищли от ввода данных на поиск
 			}
 			else if ( !( $currDbName == 'tm' || $currDbName == 'pp' || $currDbName == 'madrid') )
 			{
-				// в том числе формируем запрос на получение спов≥щень
+				// в том числе формируем запрос на получение спов?щень
 				$query = buildGetIdsBulViewQuery($currDbName, 'notice', $currBulId, $currBulStr, true, $addDbName, $currBulDate);
 				$currSearchIds = executeGetIdsBulViewQuery($currDbName, $query, true, 'notice', $mssql);
 				
@@ -1128,7 +1137,7 @@ else //прищли от ввода данных на поиск
 exit;		
 
 	// =================
-	// в≥дключенн€ в≥д Ѕƒ
+	// в?дключенн§ в?д љ?
 	// =================
 	$mssql->disconnection();
 	// =================
