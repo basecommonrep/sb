@@ -44,17 +44,23 @@
 			$date_end->modify('+6 month');
 			$date_now = new DateTime;
 
-			if ( ( $row['status'] == mb_convert_encoding('РќР°РіР°РґСѓРІР°РЅРЅСЏ РїСЂРѕ РЅРµРѕР±С…С–РґРЅС–СЃС‚СЊ РїС–РґС‚СЂРёРјР°РЅРЅСЏ С‡РёРЅРЅРѕСЃС‚С– РїР°С‚РµРЅС‚Сѓ', "windows-1251", "utf-8"))  && (($date_now >= $date_fi_14) && ($date_now < $date_end)) )
+			if ( ( $row['status'] == 'Нагадування про необхідність підтримання чинності патенту' )  && (($date_now >= $date_fi_14) && ($date_now < $date_end)) )
 			{
 				$statusImg = 'images/yellow.gif';
 				$statusStr = $LANG_SETTINGS['pp_fields']['patentoff_6m'];
 			}
 		}
 
-		if ( $row['status'] == mb_convert_encoding('РќР°РіР°РґСѓРІР°РЅРЅСЏ РїСЂРѕ РЅРµРѕР±С…С–РґРЅС–СЃС‚СЊ РїС–РґС‚СЂРёРјР°РЅРЅСЏ С‡РёРЅРЅРѕСЃС‚С– РїР°С‚РµРЅС‚Сѓ', "windows-1251", "utf-8"))
+		if ( $row['status'] == 'Нагадування про необхідність підтримання чинності патенту' )
 		{
 			$statusImg = 'images/yellow.gif';
 			$statusStr = $LANG_SETTINGS['pp_fields']['patentoff_6m'];
+		}
+		
+		if ( ( $row['status'] == 'Повідомлення про припинення дії патента у разі несплати збору') && (empty( $row['i_14'])) )
+		{
+			$statusImg = 'images/yellow.gif';
+			$statusStr = $LANG_SETTINGS['pp_fields']['attention'];
 		}
 		
 		$bcs = $basket_check_str;
