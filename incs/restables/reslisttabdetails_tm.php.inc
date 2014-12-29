@@ -442,7 +442,7 @@
 							?>
 
 							<?
-								if ( !empty( $fullBiblio['i_531'] ) && $access )
+					/*			if ( !empty( $fullBiblio['i_531'] ) && $access )
 								{
 							?>
 	
@@ -455,6 +455,7 @@
 	
 							<?
 								} // end if ( !empty( $fullBiblio['i_531'] ) )
+					*/
 							?>
 
 							<?
