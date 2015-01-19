@@ -621,6 +621,7 @@
 							<?
 							if ( $addDbName == 'reestr' )
 							{
+							/*
 							?>
 							<tr><td colspan=4 height="10"><img src="images/spacer.gif" height="10"></td></tr>						
 							<tr valign="top">
@@ -636,6 +637,7 @@
 								</td>
 							</tr>
 							<?
+							*/
 							} // end if addDbName
 							?>
 
@@ -659,6 +661,7 @@
 							<?
 							if ( $addDbName == 'reestr' )
 							{
+							/*
 							?>
 
 							<tr><td colspan=4 height="10"><img src="images/spacer.gif" height="10"></td></tr>						
@@ -676,6 +679,7 @@
 							</tr>
 
 							<?
+							/*
 							} // end if addDbName
 							?>
 
@@ -698,6 +702,7 @@
 							<?
 							if ( $addDbName == 'reestr' )
 							{
+							/*
 							?>
 
 							<tr><td colspan=4 height="10"><img src="images/spacer.gif" height="10"></td></tr>						
@@ -715,6 +720,7 @@
 							</tr>
 
 							<?
+							*/
 							} // end if addDbName
 							?>
 
@@ -760,6 +766,7 @@
 							<?
 							if ( $addDbName == 'reestr' )
 							{
+							/*
 							?>
 
 							<tr><td colspan=4 height="20"><img src="images/spacer.gif" height="20"></td></tr>						
@@ -930,6 +937,7 @@
 							</tr>
 							
 							<?
+							*/
 							} // end if !empty addDbName
 							?>
 	
