@@ -33,7 +33,8 @@
 	<table width="100%" border="0" cellspacing="0" cellpadding="0">
 
 <?
-	if ( !$printed )
+//===================================================================================================
+	if ( ( !$printed ) && (substr($addDbName, 0, 6) != 'reestr') )
 	{
 ?>
 
@@ -137,8 +138,90 @@ if (($currDbName=='tm2') || ($currDbName=='pp2'))
 	</table>
 </td>
 </tr>
+
 <?
-	} // printed
+	} // printed ====================================================
+	else {
+?>		
+	<tr>
+	<td bgcolor="#DBE6F0">
+	</td>
+	<td>
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" height="100">
+		<tr>
+			<td  align="right" bgcolor="#DBE6F0">
+			<table border="0" cellspacing="0" cellpadding="0" style="padding-top: 20px">
+			<tr>
+<?
+
+	$ca = $currAction;
+	if ($currAction == 'search' )
+		$ca = 'viewsearchres';
+
+	$langStr = "'$ca','$currPage','$currSecName','$cdbn','$currFullBiblioChapter','$currFieldName','{$_GET['from']}','".$currSortField."_".$currSortOrder."'";
+
+	if ( $_SESSION['lastLang'] == 'ukr' )
+	{
+?>
+
+		<td valign="bottom" width="44"><img src="images/b_uk_ov_12.gif" width="44" height="14" border="0"></td>
+
+<?
+	}
+	else
+	{
+?>	
+		<td valign="bottom" width="44"><a href="javascript:void(0);" onclick="javascript:setlang('ukr',<?=$langStr;?>); return false;"><img src="images/b_uk_12.gif" width="44" height="14" border="0"></a></td>
+
+<?
+	}
+	
+	if ( $_SESSION['lastLang'] == 'rus' )
+	{
+?>
+		<td valign="bottom" width="44"><img src="images/b_ru_ov_12.gif" width="44" height="14" border="0"></td>
+
+<?
+	}
+	else
+	{
+?>
+		<td valign="bottom" width="44"><a href="javascript:void(0);" onclick="javascript:setlang('rus',<?=$langStr;?>); return false;"><img src="images/b_ru_12.gif" width="44" height="14" border="0"></a></td>
+<?
+	}
+	
+	if ( $_SESSION['lastLang'] == 'eng' )
+	{
+?>
+		<td valign="bottom" width="44"><img src="images/b_en_ov_12.gif" width="44" height="14" border="0"></td>
+<?
+	}
+	else
+	{
+?>	
+		<td valign="bottom" width="44"><a href="javascript:void(0);" onclick="javascript:setlang('eng',<?=$langStr;?>); return false;"><img src="images/b_en_12.gif" width="44" height="14" border="0"></a></td>
+<?
+	}
+?>
+			</tr>
+			</table>
+			</td>
+		</tr>
+		<tr>
+			<td bgcolor="#DBE6F0" align="right">
+			<table>
+			<tr>
+				<td class="maintitle"><?=$ids_name;?></td>
+			</tr>
+			</table>
+			</td>
+		</tr>
+		</table>
+		</td>
+	
+	</tr>	
+<?		
+	} // ELSE PRINTED ====================================================
 ?>
 
 <tr>
