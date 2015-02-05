@@ -153,7 +153,7 @@ if (($currDbName=='tm2') || ($currDbName=='pp2'))
 			<table border="0" cellspacing="0" cellpadding="0" style="padding-top: 20px">
 			<tr>
 <?
-
+/* //-------------------- lang -------------
 	$ca = $currAction;
 	if ($currAction == 'search' )
 		$ca = 'viewsearchres';
@@ -202,6 +202,7 @@ if (($currDbName=='tm2') || ($currDbName=='pp2'))
 		<td valign="bottom" width="44"><a href="javascript:void(0);" onclick="javascript:setlang('eng',<?=$langStr;?>); return false;"><img src="images/b_en_12.gif" width="44" height="14" border="0"></a></td>
 <?
 	}
+*/  //-------------------- lang -------------
 ?>
 			</tr>
 			</table>
