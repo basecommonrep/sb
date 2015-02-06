@@ -167,11 +167,13 @@
 		$n = $currDbName;
 
 	$exclude_pp = array('NUSSR', 'TUSSR', 'NAUSSR', 'DAUSSR');
+	$exclude_reestrtm = array('KEYW', 'PROP');
 	
 	$i = 0;
 	while( list($key, $val) = each( $curr_db_params_table_content ) )
 	{
-		if ($currDbName == 'pp' && empty($addDbName) && in_array($key, $exclude_pp))
+
+		if ( ($currDbName == 'pp' && empty($addDbName) && in_array($key, $exclude_pp)) || ($addDbName == 'reestr' && substr($currDbName, 0, 2) == 'tm' && in_array($key, $exclude_reestrtm)) )
 			continue;
 		$i++;
 	
