@@ -191,28 +191,34 @@
 		<tr bgcolor="#c5d9eb">
 			<td style="PADDING-LEFT: 4px;" width=250 height=35><acronym title="<?=$ftitle;?>"><a href="search.php?action=viewhelp&dbname=<?=$n;?>&fname=<?=$key;?>" class="viennacat"><?=$inid;?><?=$ftitle_short;?></a></acronym></td>
 			<td width=3><img src="images/spacer.gif" height="1" width="3"></td>
-			<td width=16 align=center><a target=_blank  
-			<?
-			if (!$isUEFA && $currDbName != 'madridall' )
+			<td width=16 align=center>
+		<?
+			if($addDbName != 'reestr')
 			{
-			?>
-			href="dictionary.php?action=viewdict&dbname=<?=$currDbName;?>&fname=<?=$key;?>"
+		?>
+				<a target=_blank  
+				<?
+				if (!$isUEFA && $currDbName != 'madridall' )
+				{
+				?>
+				href="dictionary.php?action=viewdict&dbname=<?=$currDbName;?>&fname=<?=$key;?>"
+				<?
+				}
+				?>
+				
+				<?
+				if ( $currDbName != 'madridall' )
+				{
+				?>
+				class="viennacat"><img alt="<?=$LANG_SETTINGS['setfieldspage']['dict'];?>" vspace=2 width=16 height=15 src="images/dict3.gif" border=0></a>
+				<?
+				}
+				else
+				{
+				?>
+				<img vspace=2 width=16 height=1 src="images/spacer.gif" border=0>
 			<?
-			}
-			?>
-			
-			<?
-			if ( $currDbName != 'madridall' )
-			{
-			?>
-			class="viennacat"><img alt="<?=$LANG_SETTINGS['setfieldspage']['dict'];?>" vspace=2 width=16 height=15 src="images/dict3.gif" border=0></a>
-			<?
-			}
-			else
-			{
-			?>
-			<img vspace=2 width=16 height=1 src="images/spacer.gif" border=0>
-			<?
+				}
 			}
 			?>
 			</td>
