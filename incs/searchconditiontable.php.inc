@@ -173,7 +173,7 @@
 	while( list($key, $val) = each( $curr_db_params_table_content ) )
 	{
 
-		if ( ($currDbName == 'pp' && empty($addDbName) && in_array($key, $exclude_pp)) || ($addDbName == 'reestr' && substr($currDbName, 0, 2) == 'tm' && in_array($key, $exclude_reestrtm)) )
+		if ( ($currDbName == 'pp' && empty($addDbName) && in_array($key, $exclude_pp))  )  // условие для скрытия поисковых полей "Ключевые слова" и "Владелец" || ($addDbName == 'reestr' && substr($currDbName, 0, 2) == 'tm' && in_array($key, $exclude_reestrtm))
 			continue;
 		$i++;
 	
