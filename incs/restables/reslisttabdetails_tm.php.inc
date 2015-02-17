@@ -679,7 +679,7 @@
 							</tr>
 
 							<?
-							/*
+							*/
 							} // end if addDbName
 							?>
 
