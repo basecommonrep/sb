@@ -216,7 +216,7 @@
 
 
 
-				if ($currFieldName = 'TYPE')
+				if ($currFieldName == 'TYPE')
 				{
 					for ($t=0; $t<count($searchShortBiblioSet); $t++)
 					{
