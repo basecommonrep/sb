@@ -60,6 +60,11 @@
 		$publication = $LANG_SETTINGS['res']['publ'];
 		$publication = str_replace('%1', '<b>'.$fullBiblio['bulletinDate'].'</b>', $publication);		
 		$publication = str_replace('%2', '<b>'.$fullBiblio['bulletinNumber'].'</b>', $publication);		
+		
+		if ( !empty( $fullBiblio['i_556'] ) && $access )
+		{
+			SaveSoundToTemp($fullBiblio['idClaim']);
+		}
 
 	} // if ( !empty($fullBiblio) )
 	
@@ -516,6 +521,10 @@
 								<tr valign="top">
 									<td><font class="viennacatunder"><acronym title="<?=$LANG_SETTINGS['tm_details']['inid556'];?>">(556)</acronym></font></td>
 									<td colspan=3 valign="top"><font class="viennacat2"><?=$LANG_SETTINGS['tm_details']['inid556'];?></font></td>
+								</tr>
+								<tr valign="top">
+									<td><font class="viennacatunder"><acronym></acronym></font></td>
+									<td colspan=3 valign="top"><font class="viennacat2"><audio src="<?= 'tempdocs/'.$fullBiblio['idClaim'].'.wav'?>" controls></audio></font></td>
 								</tr>
 	
 							<?

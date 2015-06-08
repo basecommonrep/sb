@@ -325,4 +325,20 @@ function getDataByTagName($n, $tagName)
 	return $data;
 } // end function getDataByTagName
 
+
+function SaveSoundToTemp ($idClaim)
+{
+	if(file_exists("//10.10.18.4/SoundMarks/".$idClaim.".wav"))
+	{
+		$filename = "//10.10.18.4/SoundMarks/".$idClaim.".wav";
+		$handle = fopen($filename, "r");
+		$contents = fread($handle, filesize($filename));
+		fclose($handle);
+		
+		$fp = fopen('tempdocs/'.$idClaim.'.wav', 'w+');
+		fwrite($fp, $contents);
+		fclose($fp);
+	}
+}
+
 ?>
