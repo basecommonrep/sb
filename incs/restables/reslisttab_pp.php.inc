@@ -60,7 +60,7 @@
 		if ( ( $row['status'] == 'Повідомлення про припинення дії патента у разі несплати збору') && (empty( $row['i_14'])) )
 		{
 			$statusImg = 'images/yellow.gif';
-			$statusStr = $LANG_SETTINGS['pp_fields']['attention'];
+			$statusStr = $LANG_SETTINGS['pp_fields']['patentoff_6m'];
 		}
 		
 		$bcs = $basket_check_str;
