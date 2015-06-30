@@ -301,7 +301,6 @@
 	$lastSearchIds = $_SESSION['lastSearchIds'];
 	$currAction = ( !empty( $_GET['action'] ) && in_array( $_GET['action'], $actions ) ) ? $_GET['action'] : $actions[0];
 	$addDbName = $_SESSION['addDbName'];
-	
 	if ( !empty($addDbName) && $_GET['dbname'] != $_SESSION['lastSearchDbName'] )
 		$_GET['dbname'] = $_SESSION['lastSearchDbName'];
 	
@@ -349,8 +348,8 @@
 	// ================================================================================================================
 	// îΩªñº?û ª´ æùªó†ù¨üí æùé?Ö ?éˇ ìû ç?†ùìùñü? æùéˇ, îΩªñº?û ª´ óæªó†º ªóìùÑçª†ù¨ ?éˇ æùªó†º Ω∏é?ì?çˇ ç?çî?çü? æùéˇ
 	// ================================================================================================================
-	
-	if ( $_POST['newsearchdbname'] == 'tm' ) {
+//print($_SESSION['addDbName'].' - '.$_SESSION['lastSearchDbName'].' - '.$_POST['newsearchdbname']);	
+	if ( empty($_SESSION['addDbName']) && (( $_SESSION['lastSearchDbName'] == 'tm') || ($_POST['newsearchdbname'] == 'tm')) ) {
 		unset($params_table_content['tm']['NUSSR']);
 		unset($params_table_content['tm']['DUSSR']);
 		unset($params_table_content['tm']['TUSSR']);
@@ -359,9 +358,13 @@
 	}	
 	
 
-	if ( $_POST['newsearchdbname'] == 'pp' ) {
+	if ( empty($_SESSION['addDbName']) && (( $_SESSION['lastSearchDbName'] == 'pp') || ($_POST['newsearchdbname'] == 'pp')) ) {
 		unset($params_table_content['pp']['APP']);
 		unset($params_table_content['pp']['ADDR']);
+	}	
+	
+	if ( empty($_SESSION['addDbName']) && (( $_SESSION['lastSearchDbName'] == 'invdu') || ($_POST['newsearchdbname'] == 'invdu')) ) {
+		unset($params_table_content['invdu']['ANALOG']);
 	}	
 	
 	if ( $_SESSION['addDbName'] == 'cert' && $_SESSION['lastSearchDbName'] == 'tm' && !$_SESSION['specialEnter'] )
@@ -403,7 +406,7 @@
 		
 		case 'changedb':
 			saveFieldValues( $_SESSION['lastSearchDbName'], $_POST, $_SESSION['searchDbsValues'] );
-			
+		
 			if ( empty( $_GET['lang'] ) )
 			{
 				$_SESSION['lastSearchDbName'] = ( !empty( $_POST['newsearchdbname'] ) && in_array( $_POST['newsearchdbname'], $db_names_codes ) ) ? $_POST['newsearchdbname'] : $db_names_codes[0];
@@ -413,7 +416,7 @@
 			else
 				$_SESSION['lastSearchDbName'] = ( !empty( $_GET['dbname'] ) && in_array( $_GET['dbname'], $db_names_codes )	) ? $_GET['dbname'] : $db_names_codes[0];
 
-			
+		//	print('<br>'.$_SESSION['addDbName'].' - '.$_SESSION['lastSearchDbName'].' - '.$_POST['newsearchdbname']);	
 			$currDbName = $_SESSION['lastSearchDbName'];
 			
 			$currClaimsPerPage = $_SESSION['lastSearchClaimsPerPage'];
@@ -421,8 +424,7 @@
 			$currActualDate = $_SESSION['actualDates'][$currDbName];
 			$curr_db_params_table_content = $params_table_content[$currDbName];
 			$_SESSION['lastInFound'] = 0;
-			$currInFound = $_SESSION['lastInFound'];
-			
+			$currInFound = $_SESSION['lastInFound'];		
 			getFieldValues( $currDbName, $_POST, $_SESSION['searchDbsValues'] );
 
 			//$_SESSION['lastSearchQuery'] = '';
