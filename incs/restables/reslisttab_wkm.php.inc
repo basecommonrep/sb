@@ -33,6 +33,16 @@
 
 		if ( in_array($row['idMark'], $currBasketIds) )
 			$bcs = str_replace('###checked###', 'checked', $bcs);
+		
+		$courtcomments = $row['courtcomments'];
+		
+		if( ($_SESSION['lastLang'] == 'rus') && (!empty($row['courtcommentsRUS'])) )
+			$courtcomments = $row['courtcommentsRUS'];
+		
+		if( ($_SESSION['lastLang'] == 'eng') && (!empty($row['courtcommentsENG'])) )
+			$courtcomments = $row['courtcommentsENG'];
+			
+		
 ?>
 
 <tr>
@@ -77,7 +87,7 @@
 
 				<tr>
 					<td width=20><img height=1 width=20 src="images/spacer.gif"></td>
-					<td width=580><font class="viennacat2"><?= (!empty($row['courtcomments'])) ? $row['courtcomments'] : $desi;?></font></td>
+					<td width=580><font class="viennacat2"><?= (!empty($courtcomments)) ? $courtcomments : $desi;?></font></td>
 				</tr>
 
 				<tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>

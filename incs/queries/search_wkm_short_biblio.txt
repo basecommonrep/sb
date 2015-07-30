@@ -11,6 +11,8 @@ cast(dbo.getclaim('mktp', 0, m.idMark) as text) [fi_511],
 cast(dbo.getclaim('prop', 0, m.idMark) as text) [fi_72],
 m.markImage [image],
 m.courtcomments,
+m.courtcommentsRUS,
+m.courtcommentsENG,
 m.wheretopublish
 from mark m
 left join ref_bulletins rb on m.idBulletin=rb.idBulletin
