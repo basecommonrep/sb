@@ -273,9 +273,9 @@
 <?
 
 	if ( substr($currDbName, 0, 3) == 'inv' )
-		include("../searchBul/incs/restables/reslisttabdetails_allinv.php.inc");
+		include("./incs/restables/reslisttabdetails_allinv.php.inc");
 	else
-		include('../searchBul/incs/restables/reslisttabdetails_'.$n.'.php.inc');				
+		include('./incs/restables/reslisttabdetails_'.$n.'.php.inc');				
 ?>
 		</td> <!--конец td-->
 	</tr>

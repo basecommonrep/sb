@@ -118,10 +118,18 @@
 		<table width=100% border=0 cellspacing=0 cellpadding=0>
 		<tr>
 <?
-//	if ( substr($currDbName, 0, 6)
+ 	if ( substr($currDbName, 0, 3)=='tmc')
+	{
+?>
+			<td align=left width=250><font class="viennacat2"><?=(isDiskBul == 'no') ? $LANG_SETTINGS['interface']['actual2'].'&nbsp;'.$currActualDate.'&nbsp;'.$LANG_SETTINGS['interface']['actual2text'] : '&nbsp;';?></font></td>
+<?  
+    } 
+    else
+	{
 ?>
 			<td align=left width=250><font class="viennacat2"><?=(isDiskBul == 'no') ? $LANG_SETTINGS['interface']['actual2'].'&nbsp;'.$currActualDate : '&nbsp;';?></font></td>
 <?
+    }
 	if ( empty($addDbName) && !$isUEFA && isDiskBul == 'no' )
 	{
 ?>

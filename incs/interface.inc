@@ -409,6 +409,16 @@
 										'	where (###WHEREEXPR###) '.
 										') rc on rc.idPriorityClaim=t_parisd.idPriorityClaim'.
 								   		'###JOINQUERY### ',
+						
+						PARISC 	=> 'select distinct t_parisc.idClaim '.
+							   			'from claim310 t_parisc '.
+							   			'inner join ( '.
+							   			'select distinct c.idPriorityClaim '.
+										'	from ref_priorityClaims c '.
+										'	inner join ref_Country t_parisc on c.idCountry = t_parisc.idCountry '.
+										'	where (###WHEREEXPR###) '.
+										') rc on rc.idPriorityClaim=t_parisc.idPriorityClaim'.
+								   		'###JOINQUERY### ',
 
 
 						VIENNA 	=> 'select distinct t_vienna.idClaim '.
@@ -643,11 +653,14 @@
 						CVISTAV => array(2, 'claim230', 	'countryCode',	$LANG_SETTINGS['tm_fields']['CVISTAV'], 230, 'UA', 													0, center,	1204),
 						PARISN 	=> array(2, 'claim310',		'claimNumber', 	$LANG_SETTINGS['tm_fields']['PARISN'], 	310, 'm200613440', 											0, center,	1205),
 						PARISD 	=> array(3, 'claim310', 	'claimDate',	$LANG_SETTINGS['tm_fields']['PARISD'], 	320, '30.01.2004', 											0, center,	1206),
-						NICE 	=> array(1, 'claim510',		'classNumber',	$LANG_SETTINGS['tm_fields']['NICE'], 	511, '1 '.$LANG_SETTINGS['logical']['and'].' 3', 			1, center,	1207),
-						VIENNA 	=> array(2, 'claim546',		'vienClassStr',	$LANG_SETTINGS['tm_fields']['VIENNA'], 	531, '01.01.15',											1, center,	1208),
-						KEYW 	=> array(2, 'claim539',		'i_539',		$LANG_SETTINGS['tm_fields']['KEYW'], 	539, 'gold reserve', 										1, left,	1209),
-						COLORS 	=> array(2, 'claim591',		'color',		$LANG_SETTINGS['tm_fields']['COLORS'], 	591, 'червоний '.$LANG_SETTINGS['logical']['and'].' синій', 1, left,	1210),
-						APP 	=> array(2, 'claim731',		'name',			$LANG_SETTINGS['tm_fields']['APP'], 	731, 'завод ЛІТ', 											0, left,	1211),
+						PARISC 	=> array(2, 'claim310', 	'countryCode',	$LANG_SETTINGS['tm_fields']['PARISC'], 	330, 'UA', 													0, center,	1217),
+						NICE 	=> array(1, 'claim510',		'classNumber',	$LANG_SETTINGS['tm_fields']['NICE'], 	511, '1 '.$LANG_SETTINGS['logical']['and'].' 3', 			1, center,	1208),
+						VIENNA 	=> array(2, 'claim546',		'vienClassStr',	$LANG_SETTINGS['tm_fields']['VIENNA'], 	531, '01.01.15',											1, center,	1209),
+						KEYW 	=> array(2, 'claim539',		'i_539',		$LANG_SETTINGS['tm_fields']['KEYW'], 	539, 'gold reserve', 										1, left,	1210),
+						COLORS 	=> array(2, 'claim591',		'color',		$LANG_SETTINGS['tm_fields']['COLORS'], 	591, 'червоний '.$LANG_SETTINGS['logical']['and'].' синій', 1, left,	1211),
+						APP 	=> array(2, 'claim731',		'name',			$LANG_SETTINGS['tm_fields']['APP'], 	731, 'завод ЛІТ', 											0, left,	1212),
+						PATP 	=> array(2, 'claim740',		'name',			$LANG_SETTINGS['tm_fields']['PATP'], 	740, 'Рибак Тамара Василівна', 								0, left,	1213),						
+						ADDR 	=> array(2, 'claim750',		'name',			$LANG_SETTINGS['tm_fields']['ADDR'], 	750, 'Черепов', 											0, left,	1214),						
 						),
 	);
 	

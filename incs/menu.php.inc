@@ -237,9 +237,11 @@ $s = $LANG_SETTINGS['menu']['tmc'];;
 $str = '<a class="viennacat2" href="search.php?action=viewbul&dbname=tmc">'.$s.'</font>';
 if ( $currAction == 'viewbul' && $currDbName == 'tmc' )
 	$str = '<font style="text-decoration:underline" class="viennacat2">'.$s.'</font>';
-?>
 
-			<tr><td align="right" class="alttext"><p align="left"><?=$str;?></p></td></tr>
+
+			/* <tr><td align="right" class="alttext"><p align="left"><?=$str;?></p></td></tr>
+			*/
+?>
 			</table>
 			</td>
 			<td valign="top" background="images/but_30.gif"><img src="images/but_29.gif" width="40" height="17"></td>

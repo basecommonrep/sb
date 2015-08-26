@@ -431,7 +431,7 @@
 
 
 							<?
-								if ( !empty( $fullBiblio['i_526'] ) && $access )
+								if ( !empty( $fullBiblio['i_526'] ) && $access && $currDbName != 'tmc' )
 								{
 							?>
 	
@@ -447,7 +447,7 @@
 							?>
 
 							<?
-					/*			if ( !empty( $fullBiblio['i_531'] ) && $access )
+								if ( !empty( $fullBiblio['i_531'] ) && $access && $currDbName == 'tmc' )
 								{
 							?>
 	
@@ -460,7 +460,7 @@
 	
 							<?
 								} // end if ( !empty( $fullBiblio['i_531'] ) )
-					*/
+					
 							?>
 
 							<?
@@ -496,7 +496,7 @@
 							?>
 
 							<?
-								if ( !empty( $fullBiblio['i_555'] ) && $access )
+								if ( !empty( $fullBiblio['i_555'] ) && $access && $currDbName != 'tmc' )
 								{
 							?>
 	
@@ -512,7 +512,7 @@
 							?>
 
 							<?
-								if ( !empty( $fullBiblio['i_556'] ) && $access )
+								if ( !empty( $fullBiblio['i_556'] ) && $access && $currDbName != 'tmc' )
 								{
 							?>
 	
@@ -532,7 +532,7 @@
 							?>
 
 							<?
-								if ( !empty( $fullBiblio['i_561'] ) && $access )
+								if ( !empty( $fullBiblio['i_561'] ) && $access && $currDbName != 'tmc' )
 								{
 							?>
 	
@@ -565,7 +565,7 @@
 							?>
 
 							<?
-								if ( !empty( $fullBiblio['i_641'] ) && $access )
+								if ( !empty( $fullBiblio['i_641'] ) && $access  && $currDbName != 'tmc' )
 								{
 							?>
 	
@@ -581,7 +581,7 @@
 							?>
 
 							<?
-								if ( !empty( $fullBiblio['i_646'] ) && $access )
+								if ( !empty( $fullBiblio['i_646'] ) && $access && $currDbName != 'tmc' )
 								{
 							?>
 	
@@ -652,7 +652,7 @@
 
 
 							<?
-								if ( !empty( $fullBiblio['i_740'] ) && $access && $currDbName != 'tmc' )
+								if ( !empty( $fullBiblio['i_740'] ) && $access )
 								{
 							?>
 	
@@ -693,7 +693,7 @@
 							?>
 
 							<?
-								if ( !empty( $fullBiblio['i_750'] ) && $access && $currDbName != 'tmc' )
+								if ( !empty( $fullBiblio['i_750'] ) && $access )
 								{
 							?>
 	
@@ -736,10 +736,17 @@
 							<tr><td colspan=4 height="5"><img src="images/spacer.gif" height="10"></td></tr>						
 
 							<tr valign="top">
-								<td><font class="viennacatunder"><acronym title="<?=$LANG_SETTINGS['tm_details']['inid540'];?>">(540)</font></td>
-								<td colspan=3 valign="top" align=left>
+							<td><font class="viennacatunder"><acronym title="<?=$LANG_SETTINGS['tm_details']['inid540'];?>">(540)</font></td>
+							 <td colspan=3 valign="top" align=left>
+								<?if (empty($fullBiblio['i_539note'])) 
+								{ ?>
 									<img border=0 src="resize.php?dbn=<?=$currDbName;?>&idClaim=<?=$fullBiblio['idClaim'];?>">
-								</td>
+								<?}  
+								else 
+								{?> 
+									<font class="viennacat"><?=$LANG_SETTINGS['tm_details']['inid539note'];?> <?=$fullBiblio['i_539note'];?></font> 
+								<?} ?> 
+							 </td>
 							</tr>
 							
 							<tr><td colspan=4 height="10"><img src="images/spacer.gif" height="10"></td></tr>						
@@ -985,19 +992,41 @@
 
 					<table border="0" cellpadding="0" cellspacing="0" width="100%">
 					<tbody>
+					
+					<?
+					if( $currDbName != 'tmc')
+					{
+					?>
 					<tr>
 						<td width="40" valign="bottom"><font class="viennacatunder"><acronym title="<?=$LANG_SETTINGS['tm_details']['inid111'];?>">(111)</font></td>
 						<td width="" valign="top">
 							<font style="font-size: 16px" class="viennacat"><?=$_SESSION['lastFullBiblioPatentNumber'];?></font>
 						</td>
 					</tr>
-
+					<?
+					}
+					else
+					{
+					?> 
+						<td width=40 valign="top" ><font class="viennacatunder"><acronym title="<?=$LANG_SETTINGS['tm_details']['inid210'];?>">(210)</acronym></font></td>
+						<td width=370 valign="top"><font class="viennacat"><?=$fullBiblio['i_210'];?></font></td>
+					<?
+					}
+					?>
 					<tr><td height="10" colspan=2><img src="images/spacer.gif" height="10"></td></tr>						
 					
 					<tr>
 						<td width="40" valign="top"><font class="viennacatunder"><acronym title="<?=$LANG_SETTINGS['tm_details']['inid540'];?>">(540)</font></td>
 						<td width="" valign="top">
+
+						<?if (empty($fullBiblio['i_539note'])) 
+						{?>
 							<img border=0 src="resize.php?dbn=<?=$currDbName;?>&idClaim=<?=$fullBiblio['idClaim'];?>&chapter=signimage">
+						<?}  
+						else 
+						{?> 
+							<font class="viennacat"><?=$LANG_SETTINGS['tm_details']['inid539note'];?> <?=$fullBiblio['i_539note'];?></font> 
+						<?} ?> 	
 						</td>
 					</tr>
 

@@ -195,8 +195,17 @@
 				<table border=0 width=100% cellpadding=0 cellspacing=0>
 				<tr>
 					<td width=40 valign=top><acronym title="<?=$LANG_SETTINGS['tm_details']['inid540'];?>"><font class="viennacatunder">(540)</font></acronym></td>
-					<td width=5><img height=1 width=5 src="images/spacer.gif"><td>
-					<td width=200 valign=top align=center><a href="search.php?action=viewdetails<?=$detailStr;?>&IdClaim=<?=$row['idClaim'];?>"><img border=0 src="resize.php?dbn=<?=$currDbName;?>&idClaim=<?=$row['idClaim'];?>"></a></td>
+					<td width=5><img height=1 width=5 src="images/spacer.gif"></td>
+					<td width=200 valign=top align=center>
+					<?if (empty($row['fi_539note'])) 
+					{ ?>
+					 <a href="search.php?action=viewdetails<?=$detailStr;?>&IdClaim=<?=$row['idClaim'];?>"><img border=0 src="resize.php?dbn=<?=$currDbName;?>&idClaim=<?=$row['idClaim'];?>"></a>
+					<?}  
+					else 
+					{?> 
+					 <font class="viennacat"><?=$LANG_SETTINGS['tm_details']['inid539note'];?> <?=$row['fi_539note'];?></font> 
+					<?} ?> 
+					</td>
 				</tr>
 				</table>
 			</td>

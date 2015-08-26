@@ -1,3 +1,4 @@
+
 select rc.idClaim,
 c111.i_111 [fi_111],
 CONVERT(varchar(20),c141.i_141, 104) [fi_141],
@@ -8,10 +9,11 @@ CONVERT(varchar(20),c220.i_220, 104) [fi_220],
 CONVERT(varchar(20),c450.bulletinDate, 104) [bullDate],
 substring(rb.bulletinNumber, 0, charindex('/', rb.bulletinNumber)) [bulletinNumber],
 cast(dbo.getClaim('mktp',null,0,rc.idclaim) as text) [fi_511], 
-cast(dbo.getClaim('keywords',null,null,rc.idclaim) as text) [fi_539],
+CASE when c539note.idclaim is null then cast(dbo.getClaim('keywords',null,null,rc.idclaim) as text) else '' END [fi_539],
 cast(dbo.getClaim('colors',null,null,rc.idclaim) as text) [fi_591], 
 cast(dbo.getClaim('app',null,0,rc.idclaim) as text) [fi_731],
-cast(dbo.getClaim('prop',null,0,rc.idclaim) as text) [fi_732]
+cast(dbo.getClaim('prop',null,0,rc.idclaim) as text) [fi_732] ,
+c539note.I_539note [fi_539note]
 from ref_claims rc
 left join claim111 c111 on c111.idclaim=rc.idclaim
 left join claim141 c141 on c141.idclaim=rc.idclaim
@@ -21,5 +23,8 @@ left join claim210 c210 on c210.idclaim=rc.idclaim
 left join claim220 c220 on c220.idclaim=rc.idclaim
 left join claim450 c450 on c450.idclaim=rc.idclaim
 left join ref_bulletins rb on rb.bulletinDate=c450.bulletinDate
+left join claim539note c539note on c539note.idclaim=rc.idclaim
+
 where rc.idclaim in ($$$IDS$$$)
 $$$ORDERCLAUSE$$$
+

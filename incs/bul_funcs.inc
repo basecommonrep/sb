@@ -1467,7 +1467,7 @@ if (($dbn=='tm2')||($dbn=='pp2')) $type='assoc';
 
 
 function getActualizationDates()
-{
+{ 
 	$db_names = array_keys($GLOBALS['db_names']);
 	$connection = $GLOBALS['actualization_connection'];
 
@@ -1481,13 +1481,15 @@ function getActualizationDates()
 		
 		if (substr($db_names[$i], 0, 3) == 'inv') 
 			$dbn = 'inv';
-		if (substr($db_names[$i], 0, 2) == 'tm') 
-			$dbn = 'tm';
+		if (substr($db_names[$i], 0, 3) == 'tmc') 
+			$dbn = 'tmc';
+		elseif (substr($db_names[$i], 0, 2) == 'tm') 
+			$dbn = 'tm';	
 		if (substr($db_names[$i], 0, 2) == 'pp') 
 			$dbn = 'pp';
 			
 		$q = "select top 1 convert(varchar(20), e.enddate, 121) [date] from dbo.actualstat e inner join dbo.dbnames dn on e.iddb = dn.iddb where dn.code = '$dbn' order by enddate desc";
-		//print($db_names[$i].'<br>');
+	    //print($db_names[$i].'<br>');
 		//print($q.'<br>');
 		
 		$mssql->executeQuery($q);
@@ -1497,7 +1499,6 @@ function getActualizationDates()
 	} // end for
 
 	$mssql->disconnection();
-
 	return $actualDates;
 	
 } // end getActualizationDates

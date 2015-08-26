@@ -1,3 +1,4 @@
+--- \\10.10.18.4\sv\searchBulTest\incs\queries\search_tm_full_biblio.txt
 select rc.idClaim,
 c100.i_100,
 c111.i_111,
@@ -39,19 +40,20 @@ cast(dbo.getClaim('pravo646',null,null,rc.idclaim) as text) [i_646],
 cast(dbo.getClaim('app',null,1,rc.idclaim) as text) [i_731], 
 cast(dbo.getClaim('prop',null,1,rc.idclaim) as text) [i_732], 
 cast(dbo.getClaim('patpovir',null,null,rc.idclaim) as text) [i_740],
-cast(dbo.getClaim('addressat',null,null,rc.idclaim) as text) [i_750] 
+cast(dbo.getClaim('addressat',null,null,rc.idclaim) as text) [i_750],
+c539.I_539note [i_539note]
 from ref_claims rc
 left  join claim100 c100 on c100.idclaim=rc.idclaim
-inner join claim111 c111 on c111.idclaim=rc.idclaim
+left join claim111 c111 on c111.idclaim=rc.idclaim
 left  join claim141 c141 on c141.idclaim=rc.idclaim
 left  join claim151 c151 on c151.idclaim=rc.idclaim
 left  join claim156 c156 on c156.idclaim=rc.idclaim
 left  join claim181 c181 on c181.idclaim=rc.idclaim
 left  join claim186 c186 on c186.idclaim=rc.idclaim
 left  join claim200 c200 on c200.idclaim=rc.idclaim
-inner join claim210 c210 on c210.idclaim=rc.idclaim
-inner join claim220 c220 on c220.idclaim=rc.idclaim
-inner join claim450 c450 on c450.idclaim=rc.idclaim
+left join claim210 c210 on c210.idclaim=rc.idclaim
+left join claim220 c220 on c220.idclaim=rc.idclaim
+left join claim450 c450 on c450.idclaim=rc.idclaim
 left  join claim526 c526 on c526.idclaim=rc.idclaim
 left  join claim550 c550 on c550.idclaim=rc.idclaim
 left  join claim551 c551 on c551.idclaim=rc.idclaim
@@ -60,4 +62,6 @@ left  join claim555 c555 on c555.idclaim=rc.idclaim
 left  join claim556 c556 on c556.idclaim=rc.idclaim
 left  join claim561 c561 on c561.idclaim=rc.idclaim
 left  join ref_bulletins rb on rb.bulletinDate=c450.bulletinDate
-where rc.idClaim=:$$$IDCLAIM$$$
+left  join claim539note c539 on c539.idclaim=rc.idclaim
+where rc.idClaim =:$$$IDCLAIM$$$ --in(307649,311239) --
+

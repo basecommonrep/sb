@@ -7,5 +7,7 @@ from (
 ) rc 
 inner join claim210 c210 on c210.idclaim=rc.idclaim
 inner join claim220 c220 on c220.idclaim=rc.idclaim
+left join claim111 c111 on c111.idclaim=rc.idclaim
+where c111.i_111 is null
 $$$ORDERCLAUSE$$$
 

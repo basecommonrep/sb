@@ -16,7 +16,7 @@ if ( $dbn == 'pp' )
 }
 elseif ( substr($dbn, 0, 2) == 'tm' )
 {
-	$width = ( $_GET['chapter'] != 'signimage' ) ? 150 : 400;
+	$width = ( $_GET['chapter'] != 'signimage' ) ? 150 : 300;  
 	$f = TMImageTemplatePath.'tm_'.$idClaim.'.jpg';
 }
 elseif ( $dbn == 'madrid' || $dbn == 'madridall' )
@@ -33,12 +33,12 @@ elseif ( $dbn == 'wkm' )
 //copy($f, 'd:/server/project/www/searchbul/tempdocs/pp_'.$idVariant.'-'.$varIndex.'.jpg');
 
 
-/*
+/* 
 if (file_exists($f))
 	print($f);
 	
 exit;
-*/
+ */
 $type = 2;
 
 // f - имя файла 
@@ -101,7 +101,7 @@ if ($w_src > $w)
 
       // определяем координаты вывода текста 
         $size = 2; // размер шрифта 
-        $x_text = $w_dest-imagefontwidth($size)*strlen($str)-3; 
+        $x_text = $w_dest-imagefontwidth($size)*strlen($str)-3 ; 
         $y_text = $h_dest-imagefontheight($size)-3; 
 
         // определяем каким цветом на каком фоне выводить текст 
@@ -149,15 +149,20 @@ if ($w_src > $w)
      } 
 
 	// вывод картинки и очистка памяти 
+	 
 	imagejpeg($dest,'',$q); 
 	imagedestroy($dest); 
 	imagedestroy($src); 
+ 
+ 
 } 
 else
-{
+{    
 	imagejpeg($src,'',$q); 
 	imagedestroy($dest); 
 	imagedestroy($src); 
+	  
+ 
 }
 
 ?>
