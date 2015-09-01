@@ -269,7 +269,7 @@
 							?>
 							<tr valign="top">
 								<td width=35 valign="top" ><font class="viennacatunder"><acronym title="<?=$LANG_SETTINGS['tm_details']['inid210'];?>">(210)</acronym></font></td>
-								<td width=370 valign="top"><font class="viennacat"><?=$fullBiblio['i_210'];?></font></td>
+								<td width=370 valign="top"><font><a class="viennacat" target="_blank" href="http://base.uipv.org/SearchTMStat/showclaimdetails.php?IdClaim=<?=$fullBiblio['idClaim'];?>&resId=1"><?=$fullBiblio['i_210'];?></a></font></td>
 							</tr>
 
 							<?
@@ -1009,7 +1009,7 @@
 					{
 					?> 
 						<td width=40 valign="top" ><font class="viennacatunder"><acronym title="<?=$LANG_SETTINGS['tm_details']['inid210'];?>">(210)</acronym></font></td>
-						<td width=370 valign="top"><font class="viennacat"><?=$fullBiblio['i_210'];?></font></td>
+						<td width=370 valign="top"><font"><font><a class="viennacat" target="_blank" href="http://base.uipv.org/SearchTMStat/showclaimdetails.php?IdClaim=<?=$fullBiblio['idClaim'];?>&resId=1"><?=$fullBiblio['i_210'];?></a></font></td>
 					<?
 					}
 					?>

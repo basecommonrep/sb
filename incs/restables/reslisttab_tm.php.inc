@@ -124,7 +124,18 @@
 		
 				<tr>
 					<td width=40 valign=top><acronym title="<?=$LANG_SETTINGS['tm_details']['inid210'];?>"><font class="viennacatunder">(210)</font></acronym></td>
+					<?
+					if( $currDbName != 'tmc' )
+					{
+					?>
 					<td valign=top><font class="viennacat"><?=$row['fi_210'];?></font></td>
+					<?
+					}
+					else
+					{
+					?>
+					<td valign=top><font><a class="viennacat" target="_blank" href="http://base.uipv.org/SearchTMStat/showclaimdetails.php?IdClaim=<?=$row['idClaim'];?>&resId=1"><?=$row['fi_210'];?></a></font></td>
+					<? } ?>
 				</tr>
 		
 				<tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
