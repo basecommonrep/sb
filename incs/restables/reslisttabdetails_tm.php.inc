@@ -13,6 +13,14 @@
 			// тому що перегляд бібліографії влючає такоє перегляд документу
 			doStatistics('createnewaction', 'certtm', null, $_SESSION['statInfo']['idUser'], 5, $mssql, null); // 5 - пергляд документа		
 		}
+		
+		if ($currDbName == 'tmc')
+		{
+			doStatistics('createnewaction', 'apptmc', null, $_SESSION['statInfo']['idUser'], 4, $mssql, null); // 4 - пергляд бібліографічних даних
+
+			// тому що перегляд бібліографії влючає такоє перегляд документу
+			doStatistics('createnewaction', 'apptmc', null, $_SESSION['statInfo']['idUser'], 5, $mssql, null); // 5 - пергляд документа	
+		}
 	}
 		
 	$statusImg = 'images/green.gif';
