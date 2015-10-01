@@ -2,5 +2,5 @@ select distinct rb.bulletinNumber [bullNumb], rb.bulletinDate,
 convert(varchar(20), rb.bulletinDate, 104) [bullDate]
 from claim450 c 
 inner join ref_bulletins rb on c.bulletinDate=rb.bulletinDate 
-where c.bulletinDate > convert(datetime, '01.04.2006', 104)
+where c.bulletinDate > convert(datetime, '01.04.2006', 104) and c.bulletinDate <=GETDATE()
 order by rb.bulletinDate desc 
