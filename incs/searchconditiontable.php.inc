@@ -121,7 +121,7 @@
  	if ( substr($currDbName, 0, 3)=='tmc')
 	{
 ?>
-			<td align=left width=250><font class="viennacat2"><?=(isDiskBul == 'no') ? $LANG_SETTINGS['interface']['actual2'].'&nbsp;'.$currActualDate : '&nbsp;';?></font></td>
+			<td align=left width=250><font class="viennacat2"><?=(isDiskBul == 'no') ? $LANG_SETTINGS['interface']['actual2'].'&nbsp;'.$currActualDate.'&nbsp;'.$LANG_SETTINGS['interface']['actual2text'] : '&nbsp;';?></font></td>
 <?  
     } 
     else
