@@ -891,8 +891,30 @@ function executeGetShortBiblioQuery($dbn, $query, $mssql)
 		while ( $data = $mssql->getRow('assoc') )
 		{
 			$shortBiblioSet += array($i => $data);
+
 			$i++;
 		}
+
+        // Правильные МПК на дату бюлетеня
+        if (in_array($dbn, array('inv', 'invc', 'invd', 'invdu'))) {
+            foreach ($shortBiblioSet as &$item) {
+                if ($dbn == 'invc') {
+                    if ( !empty($item['claimBullDate']) ) {
+                        $publication = $item['claimBullDate'];
+                    }
+                    else {
+                        $publication = 0;
+                    }
+                }
+                else {
+                    $publication = $item['fi_46'];
+                }
+
+                $item['mpk'] = getIPC($dbn, $mssql, $item['fi_21'], $publication);
+            }
+        }
+
+
 	
 		return $shortBiblioSet;		
 	}
@@ -919,12 +941,114 @@ function executeGetFullBiblioQuery($dbn, $query, $mssql)
 	{
 		$fullBiblio = $mssql->getRow('assoc');
 
+        // Правильные МПК на дату бюлетеня
+        if (in_array($dbn, array('inv', 'invc', 'invd', 'invdu'))) {
+            if ($dbn == 'invc') {
+                if (!empty($fullBiblio['claimBullDate'])) {
+                    $publication = $fullBiblio['claimBullDate'];
+                } else {
+                    $publication = $fullBiblio['claimBullDate'];
+                }
+            } else {
+                $publication = $fullBiblio['i_46'];
+            }
+            $fullBiblio['i_51'] = getIPC($dbn, $mssql, $fullBiblio['i_21'], $publication);
+        }
+
 		return $fullBiblio;		
 	}
 	else
 		; 
 	return -1;
 } // end executeGetFullBiblioQuery
+
+
+/**
+ * Функция возвращает строку с реальными индексами МПК на дату выхода бюлетеня.
+ *
+ * @param $dbn
+ * @param $mssql
+ * @param $i_21
+ * @param $claimBullDate
+ * @return int|string
+ */
+function getIPC($dbn, $mssql, $i_21, $claimBullDate)
+{
+    $connSettings = $GLOBALS['connection'];
+    $currDbConnSettings = $connSettings[$dbn];
+
+    $host = $currDbConnSettings['host'];
+    $login = $currDbConnSettings['login'];
+    $password = $currDbConnSettings['pass'];
+    $database = $currDbConnSettings['dbname'];
+
+    // Запрос
+    $fpath = 'incs/queries/get_ipc_by_bul_date.txt';
+    $handle = fopen($fpath, "r");
+    $query = fread($handle, filesize($fpath));
+    fclose($handle);
+    $query = str_replace('###zayav_num###', $i_21, $query);
+    $query = str_replace('###bul_date###', date('Ymd', strtotime($claimBullDate)), $query);
+
+    $mssql->selectDb($database);
+    $mssql->executeQuery('SET ANSI_NULLS ON');
+    $mssql->executeQuery('SET ANSI_WARNINGS ON');
+    $err = (int)$mssql->executeQuery($query);
+
+    if ( $err != -1 )
+    {
+        $res = '';
+        $iscore = 0;
+        // Распарсиваем данные и собираем строку для представления
+        while ($data = $mssql->getRow('assoc')) {
+
+            //var_dump($query);
+            if ($data['level'] == 'C' || $data['gr'] == 0) {
+                if ($data['i'] == 'I') {
+                    $ipcrow = '<b>' . $data['ipc'] . '</b>';
+                } else {
+                    $ipcrow = $data['ipc'];
+                }
+            } else {
+                if ($data['i'] == 'I') {
+                    $ipcrow = '<i><b>' . $data['ipc'] . '</b></i>';
+                } else {
+                    $ipcrow = '<i>' . $data['ipc'] . '</i>' ;
+                }
+            }
+
+            if ($data['level'] == 'A' && $data['gr'] != 0) {
+                $ipcrow = $ipcrow . ' (' . $data['y'] . '.' . $data['m'] . ')';
+            } else {
+                $iscore = 1;
+            }
+
+            $res .= '###mpk###'.$ipcrow;
+        }
+
+        $pubdate = (int) date('Y', strtotime($claimBullDate));
+        if ($pubdate == 2009 || $pubdate == 2010) {
+            $pubdate = '2009';
+        } elseif ($pubdate < 2009 ) {
+            $pubdate = '2006';
+        } else {
+            $pubdate = $pubdate . '.01';
+        }
+
+        if ($iscore) {
+            $ipctitle = 'МПК (' . $pubdate . ')';
+        } else {
+            $ipctitle = 'МПК';
+        }
+
+        $res = $ipctitle . $res;
+
+        return $res;
+    }
+    else
+        ;
+    return -1;
+}
 
 function getPageNumbersStr($action, $dbn, $section, $page_count, $curr_page, $fname)
 {

@@ -537,7 +537,7 @@
 				
 				if ( empty( $errors ) )
 					$currSearchIds = executeGetIdsQuery($currDbName, $query, $mssql);
-					
+
 				// помилка при виконнанн? запиту
 				if ( empty( $errors ) && $currSearchIds == -1 )
 					$errors = $LANG_SETTINGS['errors']['header'].': '.$LANG_SETTINGS['errors']['req'];				
@@ -660,12 +660,12 @@
 				$query = buildGetShortBiblioQuery($currDbName, $currSubSetSearchIds, '');
 				$query = str_replace('$$$ORDERCLAUSE$$$', 'order by '.$currSortExpr.' '.$currSortOrder, $query);
 				$query = str_replace('###pubtype###', $currDbName, $query); // тип публикации дл§ ЮЊ†
-				//print('<br><br>'.$query.'<br><br>');			
+				//print('<br><br>'.$query.'<br><br>');
 				//die;
-				
+
 				$searchShortBiblioSet = executeGetShortBiblioQuery($currDbName, $query, $mssql);
 				//print_r($searchShortBiblioSet);
-				
+
 				$pageNumbersStr = getPageNumbersStr('viewsearchres', '', '', $pageCount, $currPage, '');
 				
 				//if ( $currDbName == 'tm' )
@@ -1085,10 +1085,10 @@ else //прищли от ввода данных на поиск
 				//print($query); print('<br>');
 				
 				$currSearchIds = executeGetIdsBulViewQuery($currDbName, $query, true, 'notice', $mssql);
-				
+
 				$searchShortBiblioSet = $currSearchIds;
 			    $RecordCount= count($searchShortBiblioSet);
-				//print_r($searchShortBiblioSet);	print('<br>');	
+				//print_r($searchShortBiblioSet);	print('<br>');
 			}
 			else if ( !( $currDbName == 'tm' || $currDbName == 'pp' || $currDbName == 'madrid') )
 			{
