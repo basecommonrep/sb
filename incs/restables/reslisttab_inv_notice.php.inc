@@ -35,7 +35,8 @@
 
 	$prevNoticeCode = 0;
 	$count = 0;
-	
+
+
 	for($i = 0; $i < count($searchShortBiblioSet); $i++)
 	{
 		$noticeCode = $searchShortBiblioSet[$i][0];
@@ -43,10 +44,10 @@
 		$i_21 = $searchShortBiblioSet[$i][2];
 		$notice = $searchShortBiblioSet[$i][3];
 		$idclaim = $searchShortBiblioSet[$i][4];
-		
 		$bullDate = $searchShortBiblioSet[$i][4];
 		$bullNumber = $searchShortBiblioSet[$i][5];
-		
+
+        $notice = str_replace('PATENTNUMBERs', 'patentnumbers', $notice);
 		$notice = str_replace('patentNumber', 'patentnumber', $notice);
 		$notice = str_replace('inputNumber', 'inputnumber', $notice);
 		$notice = str_replace('&', '@@@and@@@', $notice);
@@ -67,14 +68,19 @@
 			$notice = str_replace('dateFactStop', 'datefactstop_3', $notice);
 		}
 
-
+        // 264 - есть несколько записей с таким кодом, их структура отличается
+        if ($noticeCode == 264) {
+            foreach (array('OTHER3', 'OTHER4', 'OTHER5', 'OTHER6', 'OTHER7') as $item) {
+                $notice = str_replace($item, strtolower($item), $notice);
+            }
+        }
 		
 		
 		$parserNotice = $objXML->parse($notice);
 		$objXML->clearXML();
 		
 		$n = $parserNotice[0]['children'];
-		
+
 		++$count;
 		
 		/*
@@ -125,7 +131,7 @@
 <?
 		} // end if ( $i > 0 )
 ?>
-		<tr><td align=left><font class="viennacat"><?=$LANG_SETTINGS['inv_notices'][$dictPrefix.$noticeCode];?></font></td></tr>	
+		<tr><td align=left><font class="viennacat"><?=$noticeCode != 264 ? $LANG_SETTINGS['inv_notices'][$dictPrefix.$noticeCode] : utf8_decode($n[0]['tagData']);?></font></td></tr>
 
 		<tr><td height="5"><img src="images/spacer.gif" height="5"></td></tr>
 		
@@ -257,15 +263,14 @@
 					{
 						$tagName = $n[$j]['name'];
 						$tagAttrs = $n[$j]['attrs'];
-						
+                        $tagData = $n[$j]['tagData'];
 						$cl = 'notifyHeader';
 						if ( $j == count($n)-1 )
 							$cl = 'notifyHeaderNot';
-							
-						if ( $tagAttrs['ISSPOV'] == 'Y' )
+						if ( $tagAttrs['ISSPOV'] == 'Y')
 						{
 			?>
-							<td class="<?=$cl;?>" valign=top><font class="viennacat2white"><?=$LANG_SETTINGS['inv_notices'][$tagPrefix.'tag_'.$tagName];?></font></td>			
+							<td class="<?=$cl;?>" valign=top><font class="viennacat2white"><?=$noticeCode != 264 ? $LANG_SETTINGS['inv_notices'][$tagPrefix.'tag_'.$tagName] : utf8_decode($tagAttrs['CAPTION']);?></font></td>
 			<?
 						} // end if  $tagAttrs['SSPOV'] == 'Y'
 					} // end for $j
@@ -302,17 +307,15 @@
 					//$n[$j]['tagData'] = str_replace('((/i))', '</i>', $n[$j]['tagData']);					
 					//$n[$j]['tagData'] = str_replace('((i))', '<i>', $n[$j]['tagData']);					
 					$n[$j]['tagData'] = str_replace('((', '<', $n[$j]['tagData']);					
-					$n[$j]['tagData'] = str_replace('))', '>', $n[$j]['tagData']);					
-										
+					$n[$j]['tagData'] = str_replace('))', '>', $n[$j]['tagData']);
 					if ( $tagAttrs['ISSPOV'] != 'Y' )
 						$n[$j]['tagData'] = '';
-						
-					if ($tagName == 'INID_57' && empty( $_SESSION['reestrDbName'] ) && isDiskBul == 'no' )
-						$n[$j]['tagData'] = '<font class="viennacatchange">(57)&nbsp;</font><a href="search.php?action=viewdetails&dbname='.$currDbName.'&IdClaim='.$idclaim.'&from=notice&chapter=claim" class="viennacatchange">'.$LANG_SETTINGS['details']['viewformula'].'</a>';
+					if (($tagName == 'INID_57' || $n[$j]['tagData'] == '@FORMULA') && empty( $_SESSION['reestrDbName'] ) && isDiskBul == 'no' )
+						$n[$j]['tagData'] = '<font class="viennacatchange">(57)&nbsp;</font><a href="search.php?action=viewdetails&dbname='.$currDbName.'&IdClaim='.$idclaim.'&from=notice&chapter=claim" class="viennacatchange">'.$LANG_SETTINGS['details']['viewformula_notices'].'</a>';
 					elseif ($tagName == 'INID_57' && empty( $_SESSION['reestrDbName'] ) && isDiskBul == 'yes' )
 						$n[$j]['tagData'] = '<font class="viennacatchange">(57)&nbsp;</font><font class="viennacatchange">'.$LANG_SETTINGS['details']['viewformula2'].'</font>';
 					elseif ($tagName == 'INID_57' && !empty( $_SESSION['reestrDbName'] ))
-						$n[$j]['tagData'] = '<font class="viennacatchange">(57)&nbsp;'.$LANG_SETTINGS['details']['viewformula'].'</font>';			
+						$n[$j]['tagData'] = '<font class="viennacatchange">(57)&nbsp;'.$LANG_SETTINGS['details']['viewformula_notices'].'</font>';
 					elseif (($tagName == 'PATENTNUMBER' || $tagName == 'PATENTNUMBER_2') && empty( $_SESSION['reestrDbName'] ) && isDiskBul == 'no' )				
 						$n[$j]['tagData'] = '<a class="viennacat2under" href="search.php?action=viewdetails&dbname='.$currDbName.'&IdClaim='.$idclaim.'&from=notice">'.$n[$j]['tagData'].'</a>';
 					elseif (($tagName == 'PATENTNUMBER' || $tagName == 'PATENTNUMBER_2' ) && !empty( $_SESSION['reestrDbName'] ) )				
@@ -326,7 +329,6 @@
 					}
 					elseif ( $tagName == 'INPUTNUMBER' && empty($tagDat))
 						$n[$j]['tagData'] = $i_21;
-				
 				} // end for
 				?>
 
