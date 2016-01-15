@@ -4,6 +4,7 @@ c111.i_111 [fi_111],
 CONVERT(varchar(20),c141.i_141, 104) [fi_141],
 CONVERT(varchar(20),c151.i_151, 104) [fi_151],
 CONVERT(varchar(20),c181.i_181, 104) [fi_181],
+CONVERT(varchar(20),c186.i_186, 104) [fi_186],
 c210.i_210 [fi_210],
 CONVERT(varchar(20),c220.i_220, 104) [fi_220],
 CONVERT(varchar(20),c450.bulletinDate, 104) [bullDate],
@@ -19,6 +20,7 @@ left join claim111 c111 on c111.idclaim=rc.idclaim
 left join claim141 c141 on c141.idclaim=rc.idclaim
 left join claim151 c151 on c151.idclaim=rc.idclaim
 left join claim181 c181 on c181.idclaim=rc.idclaim
+left join claim186 c186 on c186.idclaim=rc.idclaim
 left join claim210 c210 on c210.idclaim=rc.idclaim
 left join claim220 c220 on c220.idclaim=rc.idclaim
 left join claim450 c450 on c450.idclaim=rc.idclaim

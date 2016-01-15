@@ -29,13 +29,31 @@
 
 		if ( $currDbName != 'tmc' )
 		{
-			$statusImg = 'images/green.gif';
-			$statusStr = $LANG_SETTINGS['tm_fields']['patenton'];
 			if ( !empty( $row['fi_141'] ) )
 			{
 			 	$statusImg = 'images/red.gif';	
 				$statusStr = $LANG_SETTINGS['tm_fields']['patentoff'];
-			}
+			} else { // Если статус действительный, то нужно ещё проверить не просрочена ли оплата (до полугода)
+                $now = time();
+                $i_181UnixTime = strtotime($row['fi_181']);
+                $i_186UnixTime = strtotime($row['fi_186']);
+                if ($now >= $i_181UnixTime && (is_null($row['fi_186']) || $now >= $i_186UnixTime)) {
+                    $dateFinalIndex = ($i_186UnixTime > $i_181UnixTime) ? 'fi_186' : 'fi_181';
+                    $dateFinalUnixTime = strtotime("{$row[$dateFinalIndex]} +6 months");
+
+                    // Проверка, ставить ли желтый статус
+                    if ($now <= $dateFinalUnixTime) {
+                        $statusImg = 'images/yellow.gif';
+                        $statusStr = $LANG_SETTINGS['tm_fields']['patentoff_6m'];
+                    } else {
+                        $statusImg = 'images/red.gif';
+                        $statusStr = $LANG_SETTINGS['tm_fields']['patentoff'];
+                    }
+                } else {
+                    $statusImg = 'images/green.gif';
+                    $statusStr = $LANG_SETTINGS['tm_fields']['patenton'];
+                }
+            }
 		}
 
 		$bcs = $basket_check_str;
