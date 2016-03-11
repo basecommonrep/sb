@@ -8,7 +8,7 @@
 	print('newviewbulid='.$_POST['newviewbulid'].'<BR>');
 	print('(post)NReg='.$_POST['NReg'].'<BR>');
 */
-	if ( ( $_GET['action'] == 'viewbul' || $_GET['action'] == 'search' || $_GET['action'] == 'viewdetails' ) &&
+	if ( ( $_GET['action'] == 'search' || $_GET['action'] == 'viewdetails' ) &&
 	     ( ( empty($_SESSION['bulStartedSession']) && empty($_SESSION['addDbName']) ) || ( count($_POST) === 0 && count($_SESSION['lastSearchIds']) === 0 && count($_SESSION['lastViewIds']) === 0 && $_GET['from'] != 'notice' && empty($_GET['chapter']) ) ) )
 	{
 		if ($_GET['from_efiling'] != 'yes') {
@@ -16,6 +16,12 @@
 			exit;	
 		}
 	}
+
+    if ( ( $_GET['action'] == 'viewbul' || $_GET['action'] == 'viewdetails' ) && empty($_SESSION['bulStartedSession']) )
+    {
+        header('Location: http://www.uipv.org/ua/bases2.html');
+    }
+
 
 	$isFirst = false;
 	$access = array('certtm', 'certpp', 'appinvc', 'certwkm', 'certmadridall', 'apptmc', 'reestrtm', 'reestrpp');
