@@ -4,4 +4,4 @@ SELECT ltrim(rtrim(substring(ipcIndex, 0, 14))) [ipc],
                     convert(int, substring(ipcIndex, 10, 5)) [gr],
                     substring(ipcIndex, 30, 1) [i],
                     substring(ipcIndex, 28, 1) [level]
-FROM OPENQUERY(ELLAV, 'SET FMTONLY OFF; SET NOCOUNT ON; EXEC vp3.ext.efill_GetIPC "###zayav_num###", "###bul_date###"')
+FROM OPENQUERY([10.11.11.28], 'SET FMTONLY OFF; SET NOCOUNT ON; EXEC vp3.ext.efill_GetIPC "###zayav_num###", "###bul_date###"')
