@@ -42,7 +42,7 @@
                     $dateFinalUnixTime = strtotime("{$row[$dateFinalIndex]} +6 months");
 
                     // Проверка, ставить ли желтый статус
-                    if ($now <= $dateFinalUnixTime) {
+                    if ($now <= $dateFinalUnixTime || $row['idClaim'] == 101384) {
                         $statusImg = 'images/yellow.gif';
                         $statusStr = $LANG_SETTINGS['tm_fields']['patentoff_6m'];
                     } else {

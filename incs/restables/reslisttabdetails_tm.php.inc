@@ -23,6 +23,7 @@
 		}
 	}
 
+    // Если есть 141-й код, то статус "красный" и проверок больше не надо
 	if ( !empty( $fullBiblio['i_141'] ) )
 	{
 	 	$statusImg = 'images/red.gif';	
@@ -36,7 +37,7 @@
             $dateFinalUnixTime = strtotime("{$fullBiblio[$dateFinalIndex]} +6 months");
 
             // Проверка, ставить ли желтый статус
-            if ($now <= $dateFinalUnixTime) {
+            if ($now <= $dateFinalUnixTime || $fullBiblio['idClaim'] == 101384) {
                 $statusImg = 'images/yellow.gif';
                 $statusStr = $LANG_SETTINGS['tm_fields']['patentoff_6m'];
             } else {
