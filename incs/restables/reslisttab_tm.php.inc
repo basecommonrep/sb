@@ -35,6 +35,8 @@
 				$statusStr = $LANG_SETTINGS['tm_fields']['patentoff'];
 			} else { // Если статус действительный, то нужно ещё проверить не просрочена ли оплата (до полугода)
                 $now = time();
+				// 181 - очікувана дата закінчення дії свідоцтва
+				// 186 - очікувана дата строку продовження дії свідоцтва
                 $i_181UnixTime = strtotime($row['fi_181']);
                 $i_186UnixTime = strtotime($row['fi_186']);
                 if ($now >= $i_181UnixTime && (is_null($row['fi_186']) || $now >= $i_186UnixTime)) {
