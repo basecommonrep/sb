@@ -9,8 +9,8 @@
 	print('(post)NReg='.$_POST['NReg'].'<BR>');
 */
     $startPage = 'http://www.uipv.org/ua/bases2.html';
-	if ( ( $_GET['action'] == 'search' || $_GET['action'] == 'viewdetails' ) &&
-	     ( ( empty($_SESSION['bulStartedSession']) && empty($_SESSION['addDbName']) ) || ( count($_POST) === 0 && count($_SESSION['lastSearchIds']) === 0 && count($_SESSION['lastViewIds']) === 0 && $_GET['from'] != 'notice' && empty($_GET['chapter']) ) ) )
+    if ( ( $_GET['action'] == 'search' || $_GET['action'] == 'viewdetails' ) &&
+    ( ( empty($_SESSION['bulStartedSession']) && empty($_SESSION['addDbName']) ) || ( count($_POST) === 0 && count($_SESSION['lastSearchIds']) === 0 && count($_SESSION['lastViewIds']) === 0 && $_GET['from'] != 'notice' && empty($_GET['chapter']) ) ) )
 	{
 		if ($_GET['from_efiling'] != 'yes') {
 			header('Location: ' . $startPage);
@@ -18,9 +18,11 @@
 		}
 	}
 
-    if ( $_GET['action'] == 'viewbul' && empty($_SESSION['bulStartedSession']) ) {
+    // TODO: исправить ошибки, возникающие при прямом переходе на http://base.ukrpatent.org/searchBul/search.php?action=viewbul&dbname=inv (когда сессия не инициализирована)
+    error_reporting(0); // временное решение (убрать вывод warning и т.д. в браузер)
+    /* if ( $_GET['action'] == 'viewbul' && empty($_SESSION['bulStartedSession']) ) {
         header('Location: ' . $startPage);
-    }
+    }*/
 
 	$isFirst = false;
 	$access = array('certtm', 'certpp', 'appinvc', 'certwkm', 'certmadridall', 'apptmc', 'reestrtm', 'reestrpp');
