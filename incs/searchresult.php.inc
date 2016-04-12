@@ -202,8 +202,7 @@
 	elseif ( substr($currDbName, 0, 2) == 'pp' )
 		include('../searchBul/incs/restables/reslisttab_pp.php.inc');
 	elseif ( substr($currDbName, 0, 2) == 'tm' )
-		//include('../searchBul/incs/restables/reslisttab_tm.php.inc');
-		include('incs/restables/reslisttab_tm.php.inc');
+		include('../searchBul/incs/restables/reslisttab_tm.php.inc');
 	elseif ( $currDbName == 'madrid' || ( substr($currDbName, 0, 6) == 'madrid' && $currDbName != 'madridall') )
 		include('../searchBul/incs/restables/reslisttab_madrid.php.inc');
 	/*
