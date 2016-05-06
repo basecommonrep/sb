@@ -33,17 +33,21 @@
         $i_181UnixTime = strtotime($fullBiblio['i_181']);
         $i_186UnixTime = strtotime($fullBiblio['i_186']);
         if ($now >= $i_181UnixTime && (is_null($fullBiblio['i_186']) || $now >= $i_186UnixTime)) {
-            $dateFinalIndex = ($i_186UnixTime > $i_181UnixTime) ? 'i_186' : 'i_181';
-            $dateFinalUnixTime = strtotime("{$fullBiblio[$dateFinalIndex]} +6 months");
+            //$dateFinalIndex = ($i_186UnixTime > $i_181UnixTime) ? 'i_186' : 'i_181';
+            //$dateFinalUnixTime = strtotime("{$fullBiblio[$dateFinalIndex]} +6 months");
 
             // Проверка, ставить ли желтый статус
-            if ($now <= $dateFinalUnixTime || $fullBiblio['idClaim'] == 101384) {
+            //if ($now <= $dateFinalUnixTime) {
+
+                // "Жёлтый статус" остаётся при отсутсвии 141-го кода
                 $statusImg = 'images/yellow.gif';
                 $statusStr = $LANG_SETTINGS['tm_fields']['patentoff_6m'];
-            } else {
-                $statusImg = 'images/red.gif';
-                $statusStr = $LANG_SETTINGS['tm_fields']['patentoff'];
-            }
+
+
+            //} else {
+            //    $statusImg = 'images/red.gif';
+            //    $statusStr = $LANG_SETTINGS['tm_fields']['patentoff'];
+            //}
         } else {
             $statusImg = 'images/green.gif';
             $statusStr = $LANG_SETTINGS['tm_fields']['patenton'];
