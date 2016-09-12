@@ -16,7 +16,7 @@ if ( $dbn == 'pp' )
 }
 elseif ( substr($dbn, 0, 2) == 'tm' )
 {
-	$width = ( $_GET['chapter'] != 'signimage' ) ? 150 : 300;  
+	$width = ( $_GET['chapter'] != 'signimage' ) ? 363 : 363;  // 150 : 300; при таком разрешении не было рамки у изображени€ m201600073
 	$f = TMImageTemplatePath.'tm_'.$idClaim.'.jpg';
 }
 elseif ( $dbn == 'madrid' || $dbn == 'madridall' )
