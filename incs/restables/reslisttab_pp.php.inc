@@ -39,6 +39,7 @@
 		 	$statusImg = 'images/red.gif';	
 			$statusStr = $LANG_SETTINGS['pp_fields']['patentoff'];
 			
+      $TerminationBulletinDate = new DateTime($row['TerminationBulletinDate']);
 			$date_fi_14 = new DateTime($row['fi_14']);
 			$date_end = new DateTime($row['fi_14']);
 			$date_end->modify('+6 month');
@@ -49,6 +50,13 @@
 				$statusImg = 'images/yellow.gif';
 				$statusStr = $LANG_SETTINGS['pp_fields']['patentoff_6m'];
 			}
+      
+      if ( (empty($row['TerminationBulletinDate'])) || ($date_now < $TerminationBulletinDate) )
+      {
+        $statusImg = 'images/yellow.gif';
+				$statusStr = $LANG_SETTINGS['pp_fields']['patentoff_6m'];
+      }
+      
 		}
 
 		if ( $row['status'] == 'Нагадування про необхідність підтримання чинності патенту' )
