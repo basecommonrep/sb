@@ -7,4 +7,8 @@ from notices n
 left join maininfo mi on mi.i_11=convert(int, substring(n.patentNumber+' ', 1, charindex(' ', n.patentNumber+' ')-1)) and mi.i_21=n.inputNumber and n.idCategory=mi.i_13
 inner join noticeOrder nord on n.typepub=nord.typepub and nord.dbname='util'
 where n.idCategory in (51, 52, 54, 671) and n.bulletinNumber = '$$$BULNUMB$$$'
-order by nord.ordnum, convert(int,substring(n.patentNumber+' ', 1, charindex(' ', n.patentNumber+' '))), n.inputNumber, dbo.getDataByTagName('CONTRACTNUMBER', n.notice)
+order by nord.ordnum,
+         convert(int,substring(n.patentNumber+' ', 1, charindex(' ', n.patentNumber+' '))),
+         convert(int,dbo.getDataByTagName('PATENTNUMBERS', n.notice)),
+         n.inputNumber,
+         dbo.getDataByTagName('CONTRACTNUMBER', n.notice)
