@@ -37,7 +37,7 @@
 				$statusStr = $LANG_SETTINGS['pp_fields']['patentoff_6m'];
 			}
       
-      if ( (empty($row['TerminationBulletinDate'])) || ($date_now < $TerminationBulletinDate) )
+      if ( (empty($fullBiblio['TerminationBulletinDate'])) || ($date_now < $TerminationBulletinDate) )
       {
         $statusImg = 'images/yellow.gif';
 				$statusStr = $LANG_SETTINGS['pp_fields']['patentoff_6m'];
