@@ -1892,7 +1892,7 @@ function saveMaterialFileToDisc($materialFiles, $claimNumber)
 		$path = '';
 		if ( !empty($rar) && $code != 'ou' )
 		{
-			$path = $folder2.session_id().'_'.$code.'.rar';
+			$path = $folder2.session_id().'_'.$idDoc.'_'.$code.'.rar';
 			$f = $rar;
 		} 
 		elseif( !empty($pdf) && $code == 'ou' )
