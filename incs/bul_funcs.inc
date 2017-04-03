@@ -910,7 +910,7 @@ function executeGetShortBiblioQuery($dbn, $query, $mssql)
                     $publication = $item['fi_46'];
                 }
 
-                $item['mpk'] = getIPC($dbn, $mssql, $item['fi_21'], $publication);
+                //$item['mpk'] = getIPC($dbn, $mssql, $item['fi_21'], $publication);
             }
         }
 
@@ -952,7 +952,7 @@ function executeGetFullBiblioQuery($dbn, $query, $mssql)
             } else {
                 $publication = $fullBiblio['i_46'];
             }
-            $fullBiblio['i_51'] = getIPC($dbn, $mssql, $fullBiblio['i_21'], $publication);
+            //$fullBiblio['i_51'] = getIPC($dbn, $mssql, $fullBiblio['i_21'], $publication);
         }
 
 		return $fullBiblio;		
@@ -1849,7 +1849,7 @@ function getMaterialFiles($query, $mssql)
 	
 	$mssql->selectDb($database);
 	$mssql->executeQuery($query);
-	
+
 	$matFiles = array();
 
 	$i = 0;
@@ -1868,7 +1868,7 @@ function getMaterialFiles($query, $mssql)
 function saveMaterialFileToDisc($materialFiles, $claimNumber)
 {
 	//unrar x -o+ -inul d:\!!!\test10*.rar d:\!!!\test
-	
+
 	$claimNumber = substr($claimNumber.'/', 0, strpos($claimNumber.'/', '/'));
 	
 	$part = substr( $claimNumber, 0, 6 );
@@ -1889,7 +1889,6 @@ function saveMaterialFileToDisc($materialFiles, $claimNumber)
 		$code = $materialFiles[$i]['matCode'];
 		$rar = $materialFiles[$i]['rar'];
 		$pdf = $materialFiles[$i]['pdf'];
-		
 		$path = '';
 		if ( !empty($rar) && $code != 'ou' )
 		{
@@ -2011,7 +2010,7 @@ function saveMaterialFileToDisc($materialFiles, $claimNumber)
 // גûחמג CounterIPDB($currDbName,'N='.$NReg .',P='.$PROP.',B='.$currBulStr);
 function CounterIPDB($dbName, $txt)
 {
- $serverName = "10.10.16.4";
+ $serverName = "10.10.18.1";
  $connectionOptions = array("UID" => "ndcpe", "PWD" => "ipro", "Database"=>"STM");
  $conn = sqlsrv_connect( $serverName, $connectionOptions);
  if( $conn==false ) 
