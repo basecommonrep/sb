@@ -157,7 +157,6 @@
 			?>
 				<tr valign=top>
 					<td class="notifyHeader2"><?=$LANG_SETTINGS['inv_notices'][$tagPrefix.'tag_INID_11'];?></td>
-					<td class="notifyHeader2"><?=$LANG_SETTINGS['inv_notices'][$tagPrefix.'tag_INPUTNUMBER'];?></td>
 					<td class="notifyHeader2"><?=$LANG_SETTINGS['inv_notices'][$tagPrefix.'tag_BULLETIN'];?></td>
 					<td class="notifyHeaderNot2"><?=$LANG_SETTINGS['inv_notices'][$tagPrefix.'tag_read'];?></td>
 				</tr>
@@ -173,7 +172,7 @@
 					<td class="notifyHeader2"><?=$LANG_SETTINGS['inv_notices'][$tagPrefix.'my_tag_court'];?></td>
 					<td class="notifyHeaderNot2"><?=$LANG_SETTINGS['inv_notices'][$tagPrefix.'my_tag_notavail'];?></td>
 				</tr>
-			
+
 			<?
 				} // end elseif noticeCode = 45 - Визнання патенту (деклараційного патенту) на винахід недійсним за рішенням суду
 				elseif ( $noticeCode == 50 )
@@ -251,9 +250,39 @@
 						<td class="notifyHeader2"><?=$LANG_SETTINGS['inv_notices'][$tagPrefix.'tag_INID_54'];?></td>
 						<td class="notifyHeaderNot2"><?=$LANG_SETTINGS['inv_notices'][$tagPrefix.'tag_OLDOWNERS_2'];?></td>
 					</tr>
-						
+            <?
+                } // end elseif noticeCode = 47 - Видача дубліката патенту
+                elseif ( $noticeCode == 47 )
+                {
+                    ?>
+                    <tr valign=top>
+                        <td class="notifyHeader2"><?=$LANG_SETTINGS['inv_notices'][$tagPrefix.'tag_PATENTNUMBER'];?></td>
+                    </tr>
+            <?
+                } // end elseif noticeCode = 73 - Дострокове припинення дії ліцензійного договору за взаємною згодою сторін
+                elseif ( $noticeCode == 73)
+                {
+                    ?>
+                    <tr valign=top>
+                        <td class="notifyHeader2"><?=$LANG_SETTINGS['inv_notices'][$tagPrefix.'tag_PATENTNUMBERS'];?></td>
+                        <td class="notifyHeader2"><?=$LANG_SETTINGS['inv_notices'][$tagPrefix.'tag_CONTRACTNUMBER'];?></td>
+                        <td class="notifyHeader2"><?=$LANG_SETTINGS['inv_notices'][$tagPrefix.'tag_PARENTBULLETIN'];?></td>
+                        <td class="notifyHeader2"><?=$LANG_SETTINGS['inv_notices'][$tagPrefix.'tag_LICENSIARS'];?></td>
+                        <td class="notifyHeader2"><?=$LANG_SETTINGS['inv_notices'][$tagPrefix.'tag_LICENSIATS'];?></td>
+                    </tr>
+            <?
+                } // elseif noticeCode = 43 - Припинення дії патенту (деклараційного патенту) на винахід на підставі заяви власника частково
+                elseif ( $noticeCode == 43)
+                {
+                    ?>
+                    <tr valign=top>
+                        <td class="notifyHeader2"><?=$LANG_SETTINGS['inv_notices'][$tagPrefix.'tag_PATENTNUMBERS'];?></td>
+                        <td class="notifyHeader2"><?=$LANG_SETTINGS['inv_notices'][$tagPrefix.'tag_DATEPARTIALSTOP'];?></td>
+                        <td class="notifyHeader2"><?=$LANG_SETTINGS['inv_notices'][$tagPrefix.'tag_INID_54'];?></td>
+                        <td class="notifyHeader2"><?=$LANG_SETTINGS['inv_notices'][$tagPrefix.'tag_INID_57'];?></td>
+                    </tr>
 			<?
-				} // end elseif noticeCode = 75 - Заява власника патенту (деклараційного патенту) про готовність надання будь-якій особі дозволу на використання винаходу
+				}
 				else
 				{
 			?>
@@ -379,7 +408,6 @@
 			?>
 				<tr valign=top>
 					<td class="notifyLineLeft2"><?=getDataByTagName($n, 'PATENTNUMBER');?></td>
-					<td class="notifyLine2"><?=getDataByTagName($n, 'INPUTNUMBER');?></td>
 					<td class="notifyLine2"><?=getDataByTagName($n, 'BULLETIN');?></td>
 					<td class="notifyLine2"><?=$s;?></td>
 				</tr>
@@ -517,8 +545,39 @@
 					<td class="notifyLine2"><?=getDataByTagName($n, 'PATENTTITLES');?></td>
 					<td class="notifyLine2"><?=getDataByTagName($n, 'OLDOWNERS');?></td>
 				</tr>
+            <?
+                } // noticeCode = 47
+                elseif ( $noticeCode == 47 )
+                {
+            ?>
+                <tr valign=top>
+                    <td class="notifyLineLeft2"><?=getDataByTagName($n, 'PATENTNUMBER');?></td>
+                </tr>
+            <?
+                } // noticeCode = 73
+                elseif ( $noticeCode == 73 )
+                {
+            ?>
+                <tr valign=top>
+                    <td class="notifyLineLeft2"><?=getDataByTagName($n, 'PATENTNUMBERS');?></td>
+                    <td class="notifyLineLeft2"><?=getDataByTagName($n, 'CONTRACTNUMBER');?></td>
+                    <td class="notifyLineLeft2"><?=getDataByTagName($n, 'PARENTBULLETIN');?></td>
+                    <td class="notifyLineLeft2"><?=getDataByTagName($n, 'LICENSIARS');?></td>
+                    <td class="notifyLineLeft2"><?=getDataByTagName($n, 'LICENSIATS');?></td>
+                </tr>
+            <?
+                } // noticeCode = 43
+                elseif ( $noticeCode == 43 )
+                {
+                    ?>
+                    <tr valign=top>
+                        <td class="notifyLineLeft2"><?=getDataByTagName($n, 'PATENTNUMBER');?></td>
+                        <td class="notifyLineLeft2"><?=getDataByTagName($n, 'DATEPARTIALSTOP');?></td>
+                        <td class="notifyLineLeft2"><?=getDataByTagName($n, 'INID_54');?></td>
+                        <td class="notifyLineLeft2"><?=getDataByTagName($n, 'INID_57');?></td>
+                    </tr>
 			<?
-				} // noticeCode = 75
+				}
 				else
 				{
 			?>
@@ -529,16 +588,16 @@
 					$tagData = $n[$j]['tagData'];
 					$tagName = $n[$j]['name'];
 					$tagAttrs = $n[$j]['attrs'];
-					
+
 					$cl = 'notifyLine2';
 					if ( $j == 0 )
 						$cl = 'notifyLineLeft2';
-					
+
 					if ( $tagAttrs['ISSPOV'] == 'Y' )
 					{
 			?>
 						<td class="<?=$cl;?>"><?=$tagData;?></td>
-			<?				
+			<?
 					} // end if  $tagAttrs['SSPOV'] == 'Y'
 				} // end for $j
 			?>
