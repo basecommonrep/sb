@@ -94,7 +94,8 @@
 		
 		if ( !empty( $fullBiblio['i_556'] ) && $access )
 		{
-			SaveSoundToTemp($fullBiblio['idClaim']);
+		//	SaveSoundToTemp($fullBiblio['idClaim']);
+			SaveSoundToTemp2($fullBiblio['idClaim']);
 		}
 
 	} // if ( !empty($fullBiblio) )
@@ -543,7 +544,7 @@
 							?>
 
 							<?
-								if ( !empty( $fullBiblio['i_556'] ) && $access && $currDbName != 'tmc' )
+								if ( !empty( $fullBiblio['i_556'] ) && $access ) //&& $currDbName != 'tmc'
 								{
 							?>
 	
@@ -553,12 +554,16 @@
 									<td><font class="viennacatunder"><acronym title="<?=$LANG_SETTINGS['tm_details']['inid556'];?>">(556)</acronym></font></td>
 									<td colspan=3 valign="top"><font class="viennacat2"><?=$LANG_SETTINGS['tm_details']['inid556'];?></font></td>
 								</tr>
-								<tr valign="top">
-									<td><font class="viennacatunder"><acronym></acronym></font></td>
-									<td colspan=3 valign="top"><font class="viennacat2"><audio src="<?= 'tempdocs/'.$fullBiblio['idClaim'].'.wav'?>" controls></audio></font></td>
-								</tr>
-	
+              <?
+                  if ( file_exists( 'tempdocs/'.$fullBiblio['idClaim'].'.wav' ) )
+                  {
+              ?>
+                  <tr valign="top">
+                    <td><font class="viennacatunder"><acronym></acronym></font></td>
+                    <td colspan=3 valign="top"><font class="viennacat2"><audio src="<?= 'tempdocs/'.$fullBiblio['idClaim'].'.wav'?>" controls></audio></font></td>
+                  </tr>
 							<?
+                  } // end if file_exists 
 								} // end if ( !empty( $fullBiblio['i_556'] ) )
 							?>
 

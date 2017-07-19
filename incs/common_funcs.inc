@@ -341,4 +341,30 @@ function SaveSoundToTemp ($idClaim)
 	}
 }
 
+function SaveSoundToTemp2 ($idClaim)
+{
+	if(!file_exists('tempdocs/'.$idClaim.'.wav'))
+	{
+    $connSettings = $GLOBALS['connection'];
+    $currDbConnSettings = $connSettings['inet_actualization'];
+    
+    $host = $currDbConnSettings['host'];
+    $login = $currDbConnSettings['login'];
+    $password = $currDbConnSettings['pass'];
+    $database = $currDbConnSettings['dbname'];
+
+    $link = mssql_connect($host, $login, $password);
+    mssql_select_db($database, $link);
+    $query = mssql_query("select Sound from TM_sounds where idClaim = ".$idClaim);
+    $row = mssql_fetch_assoc($query);
+
+    if(!empty($row['Sound'])) 
+    {
+      $fp = fopen('tempdocs/'.$idClaim.'.wav', 'w+');
+      fwrite($fp, $row['Sound']);
+      fclose($fp);
+    }
+	}
+}
+
 ?>
