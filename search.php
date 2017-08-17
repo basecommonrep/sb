@@ -374,14 +374,7 @@
 		unset($params_table_content['invdu']['ANALOG']);
 	}	
 	
-	if ( $_SESSION['addDbName'] == 'cert' && $_SESSION['lastSearchDbName'] == 'tm' && !$_SESSION['specialEnter'] )
-	{
-		unset($params_table_content['tm']['VIENNA']);
-		unset($params_table_content['tm']['KEYW']);
-		unset($params_table_content['tm']['ADDR']);
-		unset($params_table_content['tm']['APP']);
-	}
-	elseif ( $_SESSION['addDbName'] == 'cert' && $_SESSION['lastSearchDbName'] == 'pp' && !$_SESSION['specialEnter'] )
+	if ( $_SESSION['addDbName'] == 'cert' && $_SESSION['lastSearchDbName'] == 'pp' && !$_SESSION['specialEnter'] )
 	{
 		unset($params_table_content['pp']['ADDR']);
 	}
