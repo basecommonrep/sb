@@ -6,5 +6,5 @@ case
 	else null
 end as value
 from dictionary d
-where d.dictName = '$$$DICTNAME$$$' and d.fieldName = '$$$FIELDNAME$$$' and 
+where d.dictName = '$$$DICTNAME$$$' and d.fieldName = '$$$FIELDNAME$$$' and d.valueStr <> '*' and
 d.id in ($$$DICTIDS$$$)
