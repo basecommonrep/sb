@@ -113,7 +113,7 @@
 		$_SESSION['lastLang'] = $langTemp;
 		
 		// очистка временных файлов
-		ClearTempFiles('tempdocs', 24);
+		//ClearTempFiles('tempdocs', 24);
 
 		// дл¤ словарика
 		// =============
