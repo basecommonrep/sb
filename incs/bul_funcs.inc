@@ -274,7 +274,7 @@ function castSearchValuesToSqlFormat($dbn, &$parsedValues, $isDict)
 				{
 
 					$word = str_replace("[", "[[]", $word); // open
-					
+
 					if ( $word[0] == '"' && $word[strlen($word)-1] == '"' )
 					{
 						$word = substr($word, 1, strlen($word)-2);
@@ -365,7 +365,7 @@ function castSearchValuesToSqlFormat($dbn, &$parsedValues, $isDict)
 							$word = $word.'%';
 
 						$word = '\''.$word.'\'';
-						
+
 						//print($word);
 
 
@@ -483,6 +483,12 @@ function castSearchValuesToSqlFormat($dbn, &$parsedValues, $isDict)
 	} // end while
 	if ((count ($parsedValues[DAUSSR]) > 0) && ((count ($parsedValues[TUSSR]) == 0) && (count ($parsedValues[TUSSR]) == 0)))
 		$parsedValues[DAUSSR][0] = '('.$parsedValues[DAUSSR][0].') and t_DAUSSR.i_200n <> \'*\'';
+
+	// Точный поиск по номеру свидетельства на знак для товаров и услуг
+	if (isset($parsedValues['NCERT']) and isset($parsedValues['NCERT'][0])) {
+        $parsedValues['NCERT'][0] = str_replace('like', '=', $parsedValues['NCERT'][0]);
+        $parsedValues['NCERT'][0] = str_replace('%', '', $parsedValues['NCERT'][0]);
+    }
 	
 } // end castSearchValuesToSqlFormat
 
@@ -563,7 +569,7 @@ function buildGetIdsQuery($dbn, $parsedValues, $lastSearchQuery, $addDbName)
 									  ' from '.$realTableName.' '.$fsqlTableAlias.
 								   	  ' ###JOINQUERY### '.
 									  ' where('.$polizForm[$i].')';
-										
+
 						$polizForm[$i] = $polizQuery;
 					}
 				} // for list poliz
