@@ -7,6 +7,7 @@ tmp/**/*
 .DS_Store
 tempdocs/*
 notices/*
+geo/*
 incs/config.inc
 dict_*
 article_parser*
