@@ -687,6 +687,37 @@
 			$currDbName = ( !empty( $_GET['dbname'] ) && in_array( $_GET['dbname'], $db_names_codes ) ) ? $_GET['dbname'] : $db_names_codes[0];
 			$currDbTitle = $db_names[$currDbName];
 
+      if ( substr($currDbName, 0, 3) == 'geo')
+      {
+        $bulNumbList = getGeoBulNumberList($currDbName);
+        
+        $currBulNumbIds = array_keys($bulNumbList);
+
+        $_SESSION['lastViewBulNumb'] = ( isset($_POST['newviewbulid']) && $_POST['newviewbulid'] >= 0 && in_array( $_POST['newviewbulid'], $currBulNumbIds ) ) ? (int)$_POST['newviewbulid'] : $_SESSION['lastViewBulNumb'];
+        $_SESSION['lastViewBulNumb'] = ( in_array( $_SESSION['lastViewBulNumb'], $currBulNumbIds ) ) ? (int)$_SESSION['lastViewBulNumb'] : 0;
+        $currBulId = $_SESSION['lastViewBulNumb'];
+        
+        $currBulStr = substr($bulNumbList[$currBulId], 0, strpos($bulNumbList[$currBulId], ' '));
+        $currBulDate = substr($bulNumbList[$currBulId], strpos($bulNumbList[$currBulId], ' ')+1);
+        $currViewDbSections = $viewDbSections[$currDbName];
+        $currViewDbSectionsCodes = array_keys($currViewDbSections);
+        $currSecName = ( !empty( $_GET['section'] ) && in_array( $_GET['section'], $currViewDbSectionsCodes ) ) ? $_GET['section'] : $currViewDbSectionsCodes[0];
+        $currSecTitle = $currViewDbSections[$currSecName][2];
+
+        $t = explode(' ', $currBulStr);
+
+				$numbb = str_replace('/', '-', ($currBulStr));
+				$d = explode('.', $currBulDate);
+				$bstr = $d[0].$d[1].$d[2];
+
+        if($currSecName == 'pointer')
+          $bul_pdf_fpath = 'geo/'.$currDbName.'/pointer/pointer_'.$currDbName.'_'.$numbb.'.pdf';
+        else
+          $bul_pdf_fpath = 'geo/'.$currDbName.'/bul_'.$currDbName.'_'.$numbb.'_'.$bstr.'.pdf';
+        
+        break;
+      }
+      
 			if ( $currDbName != 'official' )
 			{
 				// сортуванн¤
@@ -1090,7 +1121,7 @@ else //прищли от ввода данных на поиск
 			    $RecordCount= count($searchShortBiblioSet);
 				//print_r($searchShortBiblioSet);	print('<br>');
 			}
-			else if ( !( $currDbName == 'tm' || $currDbName == 'pp' || $currDbName == 'madrid') )
+			else if ( !( $currDbName == 'tm' || $currDbName == 'pp' || $currDbName == 'madrid' || $currDbName == 'geo' ) )
 			{
 				// в том числе формируем запрос на получение спов?щень
 				$query = buildGetIdsBulViewQuery($currDbName, 'notice', $currBulId, $currBulStr, true, $addDbName, $currBulDate);

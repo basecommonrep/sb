@@ -44,7 +44,7 @@
 
 			<td align=right>
 				<?
-					if ( isDiskBul == 'no' )
+					if ( isDiskBul == 'no' && $currDbName != 'geo' )
 					{
 				?>
 					<font class="viennacat2"><?=$LANG_SETTINGS['interface']['actual2']?>&nbsp;<?=$currActualDate;?></font>&nbsp;
@@ -95,16 +95,14 @@ if ($currDbName=='tm2' || $currDbName=='pp2') { $predstr=substr($currDbName,0,2)
 		<td valign=top align=left>
 		<?
 			//print('viewnotices ' . $currDbName .'<BR>');
-                        if ( substr($currDbName, 0, 3) == 'inv' )
-				include('../searchBul/incs/restables/reslisttab_inv_notice.php.inc');		
-			elseif ($currDbName == 'tm2' || $currDbName == 'pp2')
-                                include('../searchBul/incs/restables/reslisttab_tm2_notice.php.inc');
-                        
-
-                        elseif ($currDbName == 'tm' || $currDbName == 'pp' || $currDbName == 'madrid')
-				include('../searchBul/incs/restables/reslisttab_pdf_notice.php.inc');		
-			else
-				include('../searchBul/incs/restables/reslisttab_allnotice.php.inc');
+    if ( substr($currDbName, 0, 3) == 'inv' )
+      include('../searchBul/incs/restables/reslisttab_inv_notice.php.inc');		
+    elseif ($currDbName == 'tm2' || $currDbName == 'pp2')
+      include('../searchBul/incs/restables/reslisttab_tm2_notice.php.inc');
+    elseif ($currDbName == 'tm' || $currDbName == 'pp' || $currDbName == 'madrid' || $currDbName == 'geo' )
+      include('../searchBul/incs/restables/reslisttab_pdf_notice.php.inc');		
+		else
+      include('../searchBul/incs/restables/reslisttab_allnotice.php.inc');
 		?>		
 
 		</td>

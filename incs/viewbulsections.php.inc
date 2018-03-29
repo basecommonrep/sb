@@ -13,11 +13,23 @@
 	<td>
 	<table border=0	cellspacing=0 cellpadding=0 width=100%>
 	<tr>
+<?
+  if(substr($currDbName,0,3) == 'geo')
+  {
+?>
+  <td colspan=4 width=100% height=20 valign=top align=center><font class="viennacat"><?=strtoupper($currDbTitle);?></font></td>
+<?
+  }
+  else
+  {
+?>
 		<td width=400 height=20 valign=top><font class="viennacat"><?=strtoupper($currDbTitle);?></font></td>
 		<td width=1 bgcolor="#00518f"><img src="images/spacer.gif" width="2"></td>
 		<td valign=top align=left style="padding-left: 10px;"><font class="viennacat"><?=(!empty($currSecTitle)) ? strtoupper($currSecTitle) : '&nbsp;';?></font></td>
-<!--		<td class="helpbox" height="20" align=center><a style="text-decoration:none; color: white;" target=_blank href="help.php#main">?</a></td>-->
 		<td>&nbsp;</td>
+<?
+  }
+?>
 	</tr>
 
 	<tr><td width=1 height=10 colspan=4><img height=10 width=1 src="images/spacer.gif"></td></tr>
@@ -45,7 +57,7 @@
 
 			</td>
 			<td align=right>
-				<font class="viennacat2"><?=(isDiskBul == 'no') ? $LANG_SETTINGS['interface']['actual2'].'&nbsp;'.$currActualDate : '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';?></font>&nbsp;
+				<font class="viennacat2"><?=(isDiskBul == 'no' && substr($currDbName,0,3) != 'geo') ? $LANG_SETTINGS['interface']['actual2'].'&nbsp;'.$currActualDate : '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';?></font>&nbsp;
 			</td>
 			
 		</tr>
@@ -54,7 +66,7 @@
 		</td>
 		<td height=5 width=1 bgcolor="#00518f"><img height=5 width=1 src="images/spacer.gif"></td>
 		
-		<td colspan=2 style="padding-left: 10px;"><font style="text-decoration: underline" class="viennacat2"><?=$LANG_SETTINGS['interface']['info'];?></font></td>
+		<td colspan=2 style="padding-left: 10px;"><font style="text-decoration: underline" class="viennacat2"></font></td>
 	</tr>
 
 	<tr><td height=5 width=1><img height=5 width=1 src="images/spacer.gif"></td></tr>
@@ -104,8 +116,8 @@
 		<?
 			if ( $isSubSec && !empty( $secHref ) )
 			{
-			if ( ( substr($currDbName, 0, 3) == 'inv' && ($itemCount[$secName] > 0 || strstr($secName, 'num') || strstr($secName, 'syst'))) || substr($currDbName, 0, 3) != 'inv'  )
-			{
+        if ( ( substr($currDbName, 0, 3) == 'inv' && ($itemCount[$secName] > 0 || strstr($secName, 'num') || strstr($secName, 'syst'))) || substr($currDbName, 0, 3) != 'inv'  )
+        {
 			//print(rtrim($currDbName));
 		?>	
 			
@@ -122,12 +134,12 @@
 
 			<tr><td width=1 height=15 colspan=4><img height=15 width=1 src="images/spacer.gif"></td></tr>
 		<?
-			}
+        }
 			}
 			elseif ( !$isSubSec && !empty( $secHref ) )			
 			{
-			if ( ( $secName == 'notice' && $itemCount[$secName] > 0 ) || $secName != 'notice' )
-			{
+        if ( ( $secName == 'notice' && $itemCount[$secName] > 0 ) || $secName != 'notice' )
+          {
 		?>
 			<tr>
 			<td colspan=4>
@@ -143,7 +155,7 @@
 	
 			<tr><td width=1 height=15 colspan=4><img height=15 width=1 src="images/spacer.gif"></td></tr>
 		<?	
-			}
+        }
 			}
 			else
 			{
@@ -179,9 +191,13 @@
 		
 		<td valign=top align=left colspan=3 rowspan=4 style="padding-left: 10px;">
 <?
-	if ( empty( $errors ) )	
+	if ( empty( $errors ) && substr($currDbName,0,3) != 'geo' )	
 		include('incs/viewbulresult.php.inc');		
-	else
+	elseif ( empty( $errors ) && substr($currDbName,0,3) == 'geo' )
+    {
+      include('incs/restables/reslisttab_pdf_bul.php.inc');
+    }
+  else
 
 ?>		
 		<font class="viennacat"><?=strtoupper($errors);?></font>

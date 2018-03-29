@@ -55,13 +55,16 @@
 						'pp'		=> $LANG_SETTINGS['menu']['pp'], 
 						'pp2'		=> $LANG_SETTINGS['menu']['pp'], 
 						'tm'		=> $LANG_SETTINGS['menu']['tm'], 
-                 		'tm2'		=> $LANG_SETTINGS['menu']['tm'],
+            'tm2'		=> $LANG_SETTINGS['menu']['tm'],
 						//'geo' 		=> $LANG_SETTINGS['menu']['geo'], 
-						'madrid' 	=> $LANG_SETTINGS['menu']['madrid'], 
+						//'madrid' 	=> $LANG_SETTINGS['menu']['madrid'], 
 						'wkm'		=> $LANG_SETTINGS['menu']['wkm'],
-						'madridall'	=> $LANG_SETTINGS['interface']['madridall_cert'],
+						//'madridall'	=> $LANG_SETTINGS['interface']['madridall_cert'],
 						'tmc'	=> $LANG_SETTINGS['interface']['tmc'],
 						'official'	=> $LANG_SETTINGS['menu']['official'],
+						'geoc'	=> $LANG_SETTINGS['menu']['geoc'],
+						'geo'	=> $LANG_SETTINGS['menu']['geo'],
+						'geor'	=> $LANG_SETTINGS['menu']['geor'],
 					);
 
 
@@ -621,13 +624,39 @@
 						TYPE	=> array(2, 'v_mark',			'publish_type',		$LANG_SETTINGS['wkm_fields']['TYPE'], 	0, $LANG_SETTINGS['wkm_fields']['TYPE_NAME_COURT'],								0, left,	912),
 						),
 
+    'geoc'  => array(
+						NC 			=> array(2, 'maininfo',		'i_21',				$LANG_SETTINGS['geo_fields']['NC'], 		0, 	'2002120009', 		0, center,	1003),
+						FD 			=> array(3, 'maininfo',		'i_22',				$LANG_SETTINGS['geo_fields']['FD'], 		0, 	'18.12.2002', 		0, center,	1004),
+            NBUL  	=> array(2, 'maininfo',	'bulStr',		    $LANG_SETTINGS['madrid_fields']['NBUL'], 	0, 	 '5/2008', 			0, center,	801),
+						DPUBL 	=> array(3, 'maininfo',		'bulletinDate',		$LANG_SETTINGS['geo_fields']['DPUBL'],		0, 	'15.03.2007', 		0, center,	1005),
+            APP 	  => array(2, 'claim731',		'name',			$LANG_SETTINGS['tm_fields']['APP'], 	731, 'çàâîä Ë²Ò', 							0, left,	717),
+						KZPNAME 	=> array(2, 'maininfo',		'kzpName',			$LANG_SETTINGS['geo_fields']['KZPNAME'],	0, 	'ÌÈÐÃÎÐÎÄÑÜÊÀ', 	0, left,	1006),
+						KZPTYPE 	=> array(2, 'maininfo',		'kzpType',			$LANG_SETTINGS['geo_fields']['KZPTYPE'],	0, 	'', 	0, left,	1007),
+						GOODNAME 	=> array(2, 'maininfo',		'goodName',			$LANG_SETTINGS['geo_fields']['GOODNAME'],	0, 	'Ì³íåðàëüíà âîäà', 	0, left,	1007),
+						),
+                       
 		'geo'  => array(
-						NP 			=> array(1, 'maininfo',		'regNumb',			$LANG_SETTINGS['geo_fields']['NP'], 		0,  '2', 				0, center,	1001),
+            NP 			=> array(1, 'maininfo',		'regNumb',			$LANG_SETTINGS['geo_fields']['NP'], 		0,  '2', 				0, center,	1001),
 						REGD		=> array(3, 'maininfo',		'regDate',			$LANG_SETTINGS['geo_fields']['REGD'], 		0, 	'15.03.2007', 		0, center,	1002),
 						NC 			=> array(2, 'maininfo',		'i_21',				$LANG_SETTINGS['geo_fields']['NC'], 		0, 	'2002120009', 		0, center,	1003),
 						FD 			=> array(3, 'maininfo',		'i_22',				$LANG_SETTINGS['geo_fields']['FD'], 		0, 	'18.12.2002', 		0, center,	1004),
-						DPUBL 		=> array(3, 'maininfo',		'bulletinDate',		$LANG_SETTINGS['geo_fields']['DPUBL'],		0, 	'15.03.2007', 		0, center,	1005),
+            NBUL  	=> array(2, 'maininfo',	'bulStr',		    $LANG_SETTINGS['madrid_fields']['NBUL'], 	0, 	 '5/2008', 			0, center,	801),
+						DPUBL 	=> array(3, 'maininfo',		'bulletinDate',		$LANG_SETTINGS['geo_fields']['DPUBL'],		0, 	'15.03.2007', 		0, center,	1005),
+            APP 	  => array(2, 'claim731',		'name',			$LANG_SETTINGS['tm_fields']['APP'], 	731, 'çàâîä Ë²Ò', 							0, left,	717),
 						KZPNAME 	=> array(2, 'maininfo',		'kzpName',			$LANG_SETTINGS['geo_fields']['KZPNAME'],	0, 	'ÌÈÐÃÎÐÎÄÑÜÊÀ', 	0, left,	1006),
+						KZPTYPE 	=> array(2, 'maininfo',		'kzpType',			$LANG_SETTINGS['geo_fields']['KZPTYPE'],	0, 	'', 	0, left,	1007),
+						GOODNAME 	=> array(2, 'maininfo',		'goodName',			$LANG_SETTINGS['geo_fields']['GOODNAME'],	0, 	'Ì³íåðàëüíà âîäà', 	0, left,	1007),
+						),
+            
+		'geor'  => array(
+						NP 			=> array(1, 'maininfo',		'regNumb',			$LANG_SETTINGS['geo_fields']['NP'], 		0,  '2', 				0, center,	1001),
+						REGD		=> array(3, 'maininfo',		'regDate',			$LANG_SETTINGS['geo_fields']['REGD'], 		0, 	'15.03.2007', 		0, center,	1002),
+						NC 			=> array(2, 'maininfo',		'i_21',				$LANG_SETTINGS['geo_fields']['artem1'], 		0, 	'1', 		0, center,	1003),
+            NBUL  	=> array(2, 'maininfo',	'bulStr',		    $LANG_SETTINGS['madrid_fields']['NBUL'], 	0, 	 '5/2008', 			0, center,	801),
+						DPUBL 	=> array(3, 'maininfo',		'bulletinDate',		$LANG_SETTINGS['geo_fields']['DPUBL'],		0, 	'15.03.2007', 		0, center,	1005),
+            APP 	  => array(2, 'claim731',		'name',			$LANG_SETTINGS['tm_fields']['artem7'], 	731, 'çàâîä Ë²Ò', 							0, left,	717),
+						KZPNAME 	=> array(2, 'maininfo',		'kzpName',			$LANG_SETTINGS['geo_fields']['KZPNAME'],	0, 	'ÌÈÐÃÎÐÎÄÑÜÊÀ', 	0, left,	1006),
+						KZPTYPE 	=> array(2, 'maininfo',		'kzpType',			$LANG_SETTINGS['geo_fields']['KZPTYPE'],	0, 	'', 	0, left,	1007),
 						GOODNAME 	=> array(2, 'maininfo',		'goodName',			$LANG_SETTINGS['geo_fields']['GOODNAME'],	0, 	'Ì³íåðàëüíà âîäà', 	0, left,	1007),
 						),
 
@@ -843,7 +872,22 @@
 						
 		'tmc'		=> array(
 						all		 	=> array(0, 'all', 		$LANG_SETTINGS['common_viewparts']['allclaims']),
-		),
+            ),
+						
+		'geo'		=> array(
+						all		 	=> array(0, 'all', 		$LANG_SETTINGS['common_viewparts']['allcerts']),
+            pointer			=> array(0, 'pointer', 		$LANG_SETTINGS['common_viewparts']['pointers'])
+            ),
+						
+		'geoc'		=> array(
+						all		 	=> array(0, 'all', 		$LANG_SETTINGS['common_viewparts']['allclaims']),
+						pointer			=> array(0, 'pointer', 		$LANG_SETTINGS['common_viewparts']['pointers'])
+            ),
+						
+		'geor'		=> array(
+						all		 	=> array(0, 'all', 		$LANG_SETTINGS['common_viewparts']['allcerts']),
+						pointer			=> array(0, 'pointer', 		$LANG_SETTINGS['common_viewparts']['pointers'])
+            ),
 
 
 	);

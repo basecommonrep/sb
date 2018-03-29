@@ -316,6 +316,103 @@ if ( $currAction == 'viewbul' && $currDbName == 'wkm' )
 
 
 <?
+	if ( empty($addDbName) || ( !empty($addDbName) && $currDbName == 'geoc' ))
+	{
+?>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td><img src="images/but_25.gif" width="132" height="11"></td>
+			<td height="11" width="40"><img src="images/but_26.gif" width="40" height="11"></td>
+		</tr>
+		<tr>
+			<td background="images/buttons_29.gif" align="right">
+			<table height=45 width="95%" border="0" cellspacing="0" cellpadding="0">
+
+<?
+$s = $LANG_SETTINGS['menu']['geoc'];;
+$str = '<a class="viennacat2" href="search.php?action=viewbul&dbname=geoc">'.$s.'</font>';
+if ( $currAction == 'viewbul' && $currDbName == 'geoc' )
+	$str = '<font style="text-decoration:underline" class="viennacat2">'.$s.'</font>';
+?>
+
+			<tr><td align="right" class="alttext"><p align="left"><?=$str;?></p></td></tr>
+			</table>
+			</td>
+			<td valign="top" background="images/but_30.gif"><img src="images/but_29.gif" width="40" height="17"></td>
+		</tr>
+		</table>
+
+<?
+	} // end if reestrDbName
+?>
+
+
+<?
+	if ( empty($addDbName) || ( !empty($addDbName) && $currDbName == 'geo' ))
+	{
+?>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td><img src="images/but_25.gif" width="132" height="11"></td>
+			<td height="11" width="40"><img src="images/but_26.gif" width="40" height="11"></td>
+		</tr>
+		<tr>
+			<td background="images/buttons_29.gif" align="right">
+			<table height=45 width="95%" border="0" cellspacing="0" cellpadding="0">
+
+<?
+$s = $LANG_SETTINGS['menu']['geo'];;
+$str = '<a class="viennacat2" href="search.php?action=viewbul&dbname=geo">'.$s.'</font>';
+if ( $currAction == 'viewbul' && $currDbName == 'geo' )
+	$str = '<font style="text-decoration:underline" class="viennacat2">'.$s.'</font>';
+?>
+
+			<tr><td align="right" class="alttext"><p align="left"><?=$str;?></p></td></tr>
+			</table>
+			</td>
+			<td valign="top" background="images/but_30.gif"><img src="images/but_29.gif" width="40" height="17"></td>
+		</tr>
+		</table>
+
+<?
+	} // end if reestrDbName
+?>
+
+
+<?
+	if ( empty($addDbName) || ( !empty($addDbName) && $currDbName == 'geor' ))
+	{
+?>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td><img src="images/but_25.gif" width="132" height="11"></td>
+			<td height="11" width="40"><img src="images/but_26.gif" width="40" height="11"></td>
+		</tr>
+		<tr>
+			<td background="images/buttons_29.gif" align="right">
+			<table height=45 width="95%" border="0" cellspacing="0" cellpadding="0">
+
+<?
+$s = $LANG_SETTINGS['menu']['geor'];;
+$str = '<a class="viennacat2" href="search.php?action=viewbul&dbname=geor">'.$s.'</font>';
+if ( $currAction == 'viewbul' && $currDbName == 'geor' )
+	$str = '<font style="text-decoration:underline" class="viennacat2">'.$s.'</font>';
+?>
+
+			<tr><td align="right" class="alttext"><p align="left"><?=$str;?></p></td></tr>
+			</table>
+			</td>
+			<td valign="top" background="images/but_30.gif"><img src="images/but_29.gif" width="40" height="17"></td>
+		</tr>
+		</table>
+
+<?
+	} // end if reestrDbName
+?>
+
+
+
+<?
 	if ( empty($addDbName) and false)
 	{
 ?>
@@ -416,7 +513,18 @@ if ( $currDbName == 'madrid' && $currAction == 'viewnotices' )
 	$str = '<font class="info2">-&nbsp;</font><font style="text-decoration:underline" class="info2">'.$LANG_SETTINGS['notice']['madrid'].'</font>';
 
 
-$s .= $str;	
+$s .= $str.'<BR>';	
+
+//---------------- notices geo
+
+$str = '<font class="info2">-&nbsp;</font><a class="info2" href="search.php?action=viewnotices&dbname=geo">'.$LANG_SETTINGS['notice']['geo'].'</a>';
+if ( $currDbName == 'geo' && $currAction == 'viewnotices' )
+	$str = '<font class="info2">-&nbsp;</font><font style="text-decoration:underline" class="info2">'.$LANG_SETTINGS['notice']['geo'].'</font>';
+
+$s .= $str;
+
+//----------------
+
 $str = $s;
 
 ?>

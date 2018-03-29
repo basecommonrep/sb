@@ -1368,12 +1368,40 @@ function cmp($a, $b)
     return ($a_date > $b_date) ? -1 : 1;
 }
 
+function getGeoBulNumberList($dbn)
+{
+  $bulNumbers = array();
+  
+  $dir = 'geo/'.$dbn;
+
+		$i = 0;
+		foreach(glob($dir.'/*') as $sf) {	
+			$t = explode('_', $sf);
+			$numbb = str_replace('-', '/', ($t[2]));
+			$dateb = substr($t[3], 0, 2).'.'.substr($t[3], 2, 2).'.'.substr($t[3], 4, 4);
+			
+			$now = getdate();
+			$now_stamp = $now[0];
+			$dateb_stamp = strtotime($dateb);
+
+			if ($now_stamp > $dateb_stamp)			
+			{
+				$bulNumbers += array($i => $numbb.' '.$dateb);
+				$i++;
+			}
+    } // end foreach
+		
+		usort($bulNumbers, 'cmp');
+		
+		return $bulNumbers;
+}
+
 function getNoticeBulNumberList($dbn, $mssql)
 {
 	$currDbName = $dbn;
 	$bulNumbers = array();
 	
-	if ( $dbn == 'tm' || $dbn == 'pp' || $dbn == 'madrid' )
+	if ( $dbn == 'tm' || $dbn == 'pp' || $dbn == 'madrid' || $dbn == 'geo' )
 	{
 		$dir = 'notices/'.$dbn;
 
