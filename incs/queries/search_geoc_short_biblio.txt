@@ -5,5 +5,6 @@ convert(varchar(20), t_NC.[app_date], 104) [app_date],
 cast(t_NC.[indication] as text) [indication],
 cast(t_NC.[product_name] as text) [product_name]
 from [geo_app] t_NC
+left join [geo_app] t_FD on t_FD.id = t_NC.[id]
 where t_NC.[id] in ($$$IDS$$$)
 $$$ORDERCLAUSE$$$

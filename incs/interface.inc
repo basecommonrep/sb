@@ -627,24 +627,25 @@
     'geoc'  => array(
 						NC 			=> array(2, 'geo_app',		'app_number',				$LANG_SETTINGS['geo_fields']['NC'], 		0, 	'2002120009', 		0, center,	1003),
 						FD 			=> array(3, 'geo_app',		'app_date',				$LANG_SETTINGS['geo_fields']['FD'], 		0, 	'18.12.2002', 		0, center,	1004),
-            NBUL  	=> array(2, 'geo_app',	'bulStr',		    $LANG_SETTINGS['madrid_fields']['NBUL'], 	0, 	 '05/2008', 			0, center,	801),
+            NBUL  	=> array(2, 'geo_app',	'bulStr',		    $LANG_SETTINGS['madrid_fields']['NBUL'], 	0, 	 '05/2008', 			0, center,	1008),
 						DPUBL 	=> array(3, 'geo_app',		'bulletinDate',		$LANG_SETTINGS['geo_fields']['DPUBL'],		0, 	'15.03.2007', 		0, center,	1005),
-            APP 	  => array(2, 'geo_app',		'Holder',			$LANG_SETTINGS['tm_fields']['APP'], 	0, 'завод ЛІТ', 							0, left,	717),
+            APP 	  => array(2, 'geo_app',		'Holder',			$LANG_SETTINGS['tm_fields']['APP'], 	0, 'завод ЛІТ', 							0, left,	1009),
 						KZPNAME 	=> array(2, 'geo_app',		'indication',			$LANG_SETTINGS['geo_fields']['KZPNAME'],	0, 	'МИРГОРОДСЬКА', 	0, left,	1006),
 						GOODNAME 	=> array(2, 'geo_app',		'product_name',			$LANG_SETTINGS['geo_fields']['GOODNAME'],	0, 	'Мінеральна вода', 	0, left,	1007),
 						),
                        
 		'geo'  => array(
-            NP 			=> array(1, 'geo_reg',		'regNumb',			$LANG_SETTINGS['geo_fields']['NP'], 		0,  '2', 				0, center,	1001),
-						REGD		=> array(3, 'geo_reg',		'regDate',			$LANG_SETTINGS['geo_fields']['REGD'], 		0, 	'15.03.2007', 		0, center,	1002),
-						NC 			=> array(2, 'geo_reg',		'i_21',				$LANG_SETTINGS['geo_fields']['NC'], 		0, 	'2002120009', 		0, center,	1003),
-						FD 			=> array(3, 'geo_reg',		'i_22',				$LANG_SETTINGS['geo_fields']['FD'], 		0, 	'18.12.2002', 		0, center,	1004),
-            NBUL  	=> array(2, 'geo_reg',	'bulStr',		    $LANG_SETTINGS['madrid_fields']['NBUL'], 	0, 	 '5/2008', 			0, center,	801),
-						DPUBL 	=> array(3, 'geo_reg',		'bulletinDate',		$LANG_SETTINGS['geo_fields']['DPUBL'],		0, 	'15.03.2007', 		0, center,	1005),
-            APP 	  => array(2, 'geo_reg',		'name',			$LANG_SETTINGS['tm_fields']['APP'], 	731, 'завод ЛІТ', 							0, left,	717),
-						KZPNAME 	=> array(2, 'geo_reg',		'kzpName',			$LANG_SETTINGS['geo_fields']['KZPNAME'],	0, 	'МИРГОРОДСЬКА', 	0, left,	1006),
-						KZPTYPE 	=> array(2, 'geo_reg',		'kzpType',			$LANG_SETTINGS['geo_fields']['KZPTYPE'],	0, 	'', 	0, left,	1007),
-						GOODNAME 	=> array(2, 'geo_reg',		'goodName',			$LANG_SETTINGS['geo_fields']['GOODNAME'],	0, 	'Мінеральна вода', 	0, left,	1007),
+            NP 			=> array(1, 'geo_reg',		'reg_number',			$LANG_SETTINGS['geo_fields']['NP'], 		0,  '2', 				0, center,	1001),
+						REGD		=> array(3, 'geo_reg',		'reg_date',			$LANG_SETTINGS['geo_fields']['REGD'], 		0, 	'15.03.2007', 		0, center,	1002),
+            NBUL  	=> array(2, 'geo_reg',	'bulStr',		    $LANG_SETTINGS['madrid_fields']['NBUL'], 	0, 	 '5/2008', 			0, center,	1008),
+            DPUBL 	=> array(3, 'geo_reg',		'bulletinDate',		$LANG_SETTINGS['geo_fields']['DPUBL'],		0, 	'15.03.2007', 		0, center,	1005),
+						NC 			=> array(2, 'geo_reg',		'app_number',				$LANG_SETTINGS['geo_fields']['NC'], 		0, 	'2002120009', 		0, center,	1003),
+						FD 			=> array(3, 'geo_reg',		'app_date',				$LANG_SETTINGS['geo_fields']['FD'], 		0, 	'18.12.2002', 		0, center,	1004),
+            APP 	  => array(2, 'geo_reg',		'Holder',			$LANG_SETTINGS['tm_fields']['APP'], 	0, 'завод ЛІТ', 							0, left,	1009),
+            UGODA   => array(2, 'geo_reg',		'ugoda',			$LANG_SETTINGS['geo_fields']['UGODA'], 	0, 'Угода про асоціацію ...', 							0, left,	1010),
+            COUNTRY => array(2, 'geo_reg',		'country',			$LANG_SETTINGS['geo_fields']['COUNTRY'], 	0, 'Україна', 0, left,	1010),
+						KZPNAME 	=> array(2, 'geo_reg',		'indication',			$LANG_SETTINGS['geo_fields']['KZPNAME'],	0, 	'МИРГОРОДСЬКА', 	0, left,	1006),
+						GOODNAME 	=> array(2, 'geo_reg',		'product_name',			$LANG_SETTINGS['geo_fields']['GOODNAME'],	0, 	'Мінеральна вода', 	0, left,	1007),
 						),
             
 		'geor'  => array(
@@ -1124,7 +1125,29 @@
 													),			
 									'fd'	=> array('title' => $LANG_SETTINGS['sort']['fd'], 	// сортувати за датою подання
 													'fcode' => 'FD', 
-													'sortexpr' => 't_NC.app_date'
+													'sortexpr' => 't_FD.app_date'
+													),			
+									),  
+                  
+              'geo' => array(
+									'rn' 	=> array('title' => $LANG_SETTINGS['sort']['nc'], 	// сортувати за номером заявки
+													'fcode' => 'RN', 
+													'sortexpr' => 't_RN.reg_number'
+													),			
+									'rd'	=> array('title' => $LANG_SETTINGS['sort']['fd'], 	// сортувати за датою подання
+													'fcode' => 'RD', 
+													'sortexpr' => 't_RD.reg_date'
+													),			
+									), 
+                  
+              'geor' => array(
+									'nc' 	=> array('title' => $LANG_SETTINGS['sort']['nc'], 	// сортувати за номером заявки
+													'fcode' => 'NC', 
+													'sortexpr' => 't_NC.app_number'
+													),			
+									'fd'	=> array('title' => $LANG_SETTINGS['sort']['fd'], 	// сортувати за датою подання
+													'fcode' => 'FD', 
+													'sortexpr' => 't_FD.app_date'
 													),			
 									),
 	);

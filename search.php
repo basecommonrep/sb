@@ -523,7 +523,7 @@
 				//	$query = str_replace('order by', " where m.wheretopublish = 'both' order by", $query);
 	
 				//print($query.'<br>');
-				print($_SESSION['lastSearchQuery'].'<br>');
+				//print($_SESSION['lastSearchQuery'].'<br>');
 				//print($isInFound.'<br>');
 
 				
@@ -537,7 +537,8 @@
 				
 				if ( empty( $errors ) )
 					$currSearchIds = executeGetIdsQuery($currDbName, $query, $mssql);
-
+print($currDbName);
+print_r($currSearchIds);
 				// помилка при виконнанн? запиту
 				if ( empty( $errors ) && $currSearchIds == -1 )
 					$errors = $LANG_SETTINGS['errors']['header'].': '.$LANG_SETTINGS['errors']['req'];				
@@ -558,7 +559,7 @@
 
 					$_SESSION['lastSearchQuery'] = $query;
 					$_SESSION['lastSearchIds'] = $currSearchIds;
-					//print_r($currSearchIds);
+					
 					$_SESSION['lastSuccessSearchDbName'] = $currDbName;
 					
 					$_SESSION['lastSortField'] = $orderFields[0];
@@ -606,15 +607,12 @@
 				$query = substr($query, 0, strrpos($query, 'order by'));
 				$query .= 'order by '.$currSortExpr.' '.$currSortOrder;
 				
-				print($_SESSION['lastSearchQuery'].' - 2<BR><BR>');
-				
 				// сортуѓмо за новими кр?тер?§ми
 				$currSearchIds = executeGetIdsQuery($currDbName, $query, $mssql);
 
 				$_SESSION['lastSearchQuery'] = $query;
 				$_SESSION['lastSearchIds'] = $currSearchIds;
 				$_SESSION['lastSuccessSearchDbName'] = $currDbName;
-				
 			} // end if $action == 'sort' 
 		
 		case 'viewsearchres':
@@ -656,7 +654,7 @@
 					$endId = $resClaimsCount;
 					
 				$currSubSetSearchIds = array_slice($currSearchIds, $startId-1, $endId-$startId+1);
-				
+		
 				$query = buildGetShortBiblioQuery($currDbName, $currSubSetSearchIds, '');
 				$query = str_replace('$$$ORDERCLAUSE$$$', 'order by '.$currSortExpr.' '.$currSortOrder, $query);
 				$query = str_replace('###pubtype###', $currDbName, $query); // тип публикации дл§ ЮЊ†
@@ -928,7 +926,7 @@
 			{
 				$fullBiblioQuery = buildGetFullBiblioQuery($currDbName, $idClaim);
 				$fullBiblioQuery = str_replace('###pubtype###', $currDbName, $fullBiblioQuery); // тип публикации дл§ ЮЊ†
-				//print($fullBiblioQuery);
+				print($fullBiblioQuery);
 				$fullBiblio = executeGetFullBiblioQuery($currDbName, $fullBiblioQuery, $mssql);
 				//print_r($fullBiblio);
 

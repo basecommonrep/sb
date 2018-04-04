@@ -199,6 +199,8 @@
 		$nn = 'geoc1';
 	elseif ( $currDbName == 'geoc' && $fullBiblio['app_category'] == 'app-reg-use' )
 		$nn = 'geoc2';
+	elseif ( $currDbName == 'geo' )
+		$nn = 'geo';
 	
 		
 	$n = '';
@@ -213,6 +215,8 @@
 	elseif ( $currDbName == 'madridall' )
 		$n = $currDbName;	
 	elseif ( $currDbName == 'geoc' )
+		$n = $currDbName;	
+	elseif ( $currDbName == 'geo' )
 		$n = $currDbName;	
 		
 	if ( substr($n, 0, 3) == 'inv' )
@@ -237,6 +241,8 @@
 		$i1 = $fullBiblio['fi_111'];
   elseif ( $n == 'geoc' )	
 		$i1 = $fullBiblio['app_number'];
+  elseif ( $n == 'geo' )	
+		$i1 = $fullBiblio['reg_number'];
 
 	//print($nn);
 	

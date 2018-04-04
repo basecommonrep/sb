@@ -1,1 +1,9 @@
-$$$SUBQUERY$$$
+select rc.id 
+from (
+	select distinct rc.id 
+	from geo_app rc
+	inner join ($$$SUBQUERY$$$) res on rc.id=res.id
+) as rc
+inner join geo_app t_NC on t_NC.id=rc.id
+inner join geo_app t_FD on t_FD.id=rc.id
+$$$ORDERCLAUSE$$$

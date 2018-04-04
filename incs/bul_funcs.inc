@@ -849,6 +849,9 @@ function buildGetFullBiblioQuery($dbn, $idClaim)
 
 function executeGetIdsQuery($dbn, $query, $mssql)
 {
+  if( substr($dbn, 0, 3) == 'geo' )
+    $dbn = 'geo';
+  
 	$connSettings = $GLOBALS['connection'];
 	$currDbConnSettings = $connSettings[$dbn];
 	
@@ -878,6 +881,9 @@ function executeGetIdsQuery($dbn, $query, $mssql)
 
 function executeGetShortBiblioQuery($dbn, $query, $mssql)
 {
+  if( substr($dbn, 0, 3) == 'geo' )
+    $dbn = 'geo';
+  
 	$connSettings = $GLOBALS['connection'];
 	$currDbConnSettings = $connSettings[$dbn];
 	
@@ -932,6 +938,9 @@ function executeGetShortBiblioQuery($dbn, $query, $mssql)
 
 function executeGetFullBiblioQuery($dbn, $query, $mssql)
 {
+  if( substr($dbn, 0, 3) == 'geo' )
+    $dbn = 'geo';
+  
 	$connSettings = $GLOBALS['connection'];
 	$currDbConnSettings = $connSettings[$dbn];
 	

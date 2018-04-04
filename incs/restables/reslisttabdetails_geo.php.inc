@@ -59,27 +59,27 @@
                 <td>
                   <table width=650 border=0 height=50 width=100% cellpadding=0 cellspacing=0>
                   <tr>
-                    <td colspan=2><font class="viennacat"><?=$LANG_SETTINGS['geo_fields']['NC'];?></font></td>
+                    <td colspan=2><font class="viennacat"><?=$LANG_SETTINGS['geo_fields']['NP'];?></font></td>
                   </tr>
 
                   <tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
 
                   <tr>
                     <td width=20><img height=1 width=20 src="images/spacer.gif"></td>
-                    <td width=580><font class="viennacat2"><?=$fullBiblio['app_number'];?></font></td>
+                    <td width=580><font class="viennacat2"><?=$fullBiblio['reg_number'];?></font></td>
                   </tr>
 
                   <tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
 
                   <tr>
-                    <td colspan=2><font class="viennacat"><?=$LANG_SETTINGS['geo_fields']['FD'];?></font></td>
+                    <td colspan=2><font class="viennacat"><?=$LANG_SETTINGS['geo_fields']['REGD'];?></font></td>
                   </tr>
 
                   <tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
 
                   <tr>
                     <td><img height=1 width=20 src="images/spacer.gif"></td>
-                    <td><font class="viennacat2"><?=$fullBiblio['app_date'];?></font></td>
+                    <td><font class="viennacat2"><?=$fullBiblio['reg_date'];?></font></td>
                   </tr>
                   
                   <tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>

@@ -1,6 +1,10 @@
-select mi.idClaim
-from maininfo mi
-inner join ($$$SUBQUERY$$$) res on mi.idClaim=res.idClaim
-$$$VIEWBULWHERE$$$
+select rc.id 
+from (
+	select distinct rc.id 
+	from geo_reg rc
+	inner join ($$$SUBQUERY$$$) res on rc.id=res.id
+) as rc
+inner join geo_reg t_RN on t_RN.id=rc.id
+inner join geo_reg t_RD on t_RD.id=rc.id
 $$$ORDERCLAUSE$$$
 
