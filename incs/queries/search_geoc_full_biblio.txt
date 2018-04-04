@@ -1,0 +1,19 @@
+select t_NC.[id],
+case 
+ when t_NC.[bulN] is not null then cast(t_NC.[bulN] as nvarchar(16))+'/'+cast(t_NC.[bulY] as nvarchar(16))
+ else NULL
+end as [bullNumber],
+t_NC.[app_number], 
+t_NC.[app_category],
+convert(varchar(20), t_NC.[app_date], 104) [app_date],
+cast(t_NC.[indication] as text) [indication],
+cast(t_NC.[product_name] as text) [product_name],
+[qualification],
+[Holder],
+[HolderAddress],
+[HolderCountry],
+[area],
+[descr],
+[termofuse]
+from [geo_app] t_NC
+where t_NC.[id]=:$$$IDCLAIM$$$

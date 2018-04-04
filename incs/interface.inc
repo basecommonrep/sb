@@ -57,7 +57,7 @@
 						'tm'		=> $LANG_SETTINGS['menu']['tm'], 
             'tm2'		=> $LANG_SETTINGS['menu']['tm'],
 						//'geo' 		=> $LANG_SETTINGS['menu']['geo'], 
-						//'madrid' 	=> $LANG_SETTINGS['menu']['madrid'], 
+						'madrid' 	=> $LANG_SETTINGS['menu']['madrid'], 
 						'wkm'		=> $LANG_SETTINGS['menu']['wkm'],
 						//'madridall'	=> $LANG_SETTINGS['interface']['madridall_cert'],
 						'tmc'	=> $LANG_SETTINGS['interface']['tmc'],
@@ -625,39 +625,38 @@
 						),
 
     'geoc'  => array(
-						NC 			=> array(2, 'maininfo',		'i_21',				$LANG_SETTINGS['geo_fields']['NC'], 		0, 	'2002120009', 		0, center,	1003),
-						FD 			=> array(3, 'maininfo',		'i_22',				$LANG_SETTINGS['geo_fields']['FD'], 		0, 	'18.12.2002', 		0, center,	1004),
-            NBUL  	=> array(2, 'maininfo',	'bulStr',		    $LANG_SETTINGS['madrid_fields']['NBUL'], 	0, 	 '5/2008', 			0, center,	801),
-						DPUBL 	=> array(3, 'maininfo',		'bulletinDate',		$LANG_SETTINGS['geo_fields']['DPUBL'],		0, 	'15.03.2007', 		0, center,	1005),
-            APP 	  => array(2, 'claim731',		'name',			$LANG_SETTINGS['tm_fields']['APP'], 	731, 'çàâîä Ë²Ò', 							0, left,	717),
-						KZPNAME 	=> array(2, 'maininfo',		'kzpName',			$LANG_SETTINGS['geo_fields']['KZPNAME'],	0, 	'ÌÈĞÃÎĞÎÄÑÜÊÀ', 	0, left,	1006),
-						KZPTYPE 	=> array(2, 'maininfo',		'kzpType',			$LANG_SETTINGS['geo_fields']['KZPTYPE'],	0, 	'', 	0, left,	1007),
-						GOODNAME 	=> array(2, 'maininfo',		'goodName',			$LANG_SETTINGS['geo_fields']['GOODNAME'],	0, 	'Ì³íåğàëüíà âîäà', 	0, left,	1007),
+						NC 			=> array(2, 'geo_app',		'app_number',				$LANG_SETTINGS['geo_fields']['NC'], 		0, 	'2002120009', 		0, center,	1003),
+						FD 			=> array(3, 'geo_app',		'app_date',				$LANG_SETTINGS['geo_fields']['FD'], 		0, 	'18.12.2002', 		0, center,	1004),
+            NBUL  	=> array(2, 'geo_app',	'bulStr',		    $LANG_SETTINGS['madrid_fields']['NBUL'], 	0, 	 '05/2008', 			0, center,	801),
+						DPUBL 	=> array(3, 'geo_app',		'bulletinDate',		$LANG_SETTINGS['geo_fields']['DPUBL'],		0, 	'15.03.2007', 		0, center,	1005),
+            APP 	  => array(2, 'geo_app',		'Holder',			$LANG_SETTINGS['tm_fields']['APP'], 	0, 'çàâîä Ë²Ò', 							0, left,	717),
+						KZPNAME 	=> array(2, 'geo_app',		'indication',			$LANG_SETTINGS['geo_fields']['KZPNAME'],	0, 	'ÌÈĞÃÎĞÎÄÑÜÊÀ', 	0, left,	1006),
+						GOODNAME 	=> array(2, 'geo_app',		'product_name',			$LANG_SETTINGS['geo_fields']['GOODNAME'],	0, 	'Ì³íåğàëüíà âîäà', 	0, left,	1007),
 						),
                        
 		'geo'  => array(
-            NP 			=> array(1, 'maininfo',		'regNumb',			$LANG_SETTINGS['geo_fields']['NP'], 		0,  '2', 				0, center,	1001),
-						REGD		=> array(3, 'maininfo',		'regDate',			$LANG_SETTINGS['geo_fields']['REGD'], 		0, 	'15.03.2007', 		0, center,	1002),
-						NC 			=> array(2, 'maininfo',		'i_21',				$LANG_SETTINGS['geo_fields']['NC'], 		0, 	'2002120009', 		0, center,	1003),
-						FD 			=> array(3, 'maininfo',		'i_22',				$LANG_SETTINGS['geo_fields']['FD'], 		0, 	'18.12.2002', 		0, center,	1004),
-            NBUL  	=> array(2, 'maininfo',	'bulStr',		    $LANG_SETTINGS['madrid_fields']['NBUL'], 	0, 	 '5/2008', 			0, center,	801),
-						DPUBL 	=> array(3, 'maininfo',		'bulletinDate',		$LANG_SETTINGS['geo_fields']['DPUBL'],		0, 	'15.03.2007', 		0, center,	1005),
-            APP 	  => array(2, 'claim731',		'name',			$LANG_SETTINGS['tm_fields']['APP'], 	731, 'çàâîä Ë²Ò', 							0, left,	717),
-						KZPNAME 	=> array(2, 'maininfo',		'kzpName',			$LANG_SETTINGS['geo_fields']['KZPNAME'],	0, 	'ÌÈĞÃÎĞÎÄÑÜÊÀ', 	0, left,	1006),
-						KZPTYPE 	=> array(2, 'maininfo',		'kzpType',			$LANG_SETTINGS['geo_fields']['KZPTYPE'],	0, 	'', 	0, left,	1007),
-						GOODNAME 	=> array(2, 'maininfo',		'goodName',			$LANG_SETTINGS['geo_fields']['GOODNAME'],	0, 	'Ì³íåğàëüíà âîäà', 	0, left,	1007),
+            NP 			=> array(1, 'geo_reg',		'regNumb',			$LANG_SETTINGS['geo_fields']['NP'], 		0,  '2', 				0, center,	1001),
+						REGD		=> array(3, 'geo_reg',		'regDate',			$LANG_SETTINGS['geo_fields']['REGD'], 		0, 	'15.03.2007', 		0, center,	1002),
+						NC 			=> array(2, 'geo_reg',		'i_21',				$LANG_SETTINGS['geo_fields']['NC'], 		0, 	'2002120009', 		0, center,	1003),
+						FD 			=> array(3, 'geo_reg',		'i_22',				$LANG_SETTINGS['geo_fields']['FD'], 		0, 	'18.12.2002', 		0, center,	1004),
+            NBUL  	=> array(2, 'geo_reg',	'bulStr',		    $LANG_SETTINGS['madrid_fields']['NBUL'], 	0, 	 '5/2008', 			0, center,	801),
+						DPUBL 	=> array(3, 'geo_reg',		'bulletinDate',		$LANG_SETTINGS['geo_fields']['DPUBL'],		0, 	'15.03.2007', 		0, center,	1005),
+            APP 	  => array(2, 'geo_reg',		'name',			$LANG_SETTINGS['tm_fields']['APP'], 	731, 'çàâîä Ë²Ò', 							0, left,	717),
+						KZPNAME 	=> array(2, 'geo_reg',		'kzpName',			$LANG_SETTINGS['geo_fields']['KZPNAME'],	0, 	'ÌÈĞÃÎĞÎÄÑÜÊÀ', 	0, left,	1006),
+						KZPTYPE 	=> array(2, 'geo_reg',		'kzpType',			$LANG_SETTINGS['geo_fields']['KZPTYPE'],	0, 	'', 	0, left,	1007),
+						GOODNAME 	=> array(2, 'geo_reg',		'goodName',			$LANG_SETTINGS['geo_fields']['GOODNAME'],	0, 	'Ì³íåğàëüíà âîäà', 	0, left,	1007),
 						),
             
 		'geor'  => array(
-						NP 			=> array(1, 'maininfo',		'regNumb',			$LANG_SETTINGS['geo_fields']['NP'], 		0,  '2', 				0, center,	1001),
-						REGD		=> array(3, 'maininfo',		'regDate',			$LANG_SETTINGS['geo_fields']['REGD'], 		0, 	'15.03.2007', 		0, center,	1002),
-						NC 			=> array(2, 'maininfo',		'i_21',				$LANG_SETTINGS['geo_fields']['artem1'], 		0, 	'1', 		0, center,	1003),
-            NBUL  	=> array(2, 'maininfo',	'bulStr',		    $LANG_SETTINGS['madrid_fields']['NBUL'], 	0, 	 '5/2008', 			0, center,	801),
-						DPUBL 	=> array(3, 'maininfo',		'bulletinDate',		$LANG_SETTINGS['geo_fields']['DPUBL'],		0, 	'15.03.2007', 		0, center,	1005),
-            APP 	  => array(2, 'claim731',		'name',			$LANG_SETTINGS['tm_fields']['artem7'], 	731, 'çàâîä Ë²Ò', 							0, left,	717),
-						KZPNAME 	=> array(2, 'maininfo',		'kzpName',			$LANG_SETTINGS['geo_fields']['KZPNAME'],	0, 	'ÌÈĞÃÎĞÎÄÑÜÊÀ', 	0, left,	1006),
-						KZPTYPE 	=> array(2, 'maininfo',		'kzpType',			$LANG_SETTINGS['geo_fields']['KZPTYPE'],	0, 	'', 	0, left,	1007),
-						GOODNAME 	=> array(2, 'maininfo',		'goodName',			$LANG_SETTINGS['geo_fields']['GOODNAME'],	0, 	'Ì³íåğàëüíà âîäà', 	0, left,	1007),
+						NP 			=> array(1, 'geo_reguse',		'regNumb',			$LANG_SETTINGS['geo_fields']['NP'], 		0,  '2', 				0, center,	1001),
+						REGD		=> array(3, 'geo_reguse',		'regDate',			$LANG_SETTINGS['geo_fields']['REGD'], 		0, 	'15.03.2007', 		0, center,	1002),
+						NC 			=> array(2, 'geo_reguse',		'i_21',				$LANG_SETTINGS['geo_fields']['artem1'], 		0, 	'1', 		0, center,	1003),
+            NBUL  	=> array(2, 'geo_reguse',	'bulStr',		    $LANG_SETTINGS['madrid_fields']['NBUL'], 	0, 	 '5/2008', 			0, center,	801),
+						DPUBL 	=> array(3, 'geo_reguse',		'bulletinDate',		$LANG_SETTINGS['geo_fields']['DPUBL'],		0, 	'15.03.2007', 		0, center,	1005),
+            APP 	  => array(2, 'geo_reguse',		'name',			$LANG_SETTINGS['tm_fields']['artem7'], 	731, 'çàâîä Ë²Ò', 							0, left,	717),
+						KZPNAME 	=> array(2, 'geo_reguse',		'kzpName',			$LANG_SETTINGS['geo_fields']['KZPNAME'],	0, 	'ÌÈĞÃÎĞÎÄÑÜÊÀ', 	0, left,	1006),
+						KZPTYPE 	=> array(2, 'geo_reguse',		'kzpType',			$LANG_SETTINGS['geo_fields']['KZPTYPE'],	0, 	'', 	0, left,	1007),
+						GOODNAME 	=> array(2, 'geo_reguse',		'goodName',			$LANG_SETTINGS['geo_fields']['GOODNAME'],	0, 	'Ì³íåğàëüíà âîäà', 	0, left,	1007),
 						),
 
 		// íàëàøòóâàííÿ äëÿ áä "ì³æíàğîäí³ ğåºñòğàö³¿ çíàê³â äëÿ òîâàğ³â ³ ïîñëóã"
@@ -704,6 +703,9 @@
 		'wkm' 		=> 'idmark',	
 		'madridall'	=> 'idtrademark',
 		'tmc' 		=> 'idclaim',
+    'geoc'	=> 'id',
+		'geo'	=> 'id',
+		'geor'	=> 'id',
 	);
 	
 	$chapterTitles = array(	
@@ -1114,7 +1116,17 @@
 													'join' => 'inner join claim220 c220 on c220.idclaim=infound.idclaim'
 													),			
 									),
-
+                  
+              'geoc' => array(
+									'nc' 	=> array('title' => $LANG_SETTINGS['sort']['nc'], 	// ñîğòóâàòè çà íîìåğîì çàÿâêè
+													'fcode' => 'NC', 
+													'sortexpr' => 't_NC.app_number'
+													),			
+									'fd'	=> array('title' => $LANG_SETTINGS['sort']['fd'], 	// ñîğòóâàòè çà äàòîş ïîäàííÿ
+													'fcode' => 'FD', 
+													'sortexpr' => 't_NC.app_date'
+													),			
+									),
 	);
 	
 	

@@ -501,7 +501,7 @@
 				$query = buildGetIdsQuery($currDbName, $currSearchDbsValuesParsed, $lastSearchQuery, $addDbName);
 				$query = str_replace('$$$ORDERCLAUSE$$$', 'order by '.$currSortExpr.' '.$currSortOrder, $query);
 
-				//print($query);
+				print($query.'<br><br>');
 				
 				// убираем ограничение, которое есть дл¤ отображени¤ раздела бюлетн¤ "з¤вки, прин¤тые к рассмотрению", 
 				// но которого не должно быть дл¤ Ѕ? "¬едомости о з¤вка на изобренеи¤, которые прин¤ты к расмотрению"
@@ -523,7 +523,7 @@
 				//	$query = str_replace('order by', " where m.wheretopublish = 'both' order by", $query);
 	
 				//print($query.'<br>');
-				//print($lastSearchQuery.'<br>');
+				print($_SESSION['lastSearchQuery'].'<br>');
 				//print($isInFound.'<br>');
 
 				
@@ -606,7 +606,7 @@
 				$query = substr($query, 0, strrpos($query, 'order by'));
 				$query .= 'order by '.$currSortExpr.' '.$currSortOrder;
 				
-				//print($query.'<BR><BR>');
+				print($_SESSION['lastSearchQuery'].' - 2<BR><BR>');
 				
 				// сортуЇмо за новими кр?тер?¤ми
 				$currSearchIds = executeGetIdsQuery($currDbName, $query, $mssql);

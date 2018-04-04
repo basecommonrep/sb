@@ -195,6 +195,10 @@
 		$nn = 'tmc';
 	elseif ( $currDbName == 'madridall' )
 		$nn = 'madridall';
+	elseif ( $currDbName == 'geoc' && $fullBiblio['app_category'] == 'app-reg' )
+		$nn = 'geoc1';
+	elseif ( $currDbName == 'geoc' && $fullBiblio['app_category'] == 'app-reg-use' )
+		$nn = 'geoc2';
 	
 		
 	$n = '';
@@ -207,6 +211,8 @@
 	elseif ( $currDbName == 'madrid' )
 		$n = substr($currDbName, 0, 6);
 	elseif ( $currDbName == 'madridall' )
+		$n = $currDbName;	
+	elseif ( $currDbName == 'geoc' )
 		$n = $currDbName;	
 		
 	if ( substr($n, 0, 3) == 'inv' )
@@ -229,6 +235,8 @@
 		$i1 = $fullBiblio['i_210'];
 	elseif ( $n == 'madridall' )	
 		$i1 = $fullBiblio['fi_111'];
+  elseif ( $n == 'geoc' )	
+		$i1 = $fullBiblio['app_number'];
 
 	//print($nn);
 	
