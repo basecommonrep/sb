@@ -1,0 +1,15 @@
+select reg.[id],
+cast(reg.[regBulN] as varchar(2)) + '/' + cast(reg.[regBulY] as varchar(4)) as [bullNumber],
+reg.[reguse_number], 
+convert(varchar(20), reg.[reguse_date], 104) [reg_date],
+cast(reg.[indication] as text) [indication],
+cast(reg.[product_name] as text) [product_name],
+reg.[qualification],
+reg.[Holder],
+reg.[HolderAddress],
+reg.[HolderCountry],
+reg.[area],
+reg.[descr],
+reg.[termofuse]
+from [geo_reguse] reg
+where reg.[id]=:$$$IDCLAIM$$$

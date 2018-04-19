@@ -643,21 +643,26 @@
 						FD 			=> array(3, 'geo_reg',		'app_date',				$LANG_SETTINGS['geo_fields']['FD'], 		0, 	'18.12.2002', 		0, center,	1004),
             APP 	  => array(2, 'geo_reg',		'Holder',			$LANG_SETTINGS['tm_fields']['APP'], 	0, 'çàâîä Ë²Ò', 							0, left,	1009),
             UGODA   => array(2, 'geo_reg',		'ugoda',			$LANG_SETTINGS['geo_fields']['UGODA'], 	0, 'Óãîäà ïğî àñîö³àö³ş ...', 							0, left,	1010),
-            COUNTRY => array(2, 'geo_reg',		'country',			$LANG_SETTINGS['geo_fields']['COUNTRY'], 	0, 'Óêğà¿íà', 0, left,	1010),
+            COUNTRY => array(2, 'geo_reg',		'country',			$LANG_SETTINGS['geo_fields']['COUNTRY'], 	0, 'Óêğà¿íà', 0, left,	1011),
 						KZPNAME 	=> array(2, 'geo_reg',		'indication',			$LANG_SETTINGS['geo_fields']['KZPNAME'],	0, 	'ÌÈĞÃÎĞÎÄÑÜÊÀ', 	0, left,	1006),
 						GOODNAME 	=> array(2, 'geo_reg',		'product_name',			$LANG_SETTINGS['geo_fields']['GOODNAME'],	0, 	'Ì³íåğàëüíà âîäà', 	0, left,	1007),
 						),
             
 		'geor'  => array(
-						NP 			=> array(1, 'geo_reguse',		'regNumb',			$LANG_SETTINGS['geo_fields']['NP'], 		0,  '2', 				0, center,	1001),
-						REGD		=> array(3, 'geo_reguse',		'regDate',			$LANG_SETTINGS['geo_fields']['REGD'], 		0, 	'15.03.2007', 		0, center,	1002),
-						NC 			=> array(2, 'geo_reguse',		'i_21',				$LANG_SETTINGS['geo_fields']['artem1'], 		0, 	'1', 		0, center,	1003),
+						NP 			=> array(1, 'geo_reguse',		'reg_number',			$LANG_SETTINGS['geo_fields']['NP'], 		0,  '1', 				0, center,	1001),
+						REGD		=> array(3, 'geo_reguse',		'reg_date',			$LANG_SETTINGS['geo_fields']['REGD'], 		0, 	'15.03.2007', 		0, center,	1002),
+						NC 			=> array(2, 'geo_reguse',		'app_number',				$LANG_SETTINGS['geo_fields']['artem1'], 		0, 	'1/01', 		0, center,	1003),
+            FD 			=> array(3, 'geo_reg',		'app_date',				$LANG_SETTINGS['geo_fields']['FD'], 		0, 	'18.12.2002', 		0, center,	1004),
             NBUL  	=> array(2, 'geo_reguse',	'bulStr',		    $LANG_SETTINGS['madrid_fields']['NBUL'], 	0, 	 '5/2008', 			0, center,	801),
 						DPUBL 	=> array(3, 'geo_reguse',		'bulletinDate',		$LANG_SETTINGS['geo_fields']['DPUBL'],		0, 	'15.03.2007', 		0, center,	1005),
-            APP 	  => array(2, 'geo_reguse',		'name',			$LANG_SETTINGS['tm_fields']['artem7'], 	731, 'çàâîä Ë²Ò', 							0, left,	717),
-						KZPNAME 	=> array(2, 'geo_reguse',		'kzpName',			$LANG_SETTINGS['geo_fields']['KZPNAME'],	0, 	'ÌÈĞÃÎĞÎÄÑÜÊÀ', 	0, left,	1006),
+            UGODA   => array(2, 'geo_reg',		'ugoda',			$LANG_SETTINGS['geo_fields']['UGODA'], 	0, 'Óãîäà ïğî àñîö³àö³ş ...', 							0, left,	1010),
+            COUNTRY => array(2, 'geo_reg',		'country',			$LANG_SETTINGS['geo_fields']['COUNTRY'], 	0, 'Óêğà¿íà', 0, left,	1011),
+            APP 	  => array(2, 'geo_reguse',		'Holder',			$LANG_SETTINGS['tm_fields']['APP'], 	0, 'çàâîä Ë²Ò', 							0, left,	717),
+						KZPNAME 	=> array(2, 'geo_reguse',		'indication',			$LANG_SETTINGS['geo_fields']['KZPNAME'],	0, 	'ÌÈĞÃÎĞÎÄÑÜÊÀ', 	0, left,	1006),
 						KZPTYPE 	=> array(2, 'geo_reguse',		'kzpType',			$LANG_SETTINGS['geo_fields']['KZPTYPE'],	0, 	'', 	0, left,	1007),
 						GOODNAME 	=> array(2, 'geo_reguse',		'goodName',			$LANG_SETTINGS['geo_fields']['GOODNAME'],	0, 	'Ì³íåğàëüíà âîäà', 	0, left,	1007),
+						CORRESPOND 	=> array(2, 'geo_reguse',		'Correspond',			$LANG_SETTINGS['geo_fields']['CORRESPOND'],	0, 	'ÄÏ «²íòåëñ ²íòåğíåøíë Íåòâîğê Óêğà¿íà»', 	0, left,	1012),
+						REPRESENT 	=> array(2, 'geo_reguse',		'Represent',			$LANG_SETTINGS['geo_fields']['REPRESENT'],	0, 	'Ôèëü Í.Ê.', 	0, left,	1013),
 						),
 
 		// íàëàøòóâàííÿ äëÿ áä "ì³æíàğîäí³ ğåºñòğàö³¿ çíàê³â äëÿ òîâàğ³â ³ ïîñëóã"
@@ -1141,13 +1146,13 @@
 									), 
                   
               'geor' => array(
-									'nc' 	=> array('title' => $LANG_SETTINGS['sort']['nc'], 	// ñîğòóâàòè çà íîìåğîì çàÿâêè
-													'fcode' => 'NC', 
-													'sortexpr' => 't_NC.app_number'
+									'rn' 	=> array('title' => $LANG_SETTINGS['sort']['nc'], 	// ñîğòóâàòè çà íîìåğîì çàÿâêè
+													'fcode' => 'RN', 
+													'sortexpr' => 't_RN.reguse_number'
 													),			
-									'fd'	=> array('title' => $LANG_SETTINGS['sort']['fd'], 	// ñîğòóâàòè çà äàòîş ïîäàííÿ
-													'fcode' => 'FD', 
-													'sortexpr' => 't_FD.app_date'
+									'rd'	=> array('title' => $LANG_SETTINGS['sort']['fd'], 	// ñîğòóâàòè çà äàòîş ïîäàííÿ
+													'fcode' => 'RD', 
+													'sortexpr' => 't_RD.reg_date'
 													),			
 									),
 	);

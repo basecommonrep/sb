@@ -1,0 +1,10 @@
+select rc.id 
+from (
+	select distinct rc.id 
+	from geo_reguse rc
+	inner join ($$$SUBQUERY$$$) res on rc.id=res.id
+) as rc
+inner join geo_reguse t_RN on t_RN.id=rc.id
+inner join geo_reguse t_RD on t_RD.id=rc.id
+$$$ORDERCLAUSE$$$
+
