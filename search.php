@@ -501,7 +501,7 @@
 				$query = buildGetIdsQuery($currDbName, $currSearchDbsValuesParsed, $lastSearchQuery, $addDbName);
 				$query = str_replace('$$$ORDERCLAUSE$$$', 'order by '.$currSortExpr.' '.$currSortOrder, $query);
 
-				print($query.'<br><br>');
+				//print($query.'<br><br>');
 				
 				// убираем ограничение, которое есть дл¤ отображени¤ раздела бюлетн¤ "з¤вки, прин¤тые к рассмотрению", 
 				// но которого не должно быть дл¤ Ѕ? "¬едомости о з¤вка на изобренеи¤, которые прин¤ты к расмотрению"
@@ -537,8 +537,8 @@
 				
 				if ( empty( $errors ) )
 					$currSearchIds = executeGetIdsQuery($currDbName, $query, $mssql);
-print($currDbName);
-print_r($currSearchIds);
+//print($currDbName);
+//print_r($currSearchIds);
 				// помилка при виконнанн? запиту
 				if ( empty( $errors ) && $currSearchIds == -1 )
 					$errors = $LANG_SETTINGS['errors']['header'].': '.$LANG_SETTINGS['errors']['req'];				
@@ -926,7 +926,7 @@ print_r($currSearchIds);
 			{
 				$fullBiblioQuery = buildGetFullBiblioQuery($currDbName, $idClaim);
 				$fullBiblioQuery = str_replace('###pubtype###', $currDbName, $fullBiblioQuery); // тип публикации дл¤ ћѕ 
-				print($fullBiblioQuery);
+				//print($fullBiblioQuery);
 				$fullBiblio = executeGetFullBiblioQuery($currDbName, $fullBiblioQuery, $mssql);
 				//print_r($fullBiblio);
 

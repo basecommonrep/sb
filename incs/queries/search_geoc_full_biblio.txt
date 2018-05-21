@@ -1,5 +1,5 @@
 select app.[id],
-app.Bul as [bullNumber],
+cast(app.[BulN] as varchar(2)) + '/' + cast(app.[BulY] as varchar(4)) as [bullNumber],
 app.[app_number], 
 app.[app_category],
 convert(varchar(20), app.[app_date], 104) [app_date],
