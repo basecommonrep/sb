@@ -249,7 +249,20 @@
 		$i1 = $fullBiblio['reg_number'];
   elseif ( $n == 'geo' )	
 		$i1 = $fullBiblio['reguse_number'];
+    
+  //changing image source in geo biblio
+  
+  if ( substr($currDbName, 0, 3) == 'geo' )	
+  {
+    $replacement = 'realimage.php?dbn=geo&id=$1';
+    $pattern = '/(\d+).(png|jpg|jpeg)/i';
 
+    $fullBiblio['termofuse'] = preg_replace($pattern, $replacement, $fullBiblio['termofuse']);
+    $fullBiblio['area'] = preg_replace($pattern, $replacement, $fullBiblio['area']);
+    $fullBiblio['descr'] = preg_replace($pattern, $replacement, $fullBiblio['descr']);
+  }
+  
+  
 	//print($nn);
 	
 	//print_r($LANG_SETTINGS['details']);
