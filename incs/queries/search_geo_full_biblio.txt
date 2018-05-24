@@ -1,5 +1,5 @@
 select reg.[id],
-reg.Bul as [bullNumber],
+reg.[bullNumber],
 reg.[reg_number], 
 convert(varchar(20), reg.[reg_date], 104) [reg_date],
 cast(reg.[indication] as text) [indication],

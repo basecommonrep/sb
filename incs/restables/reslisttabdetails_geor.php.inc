@@ -83,7 +83,10 @@
                   </tr>
                   
                   <tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
-
+<?
+                  if(!empty($fullBiblio['bullNumber']))
+                  {
+?>
                   <tr>
                     <td colspan=2><font class="viennacat"><?=$LANG_SETTINGS['geo_fields']['NBUL'];?></font></td>
                   </tr>
@@ -96,7 +99,9 @@
                   </tr>
                   
                   <tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
-
+<?
+                  }
+?>
                   <tr>
                     <td colspan=2><font class="viennacat"><?=$LANG_SETTINGS['geo_fields']['artem2'];?></font></td>
                   </tr>
