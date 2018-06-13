@@ -449,7 +449,14 @@
 
 	
 							<?
-								if ( !empty( $vi[0]['colors'] ) )
+                                $colorsExists = False;
+                                foreach ($vi as $value) {
+                                    if (!empty( $value['colors'])) {
+                                        $colorsExists = True;
+                                        break;
+                                    }
+                                }
+								if ( $colorsExists )
 								{
 							?>
 	
