@@ -2097,4 +2097,66 @@ function toLower($content) { //трансформирует все буквы в нижний регистр
   return strtolower($content); 
 }
 
+function translateWKMCourtComments($comment, $lang) {
+    $translateFrom = array(
+        'від',
+        'Заочне рішення Білгород-Дністровського міськрайонного суду Одеської області',
+        'у справі',
+        'що набрало законної сили',
+        'Рішення Апеляційного суду м. Києва',
+        'яке набрало законної сили',
+        'Рішення Вишгородського районного суду Київської області',
+        'Рішення Господарський суду м. Києва',
+        'Рішення Господарського суду м. Києва',
+        'Рішення Господарського суду міста Києва',
+        'з урахуванням ухвали цього суду',
+        'Рішення Дарницького районного суду м. Києва',
+        'Рішення Солом`янського районного суду м. Києва',
+        'Рішення Солом‘янського районного суду м. Києва',
+        'Рішення Солом’янського районного суду м. Києва',
+        'Рішення Солом\'янського районного суду м. Києва',
+    );
+
+    $translateTo = array(
+    	'rus' => array(
+            'от',
+            'Заочное решение Белгород-Днестровского горрайонного суда Одесской области',
+            'по делу',
+            'вступившее в законную силу',
+            'Решение Апелляционного суда г. Киева',
+            'вступившее в законную силу',
+            'Решение Вышгородского районного суда Киевской области',
+            'Решение Хозяйственного суда г. Киева',
+            'Решение Хозяйственного суда г. Киева',
+            'Решение Хозяйственного суда г. Киева',
+            'с учетом постановления этого суда',
+            'Решение Дарницкого районного суда г. Киева',
+            'Решение Соломенского суда г. Киева',
+            'Решение Соломенского суда г. Киева',
+            'Решение Соломенского суда г. Киева',
+            'Решение Соломенского суда г. Киева',
+		),
+    	'eng' => array(
+            'dated',
+            'Judgment by default of the Bilhorod-Dnistrovskyi Municipal and District Court of the Odessa Oblast',
+            'in re',
+            'which is effective as of',
+            'Judgment of the Court of Appeal of Kyiv',
+            'which is effective as of',
+            'Judgment of the Vyshgorod district court of the Kyiv region',
+            'Judgment of the Kyiv Economic Court',
+            'Judgment of the Kyiv Economic Court',
+            'Judgment of the Kyiv Economic Court',
+            'taking into account the decree of this court',
+            'Judgment of the Darnytskyi District Court of Kyiv',
+            'Judgment of the Solomianskyi District Court of Kyiv',
+            'Judgment of the Solomianskyi District Court of Kyiv',
+            'Judgment of the Solomianskyi District Court of Kyiv',
+            'Judgment of the Solomianskyi District Court of Kyiv',
+		),
+	);
+
+    return str_replace($translateFrom, $translateTo[$lang], $comment);
+}
+
 ?>

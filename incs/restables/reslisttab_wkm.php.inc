@@ -43,14 +43,22 @@
 			$bcs = str_replace('###checked###', 'checked', $bcs);
 		
 		$courtcomments = $row['courtcomments'];
-		
-		if( ($_SESSION['lastLang'] == 'rus') && (!empty($row['courtcommentsRUS'])) )
-			$courtcomments = $row['courtcommentsRUS'];
-		
-		if( ($_SESSION['lastLang'] == 'eng') && (!empty($row['courtcommentsENG'])) )
-			$courtcomments = $row['courtcommentsENG'];
-			
-		
+
+		if (($_SESSION['lastLang'] == 'rus')) {
+		    if (!empty($row['courtcommentsRUS'])) {
+                $courtcomments = $row['courtcommentsRUS'];
+            } else {
+                $courtcomments = translateWKMCourtComments($row['courtcomments'], 'rus');
+            }
+        }
+
+        if (($_SESSION['lastLang'] == 'eng')) {
+            if (!empty($row['courtcommentsENG'])) {
+                $courtcomments = $row['courtcommentsENG'];
+            } else {
+                $courtcomments = translateWKMCourtComments($row['courtcomments'], 'eng');
+            }
+        }
 ?>
 
 <tr>
