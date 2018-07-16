@@ -13,9 +13,17 @@
 		//print(((int)strtotime($row['bulld']) > (int)strtotime('14.06.2011')));
 	
 		// changes associated with changing from name of department to service
-		$desi = ((int)strtotime($row['bulld']) > (int)strtotime('14.06.2011')) ? $LANG_SETTINGS['wkm_fields']['DESI2'] : $LANG_SETTINGS['wkm_fields']['DESI'];
-		//$desi = $LANG_SETTINGS['wkm_fields']['DESI'];
-		$desi = str_replace('%1', '<b>'.$row['decisionDate'].'</b>', $desi);
+
+        $build = (int)strtotime($row['bulld']);
+        if ($build < (int)strtotime('14.06.2011')) {
+            $desi = $LANG_SETTINGS['wkm_fields']['DESI'];
+        } elseif ($build < (int)strtotime('19.05.2017')) {
+            $desi = $LANG_SETTINGS['wkm_fields']['DESI2'];
+        } else {
+            $desi = $LANG_SETTINGS['wkm_fields']['DESI3'];
+        }
+
+        $desi = str_replace('%1', '<b>'.$row['decisionDate'].'</b>', $desi);
 		$desi = str_replace('%2', '<b>'.$row['orderDate'].'</b>', $desi);		
 		$desi = str_replace('%3', '<b>'.$row['orderNumber'].'</b>', $desi);
 
