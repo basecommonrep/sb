@@ -693,8 +693,8 @@
 						KEYW 	=> array(2, 'claim539',		'i_539',		$LANG_SETTINGS['tm_fields']['KEYW'], 	539, 'gold reserve', 										1, left,	1210),
 						COLORS 	=> array(2, 'claim591',		'color',		$LANG_SETTINGS['tm_fields']['COLORS'], 	591, 'червоний '.$LANG_SETTINGS['logical']['and'].' синій', 1, left,	1211),
 						APP 	=> array(2, 'claim731',		'name',			$LANG_SETTINGS['tm_fields']['APP'], 	731, 'завод ЛІТ', 											0, left,	1212),
-						PATP 	=> array(2, 'claim740',		'name',			$LANG_SETTINGS['tm_fields']['PATP'], 	740, 'Рибак Тамара Василівна', 								0, left,	1213),						
-						ADDR 	=> array(2, 'claim750',		'name',			$LANG_SETTINGS['tm_fields']['ADDR'], 	750, 'Черепов', 											0, left,	1214),						
+						// PATP 	=> array(2, 'claim740',		'name',			$LANG_SETTINGS['tm_fields']['PATP'], 	740, 'Рибак Тамара Василівна', 								0, left,	1213),
+						// ADDR 	=> array(2, 'claim750',		'name',			$LANG_SETTINGS['tm_fields']['ADDR'], 	750, 'Черепов', 											0, left,	1214),
 						),
 	);
 	

@@ -636,6 +636,19 @@
 								if ( !empty( $fullBiblio['i_731'] ) && $access )
 								{
 							?>
+                                <?php
+                                    if ($currDbName === 'tmc') {
+                                        // Удаление адреса в коде 731
+                                        $arr = explode('<br>', $fullBiblio['i_731']);
+                                        $size = count($arr);
+                                        for ($i = 0; $i < $size; $i++) {
+                                            if (($i - 1) % 3 !== 0 ) {
+                                                $result[] = $arr[$i];
+                                            }
+                                        }
+                                        $fullBiblio['i_731'] = implode('<br>', $result);
+                                    }
+                                ?>
 	
 								<tr><td colspan=4 height="10"><img src="images/spacer.gif" height="10"></td></tr>						
 	
@@ -688,7 +701,7 @@
 
 
 							<?
-								if ( !empty( $fullBiblio['i_740'] ) && $access )
+								if ( $currDbName !== 'tmc' && !empty( $fullBiblio['i_740'] ) && $access )
 								{
 							?>
 	
@@ -729,7 +742,7 @@
 							?>
 
 							<?
-								if ( !empty( $fullBiblio['i_750'] ) && $access )
+								if ( $currDbName !== 'tmc' && !empty( $fullBiblio['i_750'] ) && $access )
 								{
 							?>
 	
