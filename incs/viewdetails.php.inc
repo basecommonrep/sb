@@ -247,7 +247,7 @@
 		$i1 = $fullBiblio['app_number'];
   elseif ( $n == 'geo' )	
 		$i1 = $fullBiblio['reg_number'];
-  elseif ( $n == 'geo' )	
+  elseif ( $n == 'geor' )	
 		$i1 = $fullBiblio['reguse_number'];
     
   //changing image source in geo biblio
@@ -279,13 +279,27 @@
 
 	<tr>
 		<td>
-			<font style="font-size: 12px" class="viennacat"><?=$LANG_SETTINGS['details']['title_'.$nn];?>&nbsp;#&nbsp;<?=$i1;?></font>
+			<font style="font-size: 12px" class="viennacat"><?=$LANG_SETTINGS['details']['title_'.$nn];?>&nbsp;¹&nbsp;<?=$i1;?></font>
 		</td>
 	</tr>
-
-	<tr><td height="10"><img src="images/spacer.gif" height="10"></td></tr>
-	
+  <? 
+  if(substr($currDbName, 0, 3) == 'geo' && !empty($fullBiblio['bullNumber']))
+  {
+	?>
+  <tr>
+		<td>
+			<font style="font-size: 12px" class="viennacat"><?=$LANG_SETTINGS['geo_fields']['publ_in'].$fullBiblio['bullNumber'];?></font>
+		</td>
+	</tr>
 	<?
+  }
+  else
+  {
+  ?>
+	<tr><td height="10"><img src="images/spacer.gif" height="10"></td></tr>
+	<?
+  }
+  
 	if ( !($addDbName == 'cert' && $currDbName == 'tm'))
 	{
 	?>
@@ -299,8 +313,7 @@
 	<tr><td height="10"><img src="images/spacer.gif" height="10"></td></tr>
 	<?
 	}
-	?>
-	
+  ?>
 	<tr>
 		<td>
 <?

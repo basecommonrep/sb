@@ -5,7 +5,6 @@
 			$fullBiblio[$fname] = ltrim(rtrim($fullBiblio[$fname]));
     
     $fullHolder = $fullBiblio['Holder'].' '.$fullBiblio['HolderAddress'].'; ('.$fullBiblio['HolderCountry'].')';
-    $fullKZPNAME = $fullBiblio['product_name'].' "'.$fullBiblio['indication'].'"';
 	} // if ( !empty($fullBiblio) )
 ?>
 
@@ -83,25 +82,7 @@
                   </tr>
                   
                   <tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
-<?
-                  if(!empty($fullBiblio['bullNumber']))
-                  {
-?>
-                  <tr>
-                    <td colspan=2><font class="viennacat"><?=$LANG_SETTINGS['geo_fields']['NBUL'];?></font></td>
-                  </tr>
 
-                  <tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
-
-                  <tr>
-                    <td><img height=1 width=20 src="images/spacer.gif"></td>
-                    <td><font class="viennacat2"><?=$fullBiblio['bullNumber'];?></font></td>
-                  </tr>
-                  
-                  <tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
-<?
-                  }
-?>
                   <tr>
                     <td colspan=2><font class="viennacat"><?=$LANG_SETTINGS['geo_fields']['artem2'];?></font></td>
                   </tr>
@@ -116,14 +97,14 @@
                   <tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
 
                   <tr>
-                    <td colspan=2><font class="viennacat"><?=$LANG_SETTINGS['geo_fields']['fullKZPNAME'];?></font></td>
+                    <td colspan=2><font class="viennacat"><?=$LANG_SETTINGS['geo_fields']['appGOODNAME'];?></font></td>
                   </tr>
 
                   <tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
 
                   <tr>
                     <td><img height=1 width=20 src="images/spacer.gif"></td>
-                    <td><font class="viennacat2"><?=$fullKZPNAME;?></font></td>
+                    <td><font class="viennacat2"><?=$fullBiblio['product_name'];?></font></td>
                   </tr>
 
                   <tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>

@@ -1,6 +1,6 @@
 select t_RN.[id],
 t_RN.[reguse_number], 
-convert(varchar(20), t_RN.[reguse_date], 104) [reg_date],
+convert(varchar(20), t_RN.[reguse_date], 104) [reguse_date],
 cast(t_RN.[indication] as text) [indication],
 cast(t_RN.[product_name] as text) [product_name]
 from [geo_reguse] t_RN

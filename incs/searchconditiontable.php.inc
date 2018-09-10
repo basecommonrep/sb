@@ -190,8 +190,8 @@
 		$example = $curr_db_params_table_content[$key][5];
 		
 		$ftitle_short = $ftitle;
-		if ( strlen( $ftitle ) > 40 )
-			$ftitle_short = substr($ftitle, 0, 40).'...';
+		if ( strlen( $ftitle ) > 55 )
+			$ftitle_short = substr($ftitle, 0, 55).'...';
 		
 		
 ?>

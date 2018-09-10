@@ -81,20 +81,20 @@
 
 				<tr>
 					<td><img height=1 width=20 src="images/spacer.gif"></td>
-					<td><font class="viennacat2"><?=$row['indication'];?></font></td>
+					<td><font class="viennacat2"><?=$row['product_name'];?></font></td>
 				</tr>
 
 				<tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
 
 				<tr>
-					<td colspan=2><font class="viennacat"><?=$LANG_SETTINGS['geo_fields']['KZPNAME'];?></font></td>
+					<td colspan=2><font class="viennacat"><?=$LANG_SETTINGS['geo_fields']['regKZPNAME'];?></font></td>
 				</tr>
 
 				<tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
 
 				<tr>
 					<td><img height=1 width=20 src="images/spacer.gif"></td>
-					<td><font class="viennacat2"><?=$row['product_name'];?></font></td>
+					<td><font class="viennacat2"><?=$row['indication'];?></font></td>
 				</tr>
 
 				<tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
