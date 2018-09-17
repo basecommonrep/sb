@@ -11,6 +11,15 @@
 		if ( $currDbName != 'invc' )
 			doStatistics('createnewaction', 'bul', null, $_SESSION['statInfo']['idUser'], 5, $mssql, null); // 5 - пергляд документа		
 	}
+  if(!empty($fullBiblio['bullNumber']) && empty($fullBiblio['bullDate']))
+  {
+    $published = $LANG_SETTINGS['geo_fields']['publ_in'].$fullBiblio['bullNumber'];
+  }
+  elseif(!empty($fullBiblio['bullNumber']) && !empty($fullBiblio['bullDate']))
+  {
+    $published = str_replace('#1', $fullBiblio['bullNumber'], $LANG_SETTINGS['geo_fields']['publ_in_2']);
+    $published = str_replace('#2', $fullBiblio['bullDate'], $published);
+  }
 
 ?>
 
@@ -288,7 +297,7 @@
 	?>
   <tr>
 		<td>
-			<font style="font-size: 12px" class="viennacat"><?=$LANG_SETTINGS['geo_fields']['publ_in'].$fullBiblio['bullNumber'];?></font>
+			<font style="font-size: 12px" class="viennacat"><?=$published;?></font>
 		</td>
 	</tr>
 	<?

@@ -4,8 +4,6 @@
 		while(list($fname, $fvalue) = each($fullBiblio))
 			$fullBiblio[$fname] = ltrim(rtrim($fullBiblio[$fname]));
     
-    $fullHolder = $fullBiblio['Holder'].' '.$fullBiblio['HolderAddress'].'; ('.$fullBiblio['HolderCountry'].')';
-
     $qualification = ($fullBiblio['qualification'] == 'appellation-of-origin') ? $LANG_SETTINGS['geo_fields']['appellation_of_origin'] : $LANG_SETTINGS['geo_fields']['geographical_indication'];
 	} // if ( !empty($fullBiblio) )
 ?>

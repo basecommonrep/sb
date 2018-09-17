@@ -3,8 +3,7 @@
 	{
 		while(list($fname, $fvalue) = each($fullBiblio))
 			$fullBiblio[$fname] = ltrim(rtrim($fullBiblio[$fname]));
-    
-    $fullHolder = $fullBiblio['Holder'].' '.$fullBiblio['HolderAddress'].'; ('.$fullBiblio['HolderCountry'].')';
+
 	} // if ( !empty($fullBiblio) )
 ?>
 
@@ -156,7 +155,7 @@
 
                   <tr>
                     <td><img height=1 width=20 src="images/spacer.gif"></td>
-                    <td><font class="viennacat2"><?=$fullHolder;?></font></td>
+                    <td><font class="viennacat2"><?=$fullBiblio['Holder'];?></font></td>
                   </tr>
 
                   <tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
