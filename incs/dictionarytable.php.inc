@@ -136,8 +136,14 @@
 							if (($i % 2) === 0)
 								$bgcolor = '#c5d9eb';
 							
-							 
-							$val = $searchShortBiblioSet[$i]['value'];
+							if( ($currDbName == 'geo') && (($currFieldName == 'KZPNAME')) )
+              {
+                $val_binary = mb_convert_encoding($searchShortBiblioSet[$i]['value'], 'UTF-8', 'UCS-2LE');
+                $val = mb_encode_numericentity ($val_binary, array (0x0, 0xffff, 0, 0xffff), 'UTF-8');
+              }
+              else
+                $val = $searchShortBiblioSet[$i]['value'];
+            
 							$val_original = $val;
 							
 							//print($val.'<br><br>');
@@ -145,7 +151,7 @@
 
 							$quoted = 'no';
 							
-							if ($ftype == 2) // str
+							if( ($ftype == 2) && ($currDbName != 'geo') && ($currFieldName != 'KZPNAME'))// str
 							{
 								$val_parted = '';	
 								$parts = explode(' ', $val);

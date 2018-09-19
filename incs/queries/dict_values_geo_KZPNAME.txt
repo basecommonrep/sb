@@ -1,0 +1,10 @@
+select d.entries, 
+case
+	when d.valueInt is not null then convert(varchar,d.valueInt)
+	when d.valueStr is not null then cast(d.valueStr as varbinary(max))
+	when d.valueDate is not null then convert(varchar(20), d.valueDate, 104)
+	else null
+end as value
+from dictionary d
+where d.dictName = '$$$DICTNAME$$$' and d.fieldName = '$$$FIELDNAME$$$' and ( d.valueStr IS NULL OR d.valueStr <> '*' )
+and d.id in ($$$DICTIDS$$$)

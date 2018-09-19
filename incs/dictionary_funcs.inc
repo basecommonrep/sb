@@ -48,6 +48,8 @@ function buildGetDictValuesQuery($dbn, $fname, $ids, $addDbName)
 {
 	if (($addDbName.$dbn == 'certpp') && ($fname == 'DAUSSR'))
 	  $fpath = 'incs/queries/dict_values_field20.txt';
+	elseif( ($dbn == 'geo') && (($fname == 'KZPNAME')) )
+	  $fpath = 'incs/queries/dict_values_geo_KZPNAME.txt';
 	else
 	  $fpath = 'incs/queries/dict_values.txt';
 		
