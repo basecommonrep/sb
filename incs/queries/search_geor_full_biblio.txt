@@ -10,7 +10,7 @@ convert(varchar(20), reg.[app_date], 104) [app_date],
 cast(reg.[indication] as text) [indication],
 cast(reg.[product_name] as text) [product_name],
 reg.[qualification],
-reg.[Holder],
+cast(reg.[Holder] as text) [Holder],
 reg.[area],
 reg.[descr],
 reg.[termofuse]

@@ -1,7 +1,7 @@
 select t_RN.[id],
 t_RN.[reg_number], 
 convert(varchar(20), t_RN.[reg_date], 104) [reg_date],
-cast(t_RN.[indication] as text) [indication],
+cast(t_RN.[indication] as varbinary(max)) [indication],
 cast(t_RN.[product_name] as text) [product_name]
 from [geo_reg] t_RN
 left join [geo_reg] t_RD on t_RD.id = t_RN.[id]

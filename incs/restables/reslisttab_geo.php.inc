@@ -1,7 +1,6 @@
 <table border=0 width=100% height=100 cellpadding=3 cellspacing=0>
 
 <?
-	
 	for($i = 0; $i < count( $searchShortBiblioSet ); $i++)
 	{
 		$row = $searchShortBiblioSet[$i];
@@ -9,6 +8,8 @@
 		$bcs = $basket_check_str;
 		$bcs = str_replace('###IDCLAIM###', $row['id'], $bcs);
 		
+    $indication = mb_convert_encoding($row['indication'], 'UTF-8', 'UCS-2LE');
+    $indication_html = mb_encode_numericentity ($indication, array (0x0, 0xffff, 0, 0xffff), 'UTF-8');
 ?>
 
 <tr>
@@ -17,7 +18,7 @@
 		<table border=0 width=100% cellpadding=0 cellspacing=0>
 		<tr>
 			<td>
-      <a href="search.php?action=viewdetails<?=$detailStr;?>&IdIdClaim=<?=$row['id'];?>" class="pageHeaderText"><?=$row['indication'];?></a>
+      <a href="search.php?action=viewdetails<?=$detailStr;?>&IdIdClaim=<?=$row['id'];?>" class="pageHeaderText"><?=$indication_html;?></a>
       </td>
 		</tr>
 		</table>
@@ -94,7 +95,7 @@
 
 				<tr>
 					<td><img height=1 width=20 src="images/spacer.gif"></td>
-					<td><font class="viennacat2"><?=$row['indication'];?></font></td>
+					<td><font class="viennacat2"><?=$indication_html;?></font></td>
 				</tr>
 
 				<tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>

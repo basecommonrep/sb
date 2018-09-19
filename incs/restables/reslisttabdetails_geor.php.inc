@@ -56,6 +56,10 @@
               <tr valign=top>
                 <td>
                   <table width=650 border=0 height=50 width=100% cellpadding=0 cellspacing=0>
+<?
+  if(!empty($fullBiblio['reguse_number']))
+  {
+?>
                   <tr>
                     <td colspan=2><font class="viennacat"><?=$LANG_SETTINGS['geo_fields']['artem1'];?></font></td>
                   </tr>
@@ -66,7 +70,12 @@
                     <td width=20><img height=1 width=20 src="images/spacer.gif"></td>
                     <td width=580><font class="viennacat2"><?=$fullBiblio['reguse_number'];?></font></td>
                   </tr>
+<?
+  }
 
+  if(!empty($fullBiblio['reguse_date']))
+  {
+?>
                   <tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
 
                   <tr>
@@ -81,7 +90,12 @@
                   </tr>
                   
                   <tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
-                  
+<?
+  }
+
+  if(!empty($fullBiblio['app_number']))
+  {
+?>
                   <tr>
                     <td colspan=2><font class="viennacat"><?=$LANG_SETTINGS['geo_fields']['NC'];?></font></td>
                   </tr>
@@ -94,7 +108,12 @@
                   </tr>
                   
                   <tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
-                  
+<?
+  }
+
+  if(!empty($fullBiblio['app_date']))
+  {
+?>
                   <tr>
                     <td colspan=2><font class="viennacat"><?=$LANG_SETTINGS['geo_fields']['FD'];?></font></td>
                   </tr>
@@ -107,7 +126,12 @@
                   </tr>
                   
                   <tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
-                  
+<?
+  }
+
+  if(!empty($fullBiblio['indication']))
+  {
+?>
                   <tr>
                     <td colspan=2><font class="viennacat"><?=$LANG_SETTINGS['geo_fields']['regKZPNAME'];?></font></td>
                   </tr>
@@ -120,7 +144,12 @@
                   </tr>
                   
                   <tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
-                  
+<?
+  }
+
+  if(!empty($fullBiblio['product_name']))
+  {
+?>
                   <tr>
                     <td colspan=2><font class="viennacat"><?=$LANG_SETTINGS['geo_fields']['regGOODNAME'];?></font></td>
                   </tr>
@@ -133,7 +162,12 @@
                   </tr>
               
                   <tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
+<?
+  }
 
+  if(!empty($fullBiblio['termofuse']))
+  {
+?>
                   <tr>
                     <td colspan=2><font class="viennacat"><?=$LANG_SETTINGS['geo_fields']['artem6'];?></font></td>
                   </tr>
@@ -146,7 +180,12 @@
                   </tr>
 
                   <tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
+<?
+  }
 
+  if(!empty($fullBiblio['Holder']))
+  {
+?>
                   <tr>
                     <td colspan=2><font class="viennacat"><?=$LANG_SETTINGS['geo_fields']['artem7'];?></font></td>
                   </tr>
@@ -159,7 +198,9 @@
                   </tr>
 
                   <tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
-
+<?
+  }
+?>
                   </tr>
                   </table>
                 </td>

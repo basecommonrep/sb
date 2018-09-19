@@ -1,11 +1,13 @@
 <?
 	if ( !empty($fullBiblio) )
 	{
-		while(list($fname, $fvalue) = each($fullBiblio))
+    $indication = mb_convert_encoding($fullBiblio['indication'], 'UTF-8', 'UCS-2LE');
+    $indication_html = mb_encode_numericentity ($indication, array (0x0, 0xffff, 0, 0xffff), 'UTF-8');
+    
+    while(list($fname, $fvalue) = each($fullBiblio))
 			$fullBiblio[$fname] = ltrim(rtrim($fullBiblio[$fname]));
     
-    $qualification = ($fullBiblio['qualification'] == 'appellation-of-origin') ? $LANG_SETTINGS['geo_fields']['appellation_of_origin'] : $LANG_SETTINGS['geo_fields']['geographical_indication'];
-	} // if ( !empty($fullBiblio) )
+  } // if ( !empty($fullBiblio) )
 ?>
 
 		<table border="0" cellpadding="0" cellspacing="0" width="100%">
@@ -57,6 +59,10 @@
               <tr valign=top>
                 <td>
                   <table width=650 border=0 height=50 width=100% cellpadding=0 cellspacing=0>
+<?
+  if(!empty($fullBiblio['reg_number']))
+  {
+?>
                   <tr>
                     <td colspan=2><font class="viennacat"><?=$LANG_SETTINGS['geo_fields']['NP'];?></font></td>
                   </tr>
@@ -69,7 +75,12 @@
                   </tr>
 
                   <tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
-
+<?
+  }
+  
+  if(!empty($fullBiblio['reg_date']))
+  {
+?>
                   <tr>
                     <td colspan=2><font class="viennacat"><?=$LANG_SETTINGS['geo_fields']['REGD'];?></font></td>
                   </tr>
@@ -82,7 +93,12 @@
                   </tr>
                   
                   <tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
-
+<?
+  }
+  
+  if(!empty($fullBiblio['app_number']))
+  {
+?>
                   <tr>
                     <td colspan=2><font class="viennacat"><?=$LANG_SETTINGS['geo_fields']['NC'];?></font></td>
                   </tr>
@@ -95,7 +111,12 @@
                   </tr>
                   
                   <tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
-
+<?
+  }
+  
+  if(!empty($fullBiblio['app_date']))
+  {
+?>
                   <tr>
                     <td colspan=2><font class="viennacat"><?=$LANG_SETTINGS['geo_fields']['FD'];?></font></td>
                   </tr>
@@ -108,7 +129,12 @@
                   </tr>
                   
                   <tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
-
+<?
+  }
+  
+  if(!empty($indication_html))
+  {
+?>
                   <tr>
                     <td colspan=2><font class="viennacat"><?=$LANG_SETTINGS['geo_fields']['regKZPNAME'];?></font></td>
                   </tr>
@@ -117,11 +143,16 @@
 
                   <tr>
                     <td><img height=1 width=20 src="images/spacer.gif"></td>
-                    <td><font class="viennacat2"><?=$fullBiblio['indication'];?></font></td>
+                    <td><font class="viennacat2"><?=$indication_html;?></font></td>
                   </tr>
                   
                   <tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
-
+<?
+  }
+  
+  if(!empty($fullBiblio['qualification']))
+  {
+?>
                   <tr>
                     <td colspan=2><font class="viennacat"><?=$LANG_SETTINGS['geo_fields']['KZPTYPE'];?></font></td>
                   </tr>
@@ -130,11 +161,16 @@
 
                   <tr>
                     <td><img height=1 width=20 src="images/spacer.gif"></td>
-                    <td><font class="viennacat2"><?=$qualification;?></font></td>
+                    <td><font class="viennacat2"><?=$fullBiblio['qualification'];?></font></td>
                   </tr>
                   
                   <tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
-
+<?
+  }
+  
+  if(!empty($fullBiblio['product_name']))
+  {
+?>
                   <tr>
                     <td colspan=2><font class="viennacat"><?=$LANG_SETTINGS['geo_fields']['regGOODNAME'];?></font></td>
                   </tr>
@@ -147,7 +183,12 @@
                   </tr>
 
                   <tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
-
+<?
+  }
+  
+  if(!empty($fullBiblio['descr']))
+  {
+?>
                   <tr>
                     <td colspan=2><font class="viennacat"><?=$LANG_SETTINGS['geo_fields']['artem5'];?></font></td>
                   </tr>
@@ -160,7 +201,12 @@
                   </tr>
 
                   <tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
-
+<?
+  }
+  
+  if(!empty($fullBiblio['area']))
+  {
+?>
                   <tr>
                     <td colspan=2><font class="viennacat"><?=$LANG_SETTINGS['geo_fields']['artem4'];?></font></td>
                   </tr>
@@ -173,7 +219,12 @@
                   </tr>
 
                   <tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
-
+<?
+  }
+  
+  if(!empty($fullBiblio['termofuse']))
+  {
+?>
                   <tr>
                     <td colspan=2><font class="viennacat"><?=$LANG_SETTINGS['geo_fields']['artem6'];?></font></td>
                   </tr>
@@ -186,7 +237,9 @@
                   </tr>
 
                   <tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
-
+<?
+  }
+?>
                   </tr>
                   </table>
                 </td>

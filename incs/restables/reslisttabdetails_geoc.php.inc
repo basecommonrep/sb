@@ -56,6 +56,10 @@
               <tr valign=top>
                 <td>
                   <table width=650 border=0 height=50 width=100% cellpadding=0 cellspacing=0>
+<?
+  if(!empty($fullBiblio['app_number']))
+  {
+?>
                   <tr>
                     <td colspan=2><font class="viennacat"><?=$LANG_SETTINGS['geo_fields']['NC'];?></font></td>
                   </tr>
@@ -68,7 +72,12 @@
                   </tr>
 
                   <tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
+<?
+  }
 
+  if(!empty($fullBiblio['app_date']))
+  {
+?>
                   <tr>
                     <td colspan=2><font class="viennacat"><?=$LANG_SETTINGS['geo_fields']['FD'];?></font></td>
                   </tr>
@@ -81,7 +90,12 @@
                   </tr>
                   
                   <tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
+<?
+  }
 
+  if(!empty($fullBiblio['Holder']))
+  {
+?>
                   <tr>
                     <td colspan=2><font class="viennacat"><?=$LANG_SETTINGS['geo_fields']['artem2'];?></font></td>
                   </tr>
@@ -94,7 +108,12 @@
                   </tr>
               
                   <tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
+<?
+  }
 
+  if(!empty($fullBiblio['product_name']))
+  {
+?>
                   <tr>
                     <td colspan=2><font class="viennacat"><?=$LANG_SETTINGS['geo_fields']['appGOODNAME'];?></font></td>
                   </tr>
@@ -107,7 +126,12 @@
                   </tr>
 
                   <tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
+<?
+  }
 
+  if(!empty($fullBiblio['area']))
+  {
+?>
                   <tr>
                     <td colspan=2><font class="viennacat"><?=$LANG_SETTINGS['geo_fields']['artem4'];?></font></td>
                   </tr>
@@ -120,7 +144,12 @@
                   </tr>
 
                   <tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
+<?
+  }
 
+  if(!empty($fullBiblio['descr']))
+  {
+?>
                   <tr>
                     <td colspan=2><font class="viennacat"><?=$LANG_SETTINGS['geo_fields']['artem5'];?></font></td>
                   </tr>
@@ -133,7 +162,12 @@
                   </tr>
 
                   <tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
+<?
+  }
 
+  if(!empty($fullBiblio['termofuse']))
+  {
+?>
                   <tr>
                     <td colspan=2><font class="viennacat"><?=$LANG_SETTINGS['geo_fields']['artem6'];?></font></td>
                   </tr>
@@ -146,7 +180,9 @@
                   </tr>
 
                   <tr><td height=5 colspan=2><img height=5 width=1 src="images/spacer.gif"></td></tr>
-
+<?
+  }
+?>
                   </tr>
                   </table>
                 </td>
