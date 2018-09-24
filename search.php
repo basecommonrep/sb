@@ -465,8 +465,8 @@
 			
 			if ( ($_SESSION['lastLang'] == 'rus') || ($_SESSION['lastLang'] == 'eng'));
 			{
-				$currSearchDbsValues['TYPE'] = str_replace($LANG_SETTINGS['wkm_fields']['TYPE_NAME_COURT'],'за р≥шенн€м суду',$currSearchDbsValues['TYPE']);
-				$currSearchDbsValues['TYPE'] = str_replace($LANG_SETTINGS['wkm_fields']['TYPE_NAME_AP'],'за р≥шенн€м јпел€ц≥йноњ палати',$currSearchDbsValues['TYPE']);
+				$currSearchDbsValues['TYPE'] = str_replace($LANG_SETTINGS['wkm_fields']['TYPE_NAME_COURT'],'за рішенням суду',$currSearchDbsValues['TYPE']);
+				$currSearchDbsValues['TYPE'] = str_replace($LANG_SETTINGS['wkm_fields']['TYPE_NAME_AP'],'за рішенням Апеляційної палати',$currSearchDbsValues['TYPE']);
 			}
 			
 			//print('<br><br>');

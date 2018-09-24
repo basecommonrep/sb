@@ -17,7 +17,7 @@
         $build = (int)strtotime($row['bulld']);
         if ($build < (int)strtotime('14.06.2011')) {
             $desi = $LANG_SETTINGS['wkm_fields']['DESI'];
-        } elseif ($build < (int)strtotime('19.05.2017')) {
+        } elseif ((int)strtotime($row['orderDate']) < (int)strtotime('19.05.2017')) {
             $desi = $LANG_SETTINGS['wkm_fields']['DESI2'];
         } else {
             $desi = $LANG_SETTINGS['wkm_fields']['DESI3'];
