@@ -2115,6 +2115,7 @@ function translateWKMCourtComments($comment, $lang) {
         'Рішення Солом‘янського районного суду м. Києва',
         'Рішення Солом’янського районного суду м. Києва',
         'Рішення Солом\'янського районного суду м. Києва',
+        'Рішення Солом\'янського районного суду м.Києва',
     );
 
     $translateTo = array(
@@ -2135,6 +2136,7 @@ function translateWKMCourtComments($comment, $lang) {
             'Решение Соломенского суда г. Киева',
             'Решение Соломенского суда г. Киева',
             'Решение Соломенского суда г. Киева',
+            'Решение Соломенского суда г. Киева',
 		),
     	'eng' => array(
             'dated',
@@ -2149,6 +2151,7 @@ function translateWKMCourtComments($comment, $lang) {
             'Judgment of the Kyiv Economic Court',
             'taking into account the decree of this court',
             'Judgment of the Darnytskyi District Court of Kyiv',
+            'Judgment of the Solomianskyi District Court of Kyiv',
             'Judgment of the Solomianskyi District Court of Kyiv',
             'Judgment of the Solomianskyi District Court of Kyiv',
             'Judgment of the Solomianskyi District Court of Kyiv',
