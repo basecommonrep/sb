@@ -816,8 +816,8 @@
 					$query = str_replace('$$$ORDERCLAUSE$$$', 'order by '.$currSortExpr.' '.$currSortOrder, $query);
 				else {
 					$query = str_replace('$$$ORDERCLAUSE$$$', '', $query);
-					if (!empty($addDbName))
-						$query = str_replace('where', "where mi.wheretopublish = 'both' and ", $query);
+					 // if (!empty($addDbName))
+					 // 	$query = str_replace('where', "where mi.wheretopublish = 'both' and ", $query);
 				}
 
 				//print($query.'<BR><BR>');
