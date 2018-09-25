@@ -17,7 +17,7 @@
 		<table border=0 width=100% cellpadding=0 cellspacing=0>
 		<tr>
 			<td>
-      <a href="search.php?action=viewdetails<?=$detailStr;?>&IdIdClaim=<?=$row['id'];?>" class="pageHeaderText"><?=$row['indication'];?></a>
+      <a href="search.php?action=viewdetails<?=$detailStr;?>&IdClaim=<?=$row['id'];?>" class="pageHeaderText"><?=$row['indication'];?></a>
       </td>
 		</tr>
 		</table>
